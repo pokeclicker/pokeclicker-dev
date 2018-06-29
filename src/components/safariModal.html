@@ -6,6 +6,17 @@
                 <h4 style='text-align:center' class="modal-title">Safari Zone</h4>
                 <button class='btn btn-primary' onclick='if(!Safari.inBattle()){$("#safariModal").modal("toggle")}' data-bind='css: { disabled: Safari.inBattle }' >Leave</button>
             </div>
+            <div>
+                <div class='row'>
+                    <div class='col-6'><label for="rollSpeed">Roll</label><input id="rollSpeed" type="number" value="1000"></div>
+                    <div class='col-6'><label for="bounceSpeed">Bounce</label><input id="bounceSpeed" type="number" value="1000"></div>
+                </div>
+                <div class='row'>
+                    <div class='col-6'><label for="Throwpeed">Throw</label><input id="throwSpeed" type="number" value="1000"></div>
+                    <div class='col-6'><label for="transitionSpeed">Enemy</label><input id="transitionSpeed" type="number" value="1000"></div>
+                </div>
+                <button onclick="SafariBattle.setSpeeds()">Apply</button>
+            </div>
             <div class="modal-body">
                 <div id="safariBody">
                 </div>

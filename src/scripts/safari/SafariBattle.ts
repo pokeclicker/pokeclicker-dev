@@ -3,6 +3,12 @@ class SafariBattle {
     static busy: boolean = false;
     static text: KnockoutObservable<string> = ko.observable("What will you do?");
     static escapeAttempts: number = 0;
+    static animationSpeed: number = 1000;
+    static ballThrowSpeed: number = player ? player.ballThrowSpeed || 1000 : 1000;
+    static ballBounceSpeed: number = player ? player.ballBounceSpeed || 1000 : 1000;
+    static ballRollSpeed: number = player ? player.ballRollSpeed || 1000 : 1000;
+    static enemyTransitionSpeed: number = player ? player.enemyTransitionSpeed || 1000 : 1000;
+    static particle;
 
     public static get enemy(): SafariPokemon {
         return SafariBattle._enemy();
@@ -46,61 +52,110 @@ class SafariBattle {
         if(!SafariBattle.busy) {
             SafariBattle.busy = true;
             Safari.balls(Safari.balls()-1);
-            let gameOver = Safari.balls() == 0;
+            
+            $('#safariEnemy').css("transition-duration",(0.75*SafariBattle.enemyTransitionSpeed)+"ms")
             SafariBattle.text("You throw a ball...");
             let enemyImg = $('#safariEnemy').offset();
             enemyImg.left += 48;
-            let p = SafariBattle.dropParticle('<div><img id="safariBall" src="../assets/images/safari/pokeball.png"></div>', $('#safariPlayer').offset(), enemyImg, 0.75, 'cubic-bezier(0,0,0.4,1)', true).css('z-index',9999);
 
-            setTimeout(function() {
-                $('#safariEnemy').addClass('safariCapture');
+            let ptclhtml='<div><img id="safariBall" src="../assets/images/safari/pokeball.png"></div>';
+            SafariBattle.particle = SafariBattle.dropParticle(ptclhtml, $('#safariPlayer').offset(), enemyImg, 0.75*SafariBattle.ballThrowSpeed, 'cubic-bezier(0,0,0.4,1)', true).css('z-index',9999);
 
-                setTimeout(function() {
-                    $('#safariEnemy > img').css('opacity', '0');
-                    p.addClass('bounce');
+            SafariBattle.delay(SafariBattle.ballThrowSpeed)(null)
+            .then(SafariBattle.startCapture)
+            .then(SafariBattle.delay(0.75*SafariBattle.enemyTransitionSpeed))
+            .then(SafariBattle.startBounce)
+            .then(SafariBattle.delay(1.7*SafariBattle.ballBounceSpeed))
+            .then(SafariBattle.calcIndex)
+            .then(SafariBattle.delayRoll)
+            .then(SafariBattle.finishCapture)
 
-                    setTimeout(function () {
-                        let random = Math.random();
-                        let catchF = SafariBattle.enemy.catchFactor / 100;
-                        let index = catchF >= 1 ? 3 : Math.floor( 4 * (1 - Math.max( random, catchF )) / (1 - catchF) );
-                        if (index != 0) {
-                            SafariBattle.startRoll(index);
-                        }
-
-                        setTimeout(function(){
-                            if (random*100 < SafariBattle.enemy.catchFactor){
-                                SafariBattle.capturePokemon();
-                                $('#safariBall').css('filter', 'brightness(0.4) grayscale(100%)');
-                                setTimeout(function(){
-                                    p.remove();
-                                    gameOver ? SafariBattle.gameOver() : SafariBattle.endBattle();
-                                }, 2000);
-                            } else {
-                                $('#safariEnemy > img').css('opacity', '1');
-                                $('#safariEnemy').removeClass('safariCapture');
-                                SafariBattle.text(GameConstants.SAFARI_CATCH_MESSAGES[index]);
-                                p.remove();
-                                setTimeout( function() {
-                                    gameOver ? SafariBattle.gameOver() : SafariBattle.enemyTurn();
-                                }, 1000);
-                            }
-                        }, (200 + 1200*index));
-                    }, 1700);
-                }, 750);
-            }, 750);
         }
+    }
+
+    private static delay(ms) {
+        return function(pass){
+            return new Promise((resolve,reject)=>{
+                setTimeout((pass)=>{
+                    console.log(pass)
+                    resolve(pass);
+                },ms)
+            })
+        }
+    }
+
+    private static startCapture() {
+        return new Promise((resolve,reject)=>{
+            $('#safariEnemy').addClass('safariCapture');
+            resolve();
+        })
+    }
+
+    private static startBounce() {
+        return new Promise((resolve,reject)=>{
+            $('body').css("animation-duration",(1.6*SafariBattle.ballBounceSpeed)+"ms")
+            $('#safariEnemy > img').css('opacity', '0');
+            SafariBattle.particle.addClass('bounce');
+            resolve();
+        })
+    }
+
+    private static calcIndex() {
+        return new Promise((resolve,reject)=>{
+            let random = Math.random();
+            let catchF = SafariBattle.enemy.catchFactor / 100;
+            let index = catchF >= 1 ? 3 : Math.floor( 4 * (1 - Math.max( random, catchF )) / (1 - catchF) );
+            if (index != 0) {
+                $('body').css("animation-duration",SafariBattle.ballRollSpeed+"ms")
+                SafariBattle.startRoll(index);
+            }
+            resolve([random,index]);
+        })
+    }
+
+    private static delayRoll(result) {
+        console.log(result)
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(result);
+            },(0.2+1.2*result[1])*SafariBattle.ballRollSpeed)
+        })
+    }
+
+    private static finishCapture(result) {
+        console.log(result)
+        let [random,index]=result;
+        let gameOver = Safari.balls() == 0;
+        return new Promise((resolve,reject)=>{
+            if (random*100 < SafariBattle.enemy.catchFactor){
+                SafariBattle.capturePokemon();
+                $('#safariBall').css('filter', 'brightness(0.4) grayscale(100%)');
+                setTimeout(function(){
+                    SafariBattle.particle.remove();
+                    gameOver ? SafariBattle.gameOver() : SafariBattle.endBattle();
+                }, 2*SafariBattle.enemyTransitionSpeed);
+            } else {
+                $('#safariEnemy > img').css('opacity', '1');
+                $('#safariEnemy').removeClass('safariCapture');
+                SafariBattle.text(GameConstants.SAFARI_CATCH_MESSAGES[index]);
+                SafariBattle.particle.remove();
+                setTimeout( function() {
+                    gameOver ? SafariBattle.gameOver() : SafariBattle.enemyTurn();
+                }, 1*SafariBattle.enemyTransitionSpeed);
+            }
+        })
     }
 
     private static startRoll = function(n){
         if (n == 4) {n--}
         $('#safariBall').addClass('safari-roll-left');
-        setTimeout(function(){ SafariBattle.safariRoll(n-1) }, 1200);
+        setTimeout(function(){ SafariBattle.safariRoll(n-1) }, 1.2*SafariBattle.ballRollSpeed);
     }
 
     private static safariRoll = function(n){
         if (n != 0){
             $('#safariBall').toggleClass('safari-roll-left').toggleClass('safari-roll-right');
-            setTimeout(function(){SafariBattle.safariRoll(n-1)}, 1200);
+            setTimeout(function(){SafariBattle.safariRoll(n-1)}, 1.2*SafariBattle.ballRollSpeed);
         }
     }
 
@@ -118,7 +173,7 @@ class SafariBattle {
             let enemy = $('#safariEnemy').offset();
             enemy.left += 30;
             enemy.top += 70;
-            SafariBattle.dropParticle('<img src="../assets/images/safari/bait.png">', $('#safariPlayer').offset(), enemy, 1, 'cubic-bezier(0,0,0.4,1)').css('z-index',9999);
+            SafariBattle.dropParticle('<img src="../assets/images/safari/bait.png">', $('#safariPlayer').offset(), enemy, 1000, 'cubic-bezier(0,0,0.4,1)').css('z-index',9999);
             setTimeout(SafariBattle.enemyTurn, 1500);
         }
     }
@@ -132,7 +187,7 @@ class SafariBattle {
             let enemy = $('#safariEnemy').offset();
             enemy.left += 40;
             enemy.top += 10;
-            SafariBattle.dropParticle('<img src="../assets/images/safari/rock.png">', $('#safariPlayer').offset(), enemy, 0.8, 'cubic-bezier(0,0,0.4,1)').css('z-index',9999);
+            SafariBattle.dropParticle('<img src="../assets/images/safari/rock.png">', $('#safariPlayer').offset(), enemy, 800, 'cubic-bezier(0,0,0.4,1)').css('z-index',9999);
             setTimeout(function(){
                 let hitSplash = $('<ptcl>').html("<img src='../assets/images/safari/hit.png'>").children().appendTo('body');
                 hitSplash.offset(enemy).css({'opacity': 0.8, 'z-index': 9998});
@@ -214,16 +269,28 @@ class SafariBattle {
         p.css('position','absolute')
         p.offset(pos);
         if (!top) top = 'cubic-bezier(0.6, -0.3, 0.7, 0)';
-        p[0].style.transition = 'left ' + time + 's linear, top ' + time + 's '+top;
+        p[0].style.transition = 'left ' + time + 'ms linear, top ' + time + 'ms '+top;
         p.offset(target);
         if (!persistentParticle) {
             setTimeout(function() {
                 p.fadeOut();
-            }, time * 1000 - 200);
+            }, time - 200);
             setTimeout(function() {
                 p.remove();
-            }, time * 1000);
+            }, time);
         }
         return p;
     };
+
+    public static setSpeeds() {
+        console.log("setting speeds")
+        player.ballThrowSpeed=$("#throwSpeed").val()
+        player.ballRollSpeed=$("#rollSpeed").val()
+        player.ballBounceSpeed=$("#bounceSpeed").val()
+        player.enemyTransitionSpeed=$("#transitionSpeed").val()
+        SafariBattle.enemyTransitionSpeed=player.enemyTransitionSpeed
+        SafariBattle.ballBounceSpeed=player.ballBounceSpeed
+        SafariBattle.ballRollSpeed=player.ballRollSpeed
+        SafariBattle.ballThrowSpeed=player.ballThrowSpeed
+    }
 }
