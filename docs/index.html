@@ -1,1 +1,3318 @@
-<!DOCTYPE html><html><head><title>Pokeclicker</title><link href=/assets/images/favicon.ico rel=icon type=image/x-icon><script src=libs/jquery.min.js></script><script src=libs/knockout-latest.js></script><script src=scripts/script.min.js></script><script src=libs/tether.min.js></script><link href=libs/bootstrap.min.css rel=stylesheet><script src=libs/bootstrap.min.js></script><link href=styles/styles.min.css rel=stylesheet></head><body><div class="dropdown clearfix" style="position:absolute; right:0; top:0"><button class="btn btn-secondary dropdown-toggle float-right" type=button data-toggle=dropdown>Start Menu <span class=caret></span></button><ul class="dropdown-menu dropdown-menu-right"><li><button class=dropdown-item href=#>Pokedex</button></li><li><button class=dropdown-item href=#>Stats</button></li><li><button class=dropdown-item href=#>Subreddit</button></li><li><button class=dropdown-item href=#>Save</button></li><li><button class=dropdown-item href=#>Achievements</button></li><li><button class=dropdown-item href=#>Changelog</button></li><li><button class=dropdown-item href=#>Key Items</button></li></ul></div><div class=container><div class="row justify-content-lg-center"><h1>Pokeclicker</h1></div><div class="row justify-content-lg-center" style="text-align: center"><div class="col-md-6 push-md-3"><div class=page-item style="background-color: white"><div class=card><span>Money: <span data-bind="text: Player.money">todo</span></span></div><div><h2 style="min-height: 180px">Battle window</h2></div><div class=card><table width=100%><td width=50%><span style="display: inline;">Pokémon Attack: <span data-bind="text: Player.clickAttackObservable"></span></span></td><td width=50%><span style="display: inline;">Click Attack: <span data-bind="text: Player.pokemonAttackObservable"></span></span></td></table></div></div><div class=page-item style="background-color: green; min-height: 350px"><h2>Map</h2></div></div><div class="col-md-3 pull-md-6"><div class=page-item style="background-color: white; min-height: 180px"><h2>Pokeball management</h2></div><div class=page-item style="background-color: #1aff00; min-height: 350px"><h2>Pokemon list</h2></div></div><div class=col-md-3><div class=page-item style="background-color: red; min-height: 150px"><h2>Oak Items</h2></div><div class=page-item style="background-color: deepskyblue; min-height: 100px"><h2>Current quest counter</h2></div><div class=page-item style="background-color: #ffe463; min-height: 250px"><h2>Upgrades</h2></div></div></div></div></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokéclicker</title>
+    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <script type="text/html" id="pokemonListTemplate">
+        <tr data-bind='ifnot: $data.breeding()'>
+            <td>
+                <img class="smallImage"
+                     data-bind="attr:{ src: PokemonHelper.getImage($data, player.alreadyCaughtPokemonShiny($data.name)) }"
+                     src=""/>
+                <span data-bind="text: name">Name</span>
+            </td>
+            <td data-bind="text: attack">Atk</td>
+            <td data-bind="text: levelObservable">Lvl</td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="achievementListTemplate">
+        <tr data-bind="css: { 'table-success': isCompleted() , 'table-danger': !isCompleted() }">
+            <td style="text-align:left;vertical-align:middle;"><b><span data-bind="text: name">Name</span></b><br>
+                <small><span data-bind="text: description">Description</span></small>
+            </td>
+
+            <td style="vertical-align:middle;"><span data-bind="text: getProgress()">1</span>/<span
+                    data-bind="text: property.requiredValue">2</span>
+            </td>
+            <td style="vertical-align:middle;"><span data-bind="text: getProgressPercentage()"></span>%</td>
+
+            <td style="vertical-align:middle;">+<span data-bind="text: bonus"><Bonus></Bonus></span>%</td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="treasureListTemplate">
+        <tr data-bind='if: amount() > 0'>
+            <td class='vertical-middle'>
+                <img class='mineInventoryItem' data-bind='attr:{ src: "assets/images/underground/"+id+".png" }'>
+                <span data-bind='text: "("+$data.amount()+")"'></span>
+            </td>
+            <td class='vertical-middle' data-bind='text: name'></td>
+            <!-- ko if: valueType == "Mine Egg" -->
+            <td></td>
+            <!-- /ko -->
+            <!-- ko ifnot: valueType == "Mine Egg" -->
+            <td class='vertical-middle'
+                data-bind='text: value + " " + UndergroundItem.getFullResourceName(valueType, value)'></td>
+            <!-- /ko -->
+            <td class='vertical-middle'>
+                <button class='btn btn-success tooltipRightMine'
+                        data-bind='click: function(){ Underground.sellMineItem(id) },
+                                   css: { disabled: amount() <= 0 || (valueType === "Mine Egg" && !player.hasFreeEggSlot()) },
+                                   text: valueType === "Mine Egg" ? "Breed" : "Sell"'>
+                </button>
+            </td>
+        </tr>
+    </script>
+
+    <!--jQuery-->
+    <script src="libs/jquery.min.js"></script>
+
+    <!--Knockout-->
+    <script src="libs/knockout-latest.js"></script>
+
+    <!--Minified scripts-->
+    <script src="scripts/script.min.js"></script>
+
+    <!--Tether-->
+    <script src="libs/tether.min.js"></script>
+
+    <!--Bootstrap-->
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
+    <script src="libs/bootstrap.min.js"></script>
+
+    <!--Notify-->
+    <script src="libs/bootstrap-notify.min.js"></script>
+
+    <!--Motio-->
+    <script src="libs/motio.js"></script>
+
+    <!--Minified styles-->
+    <link href="styles/styles.min.css" rel="stylesheet">
+
+    <style>
+        .loader {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #79c9fa;
+            background-size: cover;
+            z-index: 9999;
+        }
+
+        .loader-wrapper {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body class="no-select" data-bind="attr: {class: Settings.getSetting('theme').observableValue() }">
+<div class="loader" id="loader">
+    <br>
+    <div class="loader-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3">
+                    <img style="width:100%" src="assets/images/pokeclickerlogo.png">
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/pokeball/Pokeball.png" class="loader-pokeball"/>
+
+    </div>
+
+</div>
+
+<!-- Game menu-->
+<div class="dropdown clearfix" style="position:absolute; right:0; top:0; z-index: 100;">
+    <button class="btn btn-secondary dropdown-toggle float-right" type="button" data-toggle="dropdown">Start
+        Menu
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right">
+        <li>
+            <a class="dropdown-item" href="#pokedexModal" data-toggle="modal">Pokédex</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#badgeCaseModal" data-toggle="modal">Badge Case</a>
+        </li>
+        <!-- <li>
+            <button class="dropdown-item" href="#">Stats</button>
+        </li> -->
+        <li>
+            <a class="dropdown-item" href="#achievementsModal" data-toggle="modal">Achievements</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#shardModal" data-toggle="modal">Shards</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#showItemsModal" data-toggle="modal">Items</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#settingsModal" data-toggle="modal">Settings</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#saveModal" data-toggle="modal">Save</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#changelogModal" data-toggle="modal">Changelog</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://pokeclicker.reddit.com" target="_blank">Subreddit</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#donateModal" data-toggle="modal">Donate</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://gitreports.com/issue/Ishadijcks/pokeclicker" target="_blank">Report a bug</a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Donate modal-->
+<div id="donateModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header justify-content-sm-center">
+                <h4 class="modal-title">Donate</h4>
+            </div>
+            <div class="modal-body">
+                <span>This game is developed freely by community users who love what they see. If you want to help support that effort, you can donate to the project. Donations go into the project directlly by allowing us to spend more time on feature requests and active development. If you like what you see and want to contribute, feel free to use the buttons below.
+                </span>
+                <br><br>
+                <span>Please leave a message after donating, so our team can contact and thank you directly.</span>
+                <br><br>
+
+                <div class="row justify-content-sm-center" style="text-align: center">
+
+                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <button class="btn btn-success donate-button clickable">€1<br><img
+                                src="assets/images/pokemon/1.png">
+                        </button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="YP9SQ748NN5EW">
+                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="" width="1"
+                             height="1">
+                    </form>
+
+                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <button class="btn btn-danger donate-button clickable">€3<br><img
+                                src="assets/images/pokemon/4.png">
+                        </button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="MR8497BXE7P3A">
+                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="" width="1"
+                             height="1">
+                    </form>
+
+                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <button data-html="true"
+                                title="Don't let the PokéDex order fool you, Charmander is and will always be the best starter. -Isha"
+                                class="btn btn-primary donate-button clickable">€5<br><img
+                                src="assets/images/pokemon/7.png">
+
+                        </button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="VHFSUMCRY8PJU">
+                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="" width="1"
+                             height="1">
+                    </form>
+                </div>
+
+                <div class="row justify-content-sm-center" style="text-align: center">
+                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <button class="btn btn-warning donate-button clickable">€10<br><img
+                                src="assets/images/pokemon/25.png">
+                        </button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="N7NMLXFQDPPC6">
+                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="" width="1"
+                             height="1">
+                    </form>
+
+                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <button class="btn donate-button-mew donate-button clickable">€20<br><img
+                                src="assets/images/pokemon/151.png"></button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="HJHXNGD3H5BH6">
+                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="" width="1"
+                             height="1">
+                    </form>
+
+                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <button class="btn btn-default donate-button-unown donate-button clickable">Custom<br><img
+                                src="assets/images/pokemon/unown.png"></button>
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="XKQMADJLWZZC8">
+                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="" width="1"
+                             height="1">
+                    </form>
+
+                </div>
+
+                <div class="row justify-content-sm-center" style="text-align: center">
+                    <p class="text-muted" style="font-size:8px">*note you don't actually get the Pokémon</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default clickable" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Get Keyitem modal-->
+<div class="modal" id="keyItemModal" tabindex="-1" role="dialog"
+aria-labelledby="keyItemModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content" style="text-align: center">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src="assets/images/oak.png">
+               <h5 class="modal-title" id="keyItemModalLabel">New key item!</h5>
+           </div>
+       </div>
+       <div class="modal-body">
+           <h5><b>Congratulations!</b></h5>
+           <span>You have gained a</span><br>
+           <img
+                   class="key-item"
+                   data-bind="attr:{ title: KeyItemHandler.getKeyItemByName(player.recentKeyItem()).name(),  src: 'assets/images/keyitems/' + KeyItemHandler.getKeyItemByName(player.recentKeyItem()).name() + '.png'}"
+                   src=""/><br>
+           <span><strong data-bind="text: KeyItemHandler.getKeyItemByName(player.recentKeyItem()).name()">Name</strong></span><br>
+           <span data-bind="html: KeyItemHandler.getKeyItemByName(player.recentKeyItem()).description()">Description</span>
+
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+
+<!-- Show keyitems modal-->
+<!-- Show Items modal-->
+<div class="modal" id="showItemsModal" tabindex="-1" role="dialog"
+     aria-labelledby="showItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" style="text-align: center">
+
+            <ul style="width:100%" class="nav nav-tabs nav-fill">
+                <li class="nav-item"><a data-toggle='tab' class='nav-link' href="#items">Evolution stones</a>
+                </li>
+                <li class='nav-item'><a data-toggle='tab' class='nav-link active' href="#keyItems">Key Items</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="items" class="tab-pane fade">
+                    <div class="page-item m-0" style="background-color: white;">
+
+                        <div class="row no-gutters justify-content-sm-center" style="padding:15px;">
+                            <div class="row col-lg-6 col-sm-11" data-bind="foreach: Array.from(Array(Object.keys(GameConstants.StoneType).length / 2).keys()).map(x=>GameConstants.StoneType[x])">
+                                <div class="col" style="cursor: pointer"
+                                        data-bind="css:{'item-selected': ItemHandler.stoneSelected() === $data}, 
+                                            click: function(){ ItemHandler.stoneSelected($data); ItemHandler.pokemonSelected('')}">
+                                    <img data-bind="attr: {src: 'assets/images/items/' + $data + '.png'}">
+                                    <div data-bind="text: player._itemList[$data]()"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row no-gutters justify-content-sm-center" style="padding:15px">
+                            <div class="row col-lg-10 col-md-12 offset-md-0 col-sm-12 offset-sm-0"
+                                 style="padding-right: 0"
+                                 data-bind="foreach: PokemonHelper.getPokemonsWithEvolution(ItemHandler.stoneSelected())">
+                                <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem"
+                                    data-bind="if: (player.alreadyCaughtPokemon($data.name))">
+                                    <button class="btn btn-secondary smallButton list-group-item-action" style="padding-right:15px"
+                                            data-bind="click: function() {ItemHandler.pokemonSelected(name)}, css:{ 'pokemon-selected': ItemHandler.pokemonSelected() === name}">
+                                        <img class="smallImage" data-bind="attr:{src: 'assets/images/' + (player.alreadyCaughtPokemonShiny($data.name) ? 'shiny' : '') + 'pokemon/' + id +'.png' }"/>
+                                        <span data-bind="text: name" style="margin-left: 20px">Name</span>
+
+                                        <span style="float:right; margin-top:8px"
+                                            data-bind="if: player.alreadyCaughtPokemonShiny(EvolutionStone.computeEvolution(
+                                            GameConstants.StoneType[ItemHandler.stoneSelected()], name))">
+                                            <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-shiny-small.png"/>
+                                        </span>
+                                        <span style="float:right; margin-top:8px"
+                                            data-bind="if: (player.alreadyCaughtPokemon(EvolutionStone.computeEvolution(
+                                            GameConstants.StoneType[ItemHandler.stoneSelected()], name))
+                                            && !player.alreadyCaughtPokemonShiny(EvolutionStone.computeEvolution(
+                                                GameConstants.StoneType[ItemHandler.stoneSelected()], name)))">
+                                            <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-small.png"/>
+                                        </span>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row no-gutters justify-content-sm-center">
+                            <div class="row justify-content-center" style="padding:15px;">
+                                <div class="col">
+                                    <button class="btn btn-secondary amount-button list-group-item-action"
+                                            data-bind="click: function() {ItemHandler.amountSelected(1)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 1}">
+                                        <span>1</span>
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-secondary amount-button list-group-item-action"
+                                            data-bind="click: function() {ItemHandler.amountSelected(10)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 10}">
+                                        <span>10</span>
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-secondary amount-button list-group-item-action"
+                                            data-bind="click: function() {ItemHandler.amountSelected(100)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 100}">
+                                        <span>100</span>
+                                    </button>
+                                </div>
+                                <div class="col" style="text-align: center">
+                                    <button class="btn btn-secondary amount-button list-group-item-action"
+                                            data-bind="click: function() {ItemHandler.amountSelected(1000)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 1000}">
+                                        <span>1000</span>
+                                    </button>
+                                </div>
+                                <div class="col" style="text-align: center">
+                                    <button class="btn btn-secondary amount-button list-group-item-action"
+                                            data-bind="click: function() {ItemHandler.amountSelected(Infinity)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === Infinity}">
+                                        <span>All</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <p><b>Evolution stone usage stops when a shiny evolution is encountered</b></p>
+                        <div class="row no-gutters justify-content-sm-center">
+                            <div class="row justify-content-center" style="padding:15px;">
+                                <button data-bind="click: function(){ItemHandler.useStones()}" class="btn btn-lg btn-success">Use evolution stones!</button>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+
+                <div id="keyItems" class="tab-pane fade in active show">
+                    <div style="width: 100%;">
+                        <img style="float:right;margin-right:10px;margin-top:10px"
+                             data-bind="tooltip: { title: 'An overview of all Key items you have collected so far. Click on a key item to get more information.', trigger: 'hover', placement:'right' }"
+                             src="assets/images/questionmark.png">
+
+
+                    </div>
+                    <div class="page-item m-0" style="background-color: white;">
+
+                        <div class="row no-gutters justify-content-sm-center"
+                             data-bind="foreach: KeyItemHandler.keyItemList">
+                            <div class="col-sm-2">
+                                <img class="clickable key-item" src=""
+                                     data-bind="attr:{ src: 'assets/images/keyitems/' + $data.name() + '.png'},
+                              css: {'oak-item-locked': !player.hasKeyItem($data.name())
+
+                                    },
+                             event: {
+                                mouseover: function(){KeyItemHandler.hover($data.name())},
+                                click: function(){KeyItemHandler.click($data.name())},
+                                mouseout : function(){KeyItemHandler.hoverRelease()}
+                                }">
+                            </div>
+                        </div>
+
+                        <div class="card oak-item-info" style="height:90px">
+                            <div data-bind="if: KeyItemHandler.inspectedItem() !== null">
+                                <div class="row justify-content-sm-center">
+                                    <div style="height: 20px" class="col-sm-11">
+                                        <b><span data-bind="text: KeyItemHandler.inspectedItem().name()"></span></b>
+                                    </div>
+                                    <div class="row justify-content-sm-center">
+                                        <div class="col-sm-11">
+                                            <div data-bind="if: KeyItemHandler.inspectedItem().isUnlocked()">
+                                                <p style="margin-top: 5px"
+                                                   data-bind="html: KeyItemHandler.inspectedItem().description"></p>
+                                            </div>
+                                            <div data-bind="ifnot: KeyItemHandler.inspectedItem().isUnlocked()">
+                                                <p style="margin-top: 5px">?????</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Pokéclicker</h1>
+    </div>
+    <div class="row justify-content-lg-center" style="text-align: center">
+
+        <!--The next two divs switch around on large screens. This way, battle screen/map is on top on smaller screens-->
+        <!--Middle column-->
+        <div class="col-lg-6 push-lg-3">
+            <div id="interactionView" class="page-item" style="background-color: white">
+
+                <div data-bind="if: (Game.gameState() === GameConstants.GameState.fighting ||
+                                     Game.gameState() === GameConstants.GameState.dungeon ||
+                                     Game.gameState() === GameConstants.GameState.paused ||
+                                     Game.gameState() === GameConstants.GameState.town ||
+                                     Game.gameState() === GameConstants.GameState.shop)">
+                    <div class="card">
+                        <table width="100%">
+                            <tr>
+                                <td width="33.33%">
+                                    <span style="display: inline;">
+                                        <img title="Money" src="assets/images/currency/money.png">
+                                        <span id="playerMoney" data-bind="text: player.money">0</span>
+                                    </span>
+                                </td>
+                                <td width="33.33%">
+                                    <span style="display: inline;">
+                                        <img title="Dungeon Tokens&#013;&#010;Gained by capturing Pokemon" src="assets/images/currency/dungeonToken.png">
+                                        <span id="playerMoneyDungeon" data-bind="text: player.dungeonTokens">0</span>
+                                    </span>
+                                </td>
+                                <td width="33.33%">
+                                    <span style="display: inline;">
+                                        <img title="Quest points" src="assets/images/currency/questPoint.png">
+                                        <span id="playerMoneyQuest" data-bind="text: player.questPoints">0</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!--RouteBattleView-->
+                <!--Use the base battle layout for fighting and dungeons.-->
+                <div data-bind="if: (Game.gameState() === GameConstants.GameState.fighting || Game.gameState() === GameConstants.GameState.dungeon || Game.gameState() === GameConstants.GameState.paused || Game.gameState() === GameConstants.GameState.town)"
+                     id="routeBattleView">
+
+                    <div data-bind="if: Game.gameState() === GameConstants.GameState.fighting">
+                        <div style="height: 220px; display: block;" class="col-lg-12">
+                            <div class="col-lg-12" style="display: block;">
+                                Route
+                                <span data-bind="text: player.route">number</span>
+                                <!--If all Pokémon on the route are caught-->
+                                <span data-bind="if: (!RouteHelper.routeCompleted(player.route(), player.region, true) && RouteHelper.routeCompleted(player.route(), player.region, false))">
+                                    <img title="You have captured all Pokémon on this route!" class="pokeball-smallest"
+                                         src="assets/images/pokeball/Pokeball-small.png"/>
+                                </span>
+
+                                <!--If all Pokémon on the route are caught shiny-->
+                                <span data-bind="if: RouteHelper.routeCompleted(player.route(), player.region, true)">
+                                    <img title="You have captured all Pokémon shiny on this route!"
+                                         class="pokeball-smallest"
+                                         src="assets/images/pokeball/Pokeball-shiny-small.png"/>
+                                </span>
+
+                                <br>
+                                <span data-bind="text: player.routeKillsObservable(player.route())">kills</span>/<span
+                                    data-bind="text: player.routeKillsNeeded">killsneeded</span><br>
+                            </div>
+
+                            <span data-bind="text: Battle.enemyPokemon().name">Pokemon name</span>
+
+                            <!--This comment has to be here, otherwise the Pokéball is too far to the right #HTML-->
+                            <span data-bind="if: (!player.alreadyCaughtPokemonShiny(Battle.enemyPokemon().name) && player.alreadyCaughtPokemon(Battle.enemyPokemon().name))">
+                                <img title="You have captured this Pokémon!" class="pokeball-smallest"
+                                     src="assets/images/pokeball/Pokeball-small.png"/>
+                            </span>
+
+                            <!--This comment has to be here, otherwise the Pokéball is too far to the right #HTML-->
+                            <span data-bind="if: player.alreadyCaughtPokemonShiny(Battle.enemyPokemon().name)">
+                                <img title="You have captured this Pokémon shiny!" class="pokeball-smallest"
+                                     src="assets/images/pokeball/Pokeball-shiny-small.png"/>
+                            </span>
+
+                            <div>
+                                <div data-bind="ifnot: Battle.catching">
+                                    <img class="clickable" id="enemy"
+                                         data-bind="click: function() {Battle.clickAttack()},
+                                                    attr:{ src: PokemonHelper.getImage(Battle.enemyPokemon(), Battle.enemyPokemon().shiny) }"
+                                         src=""/>
+                                    <br>
+                                    <span data-bind="text: Battle.enemyPokemon().health">health</span>
+                                    <span>/</span>
+                                    <span data-bind="text: Battle.enemyPokemon().maxHealth">maxHealth</span>
+                                </div>
+                                <div data-bind="if: Battle.catching">
+                                    <img class="pokeball-animated"
+                                         data-bind="attr:{ src: 'assets/images/pokeball/' + GameConstants.Pokeball[Battle.pokeball()] + '.png' }"
+                                         src=""/>
+                                    <br>
+                                    Catch Chance:
+                                    <span data-bind="text: Battle.catchRateActual()">Catch Rate</span>%
+                                </div>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar"
+                                     data-bind="attr:{ style: 'width:' + Battle.enemyPokemon().healthPercentage() + '%' }"
+                                     aria-valuemin="0" aria-valuemax="100">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--If the player is in a dungeon-->
+                    <div data-bind="if: Game.gameState() === GameConstants.GameState.dungeon">
+                        <div class="col-lg-12" style="display: block; height: 220px">
+                            <div>
+                                <span data-bind="text: DungeonRunner.dungeon.name()">Dungeon name</span>
+                                <!--If all Pokémon on the route are caught-->
+                                <span data-bind="if: (!DungeonRunner.dungeonCompleted(DungeonRunner.dungeon, true) && DungeonRunner.dungeonCompleted(DungeonRunner.dungeon, false))">
+                                    <img title="You have captured all Pokémon on this route!" class="pokeball-smallest"
+                                         src="assets/images/pokeball/Pokeball-small.png"/>
+                                </span>
+
+                                <!--If all Pokémon on the route are caught shiny-->
+                                <span data-bind="if: DungeonRunner.dungeonCompleted(DungeonRunner.dungeon, true)">
+                                    <img title="You have captured all Pokémon shiny on this route!"
+                                         class="pokeball-smallest"
+                                         src="assets/images/pokeball/Pokeball-shiny-small.png"/>
+                                </span>
+                                <br>
+                                <div id="dungeonTimer" class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                         data-bind="text: DungeonRunner.timeLeftSeconds(), attr:{ style: 'width:' + DungeonRunner.timeLeftPercentage() + '%' }"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div data-bind="if: (DungeonRunner.fighting() || DungeonBattle.catching)">
+                                <span data-bind="text: DungeonBattle.enemyPokemon().name">Pokemon name</span>
+
+                                <!--This comment has to be here, otherwise the Pokéball is too far to the right #HTML-->
+                                <span data-bind="if: (!player.alreadyCaughtPokemonShiny(Battle.enemyPokemon().name) && player.alreadyCaughtPokemon(Battle.enemyPokemon().name))">
+                                    <img title="You have captured this Pokémon!" class="pokeball-smallest"
+                                         src="assets/images/pokeball/Pokeball-small.png"/>
+                                </span>
+
+                                <!--This comment has to be here, otherwise the Pokéball is too far to the right #HTML-->
+                                <span data-bind="if: player.alreadyCaughtPokemonShiny(Battle.enemyPokemon().name)">
+                                    <img title="You have captured this Pokémon shiny!" class="pokeball-smallest"
+                                         src="assets/images/pokeball/Pokeball-shiny-small.png"/>
+                                </span>
+
+                                <div>
+                                    <div data-bind="ifnot: DungeonBattle.catching">
+                                        <img id="dungeonEnemy"
+                                             data-bind="click: function() {DungeonBattle.clickAttack()}, attr:{ src: PokemonHelper.getImage(DungeonBattle.enemyPokemon(), DungeonBattle.enemyPokemon().shiny) }"
+                                             src=""/>
+                                        <br>
+                                        <span data-bind="text: DungeonBattle.enemyPokemon().health">health</span>/
+                                        <span data-bind="text: DungeonBattle.enemyPokemon().maxHealth">maxHealth</span>
+                                    </div>
+                                    <div data-bind="if: DungeonBattle.catching">
+                                        <img class="pokeball-animated"
+                                             data-bind="attr:{ src: 'assets/images/pokeball/' + GameConstants.Pokeball[DungeonBattle.pokeball()] + '.png' }"
+                                             src=""/>
+                                        <br>
+                                        Catch Chance:
+                                        <span data-bind="text: DungeonBattle.catchRateActual()">Catch Rate</span>%
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar"
+                                         data-bind="attr:{ style: 'width:' + DungeonBattle.enemyPokemon().healthPercentage() + '%'}, css: { 'healthbar-boss': DungeonRunner.fightingBoss(), 'bg-danger': !DungeonRunner.fightingBoss()}"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-bind="if: DungeonRunner.map.currentTile().type() === GameConstants.DungeonTile.chest">
+                                <img data-bind="click: function(){DungeonRunner.openChest()}"
+                                     class="dungeon-chest"
+                                     src="assets/images/dungeons/chest.png"/>
+                            </div>
+
+                            <div data-bind="if: (DungeonRunner.map.currentTile().type() === GameConstants.DungeonTile.boss && !DungeonRunner.fightingBoss())">
+                                <button class="btn btn-danger dungeon-boss-button"
+                                        data-bind="click: function(){DungeonRunner.startBossFight()}">Start
+                                    Bossfight
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-bind="ifnot: Game.gameState() === GameConstants.GameState.town">
+                        <div class="card">
+                            <table width="100%">
+                                <tr>
+
+                                    <td width="50%">
+                                    <span style="display: inline;">Pokémon Attack:
+                                        <span
+                                                data-bind="text: player.pokemonAttackObservable"></span>
+                                    </span>
+                                    </td>
+                                    <td width="50%">
+                                    <span style="display: inline;">Click Attack:
+                                        <span
+                                                data-bind="text: player.clickAttackObservable"></span>
+                                    </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!--TownView-->
+
+                <div id="townView" data-bind="if: Game.gameState() === GameConstants.GameState.town"
+     class="justify-content-center no-gutters no-select">
+
+<div data-bind="if:player.town().dungeon()">
+</div>
+
+<div data-bind="ifnot:player.town().dungeon()">
+   <img style="float:right;margin-right:10px;margin-top:10px;"
+        data-bind="tooltip: { title: 'In towns you can battle gymleaders to earn badges, or visit shops to buy items.', trigger: 'hover', placement:'right' }"
+        src="assets/images/questionmark.png">
+</div>
+
+<div class="row justify-content-center no-gutters" style="min-height: 100px;">
+   <div class="col no-gutters">
+       <div data-bind="if: player.town() instanceof PokemonLeague">
+           <ul class="nav flex-sm-column featureList pokemonLeagueList"
+               data-bind="foreach: player.town().gymList">
+               <li class="nav-item">
+                   <button
+                           data-bind="text: $data.leaderName,
+                                      disable: !Gym.isUnlocked($data),
+                                      click: function() {GymRunner.startGym($data)},
+                                      attr: { class: Gym.calculateCssClass($data)}">
+                       E4 Leader
+                   </button>
+               </li>
+           </ul>
+       </div>
+       <ul class="nav flex-sm-column featureList">
+           <li class="nav-item" data-bind="if:player.town().gym">
+               <button data-bind="attr: { class: Gym.calculateCssClass(player.town().gym()) }"
+                       onclick="GymRunner.startGym(player.town().gym())">
+                   Gym
+               </button>
+           </li>
+           <li class="nav-item" data-bind="if:player.town().shop">
+               <button class="btn btn-secondary"
+                       onclick="ShopHandler.showShop(player.town().shop())">Shop
+               </button>
+           </li>
+           <li class="nav-item" data-bind="if:MapHelper.ableToTravel() && GameConstants.StartingTowns.indexOf(player.town().name()) > -1">
+               <button class="btn btn-secondary"
+                       onclick="MapHelper.travelToNextRegion()">Go To Next Region
+               </button>
+           </li>
+           <div data-bind="if:player.town().dungeon()">
+               <li class="nav-item" data-bind="if: player.town() instanceof DungeonTown">
+                   <button class="btn btn-secondary"
+                           onclick="DungeonRunner.initializeDungeon(player.town().dungeon())">
+                       Start<br>
+                       <span data-bind="text: player.town().dungeon().tokenCost"></span>
+                       tokens
+                   </button>
+               </li>
+
+               <li class="nav-item"
+                   data-bind="if:(!(player.town() instanceof DungeonTown) && player.town() instanceof Town)">
+                   <button class="btn btn-secondary"
+                           onclick="MapHelper.moveToTown(player.town().dungeon().name())">
+                       <span data-bind="text: player.town().dungeon().name()"></span>
+                   </button>
+               </li>
+
+           </div>
+       </ul>
+   </div>
+   <div class="col-7 no-gutters">
+       <h2 class="pageItemTitle" data-bind="text: player.town().name()">Town Name</h2>
+       <img class="townImage no-select" src=""
+            data-bind="attr:{ src: 'assets/images/towns/' + player.town().name() + '.png' }"/>
+   </div>
+   <div class="col no-gutters"></div>
+
+</div>
+<div data-bind="if: (player.town().dungeon() && player.town() instanceof DungeonTown)">
+   <div class="card">
+       <!--Display all available Pokémon in this dungeon-->
+       <ul class="list-inline"
+           data-bind="foreach: player.town().dungeon().allPokemonNames">
+           <li class="list-inline-item" data-bind="if: player.alreadyCaughtPokemon($data)">
+               <img class="dungeon-pokemon-preview" src=""
+                    data-bind="attr:{ src: 'assets/images/pokemon/' + pokemonMap[$data].id + '.png' }"/>
+           </li>
+           <li class="list-inline-item"
+               data-bind="ifnot: player.alreadyCaughtPokemon($data)">
+               <img class="dungeon-pokemon-preview dungeon-pokemon-locked" src=""
+                    data-bind="attr:{ src: 'assets/images/pokemon/' + pokemonMap[$data].id + '.png' }"/>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+
+                <!--GymView-->
+                <div id="gymView" data-bind="if: Game.gameState() === GameConstants.GameState.gym">
+
+    <div style="position:relative; height: 220px;">
+        <div id="gymCountdownView">
+                <div class="row" style="display: inline-block; vertical-align: middle;">
+                    <div class="col-sm-6 offset-sm-3">
+                        <img style="width:100%" id="gif-go" src="assets/gifs/go.gif">
+                    </div>
+                </div>
+
+            <span style="display: inline-block; vertical-align:middle; height: 100%;"></span>
+        </div>
+        <div class="col-lg-12" style="display: block;">
+            <div id="gymTimer" class="progress">
+                <div class="progress-bar" role="progressbar"
+                     data-bind="text: GymRunner.timeLeftSeconds(), attr:{ style: 'width:' + GymRunner.timeLeftPercentage() + '%' }"
+                     aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 offset-sm-4">
+                    <span data-bind="text: GymBattle.enemyPokemon().name">Pokemon name</span><br>
+                    <div class="clickable">
+                        <img id="gymEnemy" src=""
+                             data-bind="click: function() {GymBattle.clickAttack()}, attr:{ src: 'assets/images/pokemon/' + GymBattle.enemyPokemon().id + '.png' }"/>
+                    </div>
+                </div>
+                <div class="col-sm-3" style="display: grid;">
+                    <span data-bind="text: GymBattle.gym.leaderName">Leader</span>
+                    <div class="gymPokeballList">
+                                        <span data-bind="foreach: new Array(GymBattle.pokemonsUndefeatedComputable())"><img
+                                                class="gymPokeball" src="assets/images/gymLeaders/pokeball.png"></span>
+                        <span data-bind="foreach: new Array(GymBattle.pokemonsDefeatedComputable())"><img
+                                class="gymPokeball gymPokeballDefeated"
+                                src="assets/images/gymLeaders/pokeball.png"></span>
+                    </div>
+                    <div>
+                        <img height="56px" id="gymLeader" src=""
+                             data-bind="attr:{ src: 'assets/images/gymLeaders/' + GymBattle.gym.leaderName + '.png'}">
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <span data-bind="text: GymBattle.enemyPokemon().health">health</span>
+                <span>/</span>
+                <span data-bind="text: GymBattle.enemyPokemon().maxHealth">maxHealth</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-danger" role="progressbar"
+                     data-bind="attr:{ style: 'width:' + GymBattle.enemyPokemon().healthPercentage() + '%' }"
+                     aria-valuemin="0" aria-valuemax="100">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <table width="100%">
+            <tr>
+                <td width="50%"><span style="display: inline;">Pokémon Attack: <span
+                        data-bind="text: player.pokemonAttackObservable"></span></span></td>
+                <td width="50%"><span style="display: inline;">Click Attack: <span
+                        data-bind="text: player.clickAttackObservable"></span></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+                <!--ShopView-->
+                <div id="shopView"
+     data-bind="if: Game.gameState() === GameConstants.GameState.shop">
+<div class="row justify-content-center" data-bind="foreach: ShopHandler.shopObservable().items">
+   <div class="col-sm-3">
+       <div
+               data-bind="click: function() {ShopHandler.setSelected($index())}, attr: {class: ShopHandler.calculateCss($index())}">
+           <img src="" height="36px"
+                data-bind="attr:{ src: 'assets/images/items/' + name() + '.png' }">
+           <p data-bind="text: GameConstants.humanifyString(name())">Item Name</p>
+           <div data-bind="if: $data.isAvailable()">
+                <img src="" class="currencyImage"
+                        data-bind="attr:{ src: 'assets/images/currency/' + GameConstants.Currency[currency]+ '.png' }">
+                <span data-bind="text: totalPrice(ShopHandler.amount())">Price</span>
+            </div>
+            <div data-bind="ifnot: $data.isAvailable()">
+                <span>Sold Out</span>
+            </div>
+       </div>
+   </div>
+</div>
+<div class="row justify-content-center">
+   <div class="col-11 col-sm-10 col-md-11">
+       <div class="input-group" style="margin-bottom: 6px; margin-top: 6px">
+           <span class="input-group-btn">
+               <button class="btn btn-secondary smallButton smallFont" type="button"
+                       onclick="ShopHandler.increaseAmount(-100)">-100
+               </button>
+           </span>
+           <span class="input-group-btn">
+               <button class="btn btn-secondary smallButton smallFont"
+                       type="button"
+                       onclick="ShopHandler.increaseAmount(-10)">-10
+               </button>
+           </span>
+           <span class="input-group-btn">
+               <button class="btn btn-danger smallButton smallFont"
+                       onclick="ShopHandler.resetAmount()">1
+               </button>
+           </span>
+           <input id="amountOfItems" type="number" class="form-control form-control-number"
+                  value="1" min="1" required name="amountOfItems"
+                  oninput="ShopHandler.amount(parseInt($(this).val().toString()) || 0);"
+                  onchange="ShopHandler.amount(parseInt($(this).val().toString()) || 0);" title="">
+           <span class="input-group-btn">
+               <button class="btn btn-secondary smallButton smallFont" type="button"
+                       onclick="ShopHandler.increaseAmount(10)">+10
+               </button>
+           </span>
+           <span class="input-group-btn">
+               <button class="btn btn-secondary smallButton smallFont"
+                       type="button"
+                       onclick="ShopHandler.increaseAmount(100)">+100
+               </button>
+           </span>
+           <span class="input-group-btn" style="float: right;">
+               <button data-bind="attr: {class: ShopHandler.calculateButtonCss()}"
+                       onclick="ShopHandler.buyItem()">Buy
+               </button>
+           </span>
+       </div>
+   </div>
+</div>
+<div class="row justify-content-center" style="margin-bottom: 6px">
+    <button class="btn btn-primary"
+            type="button"
+            onClick="Game.gameState(GameConstants.GameState.town)">Return to Town
+    </button>
+</div>
+    
+</div>
+            </div>
+
+            <div data-bind="if: Game.gameState() === GameConstants.GameState.dungeon">
+                <div class="page-item no-select" style="background-color: white">
+                    <div class="dungeon">
+                        <div class="card">
+                            <span data-bind="text: DungeonRunner.dungeon.name()"></span>
+                        </div>
+                        <div class="row justify-content-sm-center">
+                            <div class="dungeon-board"
+                                 data-bind="foreach: DungeonRunner.map.board()">
+                                <div class="row" data-bind="foreach: $data">
+                                    <div data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-bind="if:KeyItemHandler.getKeyItemObservableByName('Town map')().isUnlocked()">
+                <div data-bind="if: (Game.gameState() === GameConstants.GameState.fighting || Game.gameState() === GameConstants.GameState.gym || Game.gameState() === GameConstants.GameState.town||
+                    Game.gameState() === GameConstants.GameState.shop || Game.gameState() === GameConstants.GameState.farm)">
+                    <p id="mapTooltip" style="visibility: hidden;"></p>
+                    <div class="page-item no-select">
+                        <svg id="map" viewBox="0 0 650 400" preserveAspectRatio="xMaxYMax meet">
+                            <defs>
+                                <lineargradient id="mx-gradient-f8cecc-1-ea583b-1-s-0" x1="0%" x2="0%" y1="0%"
+                                                y2="100%">
+                                    <stop offset="0%" style="stop-color:#909090"></stop>
+                                    <stop offset="100%" style="stop-color:#c1c1c1"></stop>
+                                </lineargradient>
+                                <lineargradient id="mx-gradient-dae8fc-1-7ea6e0-1-s-0" x1="0%" x2="0%" y1="0%"
+                                                y2="100%">
+                                    <stop offset="0%" style="stop-color:#DAE8FC"></stop>
+                                    <stop offset="100%" style="stop-color:#7EA6E0"></stop>
+                                </lineargradient>
+                            </defs>
+
+                            <g transform="translate(-1,-1)">
+    <image height="420.7" width="651" xlink:href="assets/images/kanto.png"></image>
+
+    <!--Route 1-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(1, 0); } ">
+        <rect data-route='1'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(1,0) }"
+              height="28"
+              width="80.1"
+              x="51.3" y="250.2"></rect>
+        <text font-size="13px" x="82.3" y="268.2">1</text>
+    </g>
+
+    <!--Route 2-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(2, 0); } ">
+        <rect data-route='2'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(2,0) }"
+              height="28"
+              width="120.1"
+              x="-70" y="250.2"></rect>
+        <text font-size="13px" x="5" y="268.2">2</text>
+    </g>
+
+    <!--Route 3-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(3, 0); } ">
+        <rect data-route='3'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(3,0) }"
+              height="28"
+              width="112.1"
+              x="92.3" y="100.1"></rect>
+        <text x="140" y="120.1">3</text>
+    </g>
+
+    <!--Route 4-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(4, 0); } ">
+        <rect data-route='4'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(4,0) }"
+              height="28"
+              width="170"
+              x="174.3" y="72.8"></rect>
+        <text x="254.3" y="92.8">4</text>
+    </g>
+
+    <!--Route 5-->
+    <g transform="rotate(90,31.5,9.5)"
+       data-bind="click:function(){ MapHelper.moveToRoute(5, 0); } ">
+        <rect data-route='5'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(5,0) }"
+              height="28"
+              width="70"
+              x="120" y="-324"></rect>
+        <text x="155" y="-305">5</text>
+    </g>
+
+    <!--Route 6-->
+    <g transform="rotate(90,31.5,9.5)"
+       data-bind="click:function(){ MapHelper.moveToRoute(6, 0); } ">
+        <rect data-route='6'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(6,0) }"
+              height="28"
+              width="70"
+              x="200" y="-324"></rect>
+        <text x="230" y="-305">6</text>
+    </g>
+
+    <!--Route 7-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(7, 0); } ">
+        <rect data-route='7'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(7,0) }"
+              height="28"
+              width="112.1"
+              x="345.3" y="152.1"></rect>
+        <text x="395.3" y="173.1">7</text>
+    </g>
+
+    <!--Route 8-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(8, 0); } ">
+        <rect data-route='8'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(8,0) }"
+              height="28"
+              width="90.1"
+              x="270.3" y="152.1"></rect>
+        <text x="304.3" y="172.1">8</text>
+    </g>
+
+    <!--Route 9-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(9, 0); } ">
+        <rect data-route='9'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(9,0) }"
+              height="28"
+              width="112.1"
+              x="345.3" y="72.8"></rect>
+        <text x="395.3" y="92.8">9</text>
+    </g>
+
+    <!--Route 10-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(10, 0); } ">
+        <rect data-route='10'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(10,0) }"
+              height="28"
+              width="90"
+              transform="rotate(90,31.5,9.5)"
+              x="95" y="-430"></rect>
+        <text x="449" y="142">10</text>
+    </g>
+
+    <!--Route 11-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(11, 0); } ">
+        <rect data-route='11'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(11,0) }"
+              height="28"
+              width="99.3"
+              x="345.3" y="231.8"></rect>
+        <text x="395.3" y="252.8">11</text>
+    </g>
+
+    <!--Route 12-->
+    <g transform="rotate(90,31.5,9.5)"
+       data-bind="click:function(){ MapHelper.moveToRoute(12, 0); } ">
+        <rect data-route='12'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(12,0) }"
+              height="28"
+              width="82"
+              x="200" y="-430"></rect>
+        <text x="230" y="-410">12</text>
+    </g>
+
+    <!--Route 13-->
+    <g transform="rotate(90,31.5,9.5)"
+       data-bind="click:function(){ MapHelper.moveToRoute(13, 0); } ">
+        <rect data-route='13'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(13,0) }"
+              height="28"
+              width="56"
+              x="281" y="-430"></rect>
+        <text x="304" y="-412">13</text>
+    </g>
+
+    <!--Route 14-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(14, 0); } ">
+        <rect data-route='14'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(14,0) }"
+              height="28"
+              width="80.3"
+              x="363.3" y="287"></rect>
+        <text x="393.3" y="305.8">14</text>
+    </g>
+
+    <!--Route 15-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(15, 0); } ">
+        <rect data-route='15'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(15,0) }"
+              height="28"
+              width="101.3"
+              x="290.3" y="314"></rect>
+        <text x="338.3" y="333">15</text>
+    </g>
+
+    <!--Route 16-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(16, 0); } ">
+        <rect data-route='16'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(16,0) }"
+              height="28"
+              width="130.1"
+              x="148.3" y="152.1"></rect>
+        <text x="200.3" y="172.1">16</text>
+    </g>
+
+    <!--Route 17-->
+    <g transform="rotate(90,31.5,9.5)"
+       data-bind="click:function(){ MapHelper.moveToRoute(17, 0); } ">
+        <rect data-route='17'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(17,0) }"
+              height="28"
+              width="137"
+              x="200" y="-135.3"></rect>
+        <text x="260" y="-116">17</text>
+    </g>
+
+    <!--Route 18-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(18, 0); } ">
+        <rect data-route='18'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(18,0) }"
+              height="28"
+              width="145.3"
+              x="148.3" y="314"></rect>
+        <text x="190.3" y="333">18</text>
+    </g>
+
+    <!--Route 19-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(19, 0); } ">
+        <rect data-route='19'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(19,0) }"
+              height="28"
+              width="64"
+              x="151.3" y="35.2"></rect>
+    </g>
+
+    <!--Route 19-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(19, 0); } ">
+        <rect data-route='19'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(19,0) }"
+              height="28"
+              width="105.3"
+              x="188.3" y="367"></rect>
+        <text x="235.3" y="387">19</text>
+    </g>
+
+    <!--Route 20-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(20, 0); } ">
+        <rect data-route='20'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(20,0) }"
+              height="28"
+              width="99"
+              x="90.3" y="367"></rect>
+        <text x="129.3" y="387">20</text>
+    </g>
+
+    <!--Route 21-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(21, 0); } ">
+        <rect data-route='21'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(21,0) }"
+              height="28"
+              width="80.1"
+              x="121.3" y="250.2"></rect>
+        <text transform="rotate(-90,166.65,263.2)" font-size="12px" x="158.3" y="268.2">
+            21
+        </text>
+    </g>
+
+    <!--Route 22-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(22, 0); } ">
+        <rect data-route='22'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(22,0) }"
+              height="28"
+              width="75"
+              x="15.3" y="205"></rect>
+        <text x="39.3" y="225">22</text>
+    </g>
+
+    <!--Route 23-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(23, 0); } ">
+        <rect data-route='23'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(23,0) }"
+              height="28"
+              width="116"
+              x="-90" y="304"></rect>
+        <text x="-25" y="323">23</text>
+    </g>
+
+    <!--Route 24-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(24, 0); } ">
+        <rect data-route='24' transform="rotate(90,31.5,9.5)"
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(24,0) }"
+              height="28"
+              width="40"
+              x="67" y="-324"></rect>
+        <text x="343" y="64.8">24</text>
+    </g>
+
+    <!--Route 25-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(25, 0); } ">
+        <rect data-route='25'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(25,0) }"
+              height="28"
+              width="83"
+              x="337" y="18"></rect>
+        <text x="369" y="38">25</text>
+    </g>
+
+    <path d="M 70 108.39 L 78.29 100.1 L 89.71 100.1 L 98 108.39 L 98 119.81 L 89.71 128.1 L 78.29 128.1 L 70 119.81 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Pewter City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Pewter City')},
+          attr: { class: MapHelper.calculateTownCssClass('Pewter City') }"
+          d="M 72.8 109.53 L 79.43 102.9 L 88.57 102.9 L 95.2 109.53 L 95.2 118.67 L 88.57 125.3 L 79.43 125.3 L 72.8 118.67 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 70 215.49 L 78.29 207.2 L 89.71 207.2 L 98 215.49 L 98 226.91 L 89.71 235.2 L 78.29 235.2 L 70 226.91 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Viridian City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Viridian City')},
+          attr: { class: MapHelper.calculateTownCssClass('Viridian City') }"
+          d="M 72.8 216.63 L 79.43 210 L 88.57 210 L 95.2 216.63 L 95.2 225.77 L 88.57 232.4 L 79.43 232.4 L 72.8 225.77 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 69.3 296.69 L 77.59 288.4 L 89.01 288.4 L 97.3 296.69 L 97.3 308.11 L 89.01 316.4 L 77.59 316.4 L 69.3 308.11 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width=
+                  "1.4"></path>
+    <path class="city" data-town="Pallet Town"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Pallet Town')},
+          attr: { class: MapHelper.calculateTownCssClass('Pallet Town') }"
+          d="M 72.1 297.83 L 78.73 291.2 L 87.87 291.2 L 94.5 297.83 L 94.5 306.97 L 87.87 313.6 L 78.73 313.6 L 72.1 306.97 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 338.1 161.59 L 346.39 153.3 L 357.81 153.3 L 366.1 161.59 L 366.1 173.01 L 357.81 181.3 L 346.39 181.3 L 338.1 173.01 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10"
+          stroke-width="1.4"></path>
+    <path class="city" data-town="Saffron City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Saffron City')},
+          attr: { class: MapHelper.calculateTownCssClass('Saffron City') }"
+          d="M 340.9 162.73 L 347.53 156.1 L 356.67 156.1 L 363.3 162.73 L 363.3 171.87 L 356.67 178.5 L 347.53 178.5 L 340.9 171.87 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke=
+                  "#b85450" stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 254.1 161.59 L 262.39 153.3 L 273.81 153.3 L 282.1 161.59 L 282.1 173.01 L 273.81 181.3 L 262.39 181.3 L 254.1 173.01 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10"
+          stroke-width="1.4"></path>
+    <path class="city" data-town="Celadon City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Celadon City')},
+          attr: { class: MapHelper.calculateTownCssClass('Celadon City') }"
+          d="M 256.9 162.73 L 263.53 156.1 L 272.67 156.1 L 279.3 162.73 L 279.3 171.87 L 272.67 178.5 L 263.53 178.5 L 256.9 171.87 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke=
+                  "#b85450" stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 336.7 241.39 L 344.99 233.1 L 356.41 233.1 L 364.7 241.39 L 364.7 252.81 L 356.41 261.1 L 344.99 261.1 L 336.7 252.81 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10"
+          stroke-width="1.4"></path>
+    <path class="city" data-town="Vermillion City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Vermillion City')},
+          attr: { class: MapHelper.calculateTownCssClass('Vermillion City') }"
+          d="M 339.5 242.53 L 346.13 235.9 L 355.27 235.9 L 361.9 242.53 L 361.9 251.67 L 355.27 258.3 L 346.13 258.3 L 339.5 251.67 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke=
+                  "#b85450" stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 16.1 81.09 L 24.39 72.8 L 35.81 72.8 L 44.1 81.09 L 44.1 92.51 L 35.81 100.8 L 24.39 100.8 L 16.1 92.51 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Indigo Plateau"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Indigo Plateau')},
+          attr: { class: MapHelper.calculateTownCssClass('Indigo Plateau') }"
+          d="M 18.9 82.23 L 25.53 75.6 L 34.67 75.6 L 41.3 82.23 L 41.3 91.37 L 34.67 98 L 25.53 98 L 18.9 91.37 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 338.1 79.69 L 346.39 71.4 L 357.81 71.4 L 366.1 79.69 L 366.1 91.11 L 357.81 99.4 L 346.39 99.4 L 338.1 91.11 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width=
+                  "1.4"></path>
+    <path class="city" data-town="Cerulean City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Cerulean City')},
+          attr: { class: MapHelper.calculateTownCssClass('Cerulean City') }"
+          d="M 340.9 80.83 L 347.53 74.2 L 356.67 74.2 L 363.3 80.83 L 363.3 89.97 L 356.67 96.6 L 347.53 96.6 L 340.9 89.97 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <path d="M 445.2 162.99 L 453.49 154.7 L 464.91 154.7 L 473.2 162.99 L 473.2 174.41 L 464.91 182.7 L 453.49 182.7 L 445.2 174.41 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10"
+          stroke-width="1.4"></path>
+    <path class="city" data-town="Lavender Town"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Lavender Town')},
+          attr: { class: MapHelper.calculateTownCssClass('Lavender Town') }"
+          d="M 448 164.13 L 454.63 157.5 L 463.77 157.5 L 470.4 164.13 L 470.4 173.27 L 463.77 179.9 L 454.63 179.9 L 448 173.27 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="456.4"
+          y="166.6"></rect>
+    <rect class="city" data-town="Pokemon Tower"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Lavender Town')},
+          attr: { class: MapHelper.calculateTownCssClass('Lavender Town') }"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="457.8" y="168"></rect>
+    <path d="M 284.2 323.29 L 292.49 315 L 303.91 315 L 312.2 323.29 L 312.2 334.71 L 303.91 343 L 292.49 343 L 284.2 334.71 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width=
+                  "1.4"></path>
+    <path class="city" data-town="Fuchsia City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Fuchsia City')},
+          attr: { class: MapHelper.calculateTownCssClass('Fuchsia City') }"
+          d="M 287 324.43 L 293.63 317.8 L 302.77 317.8 L 309.4 324.43 L 309.4 333.57 L 302.77 340.2 L 293.63 340.2 L 287 333.57 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <!-- <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="295.4" y="326.9"></rect>
+    <rect  class="city" id="Fuchsia City" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" height="12.6" stroke="#6c8ebf" width="12.6" x="296.8" y="328.3"></rect>
+     -->
+    <path d="M 70 375.79 L 78.29 367.5 L 89.71 367.5 L 98 375.79 L 98 387.21 L 89.71 395.5 L 78.29 395.5 L 70 387.21 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Cinnabar Island"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Cinnabar Island')},
+          attr: { class: MapHelper.calculateTownCssClass('Cinnabar Island') }"
+          d="M 72.8 376.93 L 79.43 370.3 L 88.57 370.3 L 95.2 376.93 L 95.2 386.07 L 88.57 392.7 L 79.43 392.7 L 72.8 386.07 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4"></path>
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="81.2"
+          y="379.4"></rect>
+    <rect class="city" data-town="Pokemon Mansion"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Cinnabar Island')},
+          attr: { class: MapHelper.calculateTownCssClass('Cinnabar Island') }"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="82.6" y="380.8"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="349.3"
+          y="83.3"></rect>
+    <rect class="city" data-town="Cerulean Cave"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Cerulean City')},
+          attr: { class: MapHelper.calculateTownCssClass('Cerulean Cave') }"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="350.7" y="84.7"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="22.4"
+          y="109.9"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Victory Road')},
+    attr: { class: MapHelper.calculateTownCssClass('Victory Road') }"
+    class="city"
+    data-town="Victory Road" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="23.8" y="111.3"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="76.3"
+          y="133"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Digletts Cave')},
+    attr: { class: MapHelper.calculateTownCssClass('Digletts Cave') }"
+          class="city"
+          data-town="Digletts Cave" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="77.7" y="134.4"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="76.3"
+          y="156.1"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Viridian Forest')},
+    attr: { class: MapHelper.calculateTownCssClass('Viridian Forest') }"
+          class="city"
+          data-town="Viridian Forest" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="77.7" y="157.5"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="181.3"
+          y="374.5"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Seafoam Islands')},
+    attr: { class: MapHelper.calculateTownCssClass('Seafoam Islands') }"
+          class="city"
+          data-town="Seafoam Islands" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="182.7" y="375.9"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="182"
+          y="90"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Mt. Moon')},
+    attr: { class: MapHelper.calculateTownCssClass('Mt. Moon') }"
+    class="city"
+    data-town="Mt. Moon" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6"
+          stroke="#6c8ebf" width="12.6" x="183.5" y="91.5"></rect>
+
+    <!--                <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="371.7" y="240.1"></rect>
+                                    <rect class="city" id="Digletts Cave 2" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" height="12.6" stroke="#6c8ebf" width="12.6" x="373.1" y="241.5"></rect>
+     -->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="451.5"
+          y="79.1"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Rock Tunnel')},
+    attr: { class: MapHelper.calculateTownCssClass('Rock Tunnel') }"
+          class="city"
+          data-town="Rock Tunnel" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6"
+          stroke="#6c8ebf" width="12.6" x="452.9" y="80.5"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="451.5"
+          y="103.6"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Power Plant')},
+    attr: { class: MapHelper.calculateTownCssClass('Power Plant') }" class="city"
+          data-town="Power Plant" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6"
+          stroke="#6c8ebf" width="12.6" x="452.9" y="105"></rect>
+
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="343.6"
+          y="109.3"></rect>
+    <rect class="city" data-town="Pokemon Day Care"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="345" y="110.7"
+          data-bind="click:function(){BreedingHelper.openBreedingModal()}"></rect>
+     <rect class="city" data-town="Safari Zone"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="292" y="300.7"
+          data-bind="click:function(){Safari.openModal()}"></rect>
+    <rect class="city" data-town="Underground Entrance"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="380" y="240.7"
+          data-bind="click:function(){Underground.openUndergroundModal()}"></rect>
+    <rect class="city" data-town="Farm"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="373" y="293.7"
+          data-bind="click:function(){FarmRunner.openFarmModal()}"></rect>
+    <rect class="city" data-town="Dock"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="325" y="240"
+          data-bind="click:function(){MapHelper.openShipModal()}"></rect>
+</g>
+
+                            <g transform='translate(-1,-1)' data-bind='if: player.region == GameConstants.Region.johto'>
+    <image height="100%" width="100%" xlink:href="assets/images/johto.png"></image>
+
+    <!--
+    Town element
+
+        The two numbers following M in the path route are coordinates for the inital point,
+        adjust them to move the town element, and replace "TOWN" with the actual town name
+
+
+    <path d="M 70 108.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="TOWN"
+          data-bind="
+          click:function(){MapHelper.moveToTown('TOWN')},
+          attr: { class: MapHelper.calculateTownCssClass('TOWN') }"
+          d="M 72.8 109.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    -->
+
+    <!--Route 26-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(26, 1); } ">
+        <rect data-route='26'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(26,1) }"
+              height="31"
+              width="135"
+              x="512" y="277"></rect>
+        <text font-size="13px" x="580" y="300">26</text>
+    </g>
+
+    <!--Route 27-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(27, 1); } ">
+        <rect data-route='27'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(27,1) }"
+              height="31"
+              width="208"
+              x="-110" y="-300"></rect>
+        <text font-size="13px" x="0" y="-280">27</text>
+    </g>
+
+    <!--Route 28-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(28, 1); } ">
+        <rect data-route='28'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(28,1) }"
+              height="31"
+              width="92"
+              x="525" y="216"></rect>
+        <text font-size="13px" x="570" y="236">28</text>
+    </g>
+
+    <!--Route 29-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(29, 1); } ">
+        <rect data-route='29'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(29,1) }"
+              height="31"
+              width="143"
+              x="368" y="277"></rect>
+        <text font-size="13px" x="420" y="300">29</text>
+    </g>
+
+    <!--Route 30-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(30, 1); } ">
+        <rect data-route='30'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(30,1) }"
+              height="31"
+              width="150"
+              x="-25" y="-24"></rect>
+        <text font-size="13px" x="30" y="-5">30</text>
+    </g>
+
+    <!--Route 31-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(31, 1); } ">
+        <rect data-route='31'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(31,1) }"
+              height="31"
+              width="67"
+              x="304" y="124"></rect>
+        <text font-size="13px" x="330" y="144">31</text>
+    </g>
+
+    <!--Route 32-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(32, 1); } ">
+        <rect data-route='32'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(32,1) }"
+              height="31"
+              width="217"
+              x="-25" y="37"></rect>
+        <text font-size="13px" x="65" y="57">32</text>
+    </g>
+
+    <!--Route 33-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(33, 1); } ">
+        <rect data-route='33'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(33,1) }"
+              height="31"
+              width="100"
+              x="209" y="369"></rect>
+        <text font-size="13px" x="250" y="389">33</text>
+    </g>
+
+    <!--Route 34-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(34, 1); } ">
+        <rect data-route='34'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(34,1) }"
+              height="31"
+              width="127"
+              x="92" y="160"></rect>
+        <text font-size="13px" x="140" y="180">34</text>
+    </g>
+
+    <!--Route 35-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(35, 1); } ">
+        <rect data-route='35'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(35,1) }"
+              height="31"
+              width="73"
+              x="-25" y="160"></rect>
+        <text font-size="13px" x="10" y="180">35</text>
+    </g>
+
+    <!--Route 36-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(36, 1); } ">
+        <rect data-route='36'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(36,1) }"
+              height="31"
+              width="131"
+              x="156" y="124"></rect>
+        <text font-size="13px" x="220" y="144">36</text>
+    </g>
+
+    <!--Route 37-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(37, 1); } ">
+        <rect data-route='37'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(37,1) }"
+              height="38"
+              width="31"
+              x="216" y="87"></rect>
+        <text font-size="13px" x="223" y="114">37</text>
+    </g>
+
+    <!--Route 38-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(38, 1); } ">
+        <rect data-route='38'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(38,1) }"
+              height="31"
+              width="95"
+              x="124" y="62"></rect>
+        <text font-size="13px" x="163" y="82">38</text>
+    </g>
+
+    <!--Route 39-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(39, 1); } ">
+        <rect data-route='39'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(39,1) }"
+              height="31"
+              width="65"
+              x="-117" y="222"></rect>
+        <text font-size="13px" x="-90" y="242">39</text>
+    </g>
+
+    <!--Route 40-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(40, 1); } ">
+        <rect data-route='40'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(40,1) }"
+              height="31"
+              width="70"
+              x="-25" y="252"></rect>
+        <text font-size="13px" x="10" y="272">40</text>
+    </g>
+
+    <!--Route 41-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(41, 1); } ">
+        <rect data-route='41'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(41,1) }"
+              height="31"
+              width="84"
+              x="45" y="252"></rect>
+        <text font-size="13px" x="80" y="272">41</text>
+    </g>
+
+    <!--Route 42-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(42, 1); } ">
+        <rect data-route='42'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(42,1) }"
+              height="31"
+              width="136"
+              x="242" y="62"></rect>
+        <text font-size="13px" x="300" y="82">42</text>
+    </g>
+
+    <!--Route 43-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(43, 1); } ">
+        <rect data-route='43'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(43,1) }"
+              height="31"
+              width="63"
+              x="-180" y="-55"></rect>
+        <text font-size="13px" x="-150" y="-35">43</text>
+    </g>
+
+    <!--Route 44-->
+    <g data-bind="click:function(){ MapHelper.moveToRoute(44, 1); } ">
+        <rect data-route='44'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(44,1) }"
+              height="31"
+              width="99"
+              x="397" y="62"></rect>
+        <text font-size="13px" x="440" y="82">44</text>
+    </g>
+
+    <!--Route 45-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(45, 1); } ">
+        <rect data-route='45'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(45,1) }"
+              height="31"
+              width="100"
+              x="-62" y="-148"></rect>
+        <text font-size="13px" x="-20" y="-128">45</text>
+    </g>
+
+    <!--Route 46-->
+    <g transform="rotate(90,83.65,263.2)"
+       data-bind="click:function(){ MapHelper.moveToRoute(46, 1); } ">
+        <rect data-route='46'
+              data-bind="attr: { class: MapHelper.calculateRouteCssClass(46,1) }"
+              height="31"
+              width="94"
+              x="6" y="-117"></rect>
+        <text font-size="13px" x="53" y="-97">46</text>
+    </g>
+
+    <!--New Bark Town-->
+    <path d="M 496 286.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="New Bark Town"
+          data-bind="
+          click:function(){MapHelper.moveToTown('New Bark Town')},
+          attr: { class: MapHelper.calculateTownCssClass('New Bark Town') }"
+          d="M 498.8 287.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Cherrygrove City-->
+    <path d="M 340 288.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Cherrygrove City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Cherrygrove City')},
+          attr: { class: MapHelper.calculateTownCssClass('Cherrygrove City') }"
+          d="M 342.8 289.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Violet City-->
+    <path d="M 281 133.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Violet City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Violet City')},
+          attr: { class: MapHelper.calculateTownCssClass('Violet City') }"
+          d="M 283.8 134.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Azalea Town-->
+    <path d="M 187 378.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Azalea Town"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Azalea Town')},
+          attr: { class: MapHelper.calculateTownCssClass('Azalea Town') }"
+          d="M 189.8 379.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Goldenrod City-->
+    <path d="M 158 229 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 40 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Goldenrod City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Goldenrod City')},
+          attr: { class: MapHelper.calculateTownCssClass('Goldenrod City') }"
+          d="M 160.8 230.14 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 38 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Ecruteak City-->
+    <path d="M 218 72 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Ecruteak City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Ecruteak City')},
+          attr: { class: MapHelper.calculateTownCssClass('Ecruteak City') }"
+          d="M 220.8 73 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Olivine City-->
+    <path d="M 63 135 l 8.29 -8.29 h 45 l 8.29 8.29 v 11.42 l -8.29 8.29 h -45 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Olivine City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Olivine City')},
+          attr: { class: MapHelper.calculateTownCssClass('Olivine City') }"
+          d="M 65.4 136.2 l 6.63 -6.63 h 43 l 6.63 6.63 v 9.14 l -6.63 6.63 h -43 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Cianwood City-->
+    <path d="M 34 288 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Cianwood City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Cianwood City')},
+          attr: { class: MapHelper.calculateTownCssClass('Cianwood City') }"
+          d="M 37 289 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Mahogany Town-->
+    <path d="M 373 72 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Mahogany Town"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Mahogany Town')},
+          attr: { class: MapHelper.calculateTownCssClass('Mahogany Town') }"
+          d="M 376 73 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Blackthorn City-->
+    <path d="M 465 103 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Blackthorn City"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Blackthorn City')},
+          attr: { class: MapHelper.calculateTownCssClass('Blackthorn City') }"
+          d="M 468 104 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Indigo Plateau 2.0-->
+    <path d="M 619 72 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
+          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+    <path class="city" data-town="Indigo Plateau 2.0"
+          data-bind="
+          click:function(){MapHelper.moveToTown('Indigo Plateau 2.0')},
+          attr: { class: MapHelper.calculateTownCssClass('Indigo Plateau 2.0') }"
+          d="M 622 73 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
+          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
+          stroke-miterlimit="10" stroke-width="1.4">
+    </path>
+
+    <!--Sprout Tower-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="292" y="126"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Violet City')},
+    attr: { class: MapHelper.calculateTownCssClass('Sprout Tower') }"
+          class="city" data-town="Sprout Tower"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="293" y="127"></rect>
+
+    <!--Ruins of Alph-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="287" y="180"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Ruins of Alph')},
+    attr: { class: MapHelper.calculateTownCssClass('Ruins of Alph') }"
+          class="city" data-town="Ruins of Alph"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="288" y="181"></rect>
+
+    <!--Union Cave-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="287" y="326"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Union Cave')},
+    attr: { class: MapHelper.calculateTownCssClass('Union Cave') }"
+          class="city" data-town="Union Cave"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="288" y="327"></rect>
+
+    <!--Slowpoke Well-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="200" y="370"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Azalea Town')},
+    attr: { class: MapHelper.calculateTownCssClass('Slowpoke Well') }"
+          class="city" data-town="Slowpoke Well"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="201" y="371"></rect>
+
+    <!--Ilex Forest-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="160" y="370"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Ilex Forest')},
+    attr: { class: MapHelper.calculateTownCssClass('Ilex Forest') }"
+          class="city" data-town="Ilex Forest"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="161" y="371"></rect>
+
+    <!--Burned Tower-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="215" y="50"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Burned Tower')},
+    attr: { class: MapHelper.calculateTownCssClass('Burned Tower') }"
+          class="city" data-town="Burned Tower"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="216" y="51"></rect>
+
+    <!--Tin Tower-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="235" y="50"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Tin Tower')},
+    attr: { class: MapHelper.calculateTownCssClass('Tin Tower') }"
+          class="city" data-town="Tin Tower"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="236" y="51"></rect>
+
+    <!--Whirl Islands-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="72" y="270"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Whirl Islands')},
+    attr: { class: MapHelper.calculateTownCssClass('Whirl Islands') }"
+          class="city" data-town="Whirl Islands"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="73" y="271"></rect>
+
+    <!--Mt Mortar-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="325" y="70"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Mt Mortar')},
+    attr: { class: MapHelper.calculateTownCssClass('Mt Mortar') }"
+          class="city" data-town="Mt Mortar"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="326" y="71"></rect>
+
+    <!--Ice Path-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="470" y="70"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Ice Path')},
+    attr: { class: MapHelper.calculateTownCssClass('Ice Path') }"
+          class="city" data-town="Ice Path"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="471" y="71"></rect>
+
+    <!--Dark Cave-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="465" y="179"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Dark Cave')},
+    attr: { class: MapHelper.calculateTownCssClass('Dark Cave') }"
+          class="city" data-town="Dark Cave"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="466" y="180"></rect>
+
+    <!--Mt Silver-->
+    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
+          x="525" y="224"></rect>
+    <rect data-bind="
+    click:function(){MapHelper.moveToTown('Mt Silver')},
+    attr: { class: MapHelper.calculateTownCssClass('Mt Silver') }"
+          class="city" data-town="Mt Silver"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="526" y="225"></rect>
+
+    <!-- Dock -->
+    <rect class="city" data-town="Dock"
+          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+          height="12.6" stroke="#6c8ebf" width="12.6" x="98" y="155"
+          data-bind="click:function(){MapHelper.openShipModal()}"></rect>
+
+</g>
+
+
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--left column-->
+        <div class="col-lg-3 pull-lg-6">
+            <div class="page-item" id="pokeballSelector"
+                 data-bind="visible: player.starter != GameConstants.Starter.None"
+                 style="background-color: white; min-height: 180px">
+                <div class="row justify-content-sm-center">
+                    <div class="col-sm-10">
+                        <table class="table pokeball-table borderless">
+                            <thead>
+                            <tr>
+                                <td>Caught</td>
+                                <td>#</td>
+                                <td>New</td>
+                                <td><img
+                                        data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon', trigger: 'hover', placement:'right' }"
+                                        src="assets/images/questionmark.png"></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <img class="pokeball-small clickable" src="assets/images/pokeball/None.png"
+                                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.None)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.None}"/>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <img class="pokeball-small clickable" src="assets/images/pokeball/None.png"
+                                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.None)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.None}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Pokeball-small.png"
+                                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Pokeball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Pokeball}"/>
+                                </td>
+                                <td>
+                                    <span data-bind="text: player.pokeballsObservable(0)"></span>
+                                </td>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Pokeball-small.png"
+                                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Pokeball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Pokeball}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Greatball-small.png"
+                                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Greatball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Greatball}"/>
+                                </td>
+                                <td>
+                                    <span data-bind="text: player.pokeballsObservable(1)"></span>
+                                </td>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Greatball-small.png"
+                                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Greatball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Greatball}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Ultraball-small.png"
+                                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Ultraball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Ultraball}"/>
+                                </td>
+                                <td>
+                                    <span data-bind="text: player.pokeballsObservable(2)"></span>
+                                </td>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Ultraball-small.png"
+                                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Ultraball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Ultraball}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Masterball-small.png"
+                                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Masterball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Masterball}"/>
+                                </td>
+                                <td>
+                                    <span data-bind="text: player.pokeballsObservable(3)"></span>
+                                </td>
+                                <td>
+                                    <img class="pokeball-small clickable"
+                                         src="assets/images/pokeball/Masterball-small.png"
+                                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Masterball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Masterball}"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-item pokemon-list-container" id="pokemonListContainer"
+                 data-bind="visible: player.starter != GameConstants.Starter.None" style="background-color: white">
+                <select data-bind="options: GameConstants.SortOptions,
+                                   optionsText: 'text',
+                                   optionsValue: 'value',
+                                   value: player._sortOption,
+                                   optionsCaption: 'Sort By...'" title="">
+                </select>
+                <p>
+                    Reverse
+                    <input class="clickable" type='checkbox' data-bind="checked: player._sortDescending" title=""/>
+                </p>
+                <table id="pokemonList" class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th style="margin-left: 9px;">Name</th>
+                        <th>Atk</th>
+                        <th>Lvl</th>
+                    </tr>
+                    </thead>
+                    <tbody data-bind="template: { name: 'pokemonListTemplate', foreach: player.sortedPokemonList()}">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!--Right column-->
+        <div class="col-lg-3">
+            <div class="page-item" id="oakItemsContainer"
+            data-bind="visible: player.starter != GameConstants.Starter.None" style="background-color: white;">
+                <div class="card">
+                    <div>
+                        <span style="text-align:center"
+                              data-bind="text: OakItemRunner.getTotalActiveOakItems() + '/' + player.calculateOakItemSlots()()">
+                        asd
+                        </span>
+                        <span style="float:right; margin-right: 10px;">
+                            <img data-bind="tooltip: { title: 'Activate Oak items to gain unique bonuses. When an Oak item has gained enough experience you can level it up with money to boost its effect.', trigger: 'hover', placement:'right' }"
+                                 src="assets/images/questionmark.png">
+                        </span>
+                    </div>
+                </div>
+                <div class="row justify-content-sm-center" data-bind="foreach: OakItemRunner.oakItemList">
+                    <div>
+                        <div>
+                            <img class="clickable" src=""
+                                 data-bind="attr:{ src: 'assets/images/oakitems/' + GameConstants.humanifyString(GameConstants.OakItem[$data.id]) + '.png'},
+                                  css: {
+                                    'oak-item-small-selected': OakItemRunner.isActive($data.id),
+                                    'oak-item-small': !OakItemRunner.isActive($data.id),
+                                    'oak-item-locked': !OakItemRunner.isUnlocked($data.id)
+                                  },
+                                  event: {
+                                    mouseover: function(){OakItemRunner.hover($data.id)},
+                                    click: function(){OakItemRunner.click($data.id)},
+                                    mouseout : function(){OakItemRunner.hoverRelease()}
+                                  }">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card oak-item-info">
+                    <div data-bind="if: OakItemRunner.inspectedItem().isUnlocked()">
+                        <div class="row justify-content-sm-center">
+                            <div style="height:20px;" class="col">
+                                <b>
+                                    <span data-bind="text: GameConstants.humanifyString(GameConstants.OakItem[OakItemRunner.inspectedItem().id])"></span>
+                                </b>
+                            </div>
+                        </div>
+                        <div class="row justify-content-sm-center">
+                            <div class="col">
+                                <span data-bind="text: OakItemRunner.inspectedItem().description"></span>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-sm-center">
+                            <div class="col-sm-11 col-md-8">
+                                <div class="progress" style="margin-top: 12px"
+                                     data-bind="value: 'exp'">
+                                    <div class="progress-bar bg-success" role="progressbar"
+                                         data-bind="
+                                           attr:{
+                                             style: 'width:' + (OakItemRunner.inspectedItem().isMaxLevel() ? 100 : OakItemRunner.inspectedItem().expPercentage()) + '%'
+                                           },
+                                           css: {
+                                             'bg-success': !OakItemRunner.inspectedItem().isMaxLevel(),
+                                             'bg-primary': OakItemRunner.inspectedItem().isMaxLevel(),
+                                           }"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                        <span data-bind="hidden: OakItemRunner.inspectedItem().canUpgradeExp() || OakItemRunner.inspectedItem().isMaxLevel(), html: OakItemRunner.inspectedItem().expProgress()"></span>
+                                        <div data-bind="if:OakItemRunner.inspectedItem().canUpgradeExp() || OakItemRunner.inspectedItem().isMaxLevel(),
+                                                    disable: !OakItemRunner.inspectedItem().canUpgrade()">
+                                            <div class="btn-default"
+                                                 data-bind="
+                                                  click: function(){
+                                                    OakItemRunner.inspectedItem().upgrade();
+                                                  },
+                                                  text: OakItemRunner.inspectedItem().isMaxLevel() ? 'Max Level!' : 'Upgrade'">
+                                                Upgrade!
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-sm-center no-gutters">
+
+                            <div class="col">
+                                Lvl.
+                                <span data-bind="text: OakItemRunner.inspectedItem().level()"></span>
+                            </div>
+
+                            <div class="col">
+                                Bonus:
+                                <span data-bind="text: OakItemRunner.inspectedItem().calculateBonus()"></span>
+                                %
+                            </div>
+                        </div>
+                    </div>
+                    <div data-bind="ifnot: OakItemRunner.inspectedItem().isUnlocked()">
+
+                        <div class="row justify-content-sm-center">
+                            <div style="height:20px;" class="col">
+                                <b>
+                                    <span data-bind="text: GameConstants.humanifyString(GameConstants.OakItem[OakItemRunner.inspectedItem().id])"></span>
+                                </b>
+                            </div>
+                        </div>
+
+                        <div style="min-height:80px; vertical-align: center">
+                            Capture <span data-bind="text: OakItemRunner.inspectedItem().unlockReq - player.caughtPokemonList.length"></span> more unique Pokémon to
+                            unlock!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Current Quest -->
+            <div class="page-item" id="questDisplayContainer"
+style="background-color: white; min-height: 100px">
+    <br>
+    <button style="vertical-align: middle;" class='btn btn-primary'
+            data-bind='visible: (player.tutorialProgress() == 6) && !player.currentQuest(),
+                                   text: "New Quest",
+                                   click: function(){$("#QuestModal").modal("show")}'>
+    </button>
+    <div data-bind='if: (player.tutorialProgress() == 6) && player.currentQuest()'>
+        <p data-bind='text: QuestHelper.questList()[player.currentQuest().index].description'></p>
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="progress"
+                     data-bind='tooltip: {title: ko.pureComputed(function(){return QuestHelper.questList()[player.currentQuest().index].progressText()}), trigger: "hover"}'>
+                    <div class="progress-bar bg-success" role="progressbar"
+                         data-bind="attr:{ style: 'width:' + (QuestHelper.questList()[player.currentQuest().index].progress() * 100) + '%' }"
+                         aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+                <div>
+                                <span data-bind='if: QuestHelper.questList()[player.currentQuest().index].isCompleted()'>
+                                    <button class='btn btn-sm btn-success'
+                                            data-bind='click: function(){QuestHelper.questList()[player.currentQuest().index].claimReward()}'>
+                                        Claim
+                                    </button>
+                                </span>
+                    <span>
+                                    <button class='btn btn-sm btn-primary' style="margin:5px"
+                                            data-bind='click: function(){$("#QuestModal").modal("show")}'>
+                                        Questlist
+                                    </button>
+                                </span>
+                    <span data-bind='if: !QuestHelper.questList()[player.currentQuest().index].isCompleted()'>
+                                    <button class='btn btn-sm btn-danger' style="margin:5px"
+                                            data-bind='click: function(){QuestHelper.quitQuest()}'>
+                                        Quit
+                                    </button>
+                                </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-bind='if: (!player.tutorialComplete()) && (QuestLineHelper.tutorial.totalQuests > 0) && (QuestLineHelper.tutorial.curQuest() < QuestLineHelper.tutorial.totalQuests)'>
+        <p data-bind='text: QuestLineHelper.tutorial.curQuestObject().description'></p>
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="progress"
+                     data-bind='tooltip: {title: ko.pureComputed(function(){return QuestLineHelper.tutorial.curQuestObject().progressText()}), trigger: "hover"}'>
+                    <div class="progress-bar bg-success" role="progressbar"
+                         data-bind="attr:{ style: 'width:' + (QuestLineHelper.tutorial.curQuestObject().progress() * 100) + '%' }"
+                         aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Egg Slots/Breeding-->
+            <div data-bind="if: KeyItemHandler.getKeyItemObservableByName('Mystery egg')().isUnlocked()">
+    <div class="page-item">
+        <div id='eggList' class="row no-gutters" data-bind="foreach: player.eggList">
+            <div class="col-sm-6 eggSlot">
+                <div data-bind="if: $index() === player.eggSlots()">
+                    <p style="margin:2px;">Egg slot</p>
+                    <p style="margin:2px;"><img src="assets/images/currency/questPoint.png"> <span data-bind='text: player.nextEggSlotCost()'></span></p>
+                    <button class='btn btn-primary' onclick='player.buyEggSlot()'
+                            data-bind='css: {disabled: player.questPoints <= player.nextEggSlotCost()}'>Buy</button>
+                </div>
+                <div data-bind="if: $index() > player.eggSlots()" style="margin-top: 30px;">
+                    <img src="assets/images/breeding/lock.png">
+                </div>
+                <div data-bind="if: $data !== null">
+                    <img data-bind='attr: {src: BreedingHelper.getEggImage($data)}'/>
+
+                    <div class="progress" data-bind='if: progress() < 100'>
+                        <div class="progress-bar bg-success" role="progressbar"
+                             data-bind="attr:{ style: 'width:' + $data.progress() + '%' }"
+                             aria-valuemin="0" aria-valuemax="100">
+							 <span data-bind="text: Math.floor($data.progress()) + '%'"></span>
+                        </div>
+                    </div>
+                    <div class="progress" data-bind='if: progress() >= 100'>
+                        <div class="progress-bar bg-blue" role="progressbar"
+                        data-bind="attr:{ style: 'width: 100%; cursor: pointer;' }, click: function(){BreedingHelper.hatchPokemonEgg($index())}, text: 'Hatch!'"
+                        aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Receive gym badge Modal -->
+<div class="modal fade" id="receiveBadgeModal" tabindex="-1" role="dialog"
+aria-labelledby="receiveBadgeModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src=""
+                    data-bind="attr:{ src: 'assets/images/gymLeaders/' + GymRunner.gymObservable().leaderName + '.png'}">
+               <h5 class="modal-title" id="receiveBadgeModalLabel"
+                   data-bind="text: GymRunner.gymObservable().leaderName">Modal title</h5>
+
+           </div>
+       </div>
+       <div class="modal-body">
+           <p data-bind="text: GymRunner.gymObservable().defeatMessage"></p>
+           <img src="" width="56px"
+                data-bind="attr:{ src: 'assets/images/badges/' + GymRunner.gymObservable().leaderName + '.png'}">
+
+       </div>
+       <div data-bind="if: !(GymRunner.gymObservable() instanceof Champion)">
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           </div>
+       </div>
+       <div data-bind="if: GymRunner.gymObservable() instanceof Champion">
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                       onclick="$('#hallOfFameModal').modal('show')">
+                   Next
+               </button>
+           </div>
+       </div>
+
+   </div>
+</div>
+</div>
+
+<!-- Achievements Modal -->
+<div class="modal  fade" id="achievementsModal" tabindex="-1" role="dialog"
+aria-labelledby="AchievementsModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <h5>Achievements</h5>
+           <h5 style="display: inline" data-bind="text: 'Total Bonus: ' + AchievementHandler.achievementBonusPercent(), tooltip: { title: 'As you earn achievements, you gain up to 100% more money and xp from all sources.', trigger: 'hover', placement:'right' }"></h5>
+
+       </div>
+       <div class="modal-body">
+           <table id="" class="table table-hover">
+               <tbody data-bind="template: { name: 'achievementListTemplate', foreach: AchievementHandler.getAchievementListWithIndex(10*AchievementHandler.navigateIndex())}">
+               </tbody>
+           </table>
+       </div>
+
+       <div class="modal-footer justify-content-center">
+           <button class="btn btn-secondary" onclick="AchievementHandler.navigateLeft()"
+                   data-bind=" css: {disabled: AchievementHandler.navigateIndex() === 0}">
+               <img src="assets/images/leftarrow.png">
+           </button>
+           <div data-bind="text: AchievementHandler.navigateIndex()+1 + '/' + (AchievementHandler.getNumberOfTabs()+1)"></div>
+
+
+
+           <button class="btn btn-secondary" onclick="AchievementHandler.navigateRight()"
+                   data-bind=" css: {disabled: AchievementHandler.navigateIndex() ===  AchievementHandler.getNumberOfTabs()}">
+               <img src="assets/images/rightarrow.png">
+           </button>
+
+
+       </div>
+
+   </div>
+</div>
+</div>
+
+<!-- Settings Modal-->
+<div class="modal noselect fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style='justify-content: space-around;'>
+                <span>Settings</span>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('theme')}"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <div data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('test')}"></div>
+                    </div>
+                </div>
+                <br/>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="MultipleChoiceSettingTemplate">
+    <div class="dropdown">
+        <h3 data-bind="text: $data.displayName"></h3>
+
+        <div class="btn-group" data-bind="foreach: $data.options">
+            <button class="btn btn-primary" data-bind="
+                css: {active: $parent.isSelected($data.value)()},
+                click: function(){ Settings.setSettingByName($parent.name, $data.value)},
+                text: $data.text"
+            >
+                Option
+            </button>
+        </div>
+    </div>
+</script>
+
+
+<!-- Changelog Modal -->
+<div class="modal fade noselect" id="changelogModal" tabindex="-1" role="dialog"
+aria-labelledby="changelogModal">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <h4>Changelog</h4>
+       </div>
+       <div class="modal-body" style="text-align: left;">
+        <!-- inject:head:html -->
+        
+        <!-- endinject -->
+       </div>
+
+       <p>
+           <a target="_blank" href="./changelog.html">Click here for a full changelog.</a>
+       </p>
+
+       <div class="modal-footer" style="border-top:0">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Start Sequence Modal-->
+<div class="modal" id="startSequenceModal" tabindex="-1" role="dialog"
+aria-labelledby="startSequenceModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src="assets/images/oak.png">
+               <h5 class="modal-title" id="startSequenceModalLabel">Professor Oak</h5>
+           </div>
+       </div>
+       <div class="modal-body">
+           <p>Hello, there! Glad to meet you! Welcome to the world of Pokémon!<br>
+               My name is Oak. People affectionately refer to me as the Pokémon Professor.<br>
+               This world… …is inhabited far and wide by creatures called Pokémon!<br>
+               For some people, Pokémon are pets. Other use them for battling.<br>
+               As for myself… I study Pokémon as a profession.<br>
+               However, your own very Pokémon legend is about to unfold!<br>
+               A world of dreams and adventures with Pokémon awaits! Let's go!
+           </p>
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Next</button>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Pick Starter Modal-->
+<div class="modal" id="pickStarterModal" tabindex="-1" role="dialog"
+aria-labelledby="pickStarterModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src="assets/images/oak.png">
+               <h5 class="modal-title" id="pickStarterModalLabel">Professor Oak</h5>
+           </div>
+       </div>
+       <div class="modal-body">
+           <p id="pickStarterModalText">Oh No! We got ambushed by these pokémon!<br>
+               I can only hold off two! Pick the one you want to fight!</p>
+           <div class="row justify-content-center">
+               <div class="col-lg-8">
+                   <div class="row">
+
+                       <div class="col">
+                           <input class="image-starter" type="image"
+                                  src="assets/images/pokemon/1.png"
+                                  onclick="StartSequenceRunner.pickStarter(GameConstants.Starter.Bulbasaur)">
+                       </div>
+                       <div class="col">
+                           <input class="image-starter" type="image"
+                                  src="assets/images/pokemon/4.png"
+                                  onclick="StartSequenceRunner.pickStarter(GameConstants.Starter.Charmander)">
+                       </div>
+                       <div class="col">
+                           <input class="image-starter" type="image"
+                                  src="assets/images/pokemon/7.png"
+                                  onclick="StartSequenceRunner.pickStarter(GameConstants.Starter.Squirtle)">
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <p>You can click on it to inflict damage</p>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Starter Caught Modal-->
+<div class="modal" id="starterCaughtModal" tabindex="-1" role="dialog"
+aria-labelledby="starterCaughtModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src="assets/images/oak.png">
+               <h5 class="modal-title" id="starterCaughtModalLabel">Professor Oak</h5>
+           </div>
+       </div>
+       <div class="modal-body">
+           <p>
+               Hm! Excellent! You have caught your first pokémon!<br>
+               This is where your journey begins. <br>
+               You can progress to the next route after you have defeated 10 pokémon.<br>
+               To help you on you journey, I will give you these <b>Key items</b>!<br>
+               You can view all your <b>Key items</b> in the start menu.<br>
+           </p>
+           <div class="row justify-content-center">
+               <div class="col-sm-3">
+                   <img
+                           title="A television set that is tuned to a program with useful tips for novice TRAINERS"
+                           class="key-item"
+                           src="assets/images/keyitems/Teachy%20tv.png"/>
+                   <br>
+                   <p>Teachy tv</p>
+               </div>
+               <div class="col-sm-3">
+                   <img
+                           title="A case for holding money. It can hold up to 1,000,000 coins"
+                           class="key-item"
+                           src="assets/images/keyitems/Coin%20case.png"/>
+                   <br>
+                   <p>Coin case</p>
+               </div>
+               <div class="col-sm-3">
+                   <img
+                           title="A tiny bag that can hold up to 4 different types of PokéBalls"
+                           class="key-item"
+                           src="assets/images/keyitems/Pokeball%20bag.png"/>
+                   <br>
+                   <p>PokéBall bag</p>
+               </div>
+
+           </div>
+
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Next</button>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Hall of Fame Modal -->
+<div class="modal fade" id="hallOfFameModal" tabindex="-1" role="dialog"
+aria-labelledby="hallOfFameModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src=""
+                    data-bind="attr:{ src: 'assets/images/oak.png'}">
+               <h5 class="modal-title" id="hallOfFameModalLabel">Professor Oak</h5>
+
+           </div>
+       </div>
+       <div class="modal-body">
+           <p>
+               So, you won! Congratulations! You're the new Pokémon League champion! You've grown
+               up so
+               much since you first left with <span
+                   data-bind="text: GameConstants.Starter[player.starter]">starter</span>! You have
+               worked
+               hard to become the new League Champion!
+           </p>
+
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Shards Modal -->
+<div aria-labelledby="myModalLabel" class="modal fade" id="shardModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" id="shardModalDialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                <img style="float:right;margin-right:10px;"
+                     data-bind="tooltip: { title: 'Use shards to upgrade the type effectiveness of your Pokémon. When you defeat a Pokémon, you get shards based on its type. ', trigger: 'hover', placement:'right' }"
+                     src="assets/images/questionmark.png">
+
+            </div>
+            <div class="modal-body" id="shardBody" data-bind='foreach: player._shardUpgrades'>
+                <h3>
+                    <span data-bind="text: GameConstants.PokemonType[$index()] + ' ' + player._shardsCollected[$index()]()"></span>
+                    <img data-bind='attr: { src: "assets/images/shards/" + $index() + ".png" }'/>
+                </h3>
+                <table class='table' data-bind='foreach: $data'>
+                    <tr>
+                        <td data-bind='text: GameConstants.TypeEffectiveness[$index()]'></td>
+                        <td width='50%'>
+                            <div class="progress"
+                                 data-bind="style: { 'background-color': '#' + TypeHelper.typeColorsLocked[$parentContext.$index()] }">
+                                <div class='progress-bar' role="progressbar"
+                                     data-bind="style: { width: ($data * 10) + '%',
+                                                               'background-color': '#' + TypeHelper.typeColors[$parentContext.$index()] }"
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                                <div class='cell-container' data-bind='foreach: new Array(9)'>
+                                    <div class='progress-cell' style='width: 10%'></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-bind='text: (GameConstants.TypeEffectivenessValue[GameConstants.TypeEffectiveness[$index()]] + ($data * GameConstants.SHARD_UPGRADE_STEP)).toFixed(1) + "x"'></td>
+                        <td>
+                            <button class='btn btn-primary'
+                                    data-bind='click: function(){player.buyShardUpgrade($parentContext.$index(), $index())},
+                                        css: {disabled: !player.canBuyShardUpgrade($parentContext.$index(), $index())},
+                                        text: "Buy (" + player.getShardUpgradeCost($parentContext.$index(), $index()) + ")"'>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Breeding Modal-->
+<div class="modal fade" id="breedingModal" tabindex="-1" role="dialog"
+aria-labelledby="breedingModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <div style="width: 100%;">
+               <img src="assets/images/oak.png">
+               <h5 class="modal-title" id="breedingModalLabel">Day Care Old Man</h5>
+           </div>
+       </div>
+       <div class="modal-body">
+           <p>
+               This is the Pokémon Day Care Center. You can trade your <br>
+               level 100 pokémon for an egg of the same pokémon.<br>
+               Hatched pokémon have a higher chance of becoming shiny!
+           </p>
+           <div data-bind="if: player.canBreedPokemon()">
+               <p>
+                   Pick a pokémon below to breed them:
+               </p>
+
+               <div class="row col-lg-10 col-md-12 offset-lg-1 offset-md-0 col-sm-12 offset-sm-0"
+                    style="padding-right: 0"
+                    data-bind="foreach: player.maxLevelPokemonList()">
+                   <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem">
+                       <button class="btn btn-secondary smallButton list-group-item-action"
+                               data-bind="click: function() { BreedingHelper.gainPokemonEgg($data);if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide');}}">
+                           <img class="smallImage"
+                                data-bind="attr:{ src: 'assets/images/' + (player.caughtShinyList().includes(name) ? 'shiny' : '') + 'pokemon/' + id +'.png' }"
+                                src=""/>
+                           <span data-bind="text: name" style="margin-left: 20px">Name</span><span style="float:right" data-bind="if: player.caughtShinyList().includes(name)">&nbsp;✨</span>
+                       </button>
+                   </div>
+               </div>
+           </div>
+           <div data-bind="ifnot: player.hasMaxLevelPokemon()">
+               <p>
+                   Unfortunately, you don't have any pokémon of level 100
+               </p>
+           </div>
+           <div data-bind="ifnot: player.hasFreeEggSlot()">
+               <p>
+                   Unfortunately, you don't have any free eggslots
+               </p>
+           </div>
+       </div>
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+
+<!-- Underground Modal -->
+<div aria-labelledby="myModalLabel" class="modal fade noselect" id="mineModal" role="dialog"
+style="cursor:default" tabindex="-1">
+<div class="modal-dialog" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <ul class="nav nav-tabs nav-fill">
+               <li class="nav-item"><a data-toggle='tab' class='nav-link active' href="#dig">Dig</a></li>
+               <li class='nav-item'><a data-toggle='tab' class='nav-link' href="#treasures">Treasures</a>
+               </li>
+               <li class='nav-item'><a data-toggle='tab' class='nav-link' href="#upgrades">Upgrades</a>
+               </li>
+               <li class='nav-item'><a data-toggle='tab' class='nav-link' href="#dailyDeals">Daily
+                   deals</a></li>
+               <li class='nav-item'><a data-toggle='tab' class='nav-link' href="#help">Help</a></li>
+               <p><span id="diamondCounter" data-bind='text: player._diamonds'>x</span> <img
+                       src='assets/images/underground/diamond.png'></p>
+           </ul>
+       </div>
+       <div class="tab-content">
+           <div id="dig" class="tab-pane fade in active show">
+               <div class="modal-body" style="width: 80%;margin: auto;">
+
+                   <table class='table table-sm' style="width:60%; margin: auto">
+                       <tbody>
+                           <tr data-bind="template: { name: 'energyRestoreTemplate', foreach: ['SmallRestore','MediumRestore','LargeRestore']}">
+                           </tr>
+                       </tbody>
+                   </table>
+
+                   <div class='row' style="text-align:center;">
+                       <div class='progress'>
+                           <div id='mineEnergyBar' class='progress-bar' role='progressbar'
+                                aria-valuemin='0' aria-valuemax='100'
+                                data-bind="style: { width: Underground.energy/Underground.getMaxEnergy()*100 + '%' }">
+                           </div>
+                       </div>
+                       <span id='energyDisplay' style='color:black;'>
+                           <span data-bind='text: Math.floor(Underground.energy)'></span>/<span
+                               data-bind='text: Underground.getMaxEnergy()'></span>
+                           <img src='assets/images/underground/flash.png'>
+                           (next: <span data-bind='text: Underground.energyTick'></span>s)
+                       </span>
+                   </div>
+                   <div id="mineBody"></div>
+               </div>
+           </div>
+           <div id="treasures" class="tab-pane fade">
+               <div class="modal-body" id="treasuresBody" style="width: 80%;margin: auto;">
+                   <div data-bind="if: player.hasMineItems()">
+                       <table class='table'>
+                           <tbody data-bind="template: { name: 'treasureListTemplate', foreach: player._mineInventory()}">
+
+                           </tbody>
+                       </table>
+                   </div>
+                   <div data-bind="ifnot:player.hasMineItems()">
+                       You don't have any treasures yet...
+                   </div>
+               </div>
+           </div>
+           <div id="upgrades" class="tab-pane fade">
+               <div class="modal-body" id="upgradesBody" style="width: 80%;margin: auto;">
+                    <table class='table'>
+                        <tbody>
+                            <tr data-bind="template: { name: 'undergroundUpgradeTemplate',
+                                'data': {'totalBonus': Underground.getMaxEnergy(), 'upgrade': Underground.getUpgrade(Underground.Upgrades.Energy_Max)}}"></tr>
+                            <tr data-bind="template: { name: 'undergroundUpgradeTemplate',
+                                'data': {'totalBonus': Underground.getMaxItems(), 'upgrade': Underground.getUpgrade(Underground.Upgrades.Items_Max)}}"></tr>
+                            <tr data-bind="template: { name: 'undergroundUpgradeTemplate',
+                                'data': {'totalBonus': Underground.getEnergyGain(), 'upgrade': Underground.getUpgrade(Underground.Upgrades.Energy_Gain)}}"></tr>
+                            <tr data-bind="template: { name: 'undergroundUpgradeTemplate',
+                                'data': {'totalBonus': Underground.getEnergyRegenTime(), 'upgrade': Underground.getUpgrade(Underground.Upgrades.Energy_Regen_Time)}}"></tr>
+                            <tr data-bind="template: { name: 'undergroundUpgradeTemplate',
+                            'data': {'totalBonus': Underground.getDailyDealsMax(), 'upgrade': Underground.getUpgrade(Underground.Upgrades.Daily_Deals_Max)}}"></tr>
+                        </tbody>
+                    </table>
+               </div>
+           </div>
+           <div id="help" class="tab-pane fade">
+               <div class="modal-body" id="helpBody" style="width: 80%;margin: auto;">
+                   <h4>In the underground you can mine for hidden treasures.</h4>
+                   <h4>Select the Hammer or the Chisel and click on the wall.</h4>
+                   <h4>Sell your treasures for shards or diamonds!</h4>
+                   <h4>You can use your diamonds to buy all kinds of upgrades that will help you explore the underground even further!</h4>
+                   <h4>In the Daily deals tab you can trade your items.</h4>
+               </div>
+           </div>
+           <div id="dailyDeals" class="tab-pane fade">
+               <div class="modal-body" id="dailyDealsBody" style="width: 80%;margin: auto;">
+                   <table class='table'>
+                       <tbody data-bind='foreach: DailyDeal.list'>
+                       <tr>
+                           <td class='vertical-middle'>
+                               <img class='mineInventoryItem'
+                                    data-bind='attr: {src: "assets/images/underground/"+item1.id+".png"}'>
+                               <span data-bind='text: "(" + player.getUndergroundItemAmount(item1.id) + ")"'></span>
+                           </td>
+                           <td class='vertical-middle' data-bind='text: item1.name'></td>
+                           <td class='vertical-middle' data-bind='text: amount1'></td>
+                           <td class='vertical-middle'><img src='assets/images/underground/rightArrow.png'>
+                           </td>
+                           <td class='vertical-middle' data-bind='text: item2.name'></td>
+                           <td class='vertical-middle' data-bind='text: amount2'></td>
+                           <td class='vertical-middle'>
+                               <img class='mineInventoryItem'
+                                    data-bind='attr: {src: "assets/images/underground/"+item2.id+".png"}'>
+                           </td>
+                           <td class='vertical-middle'>
+                               <button class='btn btn-info'
+                                       data-bind="click: function(){DailyDeal.use($index())}, css: { disabled: !DailyDeal.canUse($index()) }">
+                                   Trade
+                               </button>
+                           </td>
+                       </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+
+<script type="text/html" id="energyRestoreTemplate">
+    <td class="col-md-4">
+        <button style="display: inline;" class="btn btn-secondary" data-bind="
+                                       click: function(){  ItemList[$data].use();},
+                                       css: { disabled: player._itemList[$data]() <= 0}"
+        >
+            <img class="restore-item" data-bind="attr: { src: 'assets/images/items/' + $data + '.png'}">
+            <span data-bind="text: ' +' + Underground.calculateItemEffect(GameConstants.EnergyRestoreSize[$data]) + ' energy'">&nbsp;+? energy</span>
+            <span data-bind="text: '(' + player._itemList[$data]() + ')'">(?)</span>
+        </button>
+    </td>
+</script>
+
+<script type="text/html" id="undergroundUpgradeTemplate">
+        <td class='vertical-middle' data-bind='text: upgrade.displayName + ": " + totalBonus'></td>
+        <td class='vertical-middle'
+            data-bind='text: upgrade.isMaxLevel() ? "" : "(" + (upgrade.increasing ? "+" : "-") + upgrade.upgradeBonus() + ")"'></td>
+        <td class='vertical-middle'
+            data-bind='text: upgrade.isMaxLevel() ? "" : upgrade.calculateCost().amount + " diamonds"'></td>
+        <td class='vertical-middle'>
+            <button class='btn btn-success'
+                    data-bind='css: { disabled: !upgrade.canBuy() },
+                                                          text: upgrade.isMaxLevel() ? "Max" : "Upgrade",
+                                                          click: function(){upgrade.buy()}'>
+            </button>
+        </td>
+</script>
+
+
+<!-- Pokedex Modal-->
+<div class="modal noselect" id="pokedexModal" tabindex="-1" role="dialog"
+aria-labelledby="pokedexModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <h4 style="margin-bottom: 0">Pokédex</h4>
+           <button style="float:right;" class="btn btn-secondary" type="button" data-toggle="collapse"
+                   data-target="#pokedex-collapse" aria-expanded="false" aria-controls="pokedex-collapse">
+               Filters
+           </button>
+       </div>
+       <div class="modal-body">
+
+           <div class="collapse" id="pokedex-collapse">
+               <div class="container-fluid" style="border-bottom: 1px solid #eceeef">
+                   <div class="row justify-content-center">
+
+                       <!--Name-->
+                       <div class="form-group row col-sm-10 col-lg-6">
+                           <label class="col-2 col-form-label">Name</label>
+                           <div class="col-10">
+                               <input id="nameFilter" class="form-control" placeholder="Bulbasaur" value=""
+                                      oninput="PokedexHelper.updateList()">
+                           </div>
+                       </div>
+
+                       <!--Types-->
+                       <div class="form-group row col-sm-10 col-lg-6">
+                           <label class="col-2 col-form-label" for="pokedex-filter-type1">Type</label>
+                           <div class="col-5">
+                               <select id="pokedex-filter-type1" class="custom-select"
+                                       oninput="PokedexHelper.updateList()" style="margin-right: 8px">
+                                   <option value="-1" selected>All</option>
+                               </select>
+                           </div>
+                           <label class="sr-only" for="pokedex-filter-type2">Type</label>
+                           <div class="col-5">
+                               <select id="pokedex-filter-type2" class="custom-select"
+                                       oninput="PokedexHelper.updateList()">
+                                   <option value="-1" selected>All</option>
+                               </select>
+                           </div>
+                       </div>
+
+                   </div>
+
+                   <div class="form-group row justify-content-center">
+                       <!--Uncaught-->
+                       <div class="col-sm-2">
+                           <label class="form-check-label">
+                               <input class="form-check-input" type="checkbox" id="pokedex-filter-uncaught"
+                                      value="false" onclick="PokedexHelper.updateList()"> Uncaught
+                           </label>
+                       </div>
+                       <!--Caught-->
+                       <div class="col-sm-2">
+                           <label class="form-check-label">
+                               <input class="form-check-input" type="checkbox" id="pokedex-filter-caught"
+                                      value="false" onclick="PokedexHelper.updateList()"> Caught
+                           </label>
+                       </div>
+                       <!--Shiny-->
+                       <div class="col-sm-2">
+                           <label class="form-check-label">
+                               <input class="form-check-input" type="checkbox" id="pokedex-filter-shiny"
+                                      value="false" onclick="PokedexHelper.updateList()"> Shiny
+                           </label>
+                       </div>
+
+                   </div>
+               </div>
+
+           </div>
+           <div>
+               <ul class="row justify-content-center" data-bind="foreach: PokedexHelper.filteredList()"
+                   style="max-width: 100%; padding:0; margin:0;">
+                   <li class="col-sm-4 col-md-3 col-lg-2 pokedexEntry"
+                       data-bind="style:{background: PokedexHelper.getBackgroundColors($data.name)}">
+                               <span style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;"
+                                     data-bind="text: $data.id">number</span>
+                       <div data-bind="if: PokedexHelper.pokemonSeen($data.id)">
+                           <img src="" width="80px"
+                                data-bind="attr:{ src: PokedexHelper.getImage($data.id, $data.name)}">
+                           <span style="bottom: 0; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px"
+                                 data-bind="text: $data.name">name</span>
+                       </div>
+                       <div data-bind="ifnot: PokedexHelper.pokemonSeen($data.id)">
+                           <img src="" width="80px" class="pokemon-not-seen"
+                                data-bind="attr:{src: PokemonHelper.getImage($data, false)}">
+                       </div>
+                   </li>
+               </ul>
+           </div>
+       </div>
+
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Badge Case Modal-->
+<div class="modal fade noselect" id="badgeCaseModal" tabindex="-1" role="dialog"
+aria-labelledby="badgeCaseModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-header">
+           <h4>Badge Case</h4>
+       </div>
+       <div class="modal-body">
+           <div class="row no-gutters justify-content-center"
+                data-bind="foreach: new Array(GameConstants.AMOUNT_OF_BADGES)">
+               <div class="col-sm-3 col-md-3 col-lg-3 badgeEntry">
+                   <div data-bind="with: GameConstants.Badge[$index() + 1]">
+
+                       <div data-bind="if: player.hasBadge(GameConstants.Badge[$data])">
+                           <img src=""
+                                data-bind="attr:{ src: 'assets/images/badges/'+ Gym.getLeaderByBadge($data) +'.png'}">
+
+                       </div>
+                       <div data-bind="ifnot: player.hasBadge(GameConstants.Badge[$data])">
+                           <img src="" width="80px" class="badge-not-acquired"
+                                data-bind="attr:{ src: 'assets/images/badges/'+ Gym.getLeaderByBadge($data) +'.png'}">
+                       </div>
+                       <p style="bottom: 0;"
+                          data-bind="text: $data">name</p>
+                   </div>
+
+               </div>
+           </div>
+       </div>
+
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Save Modal-->
+<div class="modal fade noselect" id="saveModal" tabindex="-1" role="dialog"
+aria-labelledby="saveModalLabel">
+<div class="modal-dialog modal-lg" role="document">
+   <div class="modal-content">
+       <div class="modal-body p-0">
+           <div class="tabbable">
+               <ul class="nav nav-tabs nav-fill">
+                   <li class="nav-item"><a class="nav-link active" href="#saveTab" data-toggle="tab">Save</a></li>
+                   <li class="nav-item"><a class="nav-link" href="#saveConvert" data-toggle="tab">Converter</a></li>
+               </ul>
+               <div class="tab-content">
+                    <div id="saveTab" class="tab-pane fade in active show">
+                       <div class="page-item m-0 pt-3 pb-3">
+                           <button class="btn btn-info" onClick=Save.download()>Download Save</button>
+                           <hr>
+
+                           <input type="file" id="input" accept=".txt" style="display:none;"
+                                  onchange=Save.loadFromFile(this.files[0])>
+                           <label for="input" class="btn btn-info">Import Save</label>
+                           <hr>
+                           <h3 style="color:red; margin-top: 20px;">You do not get any rewards for resetting your
+                            savefile</h3>
+                           <button class="btn btn-danger" onClick="Save.reset()">Reset</button>
+                       </div>
+                   </div>
+
+                   <div id="saveConvert" class="tab-pane fade">
+                       <div class="page-item m-0 pt-3 pb-3">
+                           <p>You can paste your old Pokéclicker savefile here, to keep shinies:</p>
+                           <textarea id="convertTextArea" class="saveTextArea"></textarea>
+                           <button style="float: right;" class="btn btn-success" onclick="Save.convert()">
+                               Convert
+                           </button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+       </div>
+   </div>
+</div>
+</div>
+
+
+<!-- Quests Modal-->
+<div class="modal noselect fade" id="QuestModal" tabindex="-1" role="dialog" aria-labelledby="QuestModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <div class="col-2">
+                <h4>Quests</h4>
+                </div>
+                <div class='col-6'>
+                    <div data-bind='text: "Lvl. "+player.questLevel'></div>
+                    <div class="progress" style='height: 5px'>
+                        <div class="progress-bar bg-info" role="progressbar"
+                             data-bind="attr:{ style: 'width:' + player.percentToNextQuestLevel() + '%' }"
+                             aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <img src="assets/images/currency/questPoint.png"><span id='questPoints'
+                                                                           data-bind='text: " " +player._questPoints()'></span>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="modal-body" id="treasuresBody" style="width: 80%;margin: auto;">
+                    <div>
+                        <table class='table table-hover'>
+                            <thead>
+                            <tr>
+                                <td><h5>Description</h5></td>
+                                <td><h5>Reward</h5></td>
+                                <td><h5>Status</h5></td>
+                            </tr>
+                            </thead>
+                            <tbody data-bind="foreach: QuestHelper.questList" >
+                            <tr>
+                                <td class="align-middle" style="text-align:left" data-bind='text: description'></td>
+                                <td class="align-middle" style="text-align:left"><img src="assets/images/currency/questPoint.png"><span
+                                        data-bind='text: " " + pointsReward'></span></td>
+                                <td class="align-middle">
+                                    <button class='btn btn-primary btn-sm' data-bind='visible: !player.currentQuest() && !player.completedQuestList[index](),
+                                                                       click: function(){$data.beginQuest();$("#QuestModal").modal("hide")}'>
+                                        Start
+                                    </button>
+                                    <button class='btn btn-success' data-bind='visible: player.currentQuest() && (player.currentQuest().index === $data.index) && $data.isCompleted(),
+                                                                       click: $data.claimReward;player.completedQuestList[$index](true)'>
+                                        Claim Reward
+                                    </button>
+                                    <span data-bind='visible: $data.inProgress(), text: Math.floor(progress()*100) + "%"'></span>
+                                    <span data-bind='visible: player.completedQuestList[index]()'>Completed</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <div id='refreshQuests'>
+                    <button class="btn btn-primary" onclick='QuestHelper.refreshQuests()'
+                            data-bind='text: "Refresh",
+                                       enable: QuestHelper.canAffordRefresh()'></button>
+                    <img src="assets/images/currency/money.png">
+                    <span data-bind='text: Number(QuestHelper.getRefreshCost()).toLocaleString(),
+                                  css: { "text-danger": !QuestHelper.canAffordRefresh() }'></span>
+                    <span class='' data-bind='text: "(Daily refresh in " + GameHelper.formattedLetterTimeUntilTomorrow() + ")"'>
+                    </span>
+                </div>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Farm Modal-->
+<div class="modal fade noselect" id="farmModal" tabindex="-1" role="dialog"
+     aria-labelledby="farmModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Farm</h4>
+                <!-- ko ifnot: FarmRunner.allPlotsUnlocked() -->
+                <button class="btn btn-success" onclick="FarmRunner.unlockPlot()"
+                        data-bind="css: { disabled: !FarmRunner.canBuyPlot()}">
+                    <span>Unlock new plot (</span>
+                    <img src="assets/images/currency/farmPoint.png">
+                    <span data-bind="text: FarmRunner.plotPrice() + ' )'"></span>
+                </button>
+                <!-- /ko -->
+            </div>
+            <div class="modal-body">
+                <div id="farmView"
+                     class="justify-content-center no-select row">
+
+                    <div class="col-sm-4 col-md-3 col-lg-4">
+                        <div class="col-sm-12">
+                            <img src="assets/images/currency/farmPoint.png">
+                            <span data-bind="text: ' ' + player.farmPoints()"></span>
+                        </div>
+                        <ul id="seedList" data-bind="foreach: player.berryList" class="list-group"
+                            style="margin-bottom: 5px;">
+                            <li class="list-group-item list-group-item-action seed-list-item"
+                                data-bind="click: function() {FarmRunner.curBerry = BerryList[GameConstants.BerryType[$index()]]}">
+                                <img src="" width="24px"
+                                     data-bind="attr:{ src: 'assets/images/items/' + GameConstants.BerryType[$index()] + '.png'}">
+                                <span data-bind="text: GameConstants.BerryType[$index()]"></span>
+                                <span class="seedAmount" data-bind="text: player.berryList[$index()]()"></span>
+                            </li>
+                        </ul>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-6">
+                                <button class="btn btn-primary btn-sm farm-button"
+                                        data-bind="click: function(){FarmRunner.plantAll()}">Plant All
+                                </button>
+                            </div>
+                            <div class="col-sm-12 col-6">
+                                <button class="btn btn-success btn-sm farm-button"
+                                        data-bind="click: function(){FarmRunner.harvestAll()}">Harvest All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-9 col-lg-8" style="padding-left: 0">
+                        <div id="plotList" data-bind="foreach: player.plotList">
+                            <div class="plot" data-bind="css :{plotLocked : !$data.isUnlocked()}">
+                                <div class="plot-content">
+                                    <div class="plotImage">
+                                        <img style="width: 100%" src="assets/images/farm/soil.png">
+                                        <div data-bind="ifnot:FarmRunner.isEmpty($index())()">
+                                            <div class="plotButton"
+                                                 data-bind="click: function(){FarmRunner.harvest($index())}, tooltip: {title: FarmRunner.getPlot($index()).formattedTimeLeft, trigger: 'hover', animation: false}">
+                                                <img width="100%" height="100%"
+                                                     style="max-width: 100%; max-height: 100%"
+                                                     src=""
+                                                     data-bind="attr:{ src: FarmRunner.getImage($data)}">
+                                            </div>
+                                        </div>
+                                        <div data-bind="if:FarmRunner.isEmpty($index())()">
+                                            <div class="plotButton"
+                                                 data-bind="click: function(){FarmRunner.plant($index())}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ship Modal-->
+<div class="modal noselect fade" id="ShipModal" tabindex="-1" role="dialog" aria-labelledby="ShipModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style='justify-content: space-around;'>
+                <span>Regional Travel</span>
+            </div>
+            <div class="modal-body">
+                <img src='assets/images/ship.png'>
+                <div style='margin-top:20px'>
+                    <span data-bind='ifnot: player.region == 0'>
+                        <button class='btn btn-primary' onclick='MapHelper.moveToTown("Vermillion City");player.region = 0;$("#ShipModal").modal("hide")'>
+                            Kanto
+                        </button>
+                    </span>
+                    <span data-bind='ifnot: player.region == 1'>
+                        <button class='btn btn-primary' onclick='MapHelper.moveToTown("Olivine City");player.region = 1;$("#ShipModal").modal("hide")'>
+                            Johto
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Safari Modal -->
+<div aria-labelledby="myModalLabel" class="modal fade noselect" id="safariModal" role="dialog" style="cursor:default" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p style='margin-bottom: 0' data-bind='text: "Balls: " + Safari.balls()'></p>
+                <h4 style='text-align:center' class="modal-title">Safari Zone</h4>
+                <button class='btn btn-primary' onclick='if(!Safari.inBattle()){$("#safariModal").modal("toggle")}' data-bind='css: { disabled: Safari.inBattle }' >Leave</button>
+            </div>
+            <div class="modal-body">
+                <div id="safariBody">
+                </div>
+                <div id="safariBattleBody" data-bind="if: Safari.inBattle">
+                    <div class='row safariEnemyRow'>
+                        <div class='col-sm-2 offset-sm-8' id='safariEnemy'><img data-bind='attr: { src: "assets/images/pokemon/" + SafariBattle.enemy.id + ".png" }'></div>
+                        <div id='safariEnemyName' class='col-sm-2'>
+                            <span>
+                                <span data-bind="if: player.alreadyCaughtPokemon(SafariBattle.enemy.name)">
+                                    <img class='pokeball-smallest'
+                                         data-bind='attr: { src: PokemonHelper.getPokeballImage(SafariBattle.enemy.name) }'/>
+                                </span>
+                                <span data-bind='text: SafariBattle.enemy.name'></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-sm-2 offset-sm-3'>
+                           <img id='safariPlayer' src='assets/images/safari/playerBack.png'>
+                        </div>
+                    </div>
+
+                    <div id='battleConsole' class='row'>
+                        <div class='col-sm-6'>
+                            <h3 id='safariBattleText' class="centeredBySpan" data-bind='html: SafariBattle.text'></h3>
+                            <span class="centerSpan"></span>
+                        </div>
+                        <div class='row col-sm-4 offset-sm-2 safariOptions'>
+                            <div class='col-sm-6 safariOption'>
+                                <button onClick='SafariBattle.throwBall()' class='btn btn-info btn-sm safariButton'
+                                        data-bind='text: "Ball (" + Safari.balls() + ")"'></button>
+                            </div>
+                            <div class='col-sm-6 safariOption'>
+                                <button onClick='SafariBattle.throwBait()' class='btn btn-info btn-sm safariButton'>
+                                    Bait
+                                </button>
+                            </div>
+                            <div class='col-sm-6 safariOption'>
+                                <button onClick='SafariBattle.throwRock()' class='btn btn-info btn-sm safariButton'>
+                                    Rock
+                                </button>
+                            </div>
+                            <div class='col-sm-6 safariOption'>
+                                <button onClick='SafariBattle.run()' class='btn btn-info btn-sm safariButton'>Run
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
