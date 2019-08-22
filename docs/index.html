@@ -5,7 +5,7 @@
     <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon"/>
     <script type="text/html" id="pokemonListTemplate">
         <tr data-bind='ifnot: $data.breeding()'>
-            <td>
+            <td class="text-nowrap">
                 <img class="smallImage"
                      data-bind="attr:{ src: PokemonHelper.getImage($data, player.alreadyCaughtPokemonShiny($data.name)) }"
                      src=""/>
@@ -309,12 +309,12 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             </ul>
             <div class="tab-content">
                 <div id="items" class="tab-pane fade">
+                    <h3 data-bind="text: ItemHandler.stoneSelected().replace(/_/g, ' ')"></h3>
                     <div class="page-item m-0" style="background-color: white;">
-
                         <div class="row no-gutters justify-content-sm-center" style="padding:15px;">
                             <div class="row col-lg-6 col-sm-11" data-bind="foreach: Array.from(Array(Object.keys(GameConstants.StoneType).length / 2).keys()).map(x=>GameConstants.StoneType[x])">
                                 <div class="col" style="cursor: pointer"
-                                        data-bind="css:{'item-selected': ItemHandler.stoneSelected() === $data}, 
+                                        data-bind="css:{'item-selected': ItemHandler.stoneSelected() === $data},
                                             click: function(){ ItemHandler.stoneSelected($data); ItemHandler.pokemonSelected('')}">
                                     <img data-bind="attr: {src: 'assets/images/items/' + $data + '.png'}">
                                     <div data-bind="text: player._itemList[$data]()"></div>
@@ -353,41 +353,29 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                         </div>
 
 
-                        <div class="row no-gutters justify-content-sm-center">
-                            <div class="row justify-content-center" style="padding:15px;">
-                                <div class="col">
-                                    <button class="btn btn-secondary amount-button list-group-item-action"
-                                            data-bind="click: function() {ItemHandler.amountSelected(1)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 1}">
-                                        <span>1</span>
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button class="btn btn-secondary amount-button list-group-item-action"
-                                            data-bind="click: function() {ItemHandler.amountSelected(10)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 10}">
-                                        <span>10</span>
-                                    </button>
-                                </div>
-                                <div class="col">
-                                    <button class="btn btn-secondary amount-button list-group-item-action"
-                                            data-bind="click: function() {ItemHandler.amountSelected(100)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 100}">
-                                        <span>100</span>
-                                    </button>
-                                </div>
-                                <div class="col" style="text-align: center">
-                                    <button class="btn btn-secondary amount-button list-group-item-action"
-                                            data-bind="click: function() {ItemHandler.amountSelected(1000)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 1000}">
-                                        <span>1000</span>
-                                    </button>
-                                </div>
-                                <div class="col" style="text-align: center">
-                                    <button class="btn btn-secondary amount-button list-group-item-action"
-                                            data-bind="click: function() {ItemHandler.amountSelected(Infinity)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === Infinity}">
-                                        <span>All</span>
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="btn-group" style="padding:15px;">
+                            <button class="btn btn-secondary amount-button list-group-item-action"
+                                    data-bind="click: function() {ItemHandler.amountSelected(1)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 1}">
+                                1
+                            </button>
+                            <button class="btn btn-secondary amount-button list-group-item-action"
+                                    data-bind="click: function() {ItemHandler.amountSelected(10)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 10}">
+                                10
+                            </button>
+                            <button class="btn btn-secondary amount-button list-group-item-action"
+                                    data-bind="click: function() {ItemHandler.amountSelected(100)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 100}">
+                                100
+                            </button>
+                            <button class="btn btn-secondary amount-button list-group-item-action"
+                                    data-bind="click: function() {ItemHandler.amountSelected(1000)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === 1000}">
+                                1000
+                            </button>
+                            <button class="btn btn-secondary amount-button list-group-item-action"
+                                    data-bind="click: function() {ItemHandler.amountSelected(Infinity)}, css:{ 'pokemon-selected': ItemHandler.amountSelected() === Infinity}">
+                                Maximum
+                            </button>
                         </div>
-                        <p><b>Evolution stone usage stops when a shiny evolution is encountered</b></p>
+                        <p><i>Stops using evolution stones once a shiny is encountered</i></p>
                         <div class="row no-gutters justify-content-sm-center">
                             <div class="row justify-content-center" style="padding:15px;">
                                 <button data-bind="click: function(){ItemHandler.useStones()}" class="btn btn-lg btn-success">Use evolution stones!</button>
@@ -473,7 +461,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                                 <td>#</td>
                                 <td>New</td>
                                 <td><img
-                                        data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon', trigger: 'hover', placement:'right' }"
+                                        data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon (including unobtained shiny Pokémon)', trigger: 'hover', placement:'right' }"
                                         src="assets/images/questionmark.png"></td>
                             </tr>
                             </thead>
@@ -599,19 +587,19 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                                 <td width="33.33%">
                                     <span style="display: inline;">
                                         <img title="Money" src="assets/images/currency/money.png">
-                                        <span id="playerMoney" data-bind="text: player.money">0</span>
+                                        <span id="playerMoney" data-bind="text: player.money.toLocaleString('en-US')">0</span>
                                     </span>
                                 </td>
                                 <td width="33.33%">
                                     <span style="display: inline;">
                                         <img title="Dungeon Tokens&#013;&#010;Gained by capturing Pokemon" src="assets/images/currency/dungeonToken.png">
-                                        <span id="playerMoneyDungeon" data-bind="text: player.dungeonTokens">0</span>
+                                        <span id="playerMoneyDungeon" data-bind="text: player.dungeonTokens().toLocaleString('en-US')">0</span>
                                     </span>
                                 </td>
                                 <td width="33.33%">
                                     <span style="display: inline;">
                                         <img title="Quest points" src="assets/images/currency/questPoint.png">
-                                        <span id="playerMoneyQuest" data-bind="text: player.questPoints">0</span>
+                                        <span id="playerMoneyQuest" data-bind="text: player.questPoints.toLocaleString('en-US')">0</span>
                                     </span>
                                 </td>
                             </tr>
@@ -798,16 +786,6 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
                 <div id="townView" data-bind="if: Game.gameState() === GameConstants.GameState.town"
      class="justify-content-center no-gutters no-select">
-
-<div data-bind="if:player.town().dungeon()">
-</div>
-
-<div data-bind="ifnot:player.town().dungeon()">
-   <img style="float:right;margin-right:10px;margin-top:10px;"
-        data-bind="tooltip: { title: 'In towns you can battle gymleaders to earn badges, or visit shops to buy items.', trigger: 'hover', placement:'right' }"
-        src="assets/images/questionmark.png">
-</div>
-
 <div class="row justify-content-center no-gutters" style="min-height: 100px;">
    <div class="col no-gutters">
        <div data-bind="if: player.town() instanceof PokemonLeague">
@@ -837,10 +815,10 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
            </button>
            <button class="btn btn-secondary"
                    onclick="DungeonRunner.initializeDungeon(player.town().dungeon())"
-                   data-bind="visible: player.town() instanceof DungeonTown, if: player.town().dungeon()">
+                   data-bind="visible: player.town() instanceof DungeonTown, if: player.town().dungeon(), attr: {class: player.town().dungeon() && player.dungeonTokens() >= player.town().dungeon().tokenCost ? 'btn btn-success' : 'btn btn-secondary'}">
                Start<br/>
-               <span data-bind="text: player.town().dungeon().tokenCost"></span>
-               tokens
+               <img title="Dungeon Tokens" src="assets/images/currency/dungeonToken.png" height="20px">
+               <span data-bind="text: player.town().dungeon().tokenCost.toLocaleString('en-US')"></span>
            </button>
            <button class="btn btn-secondary"
                    onclick="MapHelper.moveToTown(player.town().dungeon().name())"
@@ -854,7 +832,10 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
        <img class="townImage no-select" src=""
             data-bind="attr:{ src: 'assets/images/towns/' + player.town().name() + '.png' }"/>
    </div>
-   <div class="col no-gutters"></div>
+   <div class="col no-gutters">
+       <button type="button" class="btn btn-outline-info" style="float: right;"
+       data-bind="visible: player.town().gym() || player.town().shop(), tooltip: { title: 'In towns you can battle gymleaders to earn badges, or visit shops to buy items.', trigger: 'hover', placement:'left' }">?</button>
+   </div>
 
 </div>
 <div data-bind="if: (player.town().dungeon() && player.town() instanceof DungeonTown)">
@@ -864,7 +845,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
            data-bind="foreach: player.town().dungeon().allPokemonNames">
            <li class="list-inline-item" data-bind="if: player.alreadyCaughtPokemon($data)">
                <img class="dungeon-pokemon-preview" src=""
-                    data-bind="attr:{ src: 'assets/images/pokemon/' + pokemonMap[$data].id + '.png' }"/>
+                    data-bind="attr:{ src: 'assets/images/' + (player.alreadyCaughtPokemonShiny($data) ? 'shiny' : '') + 'pokemon/' + pokemonMap[$data].id + '.png' }"/>
+               <sup style="float:right; top:10px;" data-bind="visible: player.alreadyCaughtPokemonShiny($data)">✨</sup>
            </li>
            <li class="list-inline-item"
                data-bind="ifnot: player.alreadyCaughtPokemon($data)">
@@ -2223,14 +2205,14 @@ style="background-color: white; min-height: 100px">
                 <div data-bind="if: $data !== null">
                     <img data-bind='attr: {src: BreedingHelper.getEggImage($data)}'/>
 
-                    <div class="progress" data-bind='if: progress() < 100'>
+                    <div class="progress" data-bind='visible: progress() < 100'>
                         <div class="progress-bar bg-success" role="progressbar"
                              data-bind="attr:{ style: 'width:' + $data.progress() + '%' }"
                              aria-valuemin="0" aria-valuemax="100">
 							 <span data-bind="text: Math.floor($data.progress()) + '%'"></span>
                         </div>
                     </div>
-                    <div class="progress" data-bind='if: progress() >= 100'>
+                    <div class="progress" data-bind='visible: progress() >= 100'>
                         <div class="progress-bar bg-blue" role="progressbar"
                         data-bind="attr:{ style: 'width: 100%; cursor: pointer;' }, click: function(){BreedingHelper.hatchPokemonEgg($index())}, text: 'Hatch!'"
                         aria-valuemin="0" aria-valuemax="100">
@@ -2623,8 +2605,11 @@ aria-labelledby="hallOfFameModalLabel" aria-hidden="true">
             </div>
             <div class="modal-body" id="shardBody" data-bind='foreach: player._shardUpgrades'>
                 <h3>
-                    <span data-bind="text: GameConstants.PokemonType[$index()] + ' ' + player._shardsCollected[$index()]()"></span>
-                    <img data-bind='attr: { src: "assets/images/shards/" + $index() + ".png" }'/>
+                    <span data-bind="text: GameConstants.PokemonType[$index()]"></span>
+                    <div style="float:right;">
+                      <img data-bind='attr: { src: "assets/images/shards/" + $index() + ".png" }'/>
+                      <i data-bind="text: player._shardsCollected[$index()]().toLocaleString('en-US')"></i>
+                    </div>
                 </h3>
                 <table class='table' data-bind='foreach: $data'>
                     <tr>
@@ -2656,6 +2641,7 @@ aria-labelledby="hallOfFameModalLabel" aria-hidden="true">
         </div>
     </div>
 </div>
+
 
 <!-- Breeding Modal-->
 <div class="modal fade" id="breedingModal" tabindex="-1" role="dialog"
@@ -2947,6 +2933,7 @@ aria-labelledby="pokedexModalLabel">
                                <span style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;"
                                      data-bind="text: $data.id">number</span>
                        <div data-bind="if: PokedexHelper.pokemonSeen($data.id)">
+                           <div data-bind="visible: player.alreadyCaughtPokemonShiny(name)" style="position: absolute;right: 20px;top: 20px;">✨</div>
                            <img src="" width="80px"
                                 data-bind="attr:{ src: PokedexHelper.getImage($data.id, $data.name)}">
                            <span style="bottom: 0; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px"
@@ -2967,6 +2954,7 @@ aria-labelledby="pokedexModalLabel">
    </div>
 </div>
 </div>
+
 
 <!-- Badge Case Modal-->
 <div class="modal fade noselect" id="badgeCaseModal" tabindex="-1" role="dialog"
