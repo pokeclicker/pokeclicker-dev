@@ -68,7 +68,7 @@
     <script src="libs/popper.min.js"></script>
 
     <!--Bootstrap-->
-    <link href="https://bootswatch.com/4/yeti/bootstrap.min.css" rel="stylesheet">
+    <link href="libs/bootstrap.min.css" rel="stylesheet">
     <script src="libs/bootstrap.min.js"></script>
 
     <!--Notify-->
@@ -99,7 +99,8 @@
     </style>
 
 </head>
-<body class="no-select" data-bind="attr: {class: Settings.getSetting('theme').observableValue() }">
+<body class="no-select">
+<link href="https://bootswatch.com/4/yeti/bootstrap.min.css" rel="stylesheet" data-bind="attr: {href: 'https://bootswatch.com/4/' + Settings.getSetting('theme').observableValue() + '/bootstrap.min.css'}">
 <div class="loader" id="loader">
     <br>
     <div class="loader-wrapper">
@@ -310,7 +311,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             <div class="tab-content">
                 <div id="items" class="tab-pane fade">
                     <h3 data-bind="text: ItemHandler.stoneSelected().replace(/_/g, ' ')"></h3>
-                    <div class="page-item m-0" style="background-color: white;">
+                    <div class="page-item m-0">
                         <div class="row no-gutters justify-content-sm-center" style="padding:15px;">
                             <div class="row col-lg-6 col-sm-11" data-bind="foreach: Array.from(Array(Object.keys(GameConstants.StoneType).length / 2).keys()).map(x=>GameConstants.StoneType[x])">
                                 <div class="col" style="cursor: pointer"
@@ -392,7 +393,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
 
                     </div>
-                    <div class="page-item m-0" style="background-color: white;">
+                    <div class="page-item m-0">
 
                         <div class="row no-gutters justify-content-sm-center"
                              data-bind="foreach: KeyItemHandler.keyItemList">
@@ -449,7 +450,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
         <!--The next two divs switch around on large screens. This way, battle screen/map is on top on smaller screens-->
         <!--left column-->
         <div class="col-lg-3 col-md-6 order-lg-first">
-            <div id="pokeballSelector" class="card border-secondary" style="min-height: 180px"
+            <div id="pokeballSelector" class="card border-secondary mb-3" style="min-height: 180px"
                 data-bind="visible: player.starter != GameConstants.Starter.None">
                 <div class="card-body p-0">
 
@@ -540,7 +541,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                 </div>
             </div>
 
-            <div class="card border-secondary pokemon-list-container" id="pokemonListContainer"
+            <div class="card border-secondary mb-3 pokemon-list-container" id="pokemonListContainer"
                  data-bind="visible: player.starter != GameConstants.Starter.None" >
                 <div class="card-body p-0">
                     <div class="input-group input-group-sm">
@@ -578,7 +579,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
         <!--Middle column-->
         <div class="col-lg-6 col-md-12 order-md-first">
-            <div id="interactionView" class="card">
+            <div id="interactionView" class="card border-secondary mb-3">
 
                 <div class="card-header p-0" data-bind="visible: (Game.gameState() === GameConstants.GameState.fighting ||
                                      Game.gameState() === GameConstants.GameState.dungeon ||
@@ -916,29 +917,27 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                 </div>
             </div>
 
-            <div data-bind="if: Game.gameState() === GameConstants.GameState.dungeon">
-                <div class="page-item no-select" style="background-color: white">
-                    <div class="dungeon">
-                        <div class="card">
-                            <span data-bind="text: DungeonRunner.dungeon.name()"></span>
-                        </div>
-                        <div class="row justify-content-sm-center">
-                            <div class="dungeon-board"
-                                 data-bind="foreach: DungeonRunner.map.board()">
-                                <div class="row" data-bind="foreach: $data">
-                                    <div data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass}">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- ko if: Game.gameState() === GameConstants.GameState.dungeon -->
+            <div class="card border-secondary mb-3 dungeon no-select">
+                <div class="card-header p-0">
+                    <span data-bind="text: DungeonRunner.dungeon.name()"></span>
+                </div>
+                <div class="card-body p-0 text-center">
+                    <table class="dungeon-board" style="width:70%;margin:auto;">
+                      <tbody data-bind="foreach: DungeonRunner.map.board()">
+                        <tr data-bind="foreach: $data">
+                            <td data-bind=" click: function(){DungeonRunner.map.moveToCoordinates($context.$index(), $parentContext.$index()) }, attr: { class: $data.cssClass}"></td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </div>
             </div>
+            <!-- /ko -->
 
             <div data-bind="if:KeyItemHandler.getKeyItemObservableByName('Town map')().isUnlocked()">
                 <div data-bind="if: (Game.gameState() === GameConstants.GameState.fighting || Game.gameState() === GameConstants.GameState.gym || Game.gameState() === GameConstants.GameState.town||
                     Game.gameState() === GameConstants.GameState.shop || Game.gameState() === GameConstants.GameState.farm)">
-                    <p id="mapTooltip" style="visibility: hidden;"></p>
+                    <p id="mapTooltip" class="btn btn-secondary" style="visibility: hidden;"></p>
                     <div class="page-item no-select">
                         <svg id="map" viewBox="0 0 650 400" preserveAspectRatio="xMaxYMax meet">
                             <defs>
@@ -1989,7 +1988,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
         <!--Right column-->
         <div class="col-lg-3 col-md-6">
-            <div class="card" id="oakItemsContainer"
+            <div class="card border-secondary mb-3" id="oakItemsContainer"
             data-bind="visible: player.starter != GameConstants.Starter.None">
                 <div class="card-header p-0">
                     <div>
@@ -2101,7 +2100,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             </div>
 
             <!-- Current Quest -->
-            <div class="card" id="questDisplayContainer" style="min-height: 100px">
+            <div class="card border-secondary mb-3" id="questDisplayContainer" style="min-height: 100px">
 
     <div class="card-header p-0">
       <!-- Quests header -->
@@ -2173,40 +2172,45 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
 
             <!-- Egg Slots/Breeding-->
-            <div data-bind="if: KeyItemHandler.getKeyItemObservableByName('Mystery egg')().isUnlocked()">
-    <div class="page-item">
-        <div id='eggList' class="row no-gutters" data-bind="foreach: player.eggList">
-            <div class="col-sm-6 eggSlot">
-                <div data-bind="if: $index() === player.eggSlots()">
-                    <p style="margin:2px;">Egg slot</p>
-                    <p style="margin:2px;"><img src="assets/images/currency/questPoint.png"> <span data-bind='text: player.nextEggSlotCost()'></span></p>
-                    <button class='btn btn-primary' onclick='player.buyEggSlot()'
-                            data-bind='css: {disabled: player.questPoints <= player.nextEggSlotCost()}'>Buy</button>
-                </div>
-                <div data-bind="if: $index() > player.eggSlots()" style="margin-top: 30px;">
-                    <img src="assets/images/breeding/lock.png">
-                </div>
-                <div data-bind="if: $data !== null">
-                    <img data-bind='attr: {src: BreedingHelper.getEggImage($data)}'/>
+            <!-- ko if: KeyItemHandler.getKeyItemObservableByName('Mystery egg')().isUnlocked() -->
+<div class="card border-secondary mb-3">
+    <div class="card-header">Hatchery</div>
+    <div id='eggList' class="card-body p-0">
+      <div class="row m-0" data-bind="foreach: player.eggList">
+        <div class="col-md-6 eggSlot">
+            <div data-bind="if: $index() === player.eggSlots()">
+                <p style="margin:2px;">Egg slot</p>
+                <p style="margin:2px;"><img src="assets/images/currency/questPoint.png"> <span data-bind='text: player.nextEggSlotCost()'></span></p>
+                <button class='btn btn-primary' onclick='player.buyEggSlot()'
+                        data-bind='css: {disabled: player.questPoints <= player.nextEggSlotCost()}'>Buy</button>
+            </div>
+            <div data-bind="visible: $index() > player.eggSlots()" style="margin-top: 30px;">
+                <img src="assets/images/breeding/lock.png">
+            </div>
+            <!-- ko if: $data !== null -->
+            <div style="margin-top: 30px;">
+                <img data-bind='attr: {src: BreedingHelper.getEggImage($data)}'/>
 
-                    <div class="progress" data-bind='visible: progress() < 100'>
-                        <div class="progress-bar bg-success" role="progressbar"
-                             data-bind="attr:{ style: 'width:' + $data.progress() + '%' }"
-                             aria-valuemin="0" aria-valuemax="100">
-							 <span data-bind="text: Math.floor($data.progress()) + '%'"></span>
-                        </div>
+                <div class="progress" data-bind='visible: progress() < 100'>
+                    <div class="progress-bar bg-success" role="progressbar"
+                         data-bind="attr:{ style: 'width:' + $data.progress() + '%' }"
+                         aria-valuemin="0" aria-valuemax="100">
+					 <span data-bind="text: Math.floor($data.progress()) + '%'"></span>
                     </div>
-                    <div class="progress" data-bind='visible: progress() >= 100'>
-                        <div class="progress-bar bg-blue" role="progressbar"
-                        data-bind="attr:{ style: 'width: 100%; cursor: pointer;' }, click: function(){BreedingHelper.hatchPokemonEgg($index())}, text: 'Hatch!'"
-                        aria-valuemin="0" aria-valuemax="100">
-                        </div>
+                </div>
+                <div class="progress" data-bind='visible: progress() >= 100'>
+                    <div class="progress-bar bg-blue" role="progressbar"
+                    data-bind="attr:{ style: 'width: 100%; cursor: pointer;' }, click: function(){BreedingHelper.hatchPokemonEgg($index())}, text: 'Hatch!'"
+                    aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>
             </div>
+            <!-- /ko -->
         </div>
+      </div>
     </div>
 </div>
+<!-- /ko -->
 
         </div>
 
@@ -2362,16 +2366,19 @@ aria-labelledby="AchievementsModalLabel" aria-hidden="true">
                 <span>Settings</span>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('theme')}"></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('test')}"></div>
-                    </div>
-                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>Setting</th>
+                        <th>Option</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('theme')}"></tr>
+                      <tr data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('test')}"></tr>
+                    </tbody>
+                </table>
                 <br/>
-                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
@@ -2379,19 +2386,12 @@ aria-labelledby="AchievementsModalLabel" aria-hidden="true">
 
 
 <script type="text/html" id="MultipleChoiceSettingTemplate">
-    <div class="dropdown">
-        <h3 data-bind="text: $data.displayName"></h3>
-
-        <div class="btn-group" data-bind="foreach: $data.options">
-            <button class="btn btn-primary" data-bind="
-                css: {active: $parent.isSelected($data.value)()},
-                click: function(){ Settings.setSettingByName($parent.name, $data.value)},
-                text: $data.text"
-            >
-                Option
-            </button>
+    <td data-bind="text: $data.displayName" >Settings</td>
+    <td>
+        <select class="form-control" onchange="Settings.setSettingByName(this.name, this.value)" data-bind="foreach: $data.options, attr: {name}">
+            <option data-bind="text: $data.text, value: $data.value"></option>
         </div>
-    </div>
+    </td>
 </script>
 
 
@@ -2701,38 +2701,46 @@ style="cursor:default" tabindex="-1">
                        src='assets/images/underground/diamond.png'></p>
            </ul>
        </div>
-       <div class="tab-content">
+       <div class="tab-content p-0">
            <div id="dig" class="tab-pane fade in active show">
                <div class="modal-body" style="width: 80%;margin: auto;">
 
-                   <table class='table table-sm' style="width:60%; margin: auto">
-                       <tbody>
-                           <tr data-bind="template: { name: 'energyRestoreTemplate', foreach: ['SmallRestore','MediumRestore','LargeRestore']}">
-                           </tr>
-                       </tbody>
-                   </table>
-
+                   <div class="row" data-bind="foreach: ['SmallRestore','MediumRestore','LargeRestore']">
+                     <div class="col-md-4 text-center">
+                       <button style="display: inline;" class="btn btn-secondary" data-bind="
+                                                      click: function(){  ItemList[$data].use();},
+                                                      css: { disabled: player._itemList[$data]() <= 0}"
+                       >
+                         <img class="restore-item" data-bind="attr: { src: 'assets/images/items/' + $data + '.png'}">
+                         <span data-bind="text: ' +' + Underground.calculateItemEffect(GameConstants.EnergyRestoreSize[$data]) + ' energy'">&nbsp;+? energy</span>
+                         <span data-bind="text: '(' + player._itemList[$data]() + ')'">(?)</span>
+                       </button>
+                     </div>
+                   </div>
+                   <br/>
                    <div class='row' style="text-align:center;">
-                       <div class='progress'>
+                       <div class='progress' style="height: 20px;font-size: 18px;">
                            <div id='mineEnergyBar' class='progress-bar' role='progressbar'
                                 aria-valuemin='0' aria-valuemax='100'
-                                data-bind="style: { width: Underground.energy/Underground.getMaxEnergy()*100 + '%' }">
+                                data-bind="style: { width: Math.floor(Underground.energy/Underground.getMaxEnergy()*100) + '%' }">
+                                <span data-bind="text: 'Energy: ' + Math.floor(Underground.energy) + '/' + Underground.getMaxEnergy() + ' (' + Underground.energyTick() + 's)'"></span>
                            </div>
                        </div>
-                       <span id='energyDisplay' style='color:black;'>
-                           <span data-bind='text: Math.floor(Underground.energy)'></span>/<span
-                               data-bind='text: Underground.getMaxEnergy()'></span>
-                           <img src='assets/images/underground/flash.png'>
-                           (next: <span data-bind='text: Underground.energyTick'></span>s)
-                       </span>
                    </div>
-                   <div id="mineBody"></div>
+                   <div id="mineBody" style="margin:auto"></div>
                </div>
            </div>
            <div id="treasures" class="tab-pane fade">
                <div class="modal-body" id="treasuresBody" style="width: 80%;margin: auto;">
                    <div data-bind="if: player.hasMineItems()">
                        <table class='table'>
+                           <thead>
+                             <tr>
+                               <th colspan="2">Item</th>
+                               <th>Value</th>
+                               <th></th>
+                             </tr>
+                           </thead>
                            <tbody data-bind="template: { name: 'treasureListTemplate', foreach: player._mineInventory()}">
 
                            </tbody>
@@ -2746,6 +2754,14 @@ style="cursor:default" tabindex="-1">
            <div id="upgrades" class="tab-pane fade">
                <div class="modal-body" id="upgradesBody" style="width: 80%;margin: auto;">
                     <table class='table'>
+                        <thead>
+                          <tr>
+                            <th>Upgrade</th>
+                            <th>Amount</th>
+                            <th>Cost</th>
+                            <th></th>
+                          </tr>
+                        </thead>
                         <tbody>
                             <tr data-bind="template: { name: 'undergroundUpgradeTemplate',
                                 'data': {'totalBonus': Underground.getMaxEnergy(), 'upgrade': Underground.getUpgrade(Underground.Upgrades.Energy_Max)}}"></tr>
@@ -2773,30 +2789,40 @@ style="cursor:default" tabindex="-1">
            <div id="dailyDeals" class="tab-pane fade">
                <div class="modal-body" id="dailyDealsBody" style="width: 80%;margin: auto;">
                    <table class='table'>
+                       <thead>
+                         <tr>
+                           <th colspan="2">Item</th>
+                           <th>Cost</th>
+                           <th></th>
+                           <th colspan="2">Item</th>
+                           <th>Gain</th>
+                           <th></th>
+                         </tr>
+                       </thead>
                        <tbody data-bind='foreach: DailyDeal.list'>
-                       <tr>
-                           <td class='vertical-middle'>
-                               <img class='mineInventoryItem'
-                                    data-bind='attr: {src: "assets/images/underground/"+item1.id+".png"}'>
-                               <span data-bind='text: "(" + player.getUndergroundItemAmount(item1.id) + ")"'></span>
-                           </td>
-                           <td class='vertical-middle' data-bind='text: item1.name'></td>
-                           <td class='vertical-middle' data-bind='text: amount1'></td>
-                           <td class='vertical-middle'><img src='assets/images/underground/rightArrow.png'>
-                           </td>
-                           <td class='vertical-middle' data-bind='text: item2.name'></td>
-                           <td class='vertical-middle' data-bind='text: amount2'></td>
-                           <td class='vertical-middle'>
-                               <img class='mineInventoryItem'
-                                    data-bind='attr: {src: "assets/images/underground/"+item2.id+".png"}'>
-                           </td>
-                           <td class='vertical-middle'>
-                               <button class='btn btn-info'
-                                       data-bind="click: function(){DailyDeal.use($index())}, css: { disabled: !DailyDeal.canUse($index()) }">
-                                   Trade
-                               </button>
-                           </td>
-                       </tr>
+                           <tr>
+                               <td class='vertical-middle'>
+                                   <img class='mineInventoryItem'
+                                        data-bind='attr: {src: "assets/images/underground/"+item1.id+".png"}'>
+                                   <span data-bind='text: "(" + player.getUndergroundItemAmount(item1.id) + ")"'></span>
+                               </td>
+                               <td class='vertical-middle' data-bind='text: item1.name'></td>
+                               <td class='vertical-middle' data-bind='text: amount1'></td>
+                               <td class='vertical-middle'><img src='assets/images/underground/rightArrow.png'>
+                               </td>
+                               <td class='vertical-middle'>
+                                   <img class='mineInventoryItem'
+                                        data-bind='attr: {src: "assets/images/underground/"+item2.id+".png"}'>
+                               </td>
+                               <td class='vertical-middle' data-bind='text: item2.name'></td>
+                               <td class='vertical-middle' data-bind='text: amount2'></td>
+                               <td class='vertical-middle'>
+                                   <button class='btn btn-info'
+                                           data-bind="click: function(){DailyDeal.use($index())}, css: { disabled: !DailyDeal.canUse($index()) }">
+                                       Trade
+                                   </button>
+                               </td>
+                           </tr>
                        </tbody>
                    </table>
                </div>
@@ -2805,19 +2831,6 @@ style="cursor:default" tabindex="-1">
    </div>
 </div>
 </div>
-
-<script type="text/html" id="energyRestoreTemplate">
-    <td class="col-md-4">
-        <button style="display: inline;" class="btn btn-secondary" data-bind="
-                                       click: function(){  ItemList[$data].use();},
-                                       css: { disabled: player._itemList[$data]() <= 0}"
-        >
-            <img class="restore-item" data-bind="attr: { src: 'assets/images/items/' + $data + '.png'}">
-            <span data-bind="text: ' +' + Underground.calculateItemEffect(GameConstants.EnergyRestoreSize[$data]) + ' energy'">&nbsp;+? energy</span>
-            <span data-bind="text: '(' + player._itemList[$data]() + ')'">(?)</span>
-        </button>
-    </td>
-</script>
 
 <script type="text/html" id="undergroundUpgradeTemplate">
         <td class='vertical-middle' data-bind='text: upgrade.displayName + ": " + totalBonus'></td>
@@ -3070,7 +3083,7 @@ aria-labelledby="saveModalLabel">
                                 <td class="align-middle" style="text-align:left"><img src="assets/images/currency/questPoint.png"><span
                                         data-bind='text: " " + pointsReward'></span></td>
                                 <td class="align-middle">
-                                    <button class='btn btn-primary btn-sm'
+                                    <button class='btn btn-primary btn-sm btn-block'
                                         data-bind='visible: QuestHelper.canStartNewQuest() && !QuestHelper.onQuest($data.index)() && !player.completedQuestList[index](),
                                         click: function(){
                                             QuestHelper.beginQuest($data.index);
@@ -3078,12 +3091,12 @@ aria-labelledby="saveModalLabel">
                                         }'>
                                         Start
                                     </button>
-                                    <button class='btn btn-success btn-sm' data-bind='visible: QuestHelper.onQuest($data.index)() && $data.isCompleted(),
+                                    <button class='btn btn-success btn-sm btn-block' data-bind='visible: QuestHelper.onQuest($data.index)() && $data.isCompleted(),
                                                                        click: $data.endQuest'>
                                         Claim
                                     </button>
                                     <span data-bind='visible: $data.inProgress(), text: Math.floor(progress()*100) + "%"'></span>
-                                    <span data-bind='visible: player.completedQuestList[index]()'>Completed</span>
+                                    <button class='btn btn-success btn-sm btn-block' disabled data-bind='visible: player.completedQuestList[index]()'>Completed</span>
                                 </td>
                             </tr>
                             </tbody>
@@ -3234,20 +3247,18 @@ aria-labelledby="saveModalLabel">
                 <h4 style='text-align:center' class="modal-title">Safari Zone</h4>
                 <button class='btn btn-primary' onclick='if(!Safari.inBattle()){$("#safariModal").modal("toggle")}' data-bind='css: { disabled: Safari.inBattle }' >Leave</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-0">
                 <div id="safariBody">
                 </div>
                 <div id="safariBattleBody" data-bind="if: Safari.inBattle">
                     <div class='row safariEnemyRow'>
                         <div class='col-sm-2 offset-sm-8' id='safariEnemy'><img data-bind='attr: { src: "assets/images/pokemon/" + SafariBattle.enemy.id + ".png" }'></div>
-                        <div id='safariEnemyName' class='col-sm-2'>
-                            <span>
-                                <span data-bind="if: player.alreadyCaughtPokemon(SafariBattle.enemy.name)">
-                                    <img class='pokeball-smallest'
-                                         data-bind='attr: { src: PokemonHelper.getPokeballImage(SafariBattle.enemy.name) }'/>
-                                </span>
-                                <span data-bind='text: SafariBattle.enemy.name'></span>
+                        <div id='safariEnemyName' class='btn btn-secondary btn-sm '>
+                            <span data-bind="if: player.alreadyCaughtPokemon(SafariBattle.enemy.name)">
+                                <img class='pokeball-smallest'
+                                     data-bind='attr: { src: PokemonHelper.getPokeballImage(SafariBattle.enemy.name) }'/>
                             </span>
+                            <span data-bind='text: SafariBattle.enemy.name'></span>
                         </div>
                     </div>
                     <div class='row'>
@@ -3258,26 +3269,26 @@ aria-labelledby="saveModalLabel">
 
                     <div id='battleConsole' class='row'>
                         <div class='col-sm-6'>
-                            <h3 id='safariBattleText' class="centeredBySpan" data-bind='html: SafariBattle.text'></h3>
+                            <h4 id='safariBattleText' class="centeredBySpan" data-bind='html: SafariBattle.text'></h4>
                             <span class="centerSpan"></span>
                         </div>
                         <div class='row col-sm-4 offset-sm-2 safariOptions'>
                             <div class='col-sm-6 safariOption'>
-                                <button onClick='SafariBattle.throwBall()' class='btn btn-info btn-sm safariButton'
+                                <button onClick='SafariBattle.lockButtons();SafariBattle.throwBall()' class='btn btn-info btn-sm safariButton'
                                         data-bind='text: "Ball (" + Safari.balls() + ")"'></button>
                             </div>
                             <div class='col-sm-6 safariOption'>
-                                <button onClick='SafariBattle.throwBait()' class='btn btn-info btn-sm safariButton'>
+                                <button onClick='SafariBattle.lockButtons();SafariBattle.throwBait()' class='btn btn-info btn-sm safariButton'>
                                     Bait
                                 </button>
                             </div>
                             <div class='col-sm-6 safariOption'>
-                                <button onClick='SafariBattle.throwRock()' class='btn btn-info btn-sm safariButton'>
+                                <button onClick='SafariBattle.lockButtons();SafariBattle.throwRock()' class='btn btn-info btn-sm safariButton'>
                                     Rock
                                 </button>
                             </div>
                             <div class='col-sm-6 safariOption'>
-                                <button onClick='SafariBattle.run()' class='btn btn-info btn-sm safariButton'>Run
+                                <button onClick='SafariBattle.lockButtons();SafariBattle.run()' class='btn btn-info btn-sm safariButton'>Run
                                 </button>
                             </div>
                         </div>
@@ -3287,6 +3298,7 @@ aria-labelledby="saveModalLabel">
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
