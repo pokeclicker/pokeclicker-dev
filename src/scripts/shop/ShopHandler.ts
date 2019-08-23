@@ -35,6 +35,18 @@ class ShopHandler {
         input.val(newVal > 1 ? newVal : 1).change();
     }
 
+    public static maxAmount(n: number) {
+        const item: Item = this.shopObservable().items()[ShopHandler.selected()];
+        const input = $("input[name='amountOfItems']");
+
+        if (!item || !item.isAvailable()){
+          return input.val(0).change();
+        }
+        let amt = 1;
+        for (amt; player.hasCurrency(item.totalPrice(amt), item.currency); amt++){}
+        input.val(--amt).change();
+    }
+
     public static calculateCss(i: number): string {
         if (this.selected() == i) {
             return "shopItem clickable btn btn-secondary active"
