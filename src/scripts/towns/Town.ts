@@ -126,7 +126,8 @@ TownList["Cerulean Cave"] = new DungeonTown("Cerulean Cave", [4], GameConstants.
 TownList["Pokemon Mansion"] = new DungeonTown("Pokemon Mansion", [20], GameConstants.Badge.Soul);
 
 //Johto Towns
-TownList["New Bark Town"] = new Town("New Bark Town", []);
+let NewBarkTownShop = new Shop(["Pokeball"]);
+TownList["New Bark Town"] = new Town("New Bark Town", [], NewBarkTownShop);
 
 TownList["Cherrygrove City"] = new Town("Cherrygrove City", [29]);
 
