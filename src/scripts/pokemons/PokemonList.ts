@@ -603,8 +603,8 @@ const pokemonList = [
         "id": 44,
         "name": "Gloom",
         "catchRate": 120,
-        "evolution": "Vileplume, Bellossom",
-        "evoLevel": "Leaf_stone, Sun_stone",
+        "evolution": ["Vileplume", "Bellossom"],
+        "evoLevel": ["Leaf_stone", "Sun_stone"],
         "type": [
             "Grass",
             "Poison"
@@ -1795,8 +1795,8 @@ const pokemonList = [
         "id": 133,
         "name": "Eevee",
         "catchRate": 45,
-        "evolution": "Vaporeon, Jolteon, Flareon, Espeon, Umbreon",
-        "evoLevel": "Water_stone, Thunder_stone, Fire_stone, Time_stone, Time_stone",
+        "evolution": ["Vaporeon", "Jolteon", "Flareon", ["Espeon", "Umbreon"]],
+        "evoLevel": ["Water_stone", "Thunder_stone", "Fire_stone", "Time_stone"],
         "type": [
             "Normal"
         ],
@@ -3156,8 +3156,8 @@ const pokemonList = [
       "id": 236,
       "name": "Tyrogue",
       "catchRate": 75,
-      "evolution": "Hitmonlee, Hitmonchan, Hitmontop",
-      "evoLevel": "20, 20, 20",
+      "evolution": [["Hitmonlee", "Hitmonchan", "Hitmontop"]],
+      "evoLevel": [20],
       "type": [
         "Fighting"
       ],
@@ -3366,11 +3366,16 @@ const pokemonList = [
 ];
 
 // TODO move to its own initialize method that gets called on game start.
-for (let i = 0; i < pokemonList.length; i++) {
-    let p = pokemonList[i];
-    pokemonMap[p["name"]] = p;
-    pokemonMapId[i + 1] = p;
-    if (p.hasOwnProperty("evolution")) {
-        p["evolution"].split(", ").forEach(x => {pokemonDevolutionMap[x] = p["name"]});        
+pokemonList.forEach(p=>{
+    if (p.evolution){
+        if (p.evolution.constructor !== Array){
+            p.evolution = [p.evolution];
+        }
+        p.evolution.forEach(evo => pokemonDevolutionMap[evo] = p.name);
     }
-}
+    if (p.evoLevel && p.evoLevel.constructor !== Array){
+        p.evoLevel = [p.evoLevel];
+    }
+    pokemonMap[p.name] = p;
+    pokemonMapId[p.id] = p;
+});
