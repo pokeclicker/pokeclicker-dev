@@ -129,7 +129,8 @@ TownList["Pokemon Mansion"] = new DungeonTown("Pokemon Mansion", [20], GameConst
 let NewBarkTownShop = new Shop(["Pokeball"]);
 TownList["New Bark Town"] = new Town("New Bark Town", [], NewBarkTownShop);
 
-TownList["Cherrygrove City"] = new Town("Cherrygrove City", [29]);
+let CherrygroveCityShop = new Shop(["Greatball"]);
+TownList["Cherrygrove City"] = new Town("Cherrygrove City", [29], CherrygroveCityShop);
 
 let VioletCityShop = new Shop(["MediumRestore", "Togepi"]);
 TownList["Violet City"] = new Town("Violet City", [31], VioletCityShop, dungeonList["Sprout Tower"]);
