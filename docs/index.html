@@ -156,115 +156,12 @@
             <a class="dropdown-item" href="https://pokeclicker.reddit.com" target="_blank">Subreddit</a>
         </li>
         <li>
-            <a class="dropdown-item" href="#donateModal" data-toggle="modal">Donate</a>
-        </li>
-        <li>
             <a class="dropdown-item" href="https://gitreports.com/issue/Ishadijcks/pokeclicker" target="_blank">Report a bug</a>
         </li>
 
     </ul>
 </div>
 
-
-<!-- Donate modal-->
-<div id="donateModal" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header justify-content-sm-center">
-                <h4 class="modal-title">Donate</h4>
-            </div>
-            <div class="modal-body">
-                <span>This game is developed freely by community users who love what they see. If you want to help support that effort, you can donate to the project. Donations go into the project directlly by allowing us to spend more time on feature requests and active development. If you like what you see and want to contribute, feel free to use the buttons below.
-                </span>
-                <br><br>
-                <span>Please leave a message after donating, so our team can contact and thank you directly.</span>
-                <br><br>
-
-                <div class="row justify-content-sm-center" style="text-align: center">
-
-                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <button class="btn btn-success donate-button clickable">€1<br><img
-                                src="assets/images/pokemon/1.png">
-                        </button>
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="YP9SQ748NN5EW">
-                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        <img alt="" border="0" src="" width="1"
-                             height="1">
-                    </form>
-
-                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <button class="btn btn-danger donate-button clickable">€3<br><img
-                                src="assets/images/pokemon/4.png">
-                        </button>
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="MR8497BXE7P3A">
-                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        <img alt="" border="0" src="" width="1"
-                             height="1">
-                    </form>
-
-                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <button data-html="true"
-                                title="Don't let the PokéDex order fool you, Charmander is and will always be the best starter. -Isha"
-                                class="btn btn-primary donate-button clickable">€5<br><img
-                                src="assets/images/pokemon/7.png">
-
-                        </button>
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="VHFSUMCRY8PJU">
-                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        <img alt="" border="0" src="" width="1"
-                             height="1">
-                    </form>
-                </div>
-
-                <div class="row justify-content-sm-center" style="text-align: center">
-                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <button class="btn btn-warning donate-button clickable">€10<br><img
-                                src="assets/images/pokemon/25.png">
-                        </button>
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="N7NMLXFQDPPC6">
-                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        <img alt="" border="0" src="" width="1"
-                             height="1">
-                    </form>
-
-                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <button class="btn donate-button-mew donate-button clickable">€20<br><img
-                                src="assets/images/pokemon/151.png"></button>
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="HJHXNGD3H5BH6">
-                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        <img alt="" border="0" src="" width="1"
-                             height="1">
-                    </form>
-
-                    <form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                        <button class="btn btn-default donate-button-unown donate-button clickable">Custom<br><img
-                                src="assets/images/pokemon/unown.png"></button>
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="XKQMADJLWZZC8">
-                        <input type="hidden" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                        <img alt="" border="0" src="" width="1"
-                             height="1">
-                    </form>
-
-                </div>
-
-                <div class="row justify-content-sm-center" style="text-align: center">
-                    <p class="text-muted" style="font-size:8px">*note you don't actually get the Pokémon</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default clickable" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-
-    </div>
-</div>
 
 <!-- Get Keyitem modal-->
 <div class="modal" id="keyItemModal" tabindex="-1" role="dialog"
@@ -2657,10 +2554,27 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
                Hatched pokémon have a higher chance of becoming shiny!
            </p>
            <div data-bind="if: player.canBreedPokemon()">
+               <!-- ko if: Object.keys(GameConstants.EggItemType).filter(e=>isNaN(e)).map(x=>player._itemList[x]()).reduce((x,y)=>x+y) -->
+               <p>
+                   Pick an egg below to breed:
+               </p>
+               <div class="row col-lg-10 col-md-12 offset-lg-1 offset-md-0 col-sm-12 offset-sm-0"
+                    style="padding-right: 0"
+                    data-bind="foreach: Object.keys(GameConstants.EggItemType).filter(e=>isNaN(e)).filter(x=>player._itemList[x]())">
+                   <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem text-nowrap">
+                       <button class="btn btn-secondary list-group-item-action"
+                               data-bind="click: function() { ItemList[$data].use(); if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide'); } }">
+                           <img class="smallImage"
+                                data-bind="attr:{ src: BreedingHelper.getEggImage(ItemList[$data]) }"
+                                src=""/>
+                           <span data-bind="text: $data.replace(/_/g, ' ') + ' (' + player._itemList[$data]() + ')'" style="margin-left: 15px"></span>
+                       </button>
+                   </div>
+               </div>
+               <!-- /ko -->
                <p>
                    Pick a pokémon below to breed them:
                </p>
-
                <div class="row col-lg-10 col-md-12 offset-lg-1 offset-md-0 col-sm-12 offset-sm-0"
                     style="padding-right: 0"
                     data-bind="foreach: player.maxLevelPokemonList()">
@@ -2676,7 +2590,7 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
                    </div>
                </div>
            </div>
-           <div data-bind="ifnot: player.hasMaxLevelPokemon()">
+           <div data-bind="ifnot: player.hasMaxLevelPokemon() && Object.keys(GameConstants.EggItemType).filter(e=>isNaN(e)).map(x=>player._itemList[x]()).reduce((x,y)=>x+y)">
                <p>
                    Unfortunately, you don't have any pokémon of level 100
                </p>
