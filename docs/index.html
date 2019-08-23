@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Pokéclicker</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon"/>
     <script type="text/html" id="pokemonListTemplate">
         <tr data-bind='ifnot: $data.breeding()'>
@@ -452,10 +453,12 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
         <div class="col-lg-3 col-md-6 order-lg-first">
             <div id="pokeballSelector" class="card border-secondary mb-3" style="min-height: 180px"
                 data-bind="visible: player.starter != GameConstants.Starter.None">
+                <div class="card-header p-0">
+                  <span>Pokéballs</span>
+                  <button type="button" class="btn btn-info" style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px; padding: 4px;"
+                      data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon (including unobtained shiny Pokémon)', trigger: 'hover', placement:'left' }">?</button>
+                </div>
                 <div class="card-body p-0">
-
-                    <button type="button" class="btn btn-info" style="position: absolute; right: -1px; top: -1px; width: auto; height: 33px; padding: 4px;"
-                        data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon (including unobtained shiny Pokémon)', trigger: 'hover', placement:'left' }">?</button>
                     <table class="table table-sm">
                         <thead>
                         <tr>
@@ -542,7 +545,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             </div>
 
             <div class="card border-secondary mb-3 pokemon-list-container" id="pokemonListContainer"
-                 data-bind="visible: player.starter != GameConstants.Starter.None" >
+                 data-bind="visible: player.starter != GameConstants.Starter.None">
+                <div class="card-header p-0"><span>Pokémon List</span></div>
                 <div class="card-body p-0">
                     <div class="input-group input-group-sm">
                         <div class="input-group-prepend">
@@ -632,10 +636,11 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                                          class="pokeball-smallest"
                                          src="assets/images/pokeball/Pokeball-shiny-small.png"/>
                                 </span>
-
+                                <!-- ko if: player.routeKillsObservable(player.route())() < player.routeKillsNeeded -->
                                 <br>
-                                <span data-bind="text: player.routeKillsObservable(player.route())">kills</span>/<span
-                                    data-bind="text: player.routeKillsNeeded">killsneeded</span><br>
+                                <span data-bind="text: player.routeKillsObservable(player.route())() + '/' + player.routeKillsNeeded">0/10</span>
+                                <br>
+                                <!-- /ko -->
                             </div>
 
                             <span data-bind="text: Battle.enemyPokemon().name">Pokemon name</span>
@@ -2174,7 +2179,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             <!-- Egg Slots/Breeding-->
             <!-- ko if: KeyItemHandler.getKeyItemObservableByName('Mystery egg')().isUnlocked() -->
 <div class="card border-secondary mb-3">
-    <div class="card-header">Hatchery</div>
+    <div class="card-header p-0"><span>Hatchery</span></div>
     <div id='eggList' class="card-body p-0">
       <div class="row m-0" data-bind="foreach: player.eggList">
         <div class="col-md-6 eggSlot">
@@ -2199,7 +2204,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                     </div>
                 </div>
                 <div class="progress" data-bind='visible: progress() >= 100'>
-                    <div class="progress-bar bg-blue" role="progressbar"
+                    <div class="progress-bar bg-success" role="progressbar"
                     data-bind="attr:{ style: 'width: 100%; cursor: pointer;' }, click: function(){BreedingHelper.hatchPokemonEgg($index())}, text: 'Hatch!'"
                     aria-valuemin="0" aria-valuemax="100">
                     </div>
@@ -2375,7 +2380,6 @@ aria-labelledby="AchievementsModalLabel" aria-hidden="true">
                     </thead>
                     <tbody>
                       <tr data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('theme')}"></tr>
-                      <tr data-bind="template: { name: 'MultipleChoiceSettingTemplate', data: Settings.getSetting('test')}"></tr>
                     </tbody>
                 </table>
                 <br/>
@@ -2389,7 +2393,7 @@ aria-labelledby="AchievementsModalLabel" aria-hidden="true">
     <td data-bind="text: $data.displayName" >Settings</td>
     <td>
         <select class="form-control" onchange="Settings.setSettingByName(this.name, this.value)" data-bind="foreach: $data.options, attr: {name}">
-            <option data-bind="text: $data.text, value: $data.value"></option>
+            <option data-bind="text: $data.text, value: $data.value, attr:{ selected: Settings.getSetting('theme').observableValue() == $data.value}"></option>
         </div>
     </td>
 </script>
