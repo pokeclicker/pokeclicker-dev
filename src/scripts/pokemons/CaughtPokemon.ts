@@ -30,7 +30,7 @@ class CaughtPokemon {
 
         this.breeding = ko.observable(breeding);
         this.evolver = {};
-        this.evoTrack();
+        this.checkForEvolution();
     }
 
     public toJSON() {
@@ -40,7 +40,7 @@ class CaughtPokemon {
         return Save.filter(plainJS, keep);
     }
 
-    public evoTrack(reset = false){
+    public checkForEvolution(reset = false){
         // reset if pokemon has just hatched
         if (!!reset){
           this.evolved = false;
@@ -57,6 +57,12 @@ class CaughtPokemon {
             if (evo.constructor === Number){
                 if (this.evolver[index]){
                   this.evolver[index].dispose();
+                }
+
+                const obtainedAllEvolutions = reset ? !PokemonHelper.getPokemonByName(this.name).evolutionByIndex(index, true, true).every(p => player.alreadyCaughtPokemon(p)).length : false;
+
+                if (obtainedAllEvolutions){
+                  return;
                 }
 
                 // Get evolutions for current region, else calculate a evolution for any region for when we reach that region
