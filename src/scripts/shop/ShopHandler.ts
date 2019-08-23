@@ -5,7 +5,8 @@ class ShopHandler {
     static amount: KnockoutObservable<number> = ko.observable(1);
 
     public static showShop(shop: Shop) {
-        ShopHandler.amount(1);
+        this.setSelected(0);
+        this.resetAmount();
         this.shopObservable(shop);
 
         for (let i = 0; i < shop.items().length; i++) {
