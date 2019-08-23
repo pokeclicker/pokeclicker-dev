@@ -1078,8 +1078,8 @@ const pokemonList = [
         "id": 79,
         "name": "Slowpoke",
         "catchRate": 190,
-        "evolution": "Slowbro",
-        "evoLevel": 37,
+        "evolution": ["Slowbro", "Slowking"],
+        "evoLevel": [37, "Kings_rock"],
         "type": [
             "Water",
             "Psychic"
