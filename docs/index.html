@@ -1259,7 +1259,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
     <path class="city" data-town="Pallet Town"
           data-bind="
           click:function(){MapHelper.moveToTown('Pallet Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Pallet Town') }"
+          attr: { class: MapHelper.calculateTownCssClass('Pallet Town') },
+          css: { flash: MapHelper.ableToTravel() }"
           d="M 72.1 297.83 L 78.73 291.2 L 87.87 291.2 L 94.5 297.83 L 94.5 306.97 L 87.87 313.6 L 78.73 313.6 L 72.1 306.97 Z"
           fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
           stroke-miterlimit="10" stroke-width="1.4"></path>
@@ -1465,7 +1466,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
     <rect class="city" data-town="Dock"
           fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
           height="12.6" stroke="#6c8ebf" width="12.6" x="325" y="240"
-          data-bind="click:function(){MapHelper.openShipModal()}"></rect>
+          data-bind="click:function(){MapHelper.openShipModal()},
+          css:{ unlockedTown: player.highestRegion >= 1}"></rect>
 </g>
 
                             <g transform='translate(-1,-1)' data-bind='if: player.region == GameConstants.Region.johto'>
@@ -1720,7 +1722,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
     <path class="city" data-town="New Bark Town"
           data-bind="
           click:function(){MapHelper.moveToTown('New Bark Town')},
-          attr: { class: MapHelper.calculateTownCssClass('New Bark Town') }"
+          attr: { class: MapHelper.calculateTownCssClass('New Bark Town') },
+          css: { flash: MapHelper.ableToTravel() }"
           d="M 498.8 287.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
           fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
           stroke-miterlimit="10" stroke-width="1.4">
@@ -1980,7 +1983,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
     <rect class="city" data-town="Dock"
           fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
           height="12.6" stroke="#6c8ebf" width="12.6" x="98" y="155"
-          data-bind="click:function(){MapHelper.openShipModal()}"></rect>
+          data-bind="click:function(){MapHelper.openShipModal()},
+          attr: { class: MapHelper.calculateTownCssClass('Olivine City') }"></rect>
 
 </g>
 
@@ -2108,11 +2112,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             <div class="card border-secondary mb-3" id="questDisplayContainer" style="min-height: 100px">
 
     <div class="card-header p-0">
-      <!-- Quests header -->
-      <h6 style="display:inline">
-          <span class='' data-bind='text: !player.tutorialComplete() ? "Tutorial Quest" : "Quests (" + player.currentQuests().length + "/" + QuestHelper.questSlots()() + ")"'>
-          </span>
-      </h6>
+      <span class='' data-bind='text: !player.tutorialComplete() ? "Tutorial Quest" : "Quests (" + player.currentQuests().length + "/" + QuestHelper.questSlots()() + ")"'></span>
       <button class='btn btn-sm btn-primary' style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px;"
               data-bind='visible: player.tutorialComplete(), click: function(){$("#QuestModal").modal("show")}'>
           List
@@ -2179,7 +2179,15 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             <!-- Egg Slots/Breeding-->
             <!-- ko if: KeyItemHandler.getKeyItemObservableByName('Mystery egg')().isUnlocked() -->
 <div class="card border-secondary mb-3">
-    <div class="card-header p-0"><span>Hatchery</span></div>
+    <div class="card-header p-0">
+        <span>Hatchery</span>
+        <button class='btn btn-sm btn-primary' style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px;"
+                data-bind='visible: player.highestRegion >= 1,
+                    click: function(){ BreedingHelper.openBreedingModal() },
+                    attr: { disabled: !player.hasFreeEggSlot() }'>
+            List
+        </button>
+    </div>
     <div id='eggList' class="card-body p-0">
       <div class="row m-0" data-bind="foreach: player.eggList">
         <div class="col-md-6 eggSlot">
@@ -2656,13 +2664,14 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
                <div class="row col-lg-10 col-md-12 offset-lg-1 offset-md-0 col-sm-12 offset-sm-0"
                     style="padding-right: 0"
                     data-bind="foreach: player.maxLevelPokemonList()">
-                   <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem">
+                   <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem text-nowrap">
                        <button class="btn btn-secondary smallButton list-group-item-action"
                                data-bind="click: function() { BreedingHelper.gainPokemonEgg($data);if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide');}}">
                            <img class="smallImage"
                                 data-bind="attr:{ src: 'assets/images/' + (player.caughtShinyList().includes(name) ? 'shiny' : '') + 'pokemon/' + id +'.png' }"
                                 src=""/>
-                           <span data-bind="text: name" style="margin-left: 20px">Name</span><span style="float:right" data-bind="if: player.caughtShinyList().includes(name)">&nbsp;✨</span>
+                           <span data-bind="text: name" style="margin-left: 20px">Name</span>
+                           <span class="sparkle" data-bind="if: player.caughtShinyList().includes(name)">&nbsp;✨</span>
                        </button>
                    </div>
                </div>
@@ -3223,24 +3232,25 @@ aria-labelledby="saveModalLabel">
             <div class="modal-body">
                 <img src='assets/images/ship.png'>
                 <div style='margin-top:20px'>
-                    <span data-bind='ifnot: player.region == 0'>
-                        <button class='btn btn-primary' onclick='MapHelper.moveToTown("Vermillion City");player.region = 0;$("#ShipModal").modal("hide")'>
-                            Kanto
-                        </button>
-                    </span>
-                    <span data-bind='ifnot: player.region == 1'>
-                        <button class='btn btn-primary' onclick='MapHelper.moveToTown("Olivine City");player.region = 1;$("#ShipModal").modal("hide")'>
-                            Johto
-                        </button>
-                    </span>
+                    <button class='btn btn-primary'
+                        data-bind='visible: player.region != 0'
+                        onclick='MapHelper.moveToTown("Vermillion City");player.region = 0;$("#ShipModal").modal("hide")'>
+                        Kanto
+                    </button>
+                    <button class='btn btn-primary'
+                        data-bind='visible: player.region != 1 && player.highestRegion >= 1'
+                        onclick='MapHelper.moveToTown("Olivine City");player.region = 1;$("#ShipModal").modal("hide")'>
+                        Johto
+                    </button>
                 </div>
             </div>
             <div class="modal-footer">
-                
+
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Safari Modal -->
 <div aria-labelledby="myModalLabel" class="modal fade noselect" id="safariModal" role="dialog" style="cursor:default" tabindex="-1">
