@@ -227,26 +227,20 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                                  style="padding-right: 0"
                                  data-bind="foreach: PokemonHelper.getPokemonsWithEvolution(ItemHandler.stoneSelected())">
                                 <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem"
-                                    data-bind="if: (player.alreadyCaughtPokemon($data.name))">
+                                    data-bind="visible: (player.alreadyCaughtPokemon($data.name))">
                                     <button class="btn btn-secondary smallButton list-group-item-action" style="padding-right:15px"
                                             data-bind="click: function() {ItemHandler.pokemonSelected(name)}, css:{ 'pokemon-selected': ItemHandler.pokemonSelected() === name}">
                                         <img class="smallImage" data-bind="attr:{src: 'assets/images/' + (player.alreadyCaughtPokemonShiny($data.name) ? 'shiny' : '') + 'pokemon/' + id +'.png' }"/>
                                         <span data-bind="text: name" style="margin-left: 20px">Name</span>
 
-                                        <span style="float:right; margin-top:8px"
-                                            data-bind="if: player.alreadyCaughtPokemonShiny(EvolutionStone.computeEvolution(
-                                            GameConstants.StoneType[ItemHandler.stoneSelected()], name))">
-                                            <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-shiny-small.png"/>
-                                        </span>
-                                        <span style="float:right; margin-top:8px"
-                                            data-bind="if: (player.alreadyCaughtPokemon(EvolutionStone.computeEvolution(
-                                            GameConstants.StoneType[ItemHandler.stoneSelected()], name))
-                                            && !player.alreadyCaughtPokemonShiny(EvolutionStone.computeEvolution(
-                                                GameConstants.StoneType[ItemHandler.stoneSelected()], name)))">
-                                            <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-small.png"/>
+                                        <span style="float:right; margin-top:8px">
+                                            <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-small.png"
+                                                data-bind="visible: player.alreadyCaughtPokemon(EvolutionStone.computeEvolution(
+                                                GameConstants.StoneType[ItemHandler.stoneSelected()], name)) && !PokemonHelper.getPokemonByName(name).evolutionByIndex(PokemonHelper.getPokemonByName(name).evoLevel.indexOf(ItemHandler.stoneSelected()), true, true).every(p => player.alreadyCaughtPokemonShiny(p))"/>
+                                            <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-shiny-small.png"
+                                                data-bind="visible: PokemonHelper.getPokemonByName(name).evolutionByIndex(PokemonHelper.getPokemonByName(name).evoLevel.indexOf(ItemHandler.stoneSelected()), true, true).every(p => player.alreadyCaughtPokemonShiny(p))"/>
                                         </span>
                                     </button>
-
                                 </div>
                             </div>
                         </div>
@@ -664,11 +658,9 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                             </div>
                         </div>
                     </div>
-                </div>
+                    <!--TownView-->
 
-                <!--TownView-->
-
-                <div id="townView" data-bind="if: Game.gameState() === GameConstants.GameState.town"
+                    <div id="townView" data-bind="if: Game.gameState() === GameConstants.GameState.town"
      class="justify-content-center no-gutters no-select">
     <div class="row justify-content-center no-gutters" style="min-height: 100px;">
        <div class="col no-gutters">
@@ -738,6 +730,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
        </div>
     </div>
 </div>
+
+                </div>
 
 
                 <!--GymView-->
@@ -838,7 +832,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
             <div data-bind="if:KeyItemHandler.getKeyItemObservableByName('Town map')().isUnlocked()">
                 <div data-bind="if: (Game.gameState() === GameConstants.GameState.fighting || Game.gameState() === GameConstants.GameState.gym || Game.gameState() === GameConstants.GameState.town||
-                    Game.gameState() === GameConstants.GameState.shop || Game.gameState() === GameConstants.GameState.farm)">
+                    Game.gameState() === GameConstants.GameState.shop || Game.gameState() === GameConstants.GameState.farm || Game.gameState() === GameConstants.GameState.paused)">
                     <p id="mapTooltip" class="btn btn-secondary" style="visibility: hidden;"></p>
                     <div class="page-item no-select">
                         <svg id="map" viewBox="0 0 650 400" preserveAspectRatio="xMaxYMax meet">
@@ -2137,20 +2131,23 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <div class="row justify-content-center" data-bind="foreach: ShopHandler.shopObservable().items">
-                 <div class="col-sm-3">
-                     <div data-bind="click: function() {ShopHandler.setSelected($index())}, attr: {class: ShopHandler.calculateCss($index())}">
-                         <img src="" height="36px" data-bind="attr:{ src: 'assets/images/items/' + name() + '.png' }">
-                         <p data-bind="text: GameConstants.humanifyString(name())">Item Name</p>
-                         <div data-bind="if: $data.isAvailable()">
-                              <img src="" class="currencyImage" data-bind="attr:{ src: 'assets/images/currency/' + GameConstants.Currency[currency]+ '.png' }">
-                              <span data-bind="text: totalPrice(ShopHandler.amount())">Price</span>
-                          </div>
-                          <div data-bind="ifnot: $data.isAvailable()">
-                              <span>Sold Out</span>
-                          </div>
-                     </div>
-                  </div>
+                <div class="row justify-content-center" data-bind="foreach: ShopHandler.shopObservable().items">
+                    <div class="col-sm-3">
+                       <button class="shopItem clickable btn btn-block btn-secondary"
+                           data-bind="click: function() {ShopHandler.setSelected($index())},
+                           css: { active: ShopHandler.selected() == $index() },
+                           attr: { disabled: !$data.isAvailable() }">
+                           <img src="" height="36px" data-bind="attr:{ src: 'assets/images/items/' + name() + '.png' }">
+                           <p data-bind="text: GameConstants.humanifyString(name())">Item Name</p>
+                           <div data-bind="if: $data.isAvailable()">
+                                <img src="" class="currencyImage" data-bind="attr:{ src: 'assets/images/currency/' + GameConstants.Currency[currency]+ '.png' }">
+                                <span data-bind="text: totalPrice(ShopHandler.amount()).toLocaleString('en-US')">Price</span>
+                            </div>
+                            <div data-bind="ifnot: $data.isAvailable()">
+                                <span>Sold Out</span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
                 <div class="row justify-content-center">
                    <div class="col-11 col-sm-10 col-md-11">
@@ -2163,7 +2160,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                                      type="button"
                                      onclick="ShopHandler.increaseAmount(-10)">-10
                              </button>
-                             <button class="btn btn-danger btn-outline-dark smallButton smallFont"
+                             <button class="btn btn-primary btn-outline-dark smallButton smallFont"
                                      onclick="ShopHandler.resetAmount()">1
                              </button>
                            </div>
@@ -2178,6 +2175,10 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                                <button class="btn btn-secondary smallButton smallFont"
                                        type="button"
                                        onclick="ShopHandler.increaseAmount(100)">+100
+                               </button>
+                               <button class="btn btn-primary smallButton smallFont"
+                                       type="button"
+                                       onclick="ShopHandler.maxAmount()">Max
                                </button>
                                <button class="btn-outline-dark" data-bind="attr: {class: ShopHandler.calculateButtonCss()}"
                                        onclick="ShopHandler.buyItem()">Buy
