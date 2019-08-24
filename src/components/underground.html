@@ -38,7 +38,7 @@ style="cursor:default" tabindex="-1">
                            <div id='mineEnergyBar' class='progress-bar' role='progressbar'
                                 aria-valuemin='0' aria-valuemax='100'
                                 data-bind="style: { width: Math.floor(Underground.energy/Underground.getMaxEnergy()*100) + '%' }">
-                                <span data-bind="text: 'Energy: ' + Math.floor(Underground.energy) + '/' + Underground.getMaxEnergy() + ' (' + Underground.energyTick() + 's)'"></span>
+                                <span data-bind="text: 'Energy: ' + Math.floor(Underground.energy) + '/' + Underground.getMaxEnergy() + (Math.floor(Underground.energy) < Underground.getMaxEnergy() ? ' (' + Underground.energyTick() + 's)' : '')"></span>
                            </div>
                        </div>
                    </div>
