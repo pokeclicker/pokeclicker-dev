@@ -107,9 +107,6 @@
 <!-- Game menu-->
 @import "gameMenu.html"
 
-<!-- Donate modal-->
-@import "donate.html"
-
 <!-- Get Keyitem modal-->
 @import "getKeyItem.html"
 
@@ -441,11 +438,11 @@
                             </div>
                         </div>
                     </div>
+                    <!--TownView-->
+
+                    @import "townView.html"
                 </div>
 
-                <!--TownView-->
-
-                @import "townView.html"
 
                 <!--GymView-->
                 @import "gymView.html"
@@ -486,7 +483,7 @@
 
             <div data-bind="if:KeyItemHandler.getKeyItemObservableByName('Town map')().isUnlocked()">
                 <div data-bind="if: (Game.gameState() === GameConstants.GameState.fighting || Game.gameState() === GameConstants.GameState.gym || Game.gameState() === GameConstants.GameState.town||
-                    Game.gameState() === GameConstants.GameState.shop || Game.gameState() === GameConstants.GameState.farm)">
+                    Game.gameState() === GameConstants.GameState.shop || Game.gameState() === GameConstants.GameState.farm || Game.gameState() === GameConstants.GameState.paused)">
                     <p id="mapTooltip" class="btn btn-secondary" style="visibility: hidden;"></p>
                     <div class="page-item no-select">
                         <svg id="map" viewBox="0 0 650 400" preserveAspectRatio="xMaxYMax meet">

@@ -575,6 +575,8 @@ const pokemonList = [
         "id": 42,
         "name": "Golbat",
         "catchRate": 90,
+        "evolution": "Crobat",
+        "evoLevel": 100,
         "type": [
             "Poison",
             "Flying"
