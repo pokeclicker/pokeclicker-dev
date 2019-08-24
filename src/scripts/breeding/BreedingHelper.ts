@@ -160,11 +160,10 @@ HatchList[GameConstants.EggType.Dragon] = [
 document.addEventListener("DOMContentLoaded", function (event) {
 
     $('#breedingModal').on('hidden.bs.modal', function () {
-        if (player.route() == 5) {
-            Game.gameState(GameConstants.GameState.fighting);
-        } else {
+        if (player.highestRegion == 0) {
             MapHelper.moveToRoute(5, GameConstants.Region.kanto);
         }
+        MapHelper.returnToMap();
     });
 
 });
