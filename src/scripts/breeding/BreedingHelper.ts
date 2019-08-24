@@ -154,7 +154,7 @@ HatchList[GameConstants.EggType.Fire] = [
   ];
 HatchList[GameConstants.EggType.Water] = [
     ["Squirtle", "Lapras", "Staryu", "Psyduck"],
-    ["Totodile", "Wooper", "Qwilfish"],
+    ["Totodile", "Wooper", "Marill", "Qwilfish"],
   ];
 HatchList[GameConstants.EggType.Grass] = [
     ["Bulbasaur", "Oddish", "Tangela", "Bellsprout"],
