@@ -1,26 +1,29 @@
-<div class="card mb-3">
-    <div class="row m-0"
-        data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
-        <button class="col-md-2 btn btn-block p-0 m-0"
-            data-bind="attr: {
-                            disabled: !player.itemList[$data]()
-                        },
-                        css: {
-                            'btn-primary': EffectEngineRunner.getEffect($data) > 5,
-                            'btn-warning': EffectEngineRunner.getEffect($data) <= 5 && EffectEngineRunner.getEffect($data) > 0,
-                            'btn-secondary': !EffectEngineRunner.isActive($data)()
-                        },
-                        event: {
-                            click: function(){ItemHandler.useItem($data)}
-                        },
-                        tooltip: {
-                            title: ko.pureComputed(function(){return $data.replace(/_/g, ' ') + ' remaining: ' + (+player.itemList[$data]())}),
-                            trigger: 'hover',
-                            placement: 'top',
-                        }">
-            <img src="" class="clickable" data-bind="attr: { src: '/assets/images/items/' + $data + '.png' }">
-                <span data-bind="text: EffectEngineRunner.formattedTimeLeft($data)()"></span>
-        </button>
+<div id="BattleItemContainer" class="card mb-3">
+    <div class="card-header p-0"><span>Battle Items</span></div>
+    <div class="card-body p-0">
+      <table class="table table-bordered">
+        <tbody>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="p-0" data-bind="attr: {
+                                disabled: !player.itemList[$data]()
+                            },
+                            css: {
+                                'bg-primary': EffectEngineRunner.getEffect($data) > 5,
+                                'bg-warning': EffectEngineRunner.getEffect($data) <= 5 && EffectEngineRunner.getEffect($data) > 0,
+                                'bg-secondary': !EffectEngineRunner.isActive($data)()
+                            },
+                            event: {
+                                click: function(){ItemHandler.useItem($data)}
+                            }">
+                <img src="" class="clickable" data-bind="attr: { src: '/assets/images/items/' + $data + '.png' }">
+
+            </td>
+          </tr>
+          <tr class="bg-dark" data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="text-light p-0"><code data-bind="text: EffectEngineRunner.formattedTimeLeft($data)()"></code></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
 </div>
