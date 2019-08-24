@@ -161,7 +161,7 @@ class Save {
     }
 
     public static loadFromFile(file) {
-        fileToRead = file;
+        let fileToRead = file;
         let fr = new FileReader();
         fr.readAsText(fileToRead);
 
