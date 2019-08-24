@@ -210,7 +210,7 @@ const pokemonsPerRoute = {
         41: {
             land: [],
             water: ["Tentacool","Tentacruel","Mantine","Magikarp", "Chinchou", "Shellder"],
-            headbutt: []
+            headbutt: ["Shuckle"]
         },
         42: {
             land: ["Spearow","Zubat","Mankey","Mareep","Flaaffy"],
@@ -249,7 +249,6 @@ const pokemonsPerRoute = {
         }
     },
     2: {
-        
+
     }
 };
-
