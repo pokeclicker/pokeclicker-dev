@@ -36,7 +36,6 @@ class Player {
     private _oakItemsEquipped: string[];
     private _eggList: Array<KnockoutObservable<Egg | void>>;
     private _eggSlots: KnockoutObservable<number>;
-    private _effectEngine: { [name: string]: number };
 
     constructor(savedPlayer?) {
         let saved: boolean = (savedPlayer != null);
@@ -84,7 +83,6 @@ class Player {
             return ko.observable(savedPlayer._oakItemExp ? (savedPlayer._oakItemExp[index] || 0) : 0)
         });
         this._oakItemsEquipped = savedPlayer._oakItemsEquipped || [];
-        this._effectEngine = savedPlayer._effectEngine || {};
         this._routeKillsNeeded = ko.observable(savedPlayer._routeKillsNeeded || 10);
         this._gymBadges = ko.observableArray<GameConstants.Badge>(savedPlayer._gymBadges);
         this._keyItems = ko.observableArray<string>(savedPlayer._keyItems);
@@ -181,6 +179,7 @@ class Player {
             return ko.observable(savedPlayer.berryList ? (savedPlayer.berryList[index] || 0) : 0)
         });
         this.plotList = Save.initializePlots(savedPlayer.plotList);
+        this.effectList = Save.initializeEffects(savedPlayer.effectList || {});
         this.highestRegion = savedPlayer.highestRegion || 0;
 
         this.tutorialProgress = ko.observable(savedPlayer.tutorialProgress || 0);
@@ -226,6 +225,8 @@ class Player {
     public plotList: KnockoutObservable<Plot>[];
     public farmPoints: KnockoutObservable<number>;
     public berryList: KnockoutObservable<number>[];
+
+    public effectList: { [name: string]: KnockoutObservable<number> } = {};
 
     public tutorialProgress: KnockoutObservable<number>;
     public tutorialState: any;
@@ -321,7 +322,7 @@ class Player {
     public calculateClickAttack(): number {
         const oakItemBonus = OakItemRunner.isActive(GameConstants.OakItem.Poison_Barb) ? (1 + OakItemRunner.calculateBonus(GameConstants.OakItem.Poison_Barb) / 100) : 1;
         let clickAttack =  Math.floor(Math.pow(this.caughtPokemonList.length + 1, 1.4) * oakItemBonus);
-        if(this.effectEngine[GameConstants.BattleItemType.xClick]){
+        if(this.effectList[GameConstants.BattleItemType.xClick]){
             clickAttack *= 1.5;
         }
         return clickAttack;
@@ -448,7 +449,7 @@ class Player {
         // TODO add money multipliers
         let oakItemBonus = OakItemRunner.isActive(GameConstants.OakItem.Amulet_Coin) ? (1 + OakItemRunner.calculateBonus(GameConstants.OakItem.Amulet_Coin) / 100) : 1;
         let moneytogain = Math.floor(money * oakItemBonus * (1 + AchievementHandler.achievementBonus()))
-        if(this.effectEngine[GameConstants.BattleItemType.Lucky_incense]){
+        if(this.effectList[GameConstants.BattleItemType.Lucky_incense]){
             moneytogain = Math.floor(moneytogain * 1.5);
         }
         this._money(this._money() + moneytogain);
@@ -564,7 +565,7 @@ class Player {
         let oakItemBonus = OakItemRunner.isActive(GameConstants.OakItem.Exp_Share) ? 1 + (OakItemRunner.calculateBonus(GameConstants.OakItem.Exp_Share) / 100) : 1;
         let expTotal = Math.floor(exp * level * trainerBonus * oakItemBonus * (1 + AchievementHandler.achievementBonus()) / 9);
 
-        if(this.effectEngine[GameConstants.BattleItemType.xExp]){
+        if(this.effectList[GameConstants.BattleItemType.xExp]){
             expTotal *= 1.5;
         }
 
@@ -666,7 +667,7 @@ class Player {
     }
 
     public gainDungeonTokens(tokens: number) {
-        if(this.effectEngine[GameConstants.BattleItemType.Token_collector]){
+        if(this.effectList[GameConstants.BattleItemType.Token_collector]){
             tokens *= 1.5;
         }
 
@@ -760,14 +761,6 @@ class Player {
         this._oakItemsEquipped = value;
     }
 
-    get effectEngine(): { [name: string]: number } {
-        return this._effectEngine;
-    }
-
-    set effectEngine(value: { [name: string]: number }) {
-        this._effectEngine = value;
-    }
-
     get starter(): GameConstants.Starter {
         return this._starter;
     }
@@ -841,7 +834,7 @@ class Player {
             }
         }
 
-        if(this.effectEngine[GameConstants.BattleItemType.xAttack]){
+        if(this.effectList[GameConstants.BattleItemType.xAttack]){
             attack *= 1.5;
         }
 
@@ -853,7 +846,7 @@ class Player {
         let i = GameHelper.getIndexFromDistribution(GameConstants.BerryDistribution);
         Notifier.notify("You got a " + GameConstants.BerryType[i] + " berry!", GameConstants.NotificationOption.success);
         let amount = 1;
-        if (this.effectEngine[GameConstants.BattleItemType.xClick]) {
+        if (this.effectList[GameConstants.BattleItemType.Item_magnet]) {
             if (Math.random() < 0.5) {
                 amount += 1;
             }
@@ -1000,7 +993,6 @@ class Player {
             "_starter",
             "_oakItemExp",
             "_oakItemsEquipped",
-            "_effectEngine",
             "_itemList",
             "_itemMultipliers",
             "_keyItems",
@@ -1027,6 +1019,7 @@ class Player {
             "farmPoints",
             "plotList",
             "berryList",
+            "effectList",
             "highestRegion",
             "tutorialProgress",
             "tutorialState",

@@ -1,25 +1,39 @@
-class effectEngineRunner {
+class EffectEngineRunner {
     public static counter: number = 0;
 
     public static tick() {
         this.counter = 0;
-        
-        for(let item in player.effectEngine){
-            player.effectEngine[item] -= 1;
-            const newWidth = player.effectEngine[item] / parseInt($('#'+item+'-meter').attr('maxTime')) * 100;
-            $('#'+item+'-meter').css('width', newWidth + "%");
-            $('#'+item+'-meter').parent().attr('title', 'Seconds Remaining: ' + player.effectEngine[item] );
-            if(player.effectEngine[item] <= 0){
-                delete player.effectEngine[item];
-                $('#'+item+'-meter').parent().removeAttr('title');
-                Notifier.notify("The "+item+" has worn off!", GameConstants.NotificationOption.warning);
+        const timeToReduce = 1;
+        for(let itemName in GameConstants.BattleItemType){
+            player.effectList[itemName](Math.max(0, player.effectList[itemName]() - timeToReduce));
+            if (player.effectList[itemName]() == 5){
+              Notifier.notify(`The ${itemName}s effect is about to wear off!`, GameConstants.NotificationOption.warning);
             }
         }
     }
 
+    public static getEffect(itemName: string) {
+        return player.effectList[itemName]();
+    }
+
     public static addEffect(itemName: string){
-        player.effectEngine[itemName] = (player.effectEngine[itemName] ? player.effectEngine[itemName] : 0) + GameConstants.ITEM_USE_TIME;
-        $('#'+itemName+'-meter').css('width','100%');
-        $('#'+itemName+'-meter').attr('maxTime',player.effectEngine[itemName]);
+        player.effectList[itemName](Math.max(0, player.effectList[itemName]() +  GameConstants.ITEM_USE_TIME));
+    }
+
+    public static formattedTimeLeft(itemName: string){
+        return ko.computed(function () {
+             const times = GameConstants.formatTime(player.effectList[itemName]()).split(':');
+             if (+times[0] > 0) {
+               return '60:00+';
+             }
+             times.shift();
+             return times.join(':');
+        }, this);
+    }
+
+    public static isActive(itemName: string) {
+        return ko.computed(function () {
+            return !!player.effectList[itemName]();
+        }, this);
     }
 }

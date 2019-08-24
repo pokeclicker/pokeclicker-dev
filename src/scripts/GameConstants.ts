@@ -10,7 +10,7 @@ namespace GameConstants {
     export const UNDERGROUND_TICK = 1000;
     export const DUNGEON_TIME = 6000;
     export const DUNGEON_TICK = 1;
-    export const EFFECT_ENGINE_TICK = 100;
+    export const EFFECT_ENGINE_TICK = 1000;
     export const FARM_TICK = 1000;
     export const SAVE_TICK = 10000;
     export const GYM_TIME = 3000;

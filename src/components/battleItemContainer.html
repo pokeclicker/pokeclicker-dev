@@ -1,24 +1,26 @@
-<div class="page-item" id="battleItemContainer">
-    <div class="card">
-        <div class="row justify-content-sm-center"
-            data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
-            <div class="battle-item-small">
-                <img src="" class="clickable"
-                data-bind="attr:{ src: '/assets/images/items/' + $data + '.png'},
-                            css: {
-                                'battle-item-none': !(+player.itemList[$data]())
-                            },
-                            event: {
-                                click: function(){ItemHandler.useItem($data)}
-                            },
-                            tooltip: {
-                                title: ko.pureComputed(function(){return $data.replace(/_/g, ' ') + ' remaining: ' + (+player.itemList[$data]())}),
-                                trigger: 'hover',
-                                placement: 'top',
-                            }">
-                <div class="meter" data-bind="attr: {id:$data + '-meter'}"></div>
-            </div>
-        </div>
-
+<div class="card mb-3">
+    <div class="row m-0"
+        data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+        <button class="col-md-2 btn btn-block p-0 m-0"
+            data-bind="attr: {
+                            disabled: !player.itemList[$data]()
+                        },
+                        css: {
+                            'btn-primary': EffectEngineRunner.getEffect($data) > 5,
+                            'btn-warning': EffectEngineRunner.getEffect($data) <= 5 && EffectEngineRunner.getEffect($data) > 0,
+                            'btn-secondary': !EffectEngineRunner.isActive($data)()
+                        },
+                        event: {
+                            click: function(){ItemHandler.useItem($data)}
+                        },
+                        tooltip: {
+                            title: ko.pureComputed(function(){return $data.replace(/_/g, ' ') + ' remaining: ' + (+player.itemList[$data]())}),
+                            trigger: 'hover',
+                            placement: 'top',
+                        }">
+            <img src="" class="clickable" data-bind="attr: { src: '/assets/images/items/' + $data + '.png' }">
+                <span data-bind="text: EffectEngineRunner.formattedTimeLeft($data)()"></span>
+        </button>
     </div>
+
 </div>
