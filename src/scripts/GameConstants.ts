@@ -28,7 +28,7 @@ namespace GameConstants {
 
     export const RoamingPokemon = {
         0: ["Mew"],
-        1: ["Raikou", "Entei"],
+        1: ["Raikou", "Entei", "Suicune"],
     }
 
     // Shinies
@@ -39,8 +39,8 @@ namespace GameConstants {
     export const SHINY_CHANCE_STONE = 4096;
     export const SHINY_CHANCE_SAFARI = 2048;
 
-    export const ITEM_PRICE_MULTIPLIER = 1.01;
-    export const ITEM_PRICE_DEDUCT = 1.008;
+    export const ITEM_PRICE_MULTIPLIER = 1.001;
+    export const ITEM_PRICE_DEDUCT = 1.0005;
 
 
 
@@ -551,6 +551,7 @@ namespace GameConstants {
         Metal_coat,
         Kings_rock,
         Upgrade,
+        Time_stone,
     }
 
     export enum BattleItemType {
