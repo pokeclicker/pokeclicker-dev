@@ -505,7 +505,7 @@ namespace GameConstants {
         "Pokeball": 100,
         "Greatball": 500,
         "Ultraball": 2000,
-        "Masterball": 10000,
+        "Masterball": 2500,
 
         "xAttack": 600,
         "xClick": 400,
