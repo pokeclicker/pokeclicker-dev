@@ -251,7 +251,7 @@ namespace GameConstants {
     }
 
     export function humanifyString(str: string) {
-        return str.split('_').join(' ');
+        return str.replace(/_/g, ' ');
     }
 
     export function formatTime(time) {
