@@ -15,6 +15,11 @@
                            attr: { disabled: !$data.isAvailable() }">
                            <img src="" height="36px" data-bind="attr:{ src: 'assets/images/items/' + name() + '.png' }">
                            <p data-bind="text: GameConstants.humanifyString(name())">Item Name</p>
+                           <span style="float:right; margin-top:8px">
+                               <img class="pokeball-smallest" src="assets/images/pokeball/Pokeball-small.png"
+                                   data-bind="visible: player.alreadyCaughtPokemon(name()),
+                                   atr: {src: `assets/images/pokeball/Pokeball${player.alreadyCaughtPokemonShiny(name()) ? '-shiny' : ''}-small.png`}"/>
+                           </span>
                            <div data-bind="if: $data.isAvailable()">
                                 <img src="" class="currencyImage" data-bind="attr:{ src: 'assets/images/currency/' + GameConstants.Currency[currency]+ '.png' }">
                                 <span data-bind="text: totalPrice(ShopHandler.amount()).toLocaleString('en-US')">Price</span>
