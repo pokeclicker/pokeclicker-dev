@@ -527,7 +527,7 @@ namespace GameConstants {
         "Eevee": 5000,
         "Porygon": 2000,
         "Jynx": 2500,
-        "Mr_Mime": 1500,
+        "Mr. Mime": 1500,
         "Lickitung": 1000,
         "Togepi": 2500,
 
@@ -567,7 +567,7 @@ namespace GameConstants {
         "Eevee",
         "Porygon",
         "Jynx",
-        "Mr_Mime",
+        "Mr. Mime",
         "Lickitung",
         "Togepi",
     }
