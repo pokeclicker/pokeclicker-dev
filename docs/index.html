@@ -667,7 +667,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
            <div class="list-group" data-bind="if: player.town() instanceof PokemonLeague">
               <!-- ko foreach: player.town().gymList -->
                    <button
-                           data-bind="text: $data.leaderName,
+                           data-bind="text: $data.leaderName.replace(/\d/g,''),
                                       disable: !Gym.isUnlocked($data),
                                       click: function() {GymRunner.startGym($data)},
                                       attr: { class: Gym.calculateCssClass($data)}">
@@ -764,7 +764,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                     </div>
                 </div>
                 <div class="col-sm-3" style="display: grid;">
-                    <span data-bind="text: GymBattle.gym.leaderName">Leader</span>
+                    <span data-bind="text: GymBattle.gym.leaderName.replace(/\d/g,'')">Leader</span>
                     <div class="gymPokeballList">
                                         <span data-bind="foreach: new Array(GymBattle.pokemonsUndefeatedComputable())"><img
                                                 class="gymPokeball" src="assets/images/gymLeaders/pokeball.png"></span>
@@ -2210,7 +2210,7 @@ aria-labelledby="receiveBadgeModalLabel" aria-hidden="true">
        <div class="modal-body">
            <p data-bind="text: GymRunner.gymObservable().defeatMessage"></p>
            <img src="" width="56px"
-                data-bind="attr:{ src: 'assets/images/badges/' + GymRunner.gymObservable().leaderName + '.png'}">
+                data-bind="attr:{ src: 'assets/images/badges/' + GymRunner.gymObservable().leaderName + '.png'}, visible: !GameConstants.Badge[GymRunner.gymObservable().badgeReward].startsWith('Elite')">
 
        </div>
        <div data-bind="if: !(GymRunner.gymObservable() instanceof Champion)">
@@ -2230,6 +2230,7 @@ aria-labelledby="receiveBadgeModalLabel" aria-hidden="true">
    </div>
 </div>
 </div>
+
 
 <!-- Achievements Modal -->
 <div class="modal  fade" id="achievementsModal" tabindex="-1" role="dialog"
@@ -2627,7 +2628,7 @@ style="cursor:default" tabindex="-1">
                    deals</a></li>
                <li class='nav-item'><a data-toggle='tab' class='nav-link' href="#help">Help</a></li>
                <p><span id="diamondCounter" data-bind='text: player._diamonds'>x</span> <img
-                       src='assets/images/underground/diamond.png'></p>
+                       src='assets/images/underground/diamond.svg' width="20px'"></p>
            </ul>
        </div>
        <div class="tab-content p-0">
@@ -2652,7 +2653,7 @@ style="cursor:default" tabindex="-1">
                            <div id='mineEnergyBar' class='progress-bar' role='progressbar'
                                 aria-valuemin='0' aria-valuemax='100'
                                 data-bind="style: { width: Math.floor(Underground.energy/Underground.getMaxEnergy()*100) + '%' }">
-                                <span data-bind="text: 'Energy: ' + Math.floor(Underground.energy) + '/' + Underground.getMaxEnergy() + ' (' + Underground.energyTick() + 's)'"></span>
+                                <span data-bind="text: 'Energy: ' + Math.floor(Underground.energy) + '/' + Underground.getMaxEnergy() + (Math.floor(Underground.energy) < Underground.getMaxEnergy() ? ' (' + Underground.energyTick() + 's)' : '')"></span>
                            </div>
                        </div>
                    </div>
@@ -2892,9 +2893,8 @@ aria-labelledby="badgeCaseModalLabel">
        </div>
        <div class="modal-body">
            <div class="row no-gutters justify-content-center"
-                data-bind="foreach: new Array(GameConstants.AMOUNT_OF_BADGES)">
+                data-bind="foreach: Object.keys(GameConstants.Badge).filter(b=>isNaN(b) && !b.startsWith('Elite') && b != 'None')">
                <div class="col-sm-3 col-md-3 col-lg-3 badgeEntry">
-                   <div data-bind="with: GameConstants.Badge[$index() + 1]">
 
                        <div data-bind="if: player.hasBadge(GameConstants.Badge[$data])">
                            <img src=""
@@ -2907,7 +2907,6 @@ aria-labelledby="badgeCaseModalLabel">
                        </div>
                        <p style="bottom: 0;"
                           data-bind="text: $data">name</p>
-                   </div>
 
                </div>
            </div>
@@ -2919,6 +2918,7 @@ aria-labelledby="badgeCaseModalLabel">
    </div>
 </div>
 </div>
+
 
 <!-- Save Modal-->
 <div class="modal fade noselect" id="saveModal" tabindex="-1" role="dialog"
