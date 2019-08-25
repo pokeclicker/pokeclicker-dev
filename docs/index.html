@@ -208,7 +208,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
             </ul>
             <div class="tab-content">
                 <div id="items" class="tab-pane fade">
-                    <h3 data-bind="text: ItemHandler.stoneSelected().replace(/_/g, ' ')"></h3>
+                    <h3 data-bind="text: GameConstants.humanifyString(ItemHandler.stoneSelected())"></h3>
                     <div class="page-item m-0">
                         <div class="row no-gutters justify-content-sm-center" style="padding:15px;">
                             <div class="row col-lg-6 col-sm-11" data-bind="foreach: Array.from(Array(Object.keys(GameConstants.StoneType).length / 2).keys()).map(x=>GameConstants.StoneType[x])">
@@ -2137,7 +2137,11 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                            data-bind="click: function() {ShopHandler.setSelected($index())},
                            css: { active: ShopHandler.selected() == $index() },
                            attr: { disabled: !$data.isAvailable() }">
-                           <img src="" height="36px" data-bind="attr:{ src: 'assets/images/items/' + name() + '.png' }">
+                           <span style="position: absolute; top: 15px; right: 20px;" data-bind="if: $data instanceof PokemonItem && player.alreadyCaughtPokemon(name())">
+                               <img class="pokeball-smallest" src=""
+                                   data-bind="attr: {src: `assets/images/pokeball/Pokeball${player.alreadyCaughtPokemonShiny(name()) ? '-shiny' : ''}-small.png`}"/>
+                           </span>
+                           <img src="" height="36px" data-bind="attr:{ src: 'assets/images/items/' + name().replace(/\W/g, '_') + '.png' }">
                            <p data-bind="text: GameConstants.humanifyString(name())">Item Name</p>
                            <div data-bind="if: $data.isAvailable()">
                                 <img src="" class="currencyImage" data-bind="attr:{ src: 'assets/images/currency/' + GameConstants.Currency[currency]+ '.png' }">
@@ -2570,7 +2574,7 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
                            <img class="smallImage"
                                 data-bind="attr:{ src: BreedingHelper.getEggImage(ItemList[$data]) }"
                                 src=""/>
-                           <span data-bind="text: $data.replace(/_/g, ' ') + ' (' + player._itemList[$data]() + ')'" style="margin-left: 15px"></span>
+                           <span data-bind="text: GameConstants.humanifyString($data) + ' (' + player._itemList[$data]() + ')'" style="margin-left: 15px"></span>
                        </button>
                    </div>
                </div>
