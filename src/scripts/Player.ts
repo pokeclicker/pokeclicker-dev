@@ -358,21 +358,20 @@ class Player {
      * @param shiny if the pokémon is shiny.
      * @returns {GameConstants.Pokeball} pokéball to use.
      */
-    public calculatePokeballToUse(alreadyCaught: boolean, shiny: boolean, alreadyCaughtShiny: boolean): GameConstants.Pokeball {
+    public calculatePokeballToUse(pokemonName: string, isShiny: boolean): GameConstants.Pokeball {
+        const alreadyCaught = this.alreadyCaughtPokemon(pokemonName);
+        const alreadyCaughtShiny = this.alreadyCaughtPokemonShiny(pokemonName);
         let pref: GameConstants.Pokeball;
-        if (alreadyCaught) {
-            pref = this._alreadyCaughtBallSelection();
-        } else {
+        // just check against alreadyCaughtShiny as this returns false when you don't have the pokemon yet.
+        if (!alreadyCaught || (!alreadyCaughtShiny && isShiny)) {
             pref = this._notCaughtBallSelection();
-        }
-
-        // Always throw the highest available Pokéball at shinies
-        if (shiny && !alreadyCaughtShiny) {
-            pref = GameConstants.Pokeball.Masterball;
+        } else {
+            pref = this._alreadyCaughtBallSelection();
         }
 
         let use: GameConstants.Pokeball = GameConstants.Pokeball.None;
 
+        // Check which Pokeballs we have in stock that are of equal or lesser than selection
         for (let i: number = pref; i >= 0; i--) {
             if (this._pokeballs[i]() > 0) {
                 use = i;
@@ -388,11 +387,14 @@ class Player {
      * @returns {boolean}
      */
     public alreadyCaughtPokemon(pokemonName: string) {
-        let id = PokemonHelper.getPokemonByName(pokemonName).id;
+        const pokemon = PokemonHelper.getPokemonByName(pokemonName);
+        if (!pokemon) return false;
+        const id = PokemonHelper.getPokemonByName(pokemonName).id;
         return player.caughtAmount[id]() > 0;
     }
 
     public alreadyCaughtPokemonShiny(pokemonName: string) {
+        if (!this.alreadyCaughtPokemon(pokemonName)) return false;
         for (let i: number = 0; i < this.caughtShinyList().length; i++) {
             if (this.caughtShinyList()[i] == pokemonName) {
                 return true;

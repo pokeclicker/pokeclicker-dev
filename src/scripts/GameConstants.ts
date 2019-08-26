@@ -251,7 +251,7 @@ namespace GameConstants {
     }
 
     export function humanifyString(str: string) {
-        return str.split('_').join(' ');
+        return str.replace(/_/g, ' ');
     }
 
     export function formatTime(time) {
@@ -331,11 +331,11 @@ namespace GameConstants {
         "Marsh" = 6,
         "Volcano" = 7,
         "Earth" = 8,
-        "Lorelei" = 9,
-        "Bruno" = 10,
-        "Agatha" = 11,
-        "Lance" = 12,
-        "Champion" = 13,
+        "Elite_Lorelei" = 9,
+        "Elite_Bruno" = 10,
+        "Elite_Agatha" = 11,
+        "Elite_Lance" = 12,
+        "Elite_Champion" = 13,
         "Zephyr" = 14,
         "Hive" = 15,
         "Plain" = 16,
@@ -344,11 +344,11 @@ namespace GameConstants {
         "Mineral" = 19,
         "Glacier" = 20,
         "Rising" = 21,
-        "Will" = 22,
-        "Koga" = 23,
-        "Bruno2" = 24,
-        "Karen" = 25,
-        "JohtoChampion" = 26,
+        "Elite_Will" = 22,
+        "Elite_Koga" = 23,
+        "Elite_Bruno2" = 24,
+        "Elite_Karen" = 25,
+        "Elite_JohtoChampion" = 26,
     }
 
     export enum PokemonType {
@@ -470,7 +470,7 @@ namespace GameConstants {
             24: GameConstants.Badge.Cascade,
         },
         1: {
-            28: GameConstants.Badge.JohtoChampion,
+            28: GameConstants.Badge.Elite_JohtoChampion,
             32: GameConstants.Badge.Zephyr,
             34: GameConstants.Badge.Hive,
             35: GameConstants.Badge.Plain,
@@ -505,7 +505,7 @@ namespace GameConstants {
         "Pokeball": 100,
         "Greatball": 500,
         "Ultraball": 2000,
-        "Masterball": 10000,
+        "Masterball": 2500,
 
         "xAttack": 600,
         "xClick": 400,
@@ -527,7 +527,7 @@ namespace GameConstants {
         "Eevee": 5000,
         "Porygon": 2000,
         "Jynx": 2500,
-        "Mr_Mime": 1500,
+        "Mr. Mime": 1500,
         "Lickitung": 1000,
         "Togepi": 2500,
 
@@ -567,7 +567,7 @@ namespace GameConstants {
         "Eevee",
         "Porygon",
         "Jynx",
-        "Mr_Mime",
+        "Mr. Mime",
         "Lickitung",
         "Togepi",
     }
