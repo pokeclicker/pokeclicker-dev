@@ -195,4 +195,4 @@ class QuestHelper{
     public static questSlots(): KnockoutObservable<number> {
         return ko.observable(1);
     }
-}}
+}
