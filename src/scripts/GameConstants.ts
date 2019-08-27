@@ -183,7 +183,7 @@ namespace GameConstants {
         "MineLayers",
         "CatchShinies",
         "DefeatGym",
-        "DefeatKantoDungeon",
+        "DefeatDungeon",
         "UsePokeball",
         "UseOakItem",
     ];
@@ -726,6 +726,11 @@ namespace GameConstants {
         "Ice Path",
         "Dark Cave",
         "Mt Silver"
+    ];
+
+    export const RegionDungeons = [
+      KantoDungeons,
+      JohtoDungeons
     ];
 
     export const StartingTowns = [

@@ -64,21 +64,8 @@ class Statistics {
     }
 
     public static getDungeonIndex(dungeon: string) {
-        let index;
-        if (GameConstants.KantoDungeons.indexOf(dungeon) > -1) {
-            index = GameConstants.KantoDungeons.indexOf(dungeon)
-            return index;
-        } else {
-            index = GameConstants.KantoDungeons.length;
-        }
-        if (GameConstants.JohtoDungeons.indexOf(dungeon) > -1) {
-            index += GameConstants.JohtoDungeons.indexOf(dungeon)
-            return index;
-        } else {
-            index += GameConstants.JohtoDungeons.length;
-        }
-        console.log("Failed to find dungeon", dungeon);
-        return index;
+        const dungeons = GameConstants.RegionDungeons.flat();
+        return dungeons.indexOf(dungeon);
     }
 
 }
