@@ -51,10 +51,10 @@ class QuestHelper{
                 return new MineLayersQuest(amount);
             case "CatchShinies":
                 return new CatchShiniesQuest(1);
-            case "DefeatKantoGym":
-                let gymIndex = SeededRand.intBetween(0, GameConstants.KantoGyms.length - 1);
+            case "DefeatGym":
+                const gymTown = SeededRand.fromArray(GameConstants.RegionGyms.flat());
                 amount = SeededRand.intBetween(5, 20);
-                return new DefeatGymQuest(gymIndex, 0, amount);
+                return new DefeatGymQuest(gymTown, amount);
             case "DefeatKantoDungeon":
                 let dungeon = SeededRand.fromArray(GameConstants.KantoDungeons);
                 amount = SeededRand.intBetween(5, 20);
@@ -145,7 +145,7 @@ class QuestHelper{
             return false;
         }
         for (let i = 0; i < QuestHelper.questList().length; i++) {
-            if (!(player.completedQuestList[i]() || QuestHelper.questList()[i].isCompleted() 
+            if (!(player.completedQuestList[i]() || QuestHelper.questList()[i].isCompleted()
                     || QuestHelper.questList()[i].inProgress()())) {
                 return true;
             }
@@ -194,4 +194,4 @@ class QuestHelper{
     public static questSlots(): KnockoutObservable<number> {
         return ko.observable(1);
     }
-}
+}}

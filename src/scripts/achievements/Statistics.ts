@@ -58,18 +58,9 @@ class Statistics {
         }
     }
 
-    public static getGymIndex(gym: string, region: GameConstants.Region) {
-        let index;
-        switch (region) {
-            case 0:
-                index = GameConstants.KantoGyms.indexOf(gym);
-                break;
-            case 1:
-                index = GameConstants.KantoGyms.length;
-                index += GameConstants.JohtoGyms.indexOf(gym);
-                break;
-        }
-        return index;
+    public static getGymIndex(gym: string) {
+        const gyms = GameConstants.RegionGyms.flat();
+        return gyms.indexOf(gym);
     }
 
     public static getDungeonIndex(dungeon: string) {
