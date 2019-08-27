@@ -15,7 +15,7 @@ class QuestHelper{
     }
 
     public static random(type: string, index: number) {
-        let amount, route;
+        let amount, route, region;
         switch (type) {
             case "DefeatPokemons":
                 route = SeededRand.intBetween(1, GameConstants.RegionRoute[player.highestRegion]);
@@ -52,7 +52,8 @@ class QuestHelper{
             case "CatchShinies":
                 return new CatchShiniesQuest(1);
             case "DefeatGym":
-                const gymTown = SeededRand.fromArray(GameConstants.RegionGyms.flat());
+                region = SeededRand.intBetween(0, player.highestRegion);
+                const gymTown = SeededRand.fromArray(GameConstants.RegionGyms[region]);
                 amount = SeededRand.intBetween(5, 20);
                 return new DefeatGymQuest(gymTown, amount);
             case "DefeatKantoDungeon":
