@@ -4,8 +4,10 @@ class QuestHelper{
     public static generateQuests(level: number, refreshes: number, d: Date) {
         SeededRand.seed(Number( level * (d.getFullYear() + refreshes * 10) * d.getDate() + 1000 * d.getMonth() + 100000 * d.getDate()));
 
+        const QuestTypes = new Set(GameConstants.QuestTypes);
         for (let i=0; i<GameConstants.QUESTS_PER_SET; i++) {
-            let type = SeededRand.fromArray(GameConstants.QuestTypes);
+            let type = SeededRand.fromArray(Array.from(QuestTypes));
+            QuestTypes.delete(type);
             let quest = QuestHelper.random(type, i);
             quest.index = i;
             QuestHelper.questList.push(quest);
