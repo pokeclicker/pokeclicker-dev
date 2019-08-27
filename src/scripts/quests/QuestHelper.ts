@@ -18,7 +18,7 @@ class QuestHelper{
         let amount, route;
         switch (type) {
             case "DefeatPokemons":
-                route = SeededRand.intBetween(1, 25);
+                route = SeededRand.intBetween(1, GameConstants.RegionRoute[player.highestRegion]);
                 amount = SeededRand.intBetween(100, 500);
                 return new DefeatPokemonsQuest(route, amount);
             case "CapturePokemons":
