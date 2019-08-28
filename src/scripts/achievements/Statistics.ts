@@ -15,6 +15,7 @@ class Statistics {
     public pokeballsBought: Array<KnockoutObservable<number>>;
     public totalShards: Array<KnockoutObservable<number>>;
     public oakItemUses: Array<KnockoutObservable<number>>;
+    public berriesHarvested: Array<KnockoutObservable<number>>;
 
     private static readonly arraySizes = {
         "gymsDefeated": GameConstants.KantoGyms.length + GameConstants.JohtoGyms.length,
@@ -23,6 +24,7 @@ class Statistics {
         "pokeballsBought": GameHelper.enumLength(GameConstants.Pokeball) - 1,
         "totalShards": GameHelper.enumLength(GameConstants.PokemonType) - 1,// remove "None" pokemon type
         "oakItemUses": GameHelper.enumLength(GameConstants.OakItem),
+        "berriesHarvested": GameHelper.enumLength(GameConstants.BerryType),
     }
 
     constructor(saved = {}) {
@@ -45,6 +47,7 @@ class Statistics {
             "pokeballsBought",
             "totalShards",
             "oakItemUses",
+            "berriesHarvested",
         ]
 
         for (let prop of observables) {
