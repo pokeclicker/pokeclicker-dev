@@ -7,6 +7,7 @@ class HarvestBerriesQuest extends Quest implements QuestInterface {
         this.questFocus = player.statistics.berriesHarvested[GameConstants.BerryType[berryType]];
     }
 
+    // TODO: Balance the reward amount better
     private static calcReward(berryType: string, amount: number): number {
         const berry = BerryList[berryType];
         const berryId = GameConstants.BerryType[berryType];
