@@ -18,6 +18,9 @@ class DefeatGymQuest extends Quest implements QuestInterface {
 
     private static calcReward(gymTown: string, amount: number): number {
         let gym = gymList[gymTown];
+        if (gym instanceof Champion) {
+            gym.setPokemon(player.starter);
+        }
         let playerDamage =  player.pokemonAttackObservable();
         let attacksToWin = 0;
         for (let pokemon of gym.pokemons) {
