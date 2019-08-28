@@ -161,12 +161,9 @@ class AchievementHandler {
         AchievementHandler.addAchievement("Ultraball 5", "Get 10,000 Ultraballs", new PokeballRequirement(10000, GameConstants.Pokeball.Ultraball), 0.30);
         AchievementHandler.addAchievement("Ultraball 6", "Get 100,000 Ultraballs", new PokeballRequirement(100000, GameConstants.Pokeball.Ultraball), 0.40);
 
-        AchievementHandler.addAchievement("Masterball 1", "Get your first Masterball", new PokeballRequirement(1, GameConstants.Pokeball.Masterball), 0.10);
-        AchievementHandler.addAchievement("Masterball 2", "Get 10 Masterballs", new PokeballRequirement(10, GameConstants.Pokeball.Masterball), 0.15);
-        AchievementHandler.addAchievement("Masterball 3", "Get 100 Masterballs", new PokeballRequirement(100, GameConstants.Pokeball.Masterball), 0.20);
-        AchievementHandler.addAchievement("Masterball 4", "Get 1000 Masterballs", new PokeballRequirement(1000, GameConstants.Pokeball.Masterball), 0.30);
-        AchievementHandler.addAchievement("Masterball 5", "Get 10,000 Masterballs", new PokeballRequirement(10000, GameConstants.Pokeball.Masterball), 0.40);
-        AchievementHandler.addAchievement("Masterball 6", "Get 100,000 Masterballs", new PokeballRequirement(100000, GameConstants.Pokeball.Masterball), 0.50);
+        AchievementHandler.addAchievement("Masterball 1", "Get your first Masterball", new PokeballRequirement(1, GameConstants.Pokeball.Masterball), 0.20);
+        AchievementHandler.addAchievement("Masterball 2", "Get 10 Masterballs", new PokeballRequirement(10, GameConstants.Pokeball.Masterball), 0.30);
+        AchievementHandler.addAchievement("Masterball 3", "Get 100 Masterballs", new PokeballRequirement(100, GameConstants.Pokeball.Masterball), 0.40);
 
         AchievementHandler.addAchievement("A Few Clicks In", "Click 10 Times", new ClickRequirement(10, 1), 0.02);
         AchievementHandler.addAchievement("Clicking Pro", "Click 100 Times", new ClickRequirement(100, 1), 0.05);
