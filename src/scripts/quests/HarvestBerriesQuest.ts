@@ -12,6 +12,6 @@ class HarvestBerriesQuest extends Quest implements QuestInterface {
         const { harvestTime } = BerryList[berryType];
         const avgBerriesPerHarvest = 2.5;
         const plotsAvailable = player.plotList.length;
-        return (amount / avgBerriesPerHarvest) * harvestTime / Math.max(4, plotsAvailable);
+        return Math.ceil((amount / avgBerriesPerHarvest) * harvestTime / Math.max(4, plotsAvailable));
     }
 }
