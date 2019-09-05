@@ -60,7 +60,7 @@ class CaughtPokemon {
                 }
 
                 // We need to check if the player object has been set first, There has to be a better way though..
-                const obtainedAllEvolutions = player ? !PokemonHelper.getPokemonByName(this.name).evolutionByIndex(index, true, true).some(p => !player.alreadyCaughtPokemon(p)) : false;
+                const obtainedAllEvolutions = reset ? !PokemonHelper.getPokemonByName(this.name).evolutionByIndex(index, true, true).some(p => !player.alreadyCaughtPokemon(p)) : false;
 
                 if (obtainedAllEvolutions){
                   this.evolved = true;
