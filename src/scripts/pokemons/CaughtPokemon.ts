@@ -59,9 +59,10 @@ class CaughtPokemon {
                   this.evolver[index].dispose();
                 }
 
-                const obtainedAllEvolutions = reset ? !PokemonHelper.getPokemonByName(this.name).evolutionByIndex(index, true, true).every(p => player.alreadyCaughtPokemon(p)).length : false;
+                const obtainedAllEvolutions = !PokemonHelper.getPokemonByName(this.name).evolutionByIndex(index, true, true).some(p => !player.alreadyCaughtPokemon(p));
 
                 if (obtainedAllEvolutions){
+                  this.evolved = true;
                   return;
                 }
 
