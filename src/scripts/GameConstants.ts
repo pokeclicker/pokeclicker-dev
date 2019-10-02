@@ -451,7 +451,8 @@ namespace GameConstants {
             46: [45],
             26: [46],
             27: [26],
-        }
+        },
+        2: {}
     };
 
     export const routeBadgeRequirements = {
@@ -480,7 +481,8 @@ namespace GameConstants {
             43: GameConstants.Badge.Glacier,
             44: GameConstants.Badge.Glacier,
             45: GameConstants.Badge.Rising,
-        }
+        },
+        2: {}
     };
 
     export const routeDungeonRequirements = {
@@ -491,7 +493,8 @@ namespace GameConstants {
         1: {
             33: "Union Cave",
             34: "Ilex Forest"
-        }
+        },
+        2: {}
     }
 
     export enum Starter {
