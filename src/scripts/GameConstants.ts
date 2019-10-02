@@ -316,7 +316,7 @@ namespace GameConstants {
     export const RegionRoute = {
         0: 25,
         1: 48,
-        2: 0
+        2: 82,
     };
 
     export function randomIntBetween(min: number, max: number) {
@@ -751,9 +751,58 @@ namespace GameConstants {
         "Mt Silver"
     ];
 
+    export const HoennDungeons = [
+        // Caves, Tunnels & Mountains
+        "Rusturf Tunnel",
+        "Island Cave",
+        "Granite Cave",
+        "Desert Ruins",
+        "Jagged Pass",
+        "Fiery Path",
+        "Mt. Chimney",
+        "Meteor Falls",
+        "Scorched Slab",
+        "Ancient Tomb",
+        "Mt. Pyre",
+        "Shoal Cave",
+        "Aqua Hideout",
+        "Magma Hideout",
+        "Seafloor Cavern",
+        "Cave of Origin",
+        "Sky Pillar",
+        "Victory Road Hoenn",
+        "Sealed Chamber",
+        "Artisan Cave",
+        "Desert Underpass",
+        "Marine Cave",
+        "Terra Cave",
+        // Forest
+        "Petalburg Woods",
+        // Islands
+        "Southern Island",
+        "Faraway Island",
+        "Birth Island",
+        // Place of Interest
+        "Devon Corporation",
+        "Oceanic Museum",
+        "New Mauville",
+        "Mirage Tower",
+        "Weather Institute",
+        "Safari Zone",
+        "Mirage Island",
+        "Battle Tower",
+        "Trainer Hill",
+        "Abandoned Ship",
+        "Battle Maison",
+        "Battle Resort",
+        "Mirage Spots",
+        "Sea Mauville",
+    ];
+
     export const RegionDungeons = [
       KantoDungeons,
-      JohtoDungeons
+      JohtoDungeons,
+      HoennDungeons,
     ];
 
     export const StartingTowns = [
@@ -764,6 +813,7 @@ namespace GameConstants {
 
     export const pokemonsNeededToTravel = [
         151,
-        252, // Should be 251, set to 252 in case gen 3 isn't added before beta
+        251,
+        387, // Should be 386, set to 387 in case gen 4 isn't added yet
     ]
 }
