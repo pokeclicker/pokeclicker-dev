@@ -701,9 +701,26 @@ namespace GameConstants {
         "Champion Lance"
     ];
 
+    export const HoennGyms = [
+        "Rustboro City",
+        "Dewford Town",
+        "Mauville City",
+        "Lavaridge Town",
+        "Petalburg City",
+        "Fortree City",
+        "Mossdeep City",
+        "Sootopolis City",
+        "Elite Sidney",
+        "Elite Phoebe",
+        "Elite Glacia",
+        "Elite Drake",
+        "Champion Wallace"
+    ];
+
     export const RegionGyms = [
       KantoGyms,
-      JohtoGyms
+      JohtoGyms,
+      HoennGyms,
     ];
 
     export const KantoDungeons = [
