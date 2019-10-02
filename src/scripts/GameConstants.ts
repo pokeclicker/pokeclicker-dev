@@ -314,9 +314,9 @@ namespace GameConstants {
     ];
 
     export const RegionRoute = {
-        0: 25,
-        1: 48,
-        2: 82,
+        0: [1, 25],
+        1: [26, 48],
+        2: [101, 134],
     };
 
     export function randomIntBetween(min: number, max: number) {
