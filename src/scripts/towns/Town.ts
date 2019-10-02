@@ -166,3 +166,6 @@ TownList["Mt Mortar"] = new DungeonTown("Mt Mortar", [42]);
 TownList["Ice Path"] = new DungeonTown("Ice Path", [44]);
 TownList["Dark Cave"] = new DungeonTown("Dark Cave", [45]);
 TownList["Mt Silver"] = new DungeonTown("Mt Silver", [28], GameConstants.Badge.Elite_Karen);
+
+//Hoenn Towns
+TownList["Littleroot Town"] = new Town("Littleroot Town", []);
