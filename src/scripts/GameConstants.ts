@@ -759,6 +759,7 @@ namespace GameConstants {
     export const StartingTowns = [
         "Pallet Town",
         "New Bark Town",
+        "Littleroot Town",
     ];
 
     export const pokemonsNeededToTravel = [
