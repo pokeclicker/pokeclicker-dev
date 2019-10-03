@@ -249,6 +249,175 @@ const pokemonsPerRoute = {
         }
     },
     2: {
-
+        101: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        102: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        103: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        104: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        105: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        106: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        107: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        108: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        109: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        110: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        111: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        112: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        113: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        114: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        115: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        116: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        117: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        118: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        119: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        120: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        121: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        122: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        123: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        124: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        125: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        126: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        127: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        128: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        129: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        130: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        131: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        132: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        133: {
+            land: [],
+            water: [],
+            headbutt: []
+        },
+        134: {
+            land: [],
+            water: [],
+            headbutt: []
+        }
     }
 };
