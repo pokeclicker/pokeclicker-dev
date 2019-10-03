@@ -250,7 +250,7 @@ const pokemonsPerRoute = {
     },
     2: {
         101: {
-            land: [],
+            land: ['Zigzagoon', 'Wurmple', 'Poochyena'],
             water: [],
             headbutt: []
         },
