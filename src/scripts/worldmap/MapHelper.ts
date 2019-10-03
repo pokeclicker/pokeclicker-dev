@@ -109,21 +109,16 @@ class MapHelper {
     };
 
     public static updateAllRoutes() {
-        for (let i = 0; i < GameConstants.AMOUNT_OF_ROUTES_KANTO; i++) {
-            // TODO fix for multiple regions
-            if (MapHelper.accessToRoute(i, GameConstants.Region.kanto)) {
-                $("[data-route='" + i + "']").removeClass('currentRoute').removeClass('lockedRoute').addClass('unlockedRoute');
+        const region = player.region;
+        for (let route = GameConstants.RegionRoute[region][0]; route < GameConstants.RegionRoute[region][1]; route++) {
+            if (MapHelper.accessToRoute(route, region)) {
+                $("[data-route='" + route + "']").removeClass('currentRoute').removeClass('lockedRoute').addClass('unlockedRoute');
             }
         }
     }
 
     public static validRoute(route: number, region: GameConstants.Region): boolean {
-        switch (region) {
-            case GameConstants.Region.kanto:
-                return route > 0 && route < 26;
-            case GameConstants.Region.johto:
-                return route > 25 && route < 49;
-        }
+        return route >= GameConstants.RegionRoute[region][0] && route <= GameConstants.RegionRoute[region][1];
     }
 
     public static openShipModal() {
