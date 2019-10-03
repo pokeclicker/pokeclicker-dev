@@ -485,6 +485,12 @@ namespace GameConstants {
         2: {}
     };
 
+    export const WaterRoutes = {
+        0: new Set([19,20,21]),
+        1: new Set([40,41]),
+        2: new Set([105,106,107,108,109,122,124,125,126,127,128,129,130,131,132,133,134])
+    }
+
     export const routeDungeonRequirements = {
         0: {
             4: "Mt. Moon",
