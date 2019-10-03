@@ -355,6 +355,19 @@ namespace GameConstants {
         "Elite_Bruno2" = 24,
         "Elite_Karen" = 25,
         "Elite_JohtoChampion" = 26,
+        "Stone" = 27,
+        "Knuckle" = 28,
+        "Dynamo" = 29,
+        "Heat" = 30,
+        "Balance" = 31,
+        "Feather" = 32,
+        "Mind" = 33,
+        "Rain" = 34,
+        "Elite_Sidney" = 35,
+        "Elite_Phoebe" = 36,
+        "Elite_Glacia" = 37,
+        "Elite_Drake" = 38,
+        "Elite_HoennChampion" = 39,
     }
 
     export enum PokemonType {
