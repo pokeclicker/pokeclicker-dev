@@ -18,9 +18,18 @@ namespace GameConstants {
     export const ACHIEVEMENT_TICK = 1000;
     export const MIN_LOAD_TIME = 500;
 
-    export const AMOUNT_OF_POKEMONS = 251;
-    export const AMOUNT_OF_POKEMONS_GEN1 = 151;
-    export const AMOUNT_OF_POKEMONS_GEN2 = 251;
+    export const MAX_AVAILABLE_REGION = 1;
+
+    export const TotalPokemonsPerRegion = [
+        151, // 151
+        251, // 100
+        386, // 135
+        493, // 107
+        649, // 156
+        721, // 72
+        809, // 88
+    ];
+
     export const AMOUNT_OF_BADGES = 16;
 
     export const ROAMING_MIN_CHANCE = 8192;
@@ -832,10 +841,4 @@ namespace GameConstants {
         "New Bark Town",
         "Littleroot Town",
     ];
-
-    export const pokemonsNeededToTravel = [
-        151,
-        251,
-        387, // Should be 386, set to 387 in case gen 4 isn't added yet
-    ]
 }

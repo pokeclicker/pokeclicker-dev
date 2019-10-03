@@ -127,7 +127,7 @@ class MapHelper {
         }
     }
 
-    public static validRoute(route: number, region: GameConstants.Region): boolean {
+    public static validRoute(route: number = 0, region: GameConstants.Region = 0): boolean {
         return route >= GameConstants.RegionRoute[region][0] && route <= GameConstants.RegionRoute[region][1];
     }
 
@@ -154,7 +154,7 @@ class MapHelper {
     }
 
     public static ableToTravel() {
-        return player.caughtPokemonList.length >= GameConstants.pokemonsNeededToTravel[player.highestRegion]
+        return player.highestRegion < GameConstants.MAX_AVAILABLE_REGION && player.caughtPokemonList.length >= GameConstants.TotalPokemonsPerRegion[player.highestRegion];
     }
 
     public static travelToNextRegion() {
