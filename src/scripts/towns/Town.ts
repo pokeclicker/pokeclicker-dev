@@ -169,3 +169,18 @@ TownList["Mt Silver"] = new DungeonTown("Mt Silver", [28], GameConstants.Badge.E
 
 //Hoenn Towns
 TownList["Littleroot Town"] = new Town("Littleroot Town", []);
+TownList["Oldale Town"] = new Town("Oldale Town", [101]);
+TownList["Petalburg City"] = new Town("Petalburg City", [102]);
+TownList["Rustboro City"] = new Town("Rustboro City", [104]);
+TownList["Dewford Town"] = new Town("Dewford Town", []);
+TownList["Slateport City"] = new Town("Slateport City", []);
+TownList["Mauville City"] = new Town("Mauville City", []);
+TownList["Verdanturf Town"] = new Town("Verdanturf Town", []);
+TownList["Lavaridge Town"] = new Town("Lavaridge Town", []);
+TownList["Fallabor Town"] = new Town("Fallabor Town", []);
+TownList["Fortree City"] = new Town("Fortree City", []);
+TownList["Lilycove City"] = new Town("Lilycove City", []);
+TownList["Mossdeep City"] = new Town("Mossdeep City", []);
+TownList["Sootopolis City"] = new Town("Sootopolis City", []);
+TownList["Ever Grande City"] = new Town("Ever Grande City", []);
+TownList["Pacifidlog Town"] = new Town("Pacifidlog Town", []);
