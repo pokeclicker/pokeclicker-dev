@@ -134,6 +134,11 @@ class MapHelper {
                     openModal();
                     return;
                 }
+            case 2:
+                if (TownList["Slateport City"].isUnlocked()) {
+                    openModal();
+                    return;
+                }
         }
         Notifier.notify("You cannot access this dock yet", GameConstants.NotificationOption.warning)
     }
