@@ -469,7 +469,8 @@ namespace GameConstants {
             46: [45],
             26: [46],
             27: [26],
-        }
+        },
+        2: {}
     };
 
     export const routeBadgeRequirements = {
@@ -498,8 +499,15 @@ namespace GameConstants {
             43: GameConstants.Badge.Glacier,
             44: GameConstants.Badge.Glacier,
             45: GameConstants.Badge.Rising,
-        }
+        },
+        2: {}
     };
+
+    export const WaterRoutes = {
+        0: new Set([19,20,21]),
+        1: new Set([40,41]),
+        2: new Set([105,106,107,108,109,122,124,125,126,127,128,129,130,131,132,133,134])
+    }
 
     export const routeDungeonRequirements = {
         0: {
@@ -509,7 +517,8 @@ namespace GameConstants {
         1: {
             33: "Union Cave",
             34: "Ilex Forest"
-        }
+        },
+        2: {}
     }
 
     export enum Starter {
