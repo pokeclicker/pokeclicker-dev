@@ -26,6 +26,7 @@
     <!-- ROUTES -->
     <!-- ------ -->
 
+    <!--Route 101-->
     <%- include('templates/mapRoute',
         { route: 101, region: 2
         , height: 23, width: 40
@@ -34,345 +35,336 @@
         , rotate: true
         })
      %>
-
+     
     <!--Route 102-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(102, 2); } ">
-        <rect data-route='102'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(102,2) }"
-              height="23"
-              width="50"
-              x="50" y="262"></rect>
-        <text font-size="13px" x="62" y="279">102</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 102, region: 2
+        , height: 23, width: 50
+        , x: 50, y: 262
+        , textx: 62, texty: 279
+        , rotate: false
+        })
+     %>
 
     <!--Route 103-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(103, 2); } ">
-        <rect data-route='103'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(103,2) }"
-              height="23"
-              width="89"
-              x="97" y="239"></rect>
-        <text font-size="13px" x="130" y="256">103</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 103, region: 2
+        , height: 23, width: 89
+        , x: 97, y: 239
+        , textx: 130, texty: 256
+        , rotate: false
+        })
+     %>
 
     <!--Route 104-->
-    <g transform="rotate(90,0,0)"
-       data-bind="click:function(){ MapHelper.moveToRoute(104, 2); } ">
-        <rect data-route='104'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(104,2) }"
-              height="23"
-              width="95"
-              x="190" y="-30"></rect>
-        <text font-size="13px" x="243" y="-14">104</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 104, region: 2
+        , height: 23, width: 95
+        , x: 190, y: -30
+        , textx: 243, texty: -14
+        , rotate: true
+        })
+     %>
 
     <!--Route 105-->
-    <g transform="rotate(90,0,0)"
-       data-bind="click:function(){ MapHelper.moveToRoute(105, 2); } ">
-        <rect data-route='105'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(105,2) }"
-              height="23"
-              width="65"
-              x="285" y="-31"></rect>
-        <text font-size="13px" x="306" y="-15">105</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 105, region: 2
+        , height: 23, width: 65
+        , x: 285, y: -31
+        , textx: 306, texty: -15
+        , rotate: true
+        })
+     %>
 
     <!--Route 106-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(106, 2); } ">
-        <rect data-route='106'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(106,2) }"
-              height="24"
-              width="68"
-              x="8" y="350"></rect>
-        <text font-size="13px" x="30" y="367">106</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 106, region: 2
+        , height: 24, width: 68
+        , x: 8, y: 350
+        , textx: 30, texty: 367
+        , rotate: false
+        })
+     %>
 
     <!--Route 107-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(107, 2); } ">
-        <rect data-route='107'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(107,2) }"
-              height="24"
-              width="66"
-              x="76" y="373"></rect>
-        <text font-size="13px" x="97" y="390">107</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 107, region: 2
+        , height: 24, width: 66
+        , x: 76, y: 373
+        , textx: 97, texty: 390
+        , rotate: false
+        })
+     %>
 
     <!--Route 108-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(108, 2); } ">
-        <rect data-route='108'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(108,2) }"
-              height="24"
-              width="44"
-              x="142" y="373"></rect>
-        <text font-size="13px" x="152" y="390">108</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 108, region: 2
+        , height: 24, width: 44
+        , x: 142, y: 373
+        , textx: 152, texty: 390
+        , rotate: false
+        })
+     %>
 
     <!--Route 109-->
-    <g transform="rotate(90,0,0)"
-       data-bind="click:function(){ MapHelper.moveToRoute(109, 2); } ">
-        <rect data-route='109'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(109,2) }"
-              height="24"
-              width="64"
-              x="333" y="-210"></rect>
-        <text font-size="13px" x="353" y="-194">109</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 109, region: 2
+        , height: 24, width: 64
+        , x: 333, y: -210
+        , textx: 353, texty: -194
+        , rotate: true
+        })
+     %>
 
     <!--Route 110-->
-    <g transform="rotate(90,0,0)"
-     data-bind="click:function(){ MapHelper.moveToRoute(110, 2); } ">
-      <rect data-route='110'
-            data-bind="attr: { class: MapHelper.calculateRouteCssClass(110,2) }"
-            height="23"
-            width="88"
-            x="199" y="-209"></rect>
-      <text font-size="13px" x="229" y="-193">110</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 110, region: 2
+        , height: 23, width: 88
+        , x: 199, y: -209
+        , textx: 229, texty: -193
+        , rotate: true
+        })
+     %>
 
     <!--Route 111-->
-    <g transform="rotate(90,0,0)"
-     data-bind="click:function(){ MapHelper.moveToRoute(111, 2); } ">
-      <rect data-route='111'
-            data-bind="attr: { class: MapHelper.calculateRouteCssClass(111,2) }"
-            height="23"
-            width="131"
-            x="38" y="-209"></rect>
-      <text font-size="13px" x="100" y="-193">111</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 111, region: 2
+        , height: 23, width: 131
+        , x: 38, y: -209
+        , textx: 100, texty: -193
+        , rotate: true
+        })
+     %>
 
     <!--Route 112-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(112, 2); } ">
-        <rect data-route='112'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(112,2) }"
-              height="46"
-              width="50"
-              x="136" y="106"></rect>
-        <text font-size="13px" x="154" y="144">112</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 112, region: 2
+        , height: 46, width: 50
+        , x: 136, y: 106
+        , textx: 154, texty: 144
+        , rotate: false
+        })
+     %>
 
     <!--Route 113-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(113, 2); } ">
-        <rect data-route='113'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(113,2) }"
-              height="23"
-              width="99"
-              x="87" y="38"></rect>
-        <text font-size="13px" x="120" y="55">113</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 113, region: 2
+        , height: 23, width: 99
+        , x: 87, y: 38
+        , textx: 120, texty: 55
+        , rotate: false
+        })
+     %>
 
     <!--Route 114-->
-    <g transform="rotate(90,0,0)"
-     data-bind="click:function(){ MapHelper.moveToRoute(114, 2); } ">
-      <rect data-route='114'
-            data-bind="attr: { class: MapHelper.calculateRouteCssClass(114,2) }"
-            height="24"
-            width="68"
-            x="38" y="-65"></rect>
-      <text font-size="13px" x="62" y="-49">114</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 114, region: 2
+        , height: 24, width: 68
+        , x: 38, y: -65
+        , textx: 62, texty: -49
+        , rotate: true
+        })
+     %>
 
     <!--Route 115-->
-    <g transform="rotate(90,0,0)"
-       data-bind="click:function(){ MapHelper.moveToRoute(115, 2); } ">
-        <rect data-route='115'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(115,2) }"
-              height="23"
-              width="73"
-              x="83" y="-31"></rect>
-        <text font-size="13px" x="108" y="-15">115</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 115, region: 2
+        , height: 23, width: 73
+        , x: 83, y: -31
+        , textx: 108, texty: -15
+        , rotate: true
+        })
+     %>
 
     <!--Route 116-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(116, 2); } ">
-        <rect data-route='116'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(116,2) }"
-              height="23"
-              width="68"
-              x="31" y="150"></rect>
-        <text font-size="13px" x="52" y="167">116</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 116, region: 2
+        , height: 23, width: 68
+        , x: 31, y: 150
+        , textx: 52, texty: 167
+        , rotate: false
+        })
+     %>
 
     <!--Route 117-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(117, 2); } ">
-        <rect data-route='117'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(117,2) }"
-              height="23"
-              width="61"
-              x="118" y="172"></rect>
-        <text font-size="13px" x="137" y="189">117</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 117, region: 2
+        , height: 23, width: 61
+        , x: 118, y: 172
+        , textx: 137, texty: 189
+        , rotate: false
+        })
+     %>
 
     <!--Route 118-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(118, 2); } ">
-        <rect data-route='118'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(118,2) }"
-              height="23"
-              width="43"
-              x="233" y="172"></rect>
-        <text font-size="13px" x="240" y="189">118</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 118, region: 2
+        , height: 23, width: 43
+        , x: 233, y: 172
+        , textx: 240, texty: 189
+        , rotate: false
+        })
+     %>
 
     <!--Route 119-->
-    <g transform="rotate(90,0,0)"
-     data-bind="click:function(){ MapHelper.moveToRoute(119, 2); } ">
-      <rect data-route='119'
-            data-bind="attr: { class: MapHelper.calculateRouteCssClass(119,2) }"
-            height="23"
-            width="134"
-            x="38" y="-276"></rect>
-      <text font-size="13px" x="100" y="-261">119</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 119, region: 2
+        , height: 23, width: 134
+        , x: 38, y: -276
+        , textx: 100, texty: -261
+        , rotate: true
+        })
+     %>
 
     <!--Route 120-->
-    <g transform="rotate(90,0,0)"
-     data-bind="click:function(){ MapHelper.moveToRoute(120, 2); } ">
-      <rect data-route='120'
-            data-bind="attr: { class: MapHelper.calculateRouteCssClass(120,2) }"
-            height="23"
-            width="90"
-            x="38" y="-321"></rect>
-      <text font-size="13px" x="73" y="-305">120</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 120, region: 2
+        , height: 23, width: 90
+        , x: 38, y: -321
+        , textx: 73, texty: -305
+        , rotate: true
+        })
+     %>
 
     <!--Route 121-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(121, 2); } ">
-        <rect data-route='121'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(121,2) }"
-              height="23"
-              width="109"
-              x="321" y="105"></rect>
-        <text font-size="13px" x="365" y="123">121</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 121, region: 2
+        , height: 23, width: 109
+        , x: 321, y: 105
+        , textx: 365, texty: 123
+        , rotate: false
+        })
+     %>
 
     <!--Route 122-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(122, 2); } ">
-        <rect data-route='122'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(122,2) }"
-              height="45"
-              width="45"
-              x="359" y="127"></rect>
-        <text font-size="13px" x="369" y="143">122</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 122, region: 2
+        , height: 45, width: 45
+        , x: 359, y: 127
+        , textx: 369, texty: 143
+        , rotate: false
+        })
+     %>
 
     <!--Route 123-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(123, 2); } ">
-        <rect data-route='123'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(123,2) }"
-              height="23"
-              width="135"
-              x="275" y="172"></rect>
-        <text font-size="13px" x="325" y="189">123</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 123, region: 2
+        , height: 23, width: 135
+        , x: 275, y: 172
+        , textx: 325, texty: 189
+        , rotate: false
+        })
+     %>
 
     <!--Route 124-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(124, 2); } ">
-        <rect data-route='124'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(124,2) }"
-              height="90"
-              width="68"
-              x="477" y="83"></rect>
-        <text font-size="13px" x="506" y="120">124</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 124, region: 2
+        , height: 90, width: 68
+        , x: 477, y:83
+        , textx: 506, texty: 120
+        , rotate: false
+        })
+     %>
 
     <!--Route 125-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(125, 2); } ">
-        <rect data-route='125'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(125,2) }"
-              height="90"
-              width="68"
-              x="544" y="83"></rect>
-        <text font-size="13px" x="555" y="120">125</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 125, region: 2
+        , height: 90, width: 68
+        , x: 544, y: 83
+        , textx: 555, texty: 120
+        , rotate: false
+        })
+     %>
 
     <!--Route 126-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(126, 2); } ">
-        <rect data-route='126'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(126,2) }"
-              height="91"
-              width="68"
-              x="477" y="172"></rect>
-        <text font-size="13px" x="504" y="210">126</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 126, region: 2
+        , height: 91, width: 68
+        , x: 477, y: 172
+        , textx: 504, texty: 210
+        , rotate: false
+        })
+     %>
 
     <!--Route 127-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(127, 2); } ">
-        <rect data-route='127'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(127,2) }"
-              height="90"
-              width="68"
-              x="544" y="172"></rect>
-        <text font-size="13px" x="555" y="210">127</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 127, region: 2
+        , height: 90, width: 68
+        , x: 544, y: 172
+        , textx: 555, texty: 210
+        , rotate: false
+        })
+     %>
 
     <!--Route 128-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(128, 2); } ">
-        <rect data-route='128'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(128,2) }"
-              height="23"
-              width="67"
-              x="544" y="261"></rect>
-        <text font-size="13px" x="576" y="279">128</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 128, region: 2
+        , height: 23, width: 67
+        , x: 544, y: 261
+        , textx: 576, texty: 279
+        , rotate: false
+        })
+     %>
 
     <!--Route 129-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(129, 2); } ">
-        <rect data-route='129'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(129,2) }"
-              height="23"
-              width="48"
-              x="564" y="284"></rect>
-        <text font-size="13px" x="576" y="301">129</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 129, region: 2
+        , height: 23, width: 48
+        , x: 564, y: 284
+        , textx: 576, texty: 301
+        , rotate: false
+        })
+     %>
 
     <!--Route 130-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(130, 2); } ">
-        <rect data-route='130'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(130,2) }"
-              height="23"
-              width="64"
-              x="500" y="284"></rect>
-        <text font-size="13px" x="520" y="301">130</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 130, region: 2
+        , height: 23, width: 64
+        , x: 500, y: 284
+        , textx: 520, texty: 301
+        , rotate: false
+        })
+     %>
 
     <!--Route 131-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(131, 2); } ">
-        <rect data-route='131'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(131,2) }"
-              height="23"
-              width="67"
-              x="433" y="284"></rect>
-        <text font-size="13px" x="453" y="301">131</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 131, region: 2
+        , height: 23, width: 67
+        , x: 433, y: 284
+        , textx: 453, texty: 301
+        , rotate: false
+        })
+     %>
 
     <!--Route 132-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(132, 2); } ">
-        <rect data-route='132'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(132,2) }"
-              height="23"
-              width="67"
-              x="346" y="284"></rect>
-        <text font-size="13px" x="365" y="301">132</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 132, region: 2
+        , height: 23, width: 67
+        , x: 346, y: 284
+        , textx: 365, texty: 301
+        , rotate: false
+        })
+     %>
 
     <!--Route 133-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(133, 2); } ">
-        <rect data-route='133'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(133,2) }"
-              height="23"
-              width="69"
-              x="277" y="284"></rect>
-        <text font-size="13px" x="297" y="301">133</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 133, region: 2
+        , height: 23, width: 69
+        , x: 277, y: 284
+        , textx: 297, texty: 301
+        , rotate: false
+        })
+     %>
     
     <!--Route 134-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(134, 2); } ">
-        <rect data-route='134'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(134,2) }"
-              height="23"
-              width="66"
-              x="211" y="284"></rect>
-        <text font-size="13px" x="230" y="301">134</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 134, region: 2
+        , height: 23, width: 66
+        , x: 211, y: 284
+        , textx: 230, texty: 301
+        , rotate: false
+        })
+     %>
 
     <!-- ----- -->
     <!-- TOWNS -->
