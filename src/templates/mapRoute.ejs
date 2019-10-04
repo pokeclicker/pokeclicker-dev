@@ -1,5 +1,5 @@
 <g
-<% if (rotate) { %>
+<% if (locals.rotate) { %>
       transform="rotate(90,0,0)"
 <% } %>
       data-bind="click:function(){ MapHelper.moveToRoute(<%= route %>, <%= region %>); } ">
