@@ -255,8 +255,8 @@ const pokemonsPerRoute = {
             headbutt: []
         },
         102: {
-            land: [],
-            water: [],
+            land: ['Zigzagoon', 'Wurmple', 'Poochyena', 'Seedot', 'Lotad', 'Ralts', 'Surskit'],
+            water: ['Marill', 'Azumarill', 'Masquerain', 'Magikarp', 'Goldeen', 'Corphish'],
             headbutt: []
         },
         103: {
