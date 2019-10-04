@@ -147,7 +147,7 @@ const pokemonList = [
         "attack": 30,
         "levelType": "mediumfast",
         "exp": 39,
-        "eggCycles": 10
+        "eggCycles": 15
     },
     {
         "id": 11,
@@ -161,7 +161,7 @@ const pokemonList = [
         "attack": 25,
         "levelType": "mediumfast",
         "exp": 72,
-        "eggCycles": 10
+        "eggCycles": 15
     },
     {
         "id": 12,
@@ -174,7 +174,7 @@ const pokemonList = [
         "attack": 90,
         "levelType": "mediumfast",
         "exp": 173,
-        "eggCycles": 10
+        "eggCycles": 15
     },
     {
         "id": 13,
@@ -189,7 +189,7 @@ const pokemonList = [
         "attack": 35,
         "levelType": "mediumfast",
         "exp": 39,
-        "eggCycles": 10
+        "eggCycles": 15
     },
     {
         "id": 14,
@@ -204,7 +204,7 @@ const pokemonList = [
         "attack": 25,
         "levelType": "mediumfast",
         "exp": 72,
-        "eggCycles": 10
+        "eggCycles": 15
     },
     {
         "id": 15,
@@ -217,7 +217,7 @@ const pokemonList = [
         "attack": 90,
         "levelType": "mediumfast",
         "exp": 173,
-        "eggCycles": 10
+        "eggCycles": 15
     },
     {
         "id": 16,
@@ -354,7 +354,7 @@ const pokemonList = [
         "attack": 55,
         "levelType": "mediumfast",
         "exp": 105,
-        "eggCycles": 20
+        "eggCycles": 10
     },
     {
         "id": 26,
@@ -366,7 +366,7 @@ const pokemonList = [
         "attack": 90,
         "levelType": "mediumfast",
         "exp": 214,
-        "eggCycles": 20
+        "eggCycles": 10
     },
     {
         "id": 27,
@@ -488,7 +488,7 @@ const pokemonList = [
         "attack": 60,
         "levelType": "fast",
         "exp": 113,
-        "eggCycles": 20
+        "eggCycles": 10
     },
     {
         "id": 36,
@@ -500,7 +500,7 @@ const pokemonList = [
         "attack": 95,
         "levelType": "fast",
         "exp": 213,
-        "eggCycles": 20
+        "eggCycles": 10
     },
     {
         "id": 37,
@@ -541,7 +541,7 @@ const pokemonList = [
         "attack": 45,
         "levelType": "fast",
         "exp": 95,
-        "eggCycles": 20
+        "eggCycles": 10
     },
     {
         "id": 40,
@@ -554,7 +554,7 @@ const pokemonList = [
         "attack": 85,
         "levelType": "fast",
         "exp": 191,
-        "eggCycles": 20
+        "eggCycles": 10
     },
     {
         "id": 41,
@@ -1955,7 +1955,7 @@ const pokemonList = [
         "attack": 105,
         "levelType": "slow",
         "exp": 180,
-        "eggCycles": 30
+        "eggCycles": 35
     },
     {
         "id": 143,
@@ -3410,7 +3410,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 253,
@@ -3418,7 +3419,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 254,
@@ -3426,7 +3428,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 255,
@@ -3434,7 +3437,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 256,
@@ -3443,7 +3447,8 @@ const pokemonList = [
             "Fire",
             "Fighting"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 257,
@@ -3452,7 +3457,8 @@ const pokemonList = [
             "Fire",
             "Fighting"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 258,
@@ -3460,7 +3466,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 259,
@@ -3469,7 +3476,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 260,
@@ -3478,7 +3486,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 261,
@@ -3486,7 +3495,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 15
     },
     {
         "id": 262,
@@ -3494,7 +3504,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 263,
@@ -3502,7 +3513,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 264,
@@ -3510,7 +3522,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 15
     },
     {
         "id": 265,
@@ -3518,7 +3531,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 45
+        "attack": 45,
+        "eggCycles": 15
     },
     {
         "id": 266,
@@ -3526,7 +3540,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 15
     },
     {
         "id": 267,
@@ -3535,7 +3550,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 15
     },
     {
         "id": 268,
@@ -3543,7 +3559,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 15
     },
     {
         "id": 269,
@@ -3552,7 +3569,8 @@ const pokemonList = [
             "Bug",
             "Poison"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 270,
@@ -3561,7 +3579,8 @@ const pokemonList = [
             "Water",
             "Grass"
         ],
-        "attack": 50
+        "attack": 50,
+        "eggCycles": 15
     },
     {
         "id": 271,
@@ -3570,7 +3589,8 @@ const pokemonList = [
             "Water",
             "Grass"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 15
     },
     {
         "id": 272,
@@ -3579,7 +3599,8 @@ const pokemonList = [
             "Water",
             "Grass"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 15
     },
     {
         "id": 273,
@@ -3587,7 +3608,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 50
+        "attack": 50,
+        "eggCycles": 15
     },
     {
         "id": 274,
@@ -3596,7 +3618,8 @@ const pokemonList = [
             "Grass",
             "Dark"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 15
     },
     {
         "id": 275,
@@ -3605,7 +3628,8 @@ const pokemonList = [
             "Grass",
             "Dark"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 15
     },
     {
         "id": 276,
@@ -3614,7 +3638,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 277,
@@ -3623,7 +3648,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 15
     },
     {
         "id": 278,
@@ -3632,7 +3658,8 @@ const pokemonList = [
             "Water",
             "Flying"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 279,
@@ -3641,7 +3668,8 @@ const pokemonList = [
             "Water",
             "Flying"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 280,
@@ -3650,7 +3678,8 @@ const pokemonList = [
             "Psychic",
             "Fairy"
         ],
-        "attack": 45
+        "attack": 45,
+        "eggCycles": 20
     },
     {
         "id": 281,
@@ -3659,7 +3688,8 @@ const pokemonList = [
             "Psychic",
             "Fairy"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 282,
@@ -3668,7 +3698,8 @@ const pokemonList = [
             "Psychic",
             "Fairy"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 283,
@@ -3677,7 +3708,8 @@ const pokemonList = [
             "Bug",
             "Water"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 15
     },
     {
         "id": 284,
@@ -3686,7 +3718,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 15
     },
     {
         "id": 285,
@@ -3694,7 +3727,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 286,
@@ -3703,7 +3737,8 @@ const pokemonList = [
             "Grass",
             "Fighting"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 15
     },
     {
         "id": 287,
@@ -3711,7 +3746,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 288,
@@ -3719,7 +3755,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 289,
@@ -3727,7 +3764,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 160
+        "attack": 160,
+        "eggCycles": 15
     },
     {
         "id": 290,
@@ -3736,7 +3774,8 @@ const pokemonList = [
             "Bug",
             "Ground"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 291,
@@ -3745,7 +3784,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 160
+        "attack": 160,
+        "eggCycles": 15
     },
     {
         "id": 292,
@@ -3754,7 +3794,8 @@ const pokemonList = [
             "Bug",
             "Ghost"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 293,
@@ -3762,7 +3803,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 64
+        "attack": 64,
+        "eggCycles": 20
     },
     {
         "id": 294,
@@ -3770,7 +3812,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 84
+        "attack": 84,
+        "eggCycles": 20
     },
     {
         "id": 295,
@@ -3778,7 +3821,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 104
+        "attack": 104,
+        "eggCycles": 20
     },
     {
         "id": 296,
@@ -3786,7 +3830,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 72
+        "attack": 72,
+        "eggCycles": 20
     },
     {
         "id": 297,
@@ -3794,7 +3839,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 144
+        "attack": 144,
+        "eggCycles": 20
     },
     {
         "id": 298,
@@ -3803,7 +3849,8 @@ const pokemonList = [
             "Normal",
             "Fairy"
         ],
-        "attack": 50
+        "attack": 50,
+        "eggCycles": 10
     },
     {
         "id": 299,
@@ -3811,7 +3858,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 20
     },
     {
         "id": 300,
@@ -3819,7 +3867,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 50
+        "attack": 50,
+        "eggCycles": 15
     },
     {
         "id": 301,
@@ -3827,7 +3876,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 302,
@@ -3836,7 +3886,8 @@ const pokemonList = [
             "Dark",
             "Ghost"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 25
     },
     {
         "id": 303,
@@ -3845,7 +3896,8 @@ const pokemonList = [
             "Steel",
             "Fairy"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 304,
@@ -3854,7 +3906,8 @@ const pokemonList = [
             "Steel",
             "Rock"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 35
     },
     {
         "id": 305,
@@ -3863,7 +3916,8 @@ const pokemonList = [
             "Steel",
             "Rock"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 35
     },
     {
         "id": 306,
@@ -3872,7 +3926,8 @@ const pokemonList = [
             "Steel",
             "Rock"
         ],
-        "attack": 180
+        "attack": 180,
+        "eggCycles": 35
     },
     {
         "id": 307,
@@ -3881,7 +3936,8 @@ const pokemonList = [
             "Fighting",
             "Psychic"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 20
     },
     {
         "id": 308,
@@ -3890,7 +3946,8 @@ const pokemonList = [
             "Fighting",
             "Psychic"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 309,
@@ -3898,7 +3955,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 310,
@@ -3906,7 +3964,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 311,
@@ -3914,7 +3973,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 312,
@@ -3922,7 +3982,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 313,
@@ -3930,7 +3991,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 314,
@@ -3938,7 +4000,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 315,
@@ -3947,7 +4010,8 @@ const pokemonList = [
             "Grass",
             "Poison"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 316,
@@ -3955,7 +4019,8 @@ const pokemonList = [
         "type": [
             "Poison"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 317,
@@ -3963,7 +4028,8 @@ const pokemonList = [
         "type": [
             "Poison"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 318,
@@ -3972,7 +4038,8 @@ const pokemonList = [
             "Water",
             "Dark"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 20
     },
     {
         "id": 319,
@@ -3981,7 +4048,8 @@ const pokemonList = [
             "Water",
             "Dark"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 320,
@@ -3989,7 +4057,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 40
     },
     {
         "id": 321,
@@ -3997,7 +4066,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 170
+        "attack": 170,
+        "eggCycles": 40
     },
     {
         "id": 322,
@@ -4006,7 +4076,8 @@ const pokemonList = [
             "Fire",
             "Ground"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 323,
@@ -4015,7 +4086,8 @@ const pokemonList = [
             "Fire",
             "Ground"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 324,
@@ -4023,7 +4095,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 20
     },
     {
         "id": 325,
@@ -4031,7 +4104,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 326,
@@ -4039,7 +4113,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 327,
@@ -4047,7 +4122,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 328,
@@ -4055,7 +4131,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 329,
@@ -4064,7 +4141,8 @@ const pokemonList = [
             "Ground",
             "Dragon"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 330,
@@ -4073,7 +4151,8 @@ const pokemonList = [
             "Ground",
             "Dragon"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 331,
@@ -4081,7 +4160,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 332,
@@ -4090,7 +4170,8 @@ const pokemonList = [
             "Grass",
             "Dark"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 333,
@@ -4099,7 +4180,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 20
     },
     {
         "id": 334,
@@ -4108,7 +4190,8 @@ const pokemonList = [
             "Dragon",
             "Flying"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 335,
@@ -4116,7 +4199,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 336,
@@ -4124,7 +4208,8 @@ const pokemonList = [
         "type": [
             "Poison"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 337,
@@ -4133,7 +4218,8 @@ const pokemonList = [
             "Rock",
             "Psychic"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 25
     },
     {
         "id": 338,
@@ -4142,7 +4228,8 @@ const pokemonList = [
             "Rock",
             "Psychic"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 25
     },
     {
         "id": 339,
@@ -4151,7 +4238,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 20
     },
     {
         "id": 340,
@@ -4160,7 +4248,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 341,
@@ -4168,7 +4257,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 15
     },
     {
         "id": 342,
@@ -4177,7 +4267,8 @@ const pokemonList = [
             "Water",
             "Dark"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 15
     },
     {
         "id": 343,
@@ -4186,7 +4277,8 @@ const pokemonList = [
             "Ground",
             "Psychic"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 344,
@@ -4195,7 +4287,8 @@ const pokemonList = [
             "Ground",
             "Psychic"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 345,
@@ -4204,7 +4297,8 @@ const pokemonList = [
             "Rock",
             "Grass"
         ],
-        "attack": 87
+        "attack": 87,
+        "eggCycles": 30
     },
     {
         "id": 346,
@@ -4213,7 +4307,8 @@ const pokemonList = [
             "Rock",
             "Grass"
         ],
-        "attack": 107
+        "attack": 107,
+        "eggCycles": 30
     },
     {
         "id": 347,
@@ -4222,7 +4317,8 @@ const pokemonList = [
             "Rock",
             "Bug"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 30
     },
     {
         "id": 348,
@@ -4231,7 +4327,8 @@ const pokemonList = [
             "Rock",
             "Bug"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 30
     },
     {
         "id": 349,
@@ -4239,7 +4336,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 350,
@@ -4247,7 +4345,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 351,
@@ -4255,7 +4354,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 25
     },
     {
         "id": 352,
@@ -4263,7 +4363,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 353,
@@ -4271,7 +4372,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 25
     },
     {
         "id": 354,
@@ -4279,7 +4381,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 25
     },
     {
         "id": 355,
@@ -4287,7 +4390,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 25
     },
     {
         "id": 356,
@@ -4295,7 +4399,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 25
     },
     {
         "id": 357,
@@ -4304,7 +4409,8 @@ const pokemonList = [
             "Grass",
             "Flying"
         ],
-        "attack": 99
+        "attack": 99,
+        "eggCycles": 25
     },
     {
         "id": 358,
@@ -4312,7 +4418,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 25
     },
     {
         "id": 359,
@@ -4320,7 +4427,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 25
     },
     {
         "id": 360,
@@ -4328,7 +4436,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 361,
@@ -4336,7 +4445,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 50
+        "attack": 50,
+        "eggCycles": 20
     },
     {
         "id": 362,
@@ -4344,7 +4454,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 363,
@@ -4353,7 +4464,8 @@ const pokemonList = [
             "Ice",
             "Water"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 364,
@@ -4362,7 +4474,8 @@ const pokemonList = [
             "Ice",
             "Water"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 20
     },
     {
         "id": 365,
@@ -4371,7 +4484,8 @@ const pokemonList = [
             "Ice",
             "Water"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 366,
@@ -4379,7 +4493,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 367,
@@ -4387,7 +4502,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 368,
@@ -4395,7 +4511,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 114
+        "attack": 114,
+        "eggCycles": 20
     },
     {
         "id": 369,
@@ -4404,7 +4521,8 @@ const pokemonList = [
             "Water",
             "Rock"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 40
     },
     {
         "id": 370,
@@ -4412,7 +4530,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 97
+        "attack": 97,
+        "eggCycles": 20
     },
     {
         "id": 371,
@@ -4420,7 +4539,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 40
     },
     {
         "id": 372,
@@ -4428,7 +4548,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 40
     },
     {
         "id": 373,
@@ -4437,7 +4558,8 @@ const pokemonList = [
             "Dragon",
             "Flying"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 40
     },
     {
         "id": 374,
@@ -4446,7 +4568,8 @@ const pokemonList = [
             "Steel",
             "Psychic"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 40
     },
     {
         "id": 375,
@@ -4455,7 +4578,8 @@ const pokemonList = [
             "Steel",
             "Psychic"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 40
     },
     {
         "id": 376,
@@ -4464,7 +4588,8 @@ const pokemonList = [
             "Steel",
             "Psychic"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 40
     },
     {
         "id": 377,
@@ -4472,7 +4597,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 200
+        "attack": 200,
+        "eggCycles": 80
     },
     {
         "id": 378,
@@ -4480,7 +4606,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 200
+        "attack": 200,
+        "eggCycles": 80
     },
     {
         "id": 379,
@@ -4488,7 +4615,8 @@ const pokemonList = [
         "type": [
             "Steel"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 80
     },
     {
         "id": 380,
@@ -4497,7 +4625,8 @@ const pokemonList = [
             "Dragon",
             "Psychic"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 120
     },
     {
         "id": 381,
@@ -4506,7 +4635,8 @@ const pokemonList = [
             "Dragon",
             "Psychic"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 120
     },
     {
         "id": 382,
@@ -4514,7 +4644,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 383,
@@ -4522,7 +4653,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 384,
@@ -4531,7 +4663,8 @@ const pokemonList = [
             "Dragon",
             "Flying"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 385,
@@ -4540,7 +4673,8 @@ const pokemonList = [
             "Steel",
             "Psychic"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 120
     },
     {
         "id": 386,
@@ -4548,7 +4682,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 387,
@@ -4556,7 +4691,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 68
+        "attack": 68,
+        "eggCycles": 20
     },
     {
         "id": 388,
@@ -4564,7 +4700,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 89
+        "attack": 89,
+        "eggCycles": 20
     },
     {
         "id": 389,
@@ -4573,7 +4710,8 @@ const pokemonList = [
             "Grass",
             "Ground"
         ],
-        "attack": 109
+        "attack": 109,
+        "eggCycles": 20
     },
     {
         "id": 390,
@@ -4581,7 +4719,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 61
+        "attack": 61,
+        "eggCycles": 20
     },
     {
         "id": 391,
@@ -4590,7 +4729,8 @@ const pokemonList = [
             "Fire",
             "Fighting"
         ],
-        "attack": 81
+        "attack": 81,
+        "eggCycles": 20
     },
     {
         "id": 392,
@@ -4599,7 +4739,8 @@ const pokemonList = [
             "Fire",
             "Fighting"
         ],
-        "attack": 108
+        "attack": 108,
+        "eggCycles": 20
     },
     {
         "id": 393,
@@ -4607,7 +4748,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 61
+        "attack": 61,
+        "eggCycles": 20
     },
     {
         "id": 394,
@@ -4615,7 +4757,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 81
+        "attack": 81,
+        "eggCycles": 20
     },
     {
         "id": 395,
@@ -4624,7 +4767,8 @@ const pokemonList = [
             "Water",
             "Steel"
         ],
-        "attack": 111
+        "attack": 111,
+        "eggCycles": 20
     },
     {
         "id": 396,
@@ -4633,7 +4777,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 397,
@@ -4642,7 +4787,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 15
     },
     {
         "id": 398,
@@ -4651,7 +4797,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 15
     },
     {
         "id": 399,
@@ -4659,7 +4806,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 59
+        "attack": 59,
+        "eggCycles": 15
     },
     {
         "id": 400,
@@ -4668,7 +4816,8 @@ const pokemonList = [
             "Normal",
             "Water"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 401,
@@ -4676,7 +4825,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 41
+        "attack": 41,
+        "eggCycles": 15
     },
     {
         "id": 402,
@@ -4684,7 +4834,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 403,
@@ -4692,7 +4843,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 404,
@@ -4700,7 +4852,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 405,
@@ -4708,7 +4861,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 406,
@@ -4717,7 +4871,8 @@ const pokemonList = [
             "Grass",
             "Poison"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 407,
@@ -4726,7 +4881,8 @@ const pokemonList = [
             "Grass",
             "Poison"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 408,
@@ -4734,7 +4890,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 30
     },
     {
         "id": 409,
@@ -4742,7 +4899,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 165
+        "attack": 165,
+        "eggCycles": 30
     },
     {
         "id": 410,
@@ -4751,7 +4909,8 @@ const pokemonList = [
             "Rock",
             "Steel"
         ],
-        "attack": 118
+        "attack": 118,
+        "eggCycles": 30
     },
     {
         "id": 411,
@@ -4760,7 +4919,8 @@ const pokemonList = [
             "Rock",
             "Steel"
         ],
-        "attack": 168
+        "attack": 168,
+        "eggCycles": 30
     },
     {
         "id": 412,
@@ -4768,7 +4928,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 45
+        "attack": 45,
+        "eggCycles": 15
     },
     {
         "id": 413,
@@ -4777,7 +4938,8 @@ const pokemonList = [
             "Bug",
             "Grass"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 15
     },
     {
         "id": 414,
@@ -4786,7 +4948,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 94
+        "attack": 94,
+        "eggCycles": 15
     },
     {
         "id": 415,
@@ -4795,7 +4958,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 15
     },
     {
         "id": 416,
@@ -4804,7 +4968,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 102
+        "attack": 102,
+        "eggCycles": 15
     },
     {
         "id": 417,
@@ -4812,7 +4977,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 10
     },
     {
         "id": 418,
@@ -4820,7 +4986,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 419,
@@ -4828,7 +4995,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 420,
@@ -4836,7 +5004,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 20
     },
     {
         "id": 421,
@@ -4844,7 +5013,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 87
+        "attack": 87,
+        "eggCycles": 20
     },
     {
         "id": 422,
@@ -4852,7 +5022,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 76
+        "attack": 76,
+        "eggCycles": 20
     },
     {
         "id": 423,
@@ -4861,7 +5032,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 111
+        "attack": 111,
+        "eggCycles": 20
     },
     {
         "id": 424,
@@ -4869,7 +5041,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 425,
@@ -4878,7 +5051,8 @@ const pokemonList = [
             "Ghost",
             "Flying"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 30
     },
     {
         "id": 426,
@@ -4887,7 +5061,8 @@ const pokemonList = [
             "Ghost",
             "Flying"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 30
     },
     {
         "id": 427,
@@ -4895,7 +5070,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 428,
@@ -4903,7 +5079,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 429,
@@ -4911,7 +5088,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 25
     },
     {
         "id": 430,
@@ -4920,7 +5098,8 @@ const pokemonList = [
             "Dark",
             "Flying"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 431,
@@ -4928,7 +5107,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 432,
@@ -4936,7 +5116,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 112
+        "attack": 112,
+        "eggCycles": 20
     },
     {
         "id": 433,
@@ -4944,7 +5125,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 25
     },
     {
         "id": 434,
@@ -4953,7 +5135,8 @@ const pokemonList = [
             "Poison",
             "Dark"
         ],
-        "attack": 74
+        "attack": 74,
+        "eggCycles": 20
     },
     {
         "id": 435,
@@ -4962,7 +5145,8 @@ const pokemonList = [
             "Poison",
             "Dark"
         ],
-        "attack": 103
+        "attack": 103,
+        "eggCycles": 20
     },
     {
         "id": 436,
@@ -4971,7 +5155,8 @@ const pokemonList = [
             "Steel",
             "Psychic"
         ],
-        "attack": 86
+        "attack": 86,
+        "eggCycles": 20
     },
     {
         "id": 437,
@@ -4980,7 +5165,8 @@ const pokemonList = [
             "Steel",
             "Psychic"
         ],
-        "attack": 116
+        "attack": 116,
+        "eggCycles": 20
     },
     {
         "id": 438,
@@ -4988,7 +5174,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 439,
@@ -4997,7 +5184,8 @@ const pokemonList = [
             "Psychic",
             "Fairy"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 25
     },
     {
         "id": 440,
@@ -5005,7 +5193,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 40
     },
     {
         "id": 441,
@@ -5014,7 +5203,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 92
+        "attack": 92,
+        "eggCycles": 20
     },
     {
         "id": 442,
@@ -5023,7 +5213,8 @@ const pokemonList = [
             "Ghost",
             "Dark"
         ],
-        "attack": 108
+        "attack": 108,
+        "eggCycles": 30
     },
     {
         "id": 443,
@@ -5032,7 +5223,8 @@ const pokemonList = [
             "Dragon",
             "Ground"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 40
     },
     {
         "id": 444,
@@ -5041,7 +5233,8 @@ const pokemonList = [
             "Dragon",
             "Ground"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 40
     },
     {
         "id": 445,
@@ -5050,7 +5243,8 @@ const pokemonList = [
             "Dragon",
             "Ground"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 40
     },
     {
         "id": 446,
@@ -5058,7 +5252,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 40
     },
     {
         "id": 447,
@@ -5066,7 +5261,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 25
     },
     {
         "id": 448,
@@ -5075,7 +5271,8 @@ const pokemonList = [
             "Fighting",
             "Steel"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 25
     },
     {
         "id": 449,
@@ -5083,7 +5280,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 78
+        "attack": 78,
+        "eggCycles": 30
     },
     {
         "id": 450,
@@ -5091,7 +5289,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 118
+        "attack": 118,
+        "eggCycles": 30
     },
     {
         "id": 451,
@@ -5100,7 +5299,8 @@ const pokemonList = [
             "Poison",
             "Bug"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 20
     },
     {
         "id": 452,
@@ -5109,7 +5309,8 @@ const pokemonList = [
             "Poison",
             "Dark"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 453,
@@ -5118,7 +5319,8 @@ const pokemonList = [
             "Poison",
             "Fighting"
         ],
-        "attack": 61
+        "attack": 61,
+        "eggCycles": 10
     },
     {
         "id": 454,
@@ -5127,7 +5329,8 @@ const pokemonList = [
             "Poison",
             "Fighting"
         ],
-        "attack": 106
+        "attack": 106,
+        "eggCycles": 20
     },
     {
         "id": 455,
@@ -5135,7 +5338,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 25
     },
     {
         "id": 456,
@@ -5143,7 +5347,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 66
+        "attack": 66,
+        "eggCycles": 20
     },
     {
         "id": 457,
@@ -5151,7 +5356,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 91
+        "attack": 91,
+        "eggCycles": 20
     },
     {
         "id": 458,
@@ -5160,7 +5366,8 @@ const pokemonList = [
             "Water",
             "Flying"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 25
     },
     {
         "id": 459,
@@ -5169,7 +5376,8 @@ const pokemonList = [
             "Grass",
             "Ice"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 20
     },
     {
         "id": 460,
@@ -5178,7 +5386,8 @@ const pokemonList = [
             "Grass",
             "Ice"
         ],
-        "attack": 92
+        "attack": 92,
+        "eggCycles": 20
     },
     {
         "id": 461,
@@ -5187,7 +5396,8 @@ const pokemonList = [
             "Dark",
             "Ice"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 462,
@@ -5196,7 +5406,8 @@ const pokemonList = [
             "Electric",
             "Steel"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 20
     },
     {
         "id": 463,
@@ -5204,7 +5415,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 464,
@@ -5213,7 +5425,8 @@ const pokemonList = [
             "Ground",
             "Rock"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 20
     },
     {
         "id": 465,
@@ -5221,7 +5434,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 466,
@@ -5229,7 +5443,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 25
     },
     {
         "id": 467,
@@ -5237,7 +5452,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 25
     },
     {
         "id": 468,
@@ -5246,7 +5462,8 @@ const pokemonList = [
             "Fairy",
             "Flying"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 10
     },
     {
         "id": 469,
@@ -5255,7 +5472,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 116
+        "attack": 116,
+        "eggCycles": 20
     },
     {
         "id": 470,
@@ -5263,7 +5481,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 35
     },
     {
         "id": 471,
@@ -5271,7 +5490,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 35
     },
     {
         "id": 472,
@@ -5280,7 +5500,8 @@ const pokemonList = [
             "Ground",
             "Flying"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 473,
@@ -5289,7 +5510,8 @@ const pokemonList = [
             "Ice",
             "Ground"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 20
     },
     {
         "id": 474,
@@ -5297,7 +5519,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 20
     },
     {
         "id": 475,
@@ -5306,7 +5529,8 @@ const pokemonList = [
             "Psychic",
             "Fighting"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 476,
@@ -5315,7 +5539,8 @@ const pokemonList = [
             "Rock",
             "Steel"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 20
     },
     {
         "id": 477,
@@ -5323,7 +5548,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 25
     },
     {
         "id": 478,
@@ -5332,7 +5558,8 @@ const pokemonList = [
             "Ice",
             "Ghost"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 479,
@@ -5341,7 +5568,8 @@ const pokemonList = [
             "Electric",
             "Ghost"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 480,
@@ -5349,7 +5577,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 80
     },
     {
         "id": 481,
@@ -5357,7 +5586,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 80
     },
     {
         "id": 482,
@@ -5365,7 +5595,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 80
     },
     {
         "id": 483,
@@ -5374,7 +5605,8 @@ const pokemonList = [
             "Steel",
             "Dragon"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 484,
@@ -5383,7 +5615,8 @@ const pokemonList = [
             "Water",
             "Dragon"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 485,
@@ -5392,7 +5625,8 @@ const pokemonList = [
             "Fire",
             "Steel"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 10
     },
     {
         "id": 486,
@@ -5400,7 +5634,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 160
+        "attack": 160,
+        "eggCycles": 120
     },
     {
         "id": 487,
@@ -5409,7 +5644,8 @@ const pokemonList = [
             "Ghost",
             "Dragon"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 488,
@@ -5417,7 +5653,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 120
     },
     {
         "id": 489,
@@ -5425,7 +5662,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 40
     },
     {
         "id": 490,
@@ -5433,7 +5671,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 10
     },
     {
         "id": 491,
@@ -5441,7 +5680,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 120
     },
     {
         "id": 492,
@@ -5449,7 +5689,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 120
     },
     {
         "id": 493,
@@ -5457,7 +5698,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 120
     },
     {
         "id": 494,
@@ -5466,7 +5708,8 @@ const pokemonList = [
             "Psychic",
             "Fire"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 120
     },
     {
         "id": 495,
@@ -5474,7 +5717,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 63
+        "attack": 63,
+        "eggCycles": 20
     },
     {
         "id": 496,
@@ -5482,7 +5726,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 83
+        "attack": 83,
+        "eggCycles": 20
     },
     {
         "id": 497,
@@ -5490,7 +5735,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 113
+        "attack": 113,
+        "eggCycles": 20
     },
     {
         "id": 498,
@@ -5498,7 +5744,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 499,
@@ -5507,7 +5754,8 @@ const pokemonList = [
             "Fire",
             "Fighting"
         ],
-        "attack": 93
+        "attack": 93,
+        "eggCycles": 20
     },
     {
         "id": 500,
@@ -5516,7 +5764,8 @@ const pokemonList = [
             "Fire",
             "Fighting"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 20
     },
     {
         "id": 501,
@@ -5524,7 +5773,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 63
+        "attack": 63,
+        "eggCycles": 20
     },
     {
         "id": 502,
@@ -5532,7 +5782,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 83
+        "attack": 83,
+        "eggCycles": 20
     },
     {
         "id": 503,
@@ -5540,7 +5791,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 108
+        "attack": 108,
+        "eggCycles": 20
     },
     {
         "id": 504,
@@ -5548,7 +5800,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 15
     },
     {
         "id": 505,
@@ -5556,7 +5809,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 506,
@@ -5564,7 +5818,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 507,
@@ -5572,7 +5827,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 15
     },
     {
         "id": 508,
@@ -5580,7 +5836,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 15
     },
     {
         "id": 509,
@@ -5588,7 +5845,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 66
+        "attack": 66,
+        "eggCycles": 20
     },
     {
         "id": 510,
@@ -5596,7 +5854,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 106
+        "attack": 106,
+        "eggCycles": 20
     },
     {
         "id": 511,
@@ -5604,7 +5863,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 64
+        "attack": 64,
+        "eggCycles": 20
     },
     {
         "id": 512,
@@ -5612,7 +5872,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 101
+        "attack": 101,
+        "eggCycles": 20
     },
     {
         "id": 513,
@@ -5620,7 +5881,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 64
+        "attack": 64,
+        "eggCycles": 20
     },
     {
         "id": 514,
@@ -5628,7 +5890,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 101
+        "attack": 101,
+        "eggCycles": 20
     },
     {
         "id": 515,
@@ -5636,7 +5899,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 64
+        "attack": 64,
+        "eggCycles": 20
     },
     {
         "id": 516,
@@ -5644,7 +5908,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 101
+        "attack": 101,
+        "eggCycles": 20
     },
     {
         "id": 517,
@@ -5652,7 +5917,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 76
+        "attack": 76,
+        "eggCycles": 10
     },
     {
         "id": 518,
@@ -5660,7 +5926,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 116
+        "attack": 116,
+        "eggCycles": 10
     },
     {
         "id": 519,
@@ -5669,7 +5936,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 15
     },
     {
         "id": 520,
@@ -5678,7 +5946,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 77
+        "attack": 77,
+        "eggCycles": 15
     },
     {
         "id": 521,
@@ -5687,7 +5956,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 15
     },
     {
         "id": 522,
@@ -5695,7 +5965,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 76
+        "attack": 76,
+        "eggCycles": 20
     },
     {
         "id": 523,
@@ -5703,7 +5974,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 116
+        "attack": 116,
+        "eggCycles": 20
     },
     {
         "id": 524,
@@ -5711,7 +5983,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 525,
@@ -5719,7 +5992,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 15
     },
     {
         "id": 526,
@@ -5727,7 +6001,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 15
     },
     {
         "id": 527,
@@ -5736,7 +6011,8 @@ const pokemonList = [
             "Psychic",
             "Flying"
         ],
-        "attack": 72
+        "attack": 72,
+        "eggCycles": 15
     },
     {
         "id": 528,
@@ -5745,7 +6021,8 @@ const pokemonList = [
             "Psychic",
             "Flying"
         ],
-        "attack": 114
+        "attack": 114,
+        "eggCycles": 15
     },
     {
         "id": 529,
@@ -5753,7 +6030,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 530,
@@ -5762,7 +6040,8 @@ const pokemonList = [
             "Ground",
             "Steel"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 20
     },
     {
         "id": 531,
@@ -5770,7 +6049,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 103
+        "attack": 103,
+        "eggCycles": 20
     },
     {
         "id": 532,
@@ -5778,7 +6058,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 533,
@@ -5786,7 +6067,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 534,
@@ -5794,7 +6076,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 20
     },
     {
         "id": 535,
@@ -5802,7 +6085,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 64
+        "attack": 64,
+        "eggCycles": 20
     },
     {
         "id": 536,
@@ -5811,7 +6095,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 20
     },
     {
         "id": 537,
@@ -5820,7 +6105,8 @@ const pokemonList = [
             "Water",
             "Ground"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 538,
@@ -5828,7 +6114,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 539,
@@ -5836,7 +6123,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 540,
@@ -5845,7 +6133,8 @@ const pokemonList = [
             "Bug",
             "Grass"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 15
     },
     {
         "id": 541,
@@ -5854,7 +6143,8 @@ const pokemonList = [
             "Bug",
             "Grass"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 542,
@@ -5863,7 +6153,8 @@ const pokemonList = [
             "Bug",
             "Grass"
         ],
-        "attack": 103
+        "attack": 103,
+        "eggCycles": 15
     },
     {
         "id": 543,
@@ -5872,7 +6163,8 @@ const pokemonList = [
             "Bug",
             "Poison"
         ],
-        "attack": 59
+        "attack": 59,
+        "eggCycles": 15
     },
     {
         "id": 544,
@@ -5881,7 +6173,8 @@ const pokemonList = [
             "Bug",
             "Poison"
         ],
-        "attack": 99
+        "attack": 99,
+        "eggCycles": 15
     },
     {
         "id": 545,
@@ -5890,7 +6183,8 @@ const pokemonList = [
             "Bug",
             "Poison"
         ],
-        "attack": 112
+        "attack": 112,
+        "eggCycles": 20
     },
     {
         "id": 546,
@@ -5899,7 +6193,8 @@ const pokemonList = [
             "Grass",
             "Fairy"
         ],
-        "attack": 66
+        "attack": 66,
+        "eggCycles": 20
     },
     {
         "id": 547,
@@ -5908,7 +6203,8 @@ const pokemonList = [
             "Grass",
             "Fairy"
         ],
-        "attack": 116
+        "attack": 116,
+        "eggCycles": 20
     },
     {
         "id": 548,
@@ -5916,7 +6212,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 549,
@@ -5924,7 +6221,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 550,
@@ -5932,7 +6230,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 98
+        "attack": 98,
+        "eggCycles": 40
     },
     {
         "id": 551,
@@ -5941,7 +6240,8 @@ const pokemonList = [
             "Ground",
             "Dark"
         ],
-        "attack": 72
+        "attack": 72,
+        "eggCycles": 20
     },
     {
         "id": 552,
@@ -5950,7 +6250,8 @@ const pokemonList = [
             "Ground",
             "Dark"
         ],
-        "attack": 82
+        "attack": 82,
+        "eggCycles": 20
     },
     {
         "id": 553,
@@ -5959,7 +6260,8 @@ const pokemonList = [
             "Ground",
             "Dark"
         ],
-        "attack": 117
+        "attack": 117,
+        "eggCycles": 20
     },
     {
         "id": 554,
@@ -5967,7 +6269,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 20
     },
     {
         "id": 555,
@@ -5975,7 +6278,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 20
     },
     {
         "id": 556,
@@ -5983,7 +6287,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 106
+        "attack": 106,
+        "eggCycles": 20
     },
     {
         "id": 557,
@@ -5992,7 +6297,8 @@ const pokemonList = [
             "Bug",
             "Rock"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 558,
@@ -6001,7 +6307,8 @@ const pokemonList = [
             "Bug",
             "Rock"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 559,
@@ -6010,7 +6317,8 @@ const pokemonList = [
             "Dark",
             "Fighting"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 15
     },
     {
         "id": 560,
@@ -6019,7 +6327,8 @@ const pokemonList = [
             "Dark",
             "Fighting"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 15
     },
     {
         "id": 561,
@@ -6028,7 +6337,8 @@ const pokemonList = [
             "Psychic",
             "Flying"
         ],
-        "attack": 103
+        "attack": 103,
+        "eggCycles": 20
     },
     {
         "id": 562,
@@ -6036,7 +6346,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 25
     },
     {
         "id": 563,
@@ -6044,7 +6355,8 @@ const pokemonList = [
         "type": [
             "Ghost"
         ],
-        "attack": 145
+        "attack": 145,
+        "eggCycles": 25
     },
     {
         "id": 564,
@@ -6053,7 +6365,8 @@ const pokemonList = [
             "Water",
             "Rock"
         ],
-        "attack": 103
+        "attack": 103,
+        "eggCycles": 30
     },
     {
         "id": 565,
@@ -6062,7 +6375,8 @@ const pokemonList = [
             "Water",
             "Rock"
         ],
-        "attack": 133
+        "attack": 133,
+        "eggCycles": 30
     },
     {
         "id": 566,
@@ -6071,7 +6385,8 @@ const pokemonList = [
             "Rock",
             "Flying"
         ],
-        "attack": 112
+        "attack": 112,
+        "eggCycles": 30
     },
     {
         "id": 567,
@@ -6080,7 +6395,8 @@ const pokemonList = [
             "Rock",
             "Flying"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 30
     },
     {
         "id": 568,
@@ -6088,7 +6404,8 @@ const pokemonList = [
         "type": [
             "Poison"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 569,
@@ -6096,7 +6413,8 @@ const pokemonList = [
         "type": [
             "Poison"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 570,
@@ -6104,7 +6422,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 25
     },
     {
         "id": 571,
@@ -6112,7 +6431,8 @@ const pokemonList = [
         "type": [
             "Dark"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 572,
@@ -6120,7 +6440,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 15
     },
     {
         "id": 573,
@@ -6128,7 +6449,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 15
     },
     {
         "id": 574,
@@ -6136,7 +6458,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 575,
@@ -6144,7 +6467,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 576,
@@ -6152,7 +6476,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 577,
@@ -6160,7 +6485,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 578,
@@ -6168,7 +6494,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 579,
@@ -6176,7 +6503,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 580,
@@ -6185,7 +6513,8 @@ const pokemonList = [
             "Water",
             "Flying"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 20
     },
     {
         "id": 581,
@@ -6194,7 +6523,8 @@ const pokemonList = [
             "Water",
             "Flying"
         ],
-        "attack": 98
+        "attack": 98,
+        "eggCycles": 20
     },
     {
         "id": 582,
@@ -6202,7 +6532,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 583,
@@ -6210,7 +6541,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 584,
@@ -6218,7 +6550,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 585,
@@ -6227,7 +6560,8 @@ const pokemonList = [
             "Normal",
             "Grass"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 20
     },
     {
         "id": 586,
@@ -6236,7 +6570,8 @@ const pokemonList = [
             "Normal",
             "Grass"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 587,
@@ -6245,7 +6580,8 @@ const pokemonList = [
             "Electric",
             "Flying"
         ],
-        "attack": 103
+        "attack": 103,
+        "eggCycles": 20
     },
     {
         "id": 588,
@@ -6253,7 +6589,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 15
     },
     {
         "id": 589,
@@ -6262,7 +6599,8 @@ const pokemonList = [
             "Bug",
             "Steel"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 15
     },
     {
         "id": 590,
@@ -6271,7 +6609,8 @@ const pokemonList = [
             "Grass",
             "Poison"
         ],
-        "attack": 69
+        "attack": 69,
+        "eggCycles": 20
     },
     {
         "id": 591,
@@ -6280,7 +6619,8 @@ const pokemonList = [
             "Grass",
             "Poison"
         ],
-        "attack": 114
+        "attack": 114,
+        "eggCycles": 20
     },
     {
         "id": 592,
@@ -6289,7 +6629,8 @@ const pokemonList = [
             "Water",
             "Ghost"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 593,
@@ -6298,7 +6639,8 @@ const pokemonList = [
             "Water",
             "Ghost"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 594,
@@ -6306,7 +6648,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 165
+        "attack": 165,
+        "eggCycles": 40
     },
     {
         "id": 595,
@@ -6315,7 +6658,8 @@ const pokemonList = [
             "Bug",
             "Electric"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 596,
@@ -6324,7 +6668,8 @@ const pokemonList = [
             "Bug",
             "Electric"
         ],
-        "attack": 108
+        "attack": 108,
+        "eggCycles": 20
     },
     {
         "id": 597,
@@ -6333,7 +6678,8 @@ const pokemonList = [
             "Grass",
             "Steel"
         ],
-        "attack": 91
+        "attack": 91,
+        "eggCycles": 20
     },
     {
         "id": 598,
@@ -6342,7 +6688,8 @@ const pokemonList = [
             "Grass",
             "Steel"
         ],
-        "attack": 131
+        "attack": 131,
+        "eggCycles": 20
     },
     {
         "id": 599,
@@ -6350,7 +6697,8 @@ const pokemonList = [
         "type": [
             "Steel"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 600,
@@ -6358,7 +6706,8 @@ const pokemonList = [
         "type": [
             "Steel"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 601,
@@ -6366,7 +6715,8 @@ const pokemonList = [
         "type": [
             "Steel"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 602,
@@ -6374,7 +6724,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 20
     },
     {
         "id": 603,
@@ -6382,7 +6733,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 604,
@@ -6390,7 +6742,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 605,
@@ -6398,7 +6751,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 606,
@@ -6406,7 +6760,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 607,
@@ -6415,7 +6770,8 @@ const pokemonList = [
             "Ghost",
             "Fire"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 608,
@@ -6424,7 +6780,8 @@ const pokemonList = [
             "Ghost",
             "Fire"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 609,
@@ -6433,7 +6790,8 @@ const pokemonList = [
             "Ghost",
             "Fire"
         ],
-        "attack": 145
+        "attack": 145,
+        "eggCycles": 20
     },
     {
         "id": 610,
@@ -6441,7 +6799,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 87
+        "attack": 87,
+        "eggCycles": 40
     },
     {
         "id": 611,
@@ -6449,7 +6808,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 117
+        "attack": 117,
+        "eggCycles": 40
     },
     {
         "id": 612,
@@ -6457,7 +6817,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 147
+        "attack": 147,
+        "eggCycles": 40
     },
     {
         "id": 613,
@@ -6465,7 +6826,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 614,
@@ -6473,7 +6835,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 20
     },
     {
         "id": 615,
@@ -6481,7 +6844,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 25
     },
     {
         "id": 616,
@@ -6489,7 +6853,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 617,
@@ -6497,7 +6862,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 145
+        "attack": 145,
+        "eggCycles": 15
     },
     {
         "id": 618,
@@ -6506,7 +6872,8 @@ const pokemonList = [
             "Ground",
             "Electric"
         ],
-        "attack": 109
+        "attack": 109,
+        "eggCycles": 20
     },
     {
         "id": 619,
@@ -6514,7 +6881,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 25
     },
     {
         "id": 620,
@@ -6522,7 +6890,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 25
     },
     {
         "id": 621,
@@ -6530,7 +6899,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 30
     },
     {
         "id": 622,
@@ -6539,7 +6909,8 @@ const pokemonList = [
             "Ground",
             "Ghost"
         ],
-        "attack": 74
+        "attack": 74,
+        "eggCycles": 25
     },
     {
         "id": 623,
@@ -6548,7 +6919,8 @@ const pokemonList = [
             "Ground",
             "Ghost"
         ],
-        "attack": 124
+        "attack": 124,
+        "eggCycles": 25
     },
     {
         "id": 624,
@@ -6557,7 +6929,8 @@ const pokemonList = [
             "Dark",
             "Steel"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 625,
@@ -6566,7 +6939,8 @@ const pokemonList = [
             "Dark",
             "Steel"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 626,
@@ -6574,7 +6948,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 627,
@@ -6583,7 +6958,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 83
+        "attack": 83,
+        "eggCycles": 20
     },
     {
         "id": 628,
@@ -6592,7 +6968,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 20
     },
     {
         "id": 629,
@@ -6601,7 +6978,8 @@ const pokemonList = [
             "Dark",
             "Flying"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 20
     },
     {
         "id": 630,
@@ -6610,7 +6988,8 @@ const pokemonList = [
             "Dark",
             "Flying"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 631,
@@ -6618,7 +6997,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 632,
@@ -6627,7 +7007,8 @@ const pokemonList = [
             "Bug",
             "Steel"
         ],
-        "attack": 112
+        "attack": 112,
+        "eggCycles": 20
     },
     {
         "id": 633,
@@ -6636,7 +7017,8 @@ const pokemonList = [
             "Dark",
             "Dragon"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 40
     },
     {
         "id": 634,
@@ -6645,7 +7027,8 @@ const pokemonList = [
             "Dark",
             "Dragon"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 40
     },
     {
         "id": 635,
@@ -6654,7 +7037,8 @@ const pokemonList = [
             "Dark",
             "Dragon"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 40
     },
     {
         "id": 636,
@@ -6663,7 +7047,8 @@ const pokemonList = [
             "Bug",
             "Fire"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 40
     },
     {
         "id": 637,
@@ -6672,7 +7057,8 @@ const pokemonList = [
             "Bug",
             "Fire"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 40
     },
     {
         "id": 638,
@@ -6681,7 +7067,8 @@ const pokemonList = [
             "Steel",
             "Fighting"
         ],
-        "attack": 129
+        "attack": 129,
+        "eggCycles": 80
     },
     {
         "id": 639,
@@ -6690,7 +7077,8 @@ const pokemonList = [
             "Rock",
             "Fighting"
         ],
-        "attack": 129
+        "attack": 129,
+        "eggCycles": 80
     },
     {
         "id": 640,
@@ -6699,7 +7087,8 @@ const pokemonList = [
             "Grass",
             "Fighting"
         ],
-        "attack": 129
+        "attack": 129,
+        "eggCycles": 80
     },
     {
         "id": 641,
@@ -6707,7 +7096,8 @@ const pokemonList = [
         "type": [
             "Flying"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 120
     },
     {
         "id": 642,
@@ -6716,7 +7106,8 @@ const pokemonList = [
             "Electric",
             "Flying"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 120
     },
     {
         "id": 643,
@@ -6725,7 +7116,8 @@ const pokemonList = [
             "Dragon",
             "Fire"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 644,
@@ -6734,7 +7126,8 @@ const pokemonList = [
             "Dragon",
             "Electric"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 645,
@@ -6743,7 +7136,8 @@ const pokemonList = [
             "Ground",
             "Flying"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 120
     },
     {
         "id": 646,
@@ -6752,7 +7146,8 @@ const pokemonList = [
             "Dragon",
             "Ice"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 120
     },
     {
         "id": 647,
@@ -6761,7 +7156,8 @@ const pokemonList = [
             "Water",
             "Fighting"
         ],
-        "attack": 129
+        "attack": 129,
+        "eggCycles": 80
     },
     {
         "id": 648,
@@ -6770,7 +7166,8 @@ const pokemonList = [
             "Normal",
             "Psychic"
         ],
-        "attack": 128
+        "attack": 128,
+        "eggCycles": 120
     },
     {
         "id": 649,
@@ -6779,7 +7176,8 @@ const pokemonList = [
             "Bug",
             "Steel"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 120
     },
     {
         "id": 650,
@@ -6787,7 +7185,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 20
     },
     {
         "id": 651,
@@ -6795,7 +7194,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 20
     },
     {
         "id": 652,
@@ -6804,7 +7204,8 @@ const pokemonList = [
             "Grass",
             "Fighting"
         ],
-        "attack": 122
+        "attack": 122,
+        "eggCycles": 20
     },
     {
         "id": 653,
@@ -6812,7 +7213,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 20
     },
     {
         "id": 654,
@@ -6820,7 +7222,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 20
     },
     {
         "id": 655,
@@ -6829,7 +7232,8 @@ const pokemonList = [
             "Fire",
             "Psychic"
         ],
-        "attack": 114
+        "attack": 114,
+        "eggCycles": 20
     },
     {
         "id": 656,
@@ -6837,7 +7241,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 71
+        "attack": 71,
+        "eggCycles": 20
     },
     {
         "id": 657,
@@ -6845,7 +7250,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 97
+        "attack": 97,
+        "eggCycles": 20
     },
     {
         "id": 658,
@@ -6854,7 +7260,8 @@ const pokemonList = [
             "Water",
             "Dark"
         ],
-        "attack": 122
+        "attack": 122,
+        "eggCycles": 20
     },
     {
         "id": 659,
@@ -6862,7 +7269,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 57
+        "attack": 57,
+        "eggCycles": 15
     },
     {
         "id": 660,
@@ -6871,7 +7279,8 @@ const pokemonList = [
             "Normal",
             "Ground"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 661,
@@ -6880,7 +7289,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 15
     },
     {
         "id": 662,
@@ -6889,7 +7299,8 @@ const pokemonList = [
             "Fire",
             "Flying"
         ],
-        "attack": 84
+        "attack": 84,
+        "eggCycles": 15
     },
     {
         "id": 663,
@@ -6898,7 +7309,8 @@ const pokemonList = [
             "Fire",
             "Flying"
         ],
-        "attack": 126
+        "attack": 126,
+        "eggCycles": 15
     },
     {
         "id": 664,
@@ -6906,7 +7318,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 40
+        "attack": 40,
+        "eggCycles": 15
     },
     {
         "id": 665,
@@ -6914,7 +7327,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 15
     },
     {
         "id": 666,
@@ -6923,7 +7337,8 @@ const pokemonList = [
             "Bug",
             "Flying"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 667,
@@ -6932,7 +7347,8 @@ const pokemonList = [
             "Fire",
             "Normal"
         ],
-        "attack": 73
+        "attack": 73,
+        "eggCycles": 20
     },
     {
         "id": 668,
@@ -6941,7 +7357,8 @@ const pokemonList = [
             "Fire",
             "Normal"
         ],
-        "attack": 109
+        "attack": 109,
+        "eggCycles": 20
     },
     {
         "id": 669,
@@ -6949,7 +7366,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 79
+        "attack": 79,
+        "eggCycles": 20
     },
     {
         "id": 670,
@@ -6957,7 +7375,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 98
+        "attack": 98,
+        "eggCycles": 20
     },
     {
         "id": 671,
@@ -6965,7 +7384,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 154
+        "attack": 154,
+        "eggCycles": 20
     },
     {
         "id": 672,
@@ -6973,7 +7393,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 66
+        "attack": 66,
+        "eggCycles": 20
     },
     {
         "id": 673,
@@ -6981,7 +7402,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 20
     },
     {
         "id": 674,
@@ -6989,7 +7411,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 82
+        "attack": 82,
+        "eggCycles": 25
     },
     {
         "id": 675,
@@ -6998,7 +7421,8 @@ const pokemonList = [
             "Fighting",
             "Dark"
         ],
-        "attack": 124
+        "attack": 124,
+        "eggCycles": 25
     },
     {
         "id": 676,
@@ -7006,7 +7430,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 102
+        "attack": 102,
+        "eggCycles": 20
     },
     {
         "id": 677,
@@ -7014,7 +7439,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 68
+        "attack": 68,
+        "eggCycles": 20
     },
     {
         "id": 678,
@@ -7022,7 +7448,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 104
+        "attack": 104,
+        "eggCycles": 20
     },
     {
         "id": 679,
@@ -7031,7 +7458,8 @@ const pokemonList = [
             "Steel",
             "Ghost"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 680,
@@ -7040,7 +7468,8 @@ const pokemonList = [
             "Steel",
             "Ghost"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 20
     },
     {
         "id": 681,
@@ -7049,7 +7478,8 @@ const pokemonList = [
             "Steel",
             "Ghost"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 20
     },
     {
         "id": 682,
@@ -7057,7 +7487,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 78
+        "attack": 78,
+        "eggCycles": 20
     },
     {
         "id": 683,
@@ -7065,7 +7496,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 101
+        "attack": 101,
+        "eggCycles": 20
     },
     {
         "id": 684,
@@ -7073,7 +7505,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 66
+        "attack": 66,
+        "eggCycles": 20
     },
     {
         "id": 685,
@@ -7081,7 +7514,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 86
+        "attack": 86,
+        "eggCycles": 20
     },
     {
         "id": 686,
@@ -7090,7 +7524,8 @@ const pokemonList = [
             "Dark",
             "Psychic"
         ],
-        "attack": 54
+        "attack": 54,
+        "eggCycles": 20
     },
     {
         "id": 687,
@@ -7099,7 +7534,8 @@ const pokemonList = [
             "Dark",
             "Psychic"
         ],
-        "attack": 92
+        "attack": 92,
+        "eggCycles": 20
     },
     {
         "id": 688,
@@ -7108,7 +7544,8 @@ const pokemonList = [
             "Rock",
             "Water"
         ],
-        "attack": 67
+        "attack": 67,
+        "eggCycles": 20
     },
     {
         "id": 689,
@@ -7117,7 +7554,8 @@ const pokemonList = [
             "Rock",
             "Water"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 690,
@@ -7126,7 +7564,8 @@ const pokemonList = [
             "Poison",
             "Water"
         ],
-        "attack": 60
+        "attack": 60,
+        "eggCycles": 20
     },
     {
         "id": 691,
@@ -7135,7 +7574,8 @@ const pokemonList = [
             "Poison",
             "Dragon"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 20
     },
     {
         "id": 692,
@@ -7143,7 +7583,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 63
+        "attack": 63,
+        "eggCycles": 15
     },
     {
         "id": 693,
@@ -7151,7 +7592,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 15
     },
     {
         "id": 694,
@@ -7160,7 +7602,8 @@ const pokemonList = [
             "Electric",
             "Normal"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 695,
@@ -7169,7 +7612,8 @@ const pokemonList = [
             "Electric",
             "Normal"
         ],
-        "attack": 109
+        "attack": 109,
+        "eggCycles": 20
     },
     {
         "id": 696,
@@ -7178,7 +7622,8 @@ const pokemonList = [
             "Rock",
             "Dragon"
         ],
-        "attack": 89
+        "attack": 89,
+        "eggCycles": 30
     },
     {
         "id": 697,
@@ -7187,7 +7632,8 @@ const pokemonList = [
             "Rock",
             "Dragon"
         ],
-        "attack": 121
+        "attack": 121,
+        "eggCycles": 30
     },
     {
         "id": 698,
@@ -7196,7 +7642,8 @@ const pokemonList = [
             "Rock",
             "Ice"
         ],
-        "attack": 77
+        "attack": 77,
+        "eggCycles": 30
     },
     {
         "id": 699,
@@ -7205,7 +7652,8 @@ const pokemonList = [
             "Rock",
             "Ice"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 30
     },
     {
         "id": 700,
@@ -7213,7 +7661,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 35
     },
     {
         "id": 701,
@@ -7222,7 +7671,8 @@ const pokemonList = [
             "Fighting",
             "Flying"
         ],
-        "attack": 118
+        "attack": 118,
+        "eggCycles": 20
     },
     {
         "id": 702,
@@ -7231,7 +7681,8 @@ const pokemonList = [
             "Electric",
             "Fairy"
         ],
-        "attack": 101
+        "attack": 101,
+        "eggCycles": 20
     },
     {
         "id": 703,
@@ -7240,7 +7691,8 @@ const pokemonList = [
             "Rock",
             "Fairy"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 25
     },
     {
         "id": 704,
@@ -7248,7 +7700,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 40
     },
     {
         "id": 705,
@@ -7256,7 +7709,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 113
+        "attack": 113,
+        "eggCycles": 40
     },
     {
         "id": 706,
@@ -7264,7 +7718,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 40
     },
     {
         "id": 707,
@@ -7273,7 +7728,8 @@ const pokemonList = [
             "Steel",
             "Fairy"
         ],
-        "attack": 91
+        "attack": 91,
+        "eggCycles": 20
     },
     {
         "id": 708,
@@ -7282,7 +7738,8 @@ const pokemonList = [
             "Ghost",
             "Grass"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 709,
@@ -7291,7 +7748,8 @@ const pokemonList = [
             "Ghost",
             "Grass"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 710,
@@ -7300,7 +7758,8 @@ const pokemonList = [
             "Ghost",
             "Grass"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 20
     },
     {
         "id": 711,
@@ -7309,7 +7768,8 @@ const pokemonList = [
             "Ghost",
             "Grass"
         ],
-        "attack": 122
+        "attack": 122,
+        "eggCycles": 20
     },
     {
         "id": 712,
@@ -7317,7 +7777,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 20
     },
     {
         "id": 713,
@@ -7325,7 +7786,8 @@ const pokemonList = [
         "type": [
             "Ice"
         ],
-        "attack": 184
+        "attack": 184,
+        "eggCycles": 20
     },
     {
         "id": 714,
@@ -7334,7 +7796,8 @@ const pokemonList = [
             "Flying",
             "Dragon"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 20
     },
     {
         "id": 715,
@@ -7343,7 +7806,8 @@ const pokemonList = [
             "Flying",
             "Dragon"
         ],
-        "attack": 123
+        "attack": 123,
+        "eggCycles": 20
     },
     {
         "id": 716,
@@ -7351,7 +7815,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 131
+        "attack": 131,
+        "eggCycles": 120
     },
     {
         "id": 717,
@@ -7360,7 +7825,8 @@ const pokemonList = [
             "Dark",
             "Flying"
         ],
-        "attack": 131
+        "attack": 131,
+        "eggCycles": 120
     },
     {
         "id": 718,
@@ -7369,7 +7835,8 @@ const pokemonList = [
             "Dragon",
             "Ground"
         ],
-        "attack": 121
+        "attack": 121,
+        "eggCycles": 120
     },
     {
         "id": 719,
@@ -7378,7 +7845,8 @@ const pokemonList = [
             "Rock",
             "Fairy"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 25
     },
     {
         "id": 720,
@@ -7387,7 +7855,8 @@ const pokemonList = [
             "Psychic",
             "Ghost"
         ],
-        "attack": 150
+        "attack": 150,
+        "eggCycles": 120
     },
     {
         "id": 721,
@@ -7396,7 +7865,8 @@ const pokemonList = [
             "Fire",
             "Water"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 120
     },
     {
         "id": 722,
@@ -7405,7 +7875,8 @@ const pokemonList = [
             "Grass",
             "Flying"
         ],
-        "attack": 68
+        "attack": 68,
+        "eggCycles": 15
     },
     {
         "id": 723,
@@ -7414,7 +7885,8 @@ const pokemonList = [
             "Grass",
             "Flying"
         ],
-        "attack": 78
+        "attack": 78,
+        "eggCycles": 15
     },
     {
         "id": 724,
@@ -7423,7 +7895,8 @@ const pokemonList = [
             "Grass",
             "Ghost"
         ],
-        "attack": 107
+        "attack": 107,
+        "eggCycles": 15
     },
     {
         "id": 725,
@@ -7431,7 +7904,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 15
     },
     {
         "id": 726,
@@ -7439,7 +7913,8 @@ const pokemonList = [
         "type": [
             "Fire"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 15
     },
     {
         "id": 727,
@@ -7448,7 +7923,8 @@ const pokemonList = [
             "Fire",
             "Dark"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 15
     },
     {
         "id": 728,
@@ -7456,7 +7932,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 66
+        "attack": 66,
+        "eggCycles": 15
     },
     {
         "id": 729,
@@ -7464,7 +7941,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 91
+        "attack": 91,
+        "eggCycles": 15
     },
     {
         "id": 730,
@@ -7473,7 +7951,8 @@ const pokemonList = [
             "Water",
             "Fairy"
         ],
-        "attack": 126
+        "attack": 126,
+        "eggCycles": 15
     },
     {
         "id": 731,
@@ -7482,7 +7961,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 15
     },
     {
         "id": 732,
@@ -7491,7 +7971,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 85
+        "attack": 85,
+        "eggCycles": 15
     },
     {
         "id": 733,
@@ -7500,7 +7981,8 @@ const pokemonList = [
             "Normal",
             "Flying"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 15
     },
     {
         "id": 734,
@@ -7508,7 +7990,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 70
+        "attack": 70,
+        "eggCycles": 15
     },
     {
         "id": 735,
@@ -7516,7 +7999,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 15
     },
     {
         "id": 736,
@@ -7524,7 +8008,8 @@ const pokemonList = [
         "type": [
             "Bug"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 15
     },
     {
         "id": 737,
@@ -7533,7 +8018,8 @@ const pokemonList = [
             "Bug",
             "Electric"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 15
     },
     {
         "id": 738,
@@ -7542,7 +8028,8 @@ const pokemonList = [
             "Bug",
             "Electric"
         ],
-        "attack": 145
+        "attack": 145,
+        "eggCycles": 15
     },
     {
         "id": 739,
@@ -7550,7 +8037,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 82
+        "attack": 82,
+        "eggCycles": 20
     },
     {
         "id": 740,
@@ -7559,7 +8047,8 @@ const pokemonList = [
             "Fighting",
             "Ice"
         ],
-        "attack": 132
+        "attack": 132,
+        "eggCycles": 20
     },
     {
         "id": 741,
@@ -7568,7 +8057,8 @@ const pokemonList = [
             "Fire",
             "Flying"
         ],
-        "attack": 98
+        "attack": 98,
+        "eggCycles": 20
     },
     {
         "id": 742,
@@ -7577,7 +8067,8 @@ const pokemonList = [
             "Bug",
             "Fairy"
         ],
-        "attack": 84
+        "attack": 84,
+        "eggCycles": 20
     },
     {
         "id": 743,
@@ -7586,7 +8077,8 @@ const pokemonList = [
             "Bug",
             "Fairy"
         ],
-        "attack": 124
+        "attack": 124,
+        "eggCycles": 20
     },
     {
         "id": 744,
@@ -7594,7 +8086,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 15
     },
     {
         "id": 745,
@@ -7602,7 +8095,8 @@ const pokemonList = [
         "type": [
             "Rock"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 15
     },
     {
         "id": 746,
@@ -7610,7 +8104,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 45
+        "attack": 45,
+        "eggCycles": 15
     },
     {
         "id": 747,
@@ -7619,7 +8114,8 @@ const pokemonList = [
             "Poison",
             "Water"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 20
     },
     {
         "id": 748,
@@ -7628,7 +8124,8 @@ const pokemonList = [
             "Poison",
             "Water"
         ],
-        "attack": 152
+        "attack": 152,
+        "eggCycles": 20
     },
     {
         "id": 749,
@@ -7636,7 +8133,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 750,
@@ -7644,7 +8142,8 @@ const pokemonList = [
         "type": [
             "Ground"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 20
     },
     {
         "id": 751,
@@ -7653,7 +8152,8 @@ const pokemonList = [
             "Water",
             "Bug"
         ],
-        "attack": 72
+        "attack": 72,
+        "eggCycles": 15
     },
     {
         "id": 752,
@@ -7662,7 +8162,8 @@ const pokemonList = [
             "Water",
             "Bug"
         ],
-        "attack": 132
+        "attack": 132,
+        "eggCycles": 15
     },
     {
         "id": 753,
@@ -7670,7 +8171,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 55
+        "attack": 55,
+        "eggCycles": 20
     },
     {
         "id": 754,
@@ -7678,7 +8180,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 755,
@@ -7687,7 +8190,8 @@ const pokemonList = [
             "Grass",
             "Fairy"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 20
     },
     {
         "id": 756,
@@ -7696,7 +8200,8 @@ const pokemonList = [
             "Grass",
             "Fairy"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 20
     },
     {
         "id": 757,
@@ -7705,7 +8210,8 @@ const pokemonList = [
             "Poison",
             "Fire"
         ],
-        "attack": 77
+        "attack": 77,
+        "eggCycles": 20
     },
     {
         "id": 758,
@@ -7714,7 +8220,8 @@ const pokemonList = [
             "Poison",
             "Fire"
         ],
-        "attack": 117
+        "attack": 117,
+        "eggCycles": 20
     },
     {
         "id": 759,
@@ -7723,7 +8230,8 @@ const pokemonList = [
             "Normal",
             "Fighting"
         ],
-        "attack": 75
+        "attack": 75,
+        "eggCycles": 15
     },
     {
         "id": 760,
@@ -7732,7 +8240,8 @@ const pokemonList = [
             "Normal",
             "Fighting"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 15
     },
     {
         "id": 761,
@@ -7740,7 +8249,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 42
+        "attack": 42,
+        "eggCycles": 20
     },
     {
         "id": 762,
@@ -7748,7 +8258,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 62
+        "attack": 62,
+        "eggCycles": 20
     },
     {
         "id": 763,
@@ -7756,7 +8267,8 @@ const pokemonList = [
         "type": [
             "Grass"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 764,
@@ -7764,7 +8276,8 @@ const pokemonList = [
         "type": [
             "Fairy"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 765,
@@ -7773,7 +8286,8 @@ const pokemonList = [
             "Normal",
             "Psychic"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 20
     },
     {
         "id": 766,
@@ -7781,7 +8295,8 @@ const pokemonList = [
         "type": [
             "Fighting"
         ],
-        "attack": 120
+        "attack": 120,
+        "eggCycles": 20
     },
     {
         "id": 767,
@@ -7790,7 +8305,8 @@ const pokemonList = [
             "Bug",
             "Water"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 20
     },
     {
         "id": 768,
@@ -7799,7 +8315,8 @@ const pokemonList = [
             "Bug",
             "Water"
         ],
-        "attack": 140
+        "attack": 140,
+        "eggCycles": 20
     },
     {
         "id": 769,
@@ -7808,7 +8325,8 @@ const pokemonList = [
             "Ghost",
             "Ground"
         ],
-        "attack": 80
+        "attack": 80,
+        "eggCycles": 15
     },
     {
         "id": 770,
@@ -7817,7 +8335,8 @@ const pokemonList = [
             "Ghost",
             "Ground"
         ],
-        "attack": 110
+        "attack": 110,
+        "eggCycles": 15
     },
     {
         "id": 771,
@@ -7825,7 +8344,8 @@ const pokemonList = [
         "type": [
             "Water"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 15
     },
     {
         "id": 772,
@@ -7833,7 +8353,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 120
     },
     {
         "id": 773,
@@ -7841,7 +8362,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 95
+        "attack": 95,
+        "eggCycles": 120
     },
     {
         "id": 774,
@@ -7850,7 +8372,8 @@ const pokemonList = [
             "Rock",
             "Flying"
         ],
-        "attack": 100
+        "attack": 100,
+        "eggCycles": 25
     },
     {
         "id": 775,
@@ -7858,7 +8381,8 @@ const pokemonList = [
         "type": [
             "Normal"
         ],
-        "attack": 115
+        "attack": 115,
+        "eggCycles": 20
     },
     {
         "id": 776,
@@ -7867,7 +8391,8 @@ const pokemonList = [
             "Fire",
             "Dragon"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 20
     },
     {
         "id": 777,
@@ -7876,7 +8401,8 @@ const pokemonList = [
             "Electric",
             "Steel"
         ],
-        "attack": 98
+        "attack": 98,
+        "eggCycles": 10
     },
     {
         "id": 778,
@@ -7885,7 +8411,8 @@ const pokemonList = [
             "Ghost",
             "Fairy"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 20
     },
     {
         "id": 779,
@@ -7894,7 +8421,8 @@ const pokemonList = [
             "Water",
             "Psychic"
         ],
-        "attack": 105
+        "attack": 105,
+        "eggCycles": 15
     },
     {
         "id": 780,
@@ -7903,7 +8431,8 @@ const pokemonList = [
             "Normal",
             "Dragon"
         ],
-        "attack": 135
+        "attack": 135,
+        "eggCycles": 20
     },
     {
         "id": 781,
@@ -7912,7 +8441,8 @@ const pokemonList = [
             "Ghost",
             "Grass"
         ],
-        "attack": 131
+        "attack": 131,
+        "eggCycles": 25
     },
     {
         "id": 782,
@@ -7920,7 +8450,8 @@ const pokemonList = [
         "type": [
             "Dragon"
         ],
-        "attack": 65
+        "attack": 65,
+        "eggCycles": 40
     },
     {
         "id": 783,
@@ -7929,7 +8460,8 @@ const pokemonList = [
             "Dragon",
             "Fighting"
         ],
-        "attack": 90
+        "attack": 90,
+        "eggCycles": 40
     },
     {
         "id": 784,
@@ -7938,7 +8470,8 @@ const pokemonList = [
             "Dragon",
             "Fighting"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 40
     },
     {
         "id": 785,
@@ -7947,7 +8480,8 @@ const pokemonList = [
             "Electric",
             "Fairy"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 15
     },
     {
         "id": 786,
@@ -7956,7 +8490,8 @@ const pokemonList = [
             "Psychic",
             "Fairy"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 15
     },
     {
         "id": 787,
@@ -7965,7 +8500,8 @@ const pokemonList = [
             "Grass",
             "Fairy"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 15
     },
     {
         "id": 788,
@@ -7974,7 +8510,8 @@ const pokemonList = [
             "Water",
             "Fairy"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 15
     },
     {
         "id": 789,
@@ -7982,7 +8519,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 43
+        "attack": 43,
+        "eggCycles": 120
     },
     {
         "id": 790,
@@ -7990,7 +8528,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 131
+        "attack": 131,
+        "eggCycles": 120
     },
     {
         "id": 791,
@@ -7999,7 +8538,8 @@ const pokemonList = [
             "Psychic",
             "Steel"
         ],
-        "attack": 137
+        "attack": 137,
+        "eggCycles": 120
     },
     {
         "id": 792,
@@ -8008,7 +8548,8 @@ const pokemonList = [
             "Psychic",
             "Ghost"
         ],
-        "attack": 137
+        "attack": 137,
+        "eggCycles": 120
     },
     {
         "id": 793,
@@ -8017,7 +8558,8 @@ const pokemonList = [
             "Rock",
             "Poison"
         ],
-        "attack": 131
+        "attack": 131,
+        "eggCycles": 120
     },
     {
         "id": 794,
@@ -8026,7 +8568,8 @@ const pokemonList = [
             "Bug",
             "Fighting"
         ],
-        "attack": 139
+        "attack": 139,
+        "eggCycles": 120
     },
     {
         "id": 795,
@@ -8035,7 +8578,8 @@ const pokemonList = [
             "Bug",
             "Fighting"
         ],
-        "attack": 151
+        "attack": 151,
+        "eggCycles": 120
     },
     {
         "id": 796,
@@ -8043,7 +8587,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 173
+        "attack": 173,
+        "eggCycles": 120
     },
     {
         "id": 797,
@@ -8052,7 +8597,8 @@ const pokemonList = [
             "Steel",
             "Flying"
         ],
-        "attack": 107
+        "attack": 107,
+        "eggCycles": 120
     },
     {
         "id": 798,
@@ -8061,7 +8607,8 @@ const pokemonList = [
             "Grass",
             "Steel"
         ],
-        "attack": 181
+        "attack": 181,
+        "eggCycles": 120
     },
     {
         "id": 799,
@@ -8070,7 +8617,8 @@ const pokemonList = [
             "Dark",
             "Dragon"
         ],
-        "attack": 223
+        "attack": 223,
+        "eggCycles": 120
     },
     {
         "id": 800,
@@ -8078,7 +8626,8 @@ const pokemonList = [
         "type": [
             "Psychic"
         ],
-        "attack": 127
+        "attack": 127,
+        "eggCycles": 120
     },
     {
         "id": 801,
@@ -8087,7 +8636,8 @@ const pokemonList = [
             "Steel",
             "Fairy"
         ],
-        "attack": 130
+        "attack": 130,
+        "eggCycles": 120
     },
     {
         "id": 802,
@@ -8096,7 +8646,8 @@ const pokemonList = [
             "Fighting",
             "Ghost"
         ],
-        "attack": 125
+        "attack": 125,
+        "eggCycles": 120
     },
     {
         "id": 803,
@@ -8104,7 +8655,8 @@ const pokemonList = [
         "type": [
             "Poison"
         ],
-        "attack": 73
+        "attack": 73,
+        "eggCycles": 120
     },
     {
         "id": 804,
@@ -8113,7 +8665,8 @@ const pokemonList = [
             "Poison",
             "Dragon"
         ],
-        "attack": 127
+        "attack": 127,
+        "eggCycles": 120
     },
     {
         "id": 805,
@@ -8122,7 +8675,8 @@ const pokemonList = [
             "Rock",
             "Steel"
         ],
-        "attack": 211
+        "attack": 211,
+        "eggCycles": 120
     },
     {
         "id": 806,
@@ -8131,7 +8685,8 @@ const pokemonList = [
             "Fire",
             "Ghost"
         ],
-        "attack": 151
+        "attack": 151,
+        "eggCycles": 120
     },
     {
         "id": 807,
@@ -8139,7 +8694,8 @@ const pokemonList = [
         "type": [
             "Electric"
         ],
-        "attack": 143
+        "attack": 143,
+        "eggCycles": 120
     },
     {
         "id": 808,
