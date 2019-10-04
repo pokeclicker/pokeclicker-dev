@@ -3413,7 +3413,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 253,
@@ -3424,7 +3425,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 254,
@@ -3435,7 +3437,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 255,
@@ -3446,7 +3449,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 256,
@@ -3458,7 +3462,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 257,
@@ -3470,7 +3475,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 258,
@@ -3481,7 +3487,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 259,
@@ -3493,7 +3500,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 260,
@@ -3505,7 +3513,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 241
+        "exp": 241,
+        "catchRate": 45
     },
     {
         "id": 261,
@@ -3516,7 +3525,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 262,
@@ -3527,7 +3537,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 127
     },
     {
         "id": 263,
@@ -3538,7 +3549,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 264,
@@ -3549,7 +3561,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 90
     },
     {
         "id": 265,
@@ -3560,7 +3573,8 @@ const pokemonList = [
         "attack": 45,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 266,
@@ -3571,7 +3585,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 72
+        "exp": 72,
+        "catchRate": 120
     },
     {
         "id": 267,
@@ -3583,7 +3598,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 178
+        "exp": 178,
+        "catchRate": 45
     },
     {
         "id": 268,
@@ -3594,7 +3610,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 72
+        "exp": 72,
+        "catchRate": 120
     },
     {
         "id": 269,
@@ -3606,7 +3623,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 270,
@@ -3618,7 +3636,8 @@ const pokemonList = [
         "attack": 50,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 44
+        "exp": 44,
+        "catchRate": 255
     },
     {
         "id": 271,
@@ -3630,7 +3649,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 119
+        "exp": 119,
+        "catchRate": 120
     },
     {
         "id": 272,
@@ -3642,7 +3662,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 216
+        "exp": 216,
+        "catchRate": 45
     },
     {
         "id": 273,
@@ -3653,7 +3674,8 @@ const pokemonList = [
         "attack": 50,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 44
+        "exp": 44,
+        "catchRate": 255
     },
     {
         "id": 274,
@@ -3665,7 +3687,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 119
+        "exp": 119,
+        "catchRate": 120
     },
     {
         "id": 275,
@@ -3677,7 +3700,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 216
+        "exp": 216,
+        "catchRate": 45
     },
     {
         "id": 276,
@@ -3689,7 +3713,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 54
+        "exp": 54,
+        "catchRate": 200
     },
     {
         "id": 277,
@@ -3701,7 +3726,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 45
     },
     {
         "id": 278,
@@ -3713,7 +3739,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 54
+        "exp": 54,
+        "catchRate": 190
     },
     {
         "id": 279,
@@ -3725,7 +3752,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 154
+        "exp": 154,
+        "catchRate": 45
     },
     {
         "id": 280,
@@ -3737,7 +3765,8 @@ const pokemonList = [
         "attack": 45,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 40
+        "exp": 40,
+        "catchRate": 235
     },
     {
         "id": 281,
@@ -3749,7 +3778,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 97
+        "exp": 97,
+        "catchRate": 120
     },
     {
         "id": 282,
@@ -3761,7 +3791,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 233
+        "exp": 233,
+        "catchRate": 45
     },
     {
         "id": 283,
@@ -3773,7 +3804,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 54
+        "exp": 54,
+        "catchRate": 200
     },
     {
         "id": 284,
@@ -3785,7 +3817,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 75
     },
     {
         "id": 285,
@@ -3796,7 +3829,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "fluctuating",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 255
     },
     {
         "id": 286,
@@ -3808,7 +3842,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 15,
         "levelType": "fluctuating",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 90
     },
     {
         "id": 287,
@@ -3819,7 +3854,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 288,
@@ -3830,7 +3866,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": 154
+        "exp": 154,
+        "catchRate": 120
     },
     {
         "id": 289,
@@ -3841,7 +3878,8 @@ const pokemonList = [
         "attack": 160,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": 252
+        "exp": 252,
+        "catchRate": 45
     },
     {
         "id": 290,
@@ -3853,7 +3891,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "erratic",
-        "exp": 53
+        "exp": 53,
+        "catchRate": 255
     },
     {
         "id": 291,
@@ -3865,7 +3904,8 @@ const pokemonList = [
         "attack": 160,
         "eggCycles": 15,
         "levelType": "erratic",
-        "exp": 160
+        "exp": 160,
+        "catchRate": 120
     },
     {
         "id": 292,
@@ -3877,7 +3917,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "erratic",
-        "exp": 83
+        "exp": 83,
+        "catchRate": 45
     },
     {
         "id": 293,
@@ -3888,7 +3929,8 @@ const pokemonList = [
         "attack": 64,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 48
+        "exp": 48,
+        "catchRate": 190
     },
     {
         "id": 294,
@@ -3899,7 +3941,8 @@ const pokemonList = [
         "attack": 84,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 126
+        "exp": 126,
+        "catchRate": 120
     },
     {
         "id": 295,
@@ -3910,7 +3953,8 @@ const pokemonList = [
         "attack": 104,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 221
+        "exp": 221,
+        "catchRate": 45
     },
     {
         "id": 296,
@@ -3921,7 +3965,8 @@ const pokemonList = [
         "attack": 72,
         "eggCycles": 20,
         "levelType": "fluctuating",
-        "exp": 47
+        "exp": 47,
+        "catchRate": 180
     },
     {
         "id": 297,
@@ -3932,7 +3977,8 @@ const pokemonList = [
         "attack": 144,
         "eggCycles": 20,
         "levelType": "fluctuating",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 200
     },
     {
         "id": 298,
@@ -3944,7 +3990,8 @@ const pokemonList = [
         "attack": 50,
         "eggCycles": 10,
         "levelType": "fast",
-        "exp": 38
+        "exp": 38,
+        "catchRate": 150
     },
     {
         "id": 299,
@@ -3955,7 +4002,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 75
+        "exp": 75,
+        "catchRate": 255
     },
     {
         "id": 300,
@@ -3966,7 +4014,8 @@ const pokemonList = [
         "attack": 50,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 52
+        "exp": 52,
+        "catchRate": 255
     },
     {
         "id": 301,
@@ -3977,7 +4026,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 140
+        "exp": 140,
+        "catchRate": 60
     },
     {
         "id": 302,
@@ -3989,7 +4039,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 133
+        "exp": 133,
+        "catchRate": 45
     },
     {
         "id": 303,
@@ -4001,7 +4052,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 133
+        "exp": 133,
+        "catchRate": 45
     },
     {
         "id": 304,
@@ -4013,7 +4065,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 35,
         "levelType": "slow",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 180
     },
     {
         "id": 305,
@@ -4025,7 +4078,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 35,
         "levelType": "slow",
-        "exp": 151
+        "exp": 151,
+        "catchRate": 90
     },
     {
         "id": 306,
@@ -4037,7 +4091,8 @@ const pokemonList = [
         "attack": 180,
         "eggCycles": 35,
         "levelType": "slow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 307,
@@ -4049,7 +4104,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 180
     },
     {
         "id": 308,
@@ -4061,7 +4117,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 90
     },
     {
         "id": 309,
@@ -4072,7 +4129,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 120
     },
     {
         "id": 310,
@@ -4083,7 +4141,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 45
     },
     {
         "id": 311,
@@ -4094,7 +4153,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 200
     },
     {
         "id": 312,
@@ -4105,7 +4165,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 200
     },
     {
         "id": 313,
@@ -4116,7 +4177,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "erratic",
-        "exp": 151
+        "exp": 151,
+        "catchRate": 150
     },
     {
         "id": 314,
@@ -4127,7 +4189,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "fluctuating",
-        "exp": 151
+        "exp": 151,
+        "catchRate": 150
     },
     {
         "id": 315,
@@ -4139,7 +4202,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 140
+        "exp": 140,
+        "catchRate": 150
     },
     {
         "id": 316,
@@ -4150,7 +4214,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "fluctuating",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 225
     },
     {
         "id": 317,
@@ -4161,7 +4226,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "fluctuating",
-        "exp": 163
+        "exp": 163,
+        "catchRate": 75
     },
     {
         "id": 318,
@@ -4173,7 +4239,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 225
     },
     {
         "id": 319,
@@ -4185,7 +4252,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 60
     },
     {
         "id": 320,
@@ -4196,7 +4264,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 40,
         "levelType": "fluctuating",
-        "exp": 80
+        "exp": 80,
+        "catchRate": 125
     },
     {
         "id": 321,
@@ -4207,7 +4276,8 @@ const pokemonList = [
         "attack": 170,
         "eggCycles": 40,
         "levelType": "fluctuating",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 60
     },
     {
         "id": 322,
@@ -4219,7 +4289,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 255
     },
     {
         "id": 323,
@@ -4231,7 +4302,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 150
     },
     {
         "id": 324,
@@ -4242,7 +4314,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 90
     },
     {
         "id": 325,
@@ -4253,7 +4326,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 255
     },
     {
         "id": 326,
@@ -4264,7 +4338,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 60
     },
     {
         "id": 327,
@@ -4275,7 +4350,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 126
+        "exp": 126,
+        "catchRate": 255
     },
     {
         "id": 328,
@@ -4286,7 +4362,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 255
     },
     {
         "id": 329,
@@ -4298,7 +4375,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 119
+        "exp": 119,
+        "catchRate": 120
     },
     {
         "id": 330,
@@ -4310,7 +4388,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 234
+        "exp": 234,
+        "catchRate": 45
     },
     {
         "id": 331,
@@ -4321,7 +4400,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 67
+        "exp": 67,
+        "catchRate": 190
     },
     {
         "id": 332,
@@ -4333,7 +4413,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 60
     },
     {
         "id": 333,
@@ -4345,7 +4426,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 255
     },
     {
         "id": 334,
@@ -4357,7 +4439,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 45
     },
     {
         "id": 335,
@@ -4368,7 +4451,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 160
+        "exp": 160,
+        "catchRate": 90
     },
     {
         "id": 336,
@@ -4379,7 +4463,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "fluctuating",
-        "exp": 160
+        "exp": 160,
+        "catchRate": 90
     },
     {
         "id": 337,
@@ -4391,7 +4476,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 45
     },
     {
         "id": 338,
@@ -4403,7 +4489,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 45
     },
     {
         "id": 339,
@@ -4415,7 +4502,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 190
     },
     {
         "id": 340,
@@ -4427,7 +4515,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 164
+        "exp": 164,
+        "catchRate": 75
     },
     {
         "id": 341,
@@ -4438,7 +4527,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 15,
         "levelType": "fluctuating",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 205
     },
     {
         "id": 342,
@@ -4450,7 +4540,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 15,
         "levelType": "fluctuating",
-        "exp": 164
+        "exp": 164,
+        "catchRate": 155
     },
     {
         "id": 343,
@@ -4462,7 +4553,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 255
     },
     {
         "id": 344,
@@ -4474,7 +4566,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 90
     },
     {
         "id": 345,
@@ -4486,7 +4579,8 @@ const pokemonList = [
         "attack": 87,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 71
+        "exp": 71,
+        "catchRate": 45
     },
     {
         "id": 346,
@@ -4498,7 +4592,8 @@ const pokemonList = [
         "attack": 107,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 347,
@@ -4510,7 +4605,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 71
+        "exp": 71,
+        "catchRate": 45
     },
     {
         "id": 348,
@@ -4522,7 +4618,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 349,
@@ -4533,7 +4630,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 40
+        "exp": 40,
+        "catchRate": 255
     },
     {
         "id": 350,
@@ -4544,7 +4642,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 189
+        "exp": 189,
+        "catchRate": 60
     },
     {
         "id": 351,
@@ -4555,7 +4654,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 352,
@@ -4566,7 +4666,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 154
+        "exp": 154,
+        "catchRate": 200
     },
     {
         "id": 353,
@@ -4577,7 +4678,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 225
     },
     {
         "id": 354,
@@ -4588,7 +4690,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 45
     },
     {
         "id": 355,
@@ -4599,7 +4702,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 190
     },
     {
         "id": 356,
@@ -4610,7 +4714,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 90
     },
     {
         "id": 357,
@@ -4622,7 +4727,8 @@ const pokemonList = [
         "attack": 99,
         "eggCycles": 25,
         "levelType": "slow",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 200
     },
     {
         "id": 358,
@@ -4633,7 +4739,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 45
     },
     {
         "id": 359,
@@ -4644,7 +4751,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 163
+        "exp": 163,
+        "catchRate": 30
     },
     {
         "id": 360,
@@ -4655,7 +4763,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 52
+        "exp": 52,
+        "catchRate": 125
     },
     {
         "id": 361,
@@ -4666,7 +4775,8 @@ const pokemonList = [
         "attack": 50,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 190
     },
     {
         "id": 362,
@@ -4677,7 +4787,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 75
     },
     {
         "id": 363,
@@ -4689,7 +4800,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 255
     },
     {
         "id": 364,
@@ -4701,7 +4813,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 120
     },
     {
         "id": 365,
@@ -4713,7 +4826,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 366,
@@ -4724,7 +4838,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 69
+        "exp": 69,
+        "catchRate": 255
     },
     {
         "id": 367,
@@ -4735,7 +4850,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 60
     },
     {
         "id": 368,
@@ -4746,7 +4862,8 @@ const pokemonList = [
         "attack": 114,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 60
     },
     {
         "id": 369,
@@ -4758,7 +4875,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 25
     },
     {
         "id": 370,
@@ -4769,7 +4887,8 @@ const pokemonList = [
         "attack": 97,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 116
+        "exp": 116,
+        "catchRate": 225
     },
     {
         "id": 371,
@@ -4780,7 +4899,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 45
     },
     {
         "id": 372,
@@ -4791,7 +4911,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 373,
@@ -4803,7 +4924,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 45
     },
     {
         "id": 374,
@@ -4815,7 +4937,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 3
     },
     {
         "id": 375,
@@ -4827,7 +4950,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 3
     },
     {
         "id": 376,
@@ -4839,7 +4963,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 377,
@@ -4850,7 +4975,8 @@ const pokemonList = [
         "attack": 200,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 378,
@@ -4861,7 +4987,8 @@ const pokemonList = [
         "attack": 200,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 379,
@@ -4872,7 +4999,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 380,
@@ -4884,7 +5012,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 381,
@@ -4896,7 +5025,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 382,
@@ -4907,7 +5037,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 302
+        "exp": 302,
+        "catchRate": 3
     },
     {
         "id": 383,
@@ -4918,7 +5049,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 302
+        "exp": 302,
+        "catchRate": 3
     },
     {
         "id": 384,
@@ -4930,7 +5062,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 45
     },
     {
         "id": 385,
@@ -4942,7 +5075,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 386,
@@ -4953,7 +5087,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 387,
@@ -4964,7 +5099,8 @@ const pokemonList = [
         "attack": 68,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 45
     },
     {
         "id": 388,
@@ -4975,7 +5111,8 @@ const pokemonList = [
         "attack": 89,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 389,
@@ -4987,7 +5124,8 @@ const pokemonList = [
         "attack": 109,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 236
+        "exp": 236,
+        "catchRate": 45
     },
     {
         "id": 390,
@@ -4998,7 +5136,8 @@ const pokemonList = [
         "attack": 61,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 391,
@@ -5010,7 +5149,8 @@ const pokemonList = [
         "attack": 81,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 392,
@@ -5022,7 +5162,8 @@ const pokemonList = [
         "attack": 108,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 240
+        "exp": 240,
+        "catchRate": 45
     },
     {
         "id": 393,
@@ -5033,7 +5174,8 @@ const pokemonList = [
         "attack": 61,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 45
     },
     {
         "id": 394,
@@ -5044,7 +5186,8 @@ const pokemonList = [
         "attack": 81,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 395,
@@ -5056,7 +5199,8 @@ const pokemonList = [
         "attack": 111,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 396,
@@ -5068,7 +5212,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 49
+        "exp": 49,
+        "catchRate": 255
     },
     {
         "id": 397,
@@ -5080,7 +5225,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 119
+        "exp": 119,
+        "catchRate": 120
     },
     {
         "id": 398,
@@ -5092,7 +5238,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 218
+        "exp": 218,
+        "catchRate": 45
     },
     {
         "id": 399,
@@ -5103,7 +5250,8 @@ const pokemonList = [
         "attack": 59,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 50
+        "exp": 50,
+        "catchRate": 255
     },
     {
         "id": 400,
@@ -5115,7 +5263,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 127
     },
     {
         "id": 401,
@@ -5126,7 +5275,8 @@ const pokemonList = [
         "attack": 41,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 39
+        "exp": 39,
+        "catchRate": 255
     },
     {
         "id": 402,
@@ -5137,7 +5287,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 134
+        "exp": 134,
+        "catchRate": 45
     },
     {
         "id": 403,
@@ -5148,7 +5299,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 53
+        "exp": 53,
+        "catchRate": 235
     },
     {
         "id": 404,
@@ -5159,7 +5311,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 127
+        "exp": 127,
+        "catchRate": 120
     },
     {
         "id": 405,
@@ -5170,7 +5323,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 235
+        "exp": 235,
+        "catchRate": 45
     },
     {
         "id": 406,
@@ -5182,7 +5336,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 407,
@@ -5194,7 +5349,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 232
+        "exp": 232,
+        "catchRate": 75
     },
     {
         "id": 408,
@@ -5205,7 +5361,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 45
     },
     {
         "id": 409,
@@ -5216,7 +5373,8 @@ const pokemonList = [
         "attack": 165,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 410,
@@ -5228,7 +5386,8 @@ const pokemonList = [
         "attack": 118,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 45
     },
     {
         "id": 411,
@@ -5240,7 +5399,8 @@ const pokemonList = [
         "attack": 168,
         "eggCycles": 30,
         "levelType": "erratic",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 412,
@@ -5251,7 +5411,8 @@ const pokemonList = [
         "attack": 45,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 45
+        "exp": 45,
+        "catchRate": 120
     },
     {
         "id": 413,
@@ -5263,7 +5424,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 148
+        "exp": 148,
+        "catchRate": 45
     },
     {
         "id": 414,
@@ -5275,7 +5437,8 @@ const pokemonList = [
         "attack": 94,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 148
+        "exp": 148,
+        "catchRate": 45
     },
     {
         "id": 415,
@@ -5287,7 +5450,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 49
+        "exp": 49,
+        "catchRate": 120
     },
     {
         "id": 416,
@@ -5299,7 +5463,8 @@ const pokemonList = [
         "attack": 102,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 45
     },
     {
         "id": 417,
@@ -5310,7 +5475,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 10,
         "levelType": "mediumfast",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 200
     },
     {
         "id": 418,
@@ -5321,7 +5487,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 190
     },
     {
         "id": 419,
@@ -5332,7 +5499,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 75
     },
     {
         "id": 420,
@@ -5343,7 +5511,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 55
+        "exp": 55,
+        "catchRate": 190
     },
     {
         "id": 421,
@@ -5354,7 +5523,8 @@ const pokemonList = [
         "attack": 87,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 158
+        "exp": 158,
+        "catchRate": 75
     },
     {
         "id": 422,
@@ -5365,7 +5535,8 @@ const pokemonList = [
         "attack": 76,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 65
+        "exp": 65,
+        "catchRate": 190
     },
     {
         "id": 423,
@@ -5377,7 +5548,8 @@ const pokemonList = [
         "attack": 111,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 75
     },
     {
         "id": 424,
@@ -5388,7 +5560,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 169
+        "exp": 169,
+        "catchRate": 45
     },
     {
         "id": 425,
@@ -5400,7 +5573,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 30,
         "levelType": "fluctuating",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 125
     },
     {
         "id": 426,
@@ -5412,7 +5586,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 30,
         "levelType": "fluctuating",
-        "exp": 174
+        "exp": 174,
+        "catchRate": 60
     },
     {
         "id": 427,
@@ -5423,7 +5598,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 190
     },
     {
         "id": 428,
@@ -5434,7 +5610,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 60
     },
     {
         "id": 429,
@@ -5445,7 +5622,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 430,
@@ -5457,7 +5635,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 177
+        "exp": 177,
+        "catchRate": 30
     },
     {
         "id": 431,
@@ -5468,7 +5647,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 190
     },
     {
         "id": 432,
@@ -5479,7 +5659,8 @@ const pokemonList = [
         "attack": 112,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 158
+        "exp": 158,
+        "catchRate": 75
     },
     {
         "id": 433,
@@ -5490,7 +5671,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 57
+        "exp": 57,
+        "catchRate": 120
     },
     {
         "id": 434,
@@ -5502,7 +5684,8 @@ const pokemonList = [
         "attack": 74,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 225
     },
     {
         "id": 435,
@@ -5514,7 +5697,8 @@ const pokemonList = [
         "attack": 103,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 60
     },
     {
         "id": 436,
@@ -5526,7 +5710,8 @@ const pokemonList = [
         "attack": 86,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 255
     },
     {
         "id": 437,
@@ -5538,7 +5723,8 @@ const pokemonList = [
         "attack": 116,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 90
     },
     {
         "id": 438,
@@ -5549,7 +5735,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 255
     },
     {
         "id": 439,
@@ -5561,7 +5748,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 145
     },
     {
         "id": 440,
@@ -5572,7 +5760,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 40,
         "levelType": "fast",
-        "exp": 110
+        "exp": 110,
+        "catchRate": 130
     },
     {
         "id": 441,
@@ -5584,7 +5773,8 @@ const pokemonList = [
         "attack": 92,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 30
     },
     {
         "id": 442,
@@ -5596,7 +5786,8 @@ const pokemonList = [
         "attack": 108,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 100
     },
     {
         "id": 443,
@@ -5608,7 +5799,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 45
     },
     {
         "id": 444,
@@ -5620,7 +5812,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 45
     },
     {
         "id": 445,
@@ -5632,7 +5825,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 45
     },
     {
         "id": 446,
@@ -5643,7 +5837,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 78
+        "exp": 78,
+        "catchRate": 50
     },
     {
         "id": 447,
@@ -5654,7 +5849,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 57
+        "exp": 57,
+        "catchRate": 75
     },
     {
         "id": 448,
@@ -5666,7 +5862,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 184
+        "exp": 184,
+        "catchRate": 45
     },
     {
         "id": 449,
@@ -5677,7 +5874,8 @@ const pokemonList = [
         "attack": 78,
         "eggCycles": 30,
         "levelType": "slow",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 140
     },
     {
         "id": 450,
@@ -5688,7 +5886,8 @@ const pokemonList = [
         "attack": 118,
         "eggCycles": 30,
         "levelType": "slow",
-        "exp": 184
+        "exp": 184,
+        "catchRate": 60
     },
     {
         "id": 451,
@@ -5700,7 +5899,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 120
     },
     {
         "id": 452,
@@ -5712,7 +5912,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 45
     },
     {
         "id": 453,
@@ -5724,7 +5925,8 @@ const pokemonList = [
         "attack": 61,
         "eggCycles": 10,
         "levelType": "mediumfast",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 140
     },
     {
         "id": 454,
@@ -5736,7 +5938,8 @@ const pokemonList = [
         "attack": 106,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 75
     },
     {
         "id": 455,
@@ -5747,7 +5950,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 25,
         "levelType": "slow",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 200
     },
     {
         "id": 456,
@@ -5758,7 +5962,8 @@ const pokemonList = [
         "attack": 66,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 190
     },
     {
         "id": 457,
@@ -5769,7 +5974,8 @@ const pokemonList = [
         "attack": 91,
         "eggCycles": 20,
         "levelType": "erratic",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 75
     },
     {
         "id": 458,
@@ -5781,7 +5987,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 25,
         "levelType": "slow",
-        "exp": 69
+        "exp": 69,
+        "catchRate": 25
     },
     {
         "id": 459,
@@ -5793,7 +6000,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 67
+        "exp": 67,
+        "catchRate": 120
     },
     {
         "id": 460,
@@ -5805,7 +6013,8 @@ const pokemonList = [
         "attack": 92,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 60
     },
     {
         "id": 461,
@@ -5817,7 +6026,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 179
+        "exp": 179,
+        "catchRate": 45
     },
     {
         "id": 462,
@@ -5829,7 +6039,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 241
+        "exp": 241,
+        "catchRate": 30
     },
     {
         "id": 463,
@@ -5840,7 +6051,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 180
+        "exp": 180,
+        "catchRate": 30
     },
     {
         "id": 464,
@@ -5852,7 +6064,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 241
+        "exp": 241,
+        "catchRate": 30
     },
     {
         "id": 465,
@@ -5863,7 +6076,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 187
+        "exp": 187,
+        "catchRate": 30
     },
     {
         "id": 466,
@@ -5874,7 +6088,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 243
+        "exp": 243,
+        "catchRate": 30
     },
     {
         "id": 467,
@@ -5885,7 +6100,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 243
+        "exp": 243,
+        "catchRate": 30
     },
     {
         "id": 468,
@@ -5897,7 +6113,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 10,
         "levelType": "fast",
-        "exp": 245
+        "exp": 245,
+        "catchRate": 30
     },
     {
         "id": 469,
@@ -5909,7 +6126,8 @@ const pokemonList = [
         "attack": 116,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 180
+        "exp": 180,
+        "catchRate": 30
     },
     {
         "id": 470,
@@ -5920,7 +6138,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 35,
         "levelType": "mediumfast",
-        "exp": 184
+        "exp": 184,
+        "catchRate": 45
     },
     {
         "id": 471,
@@ -5931,7 +6150,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 35,
         "levelType": "mediumfast",
-        "exp": 184
+        "exp": 184,
+        "catchRate": 45
     },
     {
         "id": 472,
@@ -5943,7 +6163,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 179
+        "exp": 179,
+        "catchRate": 30
     },
     {
         "id": 473,
@@ -5955,7 +6176,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 50
     },
     {
         "id": 474,
@@ -5966,7 +6188,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 241
+        "exp": 241,
+        "catchRate": 30
     },
     {
         "id": 475,
@@ -5978,7 +6201,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 233
+        "exp": 233,
+        "catchRate": 45
     },
     {
         "id": 476,
@@ -5990,7 +6214,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 184
+        "exp": 184,
+        "catchRate": 60
     },
     {
         "id": 477,
@@ -6001,7 +6226,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 25,
         "levelType": "fast",
-        "exp": 236
+        "exp": 236,
+        "catchRate": 45
     },
     {
         "id": 478,
@@ -6013,7 +6239,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 75
     },
     {
         "id": 479,
@@ -6025,7 +6252,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 182
+        "exp": 182,
+        "catchRate": 45
     },
     {
         "id": 480,
@@ -6036,7 +6264,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 481,
@@ -6047,7 +6276,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 482,
@@ -6058,7 +6288,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 483,
@@ -6070,7 +6301,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 3
     },
     {
         "id": 484,
@@ -6082,7 +6314,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 3
     },
     {
         "id": 485,
@@ -6094,7 +6327,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 10,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 486,
@@ -6105,7 +6339,8 @@ const pokemonList = [
         "attack": 160,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 302
+        "exp": 302,
+        "catchRate": 3
     },
     {
         "id": 487,
@@ -6117,7 +6352,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 3
     },
     {
         "id": 488,
@@ -6128,7 +6364,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 489,
@@ -6139,7 +6376,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 216
+        "exp": 216,
+        "catchRate": 30
     },
     {
         "id": 490,
@@ -6150,7 +6388,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 10,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 491,
@@ -6161,7 +6400,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 492,
@@ -6172,7 +6412,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 120,
         "levelType": "mediumslow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 45
     },
     {
         "id": 493,
@@ -6183,7 +6424,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 324
+        "exp": 324,
+        "catchRate": 3
     },
     {
         "id": 494,
@@ -6195,7 +6437,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 495,
@@ -6206,7 +6449,8 @@ const pokemonList = [
         "attack": 63,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 496,
@@ -6217,7 +6461,8 @@ const pokemonList = [
         "attack": 83,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 145
+        "exp": 145,
+        "catchRate": 45
     },
     {
         "id": 497,
@@ -6228,7 +6473,8 @@ const pokemonList = [
         "attack": 113,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 238
+        "exp": 238,
+        "catchRate": 45
     },
     {
         "id": 498,
@@ -6239,7 +6485,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 499,
@@ -6251,7 +6498,8 @@ const pokemonList = [
         "attack": 93,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 146
+        "exp": 146,
+        "catchRate": 45
     },
     {
         "id": 500,
@@ -6263,7 +6511,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 238
+        "exp": 238,
+        "catchRate": 45
     },
     {
         "id": 501,
@@ -6274,7 +6523,8 @@ const pokemonList = [
         "attack": 63,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 45
     },
     {
         "id": 502,
@@ -6285,7 +6535,8 @@ const pokemonList = [
         "attack": 83,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 145
+        "exp": 145,
+        "catchRate": 45
     },
     {
         "id": 503,
@@ -6296,7 +6547,8 @@ const pokemonList = [
         "attack": 108,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 238
+        "exp": 238,
+        "catchRate": 45
     },
     {
         "id": 504,
@@ -6307,7 +6559,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 51
+        "exp": 51,
+        "catchRate": 255
     },
     {
         "id": 505,
@@ -6318,7 +6571,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 255
     },
     {
         "id": 506,
@@ -6329,7 +6583,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 55
+        "exp": 55,
+        "catchRate": 255
     },
     {
         "id": 507,
@@ -6340,7 +6595,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 130
+        "exp": 130,
+        "catchRate": 120
     },
     {
         "id": 508,
@@ -6351,7 +6607,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 225
+        "exp": 225,
+        "catchRate": 45
     },
     {
         "id": 509,
@@ -6362,7 +6619,8 @@ const pokemonList = [
         "attack": 66,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 510,
@@ -6373,7 +6631,8 @@ const pokemonList = [
         "attack": 106,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 156
+        "exp": 156,
+        "catchRate": 90
     },
     {
         "id": 511,
@@ -6384,7 +6643,8 @@ const pokemonList = [
         "attack": 64,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 190
     },
     {
         "id": 512,
@@ -6395,7 +6655,8 @@ const pokemonList = [
         "attack": 101,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 174
+        "exp": 174,
+        "catchRate": 75
     },
     {
         "id": 513,
@@ -6406,7 +6667,8 @@ const pokemonList = [
         "attack": 64,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 190
     },
     {
         "id": 514,
@@ -6417,7 +6679,8 @@ const pokemonList = [
         "attack": 101,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 174
+        "exp": 174,
+        "catchRate": 75
     },
     {
         "id": 515,
@@ -6428,7 +6691,8 @@ const pokemonList = [
         "attack": 64,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 190
     },
     {
         "id": 516,
@@ -6439,7 +6703,8 @@ const pokemonList = [
         "attack": 101,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 174
+        "exp": 174,
+        "catchRate": 75
     },
     {
         "id": 517,
@@ -6450,7 +6715,8 @@ const pokemonList = [
         "attack": 76,
         "eggCycles": 10,
         "levelType": "fast",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 190
     },
     {
         "id": 518,
@@ -6461,7 +6727,8 @@ const pokemonList = [
         "attack": 116,
         "eggCycles": 10,
         "levelType": "fast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 75
     },
     {
         "id": 519,
@@ -6473,7 +6740,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 53
+        "exp": 53,
+        "catchRate": 255
     },
     {
         "id": 520,
@@ -6485,7 +6753,8 @@ const pokemonList = [
         "attack": 77,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 125
+        "exp": 125,
+        "catchRate": 120
     },
     {
         "id": 521,
@@ -6497,7 +6766,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 220
+        "exp": 220,
+        "catchRate": 45
     },
     {
         "id": 522,
@@ -6508,7 +6778,8 @@ const pokemonList = [
         "attack": 76,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 190
     },
     {
         "id": 523,
@@ -6519,7 +6790,8 @@ const pokemonList = [
         "attack": 116,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 174
+        "exp": 174,
+        "catchRate": 75
     },
     {
         "id": 524,
@@ -6530,7 +6802,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 525,
@@ -6541,7 +6814,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 137
+        "exp": 137,
+        "catchRate": 120
     },
     {
         "id": 526,
@@ -6552,7 +6826,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 232
+        "exp": 232,
+        "catchRate": 45
     },
     {
         "id": 527,
@@ -6564,7 +6839,8 @@ const pokemonList = [
         "attack": 72,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 65
+        "exp": 65,
+        "catchRate": 190
     },
     {
         "id": 528,
@@ -6576,7 +6852,8 @@ const pokemonList = [
         "attack": 114,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 149
+        "exp": 149,
+        "catchRate": 45
     },
     {
         "id": 529,
@@ -6587,7 +6864,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 120
     },
     {
         "id": 530,
@@ -6599,7 +6877,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 178
+        "exp": 178,
+        "catchRate": 60
     },
     {
         "id": 531,
@@ -6610,7 +6889,8 @@ const pokemonList = [
         "attack": 103,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 390
+        "exp": 390,
+        "catchRate": 255
     },
     {
         "id": 532,
@@ -6621,7 +6901,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 180
     },
     {
         "id": 533,
@@ -6632,7 +6913,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 90
     },
     {
         "id": 534,
@@ -6643,7 +6925,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 227
+        "exp": 227,
+        "catchRate": 45
     },
     {
         "id": 535,
@@ -6654,7 +6937,8 @@ const pokemonList = [
         "attack": 64,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 255
     },
     {
         "id": 536,
@@ -6666,7 +6950,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 134
+        "exp": 134,
+        "catchRate": 120
     },
     {
         "id": 537,
@@ -6678,7 +6963,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 229
+        "exp": 229,
+        "catchRate": 45
     },
     {
         "id": 538,
@@ -6689,7 +6975,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 163
+        "exp": 163,
+        "catchRate": 45
     },
     {
         "id": 539,
@@ -6700,7 +6987,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 163
+        "exp": 163,
+        "catchRate": 45
     },
     {
         "id": 540,
@@ -6712,7 +7000,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 255
     },
     {
         "id": 541,
@@ -6724,7 +7013,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 133
+        "exp": 133,
+        "catchRate": 120
     },
     {
         "id": 542,
@@ -6736,7 +7026,8 @@ const pokemonList = [
         "attack": 103,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 225
+        "exp": 225,
+        "catchRate": 45
     },
     {
         "id": 543,
@@ -6748,7 +7039,8 @@ const pokemonList = [
         "attack": 59,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 52
+        "exp": 52,
+        "catchRate": 255
     },
     {
         "id": 544,
@@ -6760,7 +7052,8 @@ const pokemonList = [
         "attack": 99,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 126
+        "exp": 126,
+        "catchRate": 120
     },
     {
         "id": 545,
@@ -6772,7 +7065,8 @@ const pokemonList = [
         "attack": 112,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 218
+        "exp": 218,
+        "catchRate": 45
     },
     {
         "id": 546,
@@ -6784,7 +7078,8 @@ const pokemonList = [
         "attack": 66,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 190
     },
     {
         "id": 547,
@@ -6796,7 +7091,8 @@ const pokemonList = [
         "attack": 116,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 75
     },
     {
         "id": 548,
@@ -6807,7 +7103,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 190
     },
     {
         "id": 549,
@@ -6818,7 +7115,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 75
     },
     {
         "id": 550,
@@ -6829,7 +7127,8 @@ const pokemonList = [
         "attack": 98,
         "eggCycles": 40,
         "levelType": "mediumfast",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 25
     },
     {
         "id": 551,
@@ -6841,7 +7140,8 @@ const pokemonList = [
         "attack": 72,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 180
     },
     {
         "id": 552,
@@ -6853,7 +7153,8 @@ const pokemonList = [
         "attack": 82,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 123
+        "exp": 123,
+        "catchRate": 90
     },
     {
         "id": 553,
@@ -6865,7 +7166,8 @@ const pokemonList = [
         "attack": 117,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 234
+        "exp": 234,
+        "catchRate": 45
     },
     {
         "id": 554,
@@ -6876,7 +7178,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 120
     },
     {
         "id": 555,
@@ -6887,7 +7190,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 189
+        "exp": 189,
+        "catchRate": 60
     },
     {
         "id": 556,
@@ -6898,7 +7202,8 @@ const pokemonList = [
         "attack": 106,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 161
+        "exp": 161,
+        "catchRate": 255
     },
     {
         "id": 557,
@@ -6910,7 +7215,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 65
+        "exp": 65,
+        "catchRate": 190
     },
     {
         "id": 558,
@@ -6922,7 +7228,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 75
     },
     {
         "id": 559,
@@ -6934,7 +7241,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 180
     },
     {
         "id": 560,
@@ -6946,7 +7254,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 171
+        "exp": 171,
+        "catchRate": 90
     },
     {
         "id": 561,
@@ -6958,7 +7267,8 @@ const pokemonList = [
         "attack": 103,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 45
     },
     {
         "id": 562,
@@ -6969,7 +7279,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 190
     },
     {
         "id": 563,
@@ -6980,7 +7291,8 @@ const pokemonList = [
         "attack": 145,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 169
+        "exp": 169,
+        "catchRate": 90
     },
     {
         "id": 564,
@@ -6992,7 +7304,8 @@ const pokemonList = [
         "attack": 103,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 71
+        "exp": 71,
+        "catchRate": 45
     },
     {
         "id": 565,
@@ -7004,7 +7317,8 @@ const pokemonList = [
         "attack": 133,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 45
     },
     {
         "id": 566,
@@ -7016,7 +7330,8 @@ const pokemonList = [
         "attack": 112,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 71
+        "exp": 71,
+        "catchRate": 45
     },
     {
         "id": 567,
@@ -7028,7 +7343,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 177
+        "exp": 177,
+        "catchRate": 45
     },
     {
         "id": 568,
@@ -7039,7 +7355,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 190
     },
     {
         "id": 569,
@@ -7050,7 +7367,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 60
     },
     {
         "id": 570,
@@ -7061,7 +7379,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 75
     },
     {
         "id": 571,
@@ -7072,7 +7391,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 179
+        "exp": 179,
+        "catchRate": 45
     },
     {
         "id": 572,
@@ -7083,7 +7403,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 255
     },
     {
         "id": 573,
@@ -7094,7 +7415,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 60
     },
     {
         "id": 574,
@@ -7105,7 +7427,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 200
     },
     {
         "id": 575,
@@ -7116,7 +7439,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 137
+        "exp": 137,
+        "catchRate": 100
     },
     {
         "id": 576,
@@ -7127,7 +7451,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 221
+        "exp": 221,
+        "catchRate": 50
     },
     {
         "id": 577,
@@ -7138,7 +7463,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 200
     },
     {
         "id": 578,
@@ -7149,7 +7475,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 130
+        "exp": 130,
+        "catchRate": 100
     },
     {
         "id": 579,
@@ -7160,7 +7487,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 221
+        "exp": 221,
+        "catchRate": 50
     },
     {
         "id": 580,
@@ -7172,7 +7500,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 190
     },
     {
         "id": 581,
@@ -7184,7 +7513,8 @@ const pokemonList = [
         "attack": 98,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 45
     },
     {
         "id": 582,
@@ -7195,7 +7525,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 255
     },
     {
         "id": 583,
@@ -7206,7 +7537,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 138
+        "exp": 138,
+        "catchRate": 120
     },
     {
         "id": 584,
@@ -7217,7 +7549,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 241
+        "exp": 241,
+        "catchRate": 45
     },
     {
         "id": 585,
@@ -7229,7 +7562,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 67
+        "exp": 67,
+        "catchRate": 190
     },
     {
         "id": 586,
@@ -7241,7 +7575,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 75
     },
     {
         "id": 587,
@@ -7253,7 +7588,8 @@ const pokemonList = [
         "attack": 103,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 150
+        "exp": 150,
+        "catchRate": 200
     },
     {
         "id": 588,
@@ -7264,7 +7600,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 200
     },
     {
         "id": 589,
@@ -7276,7 +7613,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 75
     },
     {
         "id": 590,
@@ -7288,7 +7626,8 @@ const pokemonList = [
         "attack": 69,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 59
+        "exp": 59,
+        "catchRate": 190
     },
     {
         "id": 591,
@@ -7300,7 +7639,8 @@ const pokemonList = [
         "attack": 114,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 162
+        "exp": 162,
+        "catchRate": 75
     },
     {
         "id": 592,
@@ -7312,7 +7652,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 67
+        "exp": 67,
+        "catchRate": 190
     },
     {
         "id": 593,
@@ -7324,7 +7665,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 60
     },
     {
         "id": 594,
@@ -7335,7 +7677,8 @@ const pokemonList = [
         "attack": 165,
         "eggCycles": 40,
         "levelType": "fast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 75
     },
     {
         "id": 595,
@@ -7347,7 +7690,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 190
     },
     {
         "id": 596,
@@ -7359,7 +7703,8 @@ const pokemonList = [
         "attack": 108,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 75
     },
     {
         "id": 597,
@@ -7371,7 +7716,8 @@ const pokemonList = [
         "attack": 91,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 255
     },
     {
         "id": 598,
@@ -7383,7 +7729,8 @@ const pokemonList = [
         "attack": 131,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 171
+        "exp": 171,
+        "catchRate": 90
     },
     {
         "id": 599,
@@ -7394,7 +7741,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 130
     },
     {
         "id": 600,
@@ -7405,7 +7753,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 154
+        "exp": 154,
+        "catchRate": 60
     },
     {
         "id": 601,
@@ -7416,7 +7765,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 234
+        "exp": 234,
+        "catchRate": 30
     },
     {
         "id": 602,
@@ -7427,7 +7777,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 55
+        "exp": 55,
+        "catchRate": 190
     },
     {
         "id": 603,
@@ -7438,7 +7789,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 60
     },
     {
         "id": 604,
@@ -7449,7 +7801,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 232
+        "exp": 232,
+        "catchRate": 30
     },
     {
         "id": 605,
@@ -7460,7 +7813,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 67
+        "exp": 67,
+        "catchRate": 255
     },
     {
         "id": 606,
@@ -7471,7 +7825,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 90
     },
     {
         "id": 607,
@@ -7483,7 +7838,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 55
+        "exp": 55,
+        "catchRate": 190
     },
     {
         "id": 608,
@@ -7495,7 +7851,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 130
+        "exp": 130,
+        "catchRate": 90
     },
     {
         "id": 609,
@@ -7507,7 +7864,8 @@ const pokemonList = [
         "attack": 145,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 234
+        "exp": 234,
+        "catchRate": 45
     },
     {
         "id": 610,
@@ -7518,7 +7876,8 @@ const pokemonList = [
         "attack": 87,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 75
     },
     {
         "id": 611,
@@ -7529,7 +7888,8 @@ const pokemonList = [
         "attack": 117,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 60
     },
     {
         "id": 612,
@@ -7540,7 +7900,8 @@ const pokemonList = [
         "attack": 147,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 243
+        "exp": 243,
+        "catchRate": 45
     },
     {
         "id": 613,
@@ -7551,7 +7912,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 120
     },
     {
         "id": 614,
@@ -7562,7 +7924,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 177
+        "exp": 177,
+        "catchRate": 60
     },
     {
         "id": 615,
@@ -7573,7 +7936,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 180
+        "exp": 180,
+        "catchRate": 25
     },
     {
         "id": 616,
@@ -7584,7 +7948,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 200
     },
     {
         "id": 617,
@@ -7595,7 +7960,8 @@ const pokemonList = [
         "attack": 145,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 75
     },
     {
         "id": 618,
@@ -7607,7 +7973,8 @@ const pokemonList = [
         "attack": 109,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 75
     },
     {
         "id": 619,
@@ -7618,7 +7985,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 180
     },
     {
         "id": 620,
@@ -7629,7 +7997,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 179
+        "exp": 179,
+        "catchRate": 45
     },
     {
         "id": 621,
@@ -7640,7 +8009,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 45
     },
     {
         "id": 622,
@@ -7652,7 +8022,8 @@ const pokemonList = [
         "attack": 74,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 190
     },
     {
         "id": 623,
@@ -7664,7 +8035,8 @@ const pokemonList = [
         "attack": 124,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 169
+        "exp": 169,
+        "catchRate": 90
     },
     {
         "id": 624,
@@ -7676,7 +8048,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 68
+        "exp": 68,
+        "catchRate": 120
     },
     {
         "id": 625,
@@ -7688,7 +8061,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 45
     },
     {
         "id": 626,
@@ -7699,7 +8073,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 45
     },
     {
         "id": 627,
@@ -7711,7 +8086,8 @@ const pokemonList = [
         "attack": 83,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 190
     },
     {
         "id": 628,
@@ -7723,7 +8099,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 179
+        "exp": 179,
+        "catchRate": 60
     },
     {
         "id": 629,
@@ -7735,7 +8112,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 74
+        "exp": 74,
+        "catchRate": 190
     },
     {
         "id": 630,
@@ -7747,7 +8125,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 179
+        "exp": 179,
+        "catchRate": 60
     },
     {
         "id": 631,
@@ -7758,7 +8137,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 169
+        "exp": 169,
+        "catchRate": 90
     },
     {
         "id": 632,
@@ -7770,7 +8150,8 @@ const pokemonList = [
         "attack": 112,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 169
+        "exp": 169,
+        "catchRate": 90
     },
     {
         "id": 633,
@@ -7782,7 +8163,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 45
     },
     {
         "id": 634,
@@ -7794,7 +8176,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 635,
@@ -7806,7 +8189,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 45
     },
     {
         "id": 636,
@@ -7818,7 +8202,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 72
+        "exp": 72,
+        "catchRate": 45
     },
     {
         "id": 637,
@@ -7830,7 +8215,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 248
+        "exp": 248,
+        "catchRate": 15
     },
     {
         "id": 638,
@@ -7842,7 +8228,8 @@ const pokemonList = [
         "attack": 129,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 639,
@@ -7854,7 +8241,8 @@ const pokemonList = [
         "attack": 129,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 640,
@@ -7866,7 +8254,8 @@ const pokemonList = [
         "attack": 129,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 641,
@@ -7877,7 +8266,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 642,
@@ -7889,7 +8279,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 643,
@@ -7901,7 +8292,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 3
     },
     {
         "id": 644,
@@ -7913,7 +8305,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 3
     },
     {
         "id": 645,
@@ -7925,7 +8318,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 646,
@@ -7937,7 +8331,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 315
+        "exp": 315,
+        "catchRate": 3
     },
     {
         "id": 647,
@@ -7949,7 +8344,8 @@ const pokemonList = [
         "attack": 129,
         "eggCycles": 80,
         "levelType": "slow",
-        "exp": 261
+        "exp": 261,
+        "catchRate": 3
     },
     {
         "id": 648,
@@ -7961,7 +8357,8 @@ const pokemonList = [
         "attack": 128,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 649,
@@ -7973,7 +8370,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 650,
@@ -7984,7 +8382,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 45
     },
     {
         "id": 651,
@@ -7995,7 +8394,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 652,
@@ -8007,7 +8407,8 @@ const pokemonList = [
         "attack": 122,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 653,
@@ -8018,7 +8419,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 45
     },
     {
         "id": 654,
@@ -8029,7 +8431,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 143
+        "exp": 143,
+        "catchRate": 45
     },
     {
         "id": 655,
@@ -8041,7 +8444,8 @@ const pokemonList = [
         "attack": 114,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 240
+        "exp": 240,
+        "catchRate": 45
     },
     {
         "id": 656,
@@ -8052,7 +8456,8 @@ const pokemonList = [
         "attack": 71,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 63
+        "exp": 63,
+        "catchRate": 45
     },
     {
         "id": 657,
@@ -8063,7 +8468,8 @@ const pokemonList = [
         "attack": 97,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 45
     },
     {
         "id": 658,
@@ -8075,7 +8481,8 @@ const pokemonList = [
         "attack": 122,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 659,
@@ -8086,7 +8493,8 @@ const pokemonList = [
         "attack": 57,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 47
+        "exp": 47,
+        "catchRate": 255
     },
     {
         "id": 660,
@@ -8098,7 +8506,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 148
+        "exp": 148,
+        "catchRate": 127
     },
     {
         "id": 661,
@@ -8110,7 +8519,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 255
     },
     {
         "id": 662,
@@ -8122,7 +8532,8 @@ const pokemonList = [
         "attack": 84,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 134
+        "exp": 134,
+        "catchRate": 120
     },
     {
         "id": 663,
@@ -8134,7 +8545,8 @@ const pokemonList = [
         "attack": 126,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 45
     },
     {
         "id": 664,
@@ -8145,7 +8557,8 @@ const pokemonList = [
         "attack": 40,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 40
+        "exp": 40,
+        "catchRate": 255
     },
     {
         "id": 665,
@@ -8156,7 +8569,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 75
+        "exp": 75,
+        "catchRate": 120
     },
     {
         "id": 666,
@@ -8168,7 +8582,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 185
+        "exp": 185,
+        "catchRate": 45
     },
     {
         "id": 667,
@@ -8180,7 +8595,8 @@ const pokemonList = [
         "attack": 73,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 74
+        "exp": 74,
+        "catchRate": 220
     },
     {
         "id": 668,
@@ -8192,7 +8608,8 @@ const pokemonList = [
         "attack": 109,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 177
+        "exp": 177,
+        "catchRate": 65
     },
     {
         "id": 669,
@@ -8203,7 +8620,8 @@ const pokemonList = [
         "attack": 79,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 225
     },
     {
         "id": 670,
@@ -8214,7 +8632,8 @@ const pokemonList = [
         "attack": 98,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 130
+        "exp": 130,
+        "catchRate": 120
     },
     {
         "id": 671,
@@ -8225,7 +8644,8 @@ const pokemonList = [
         "attack": 154,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 248
+        "exp": 248,
+        "catchRate": 45
     },
     {
         "id": 672,
@@ -8236,7 +8656,8 @@ const pokemonList = [
         "attack": 66,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 200
     },
     {
         "id": 673,
@@ -8247,7 +8668,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 186
+        "exp": 186,
+        "catchRate": 45
     },
     {
         "id": 674,
@@ -8258,7 +8680,8 @@ const pokemonList = [
         "attack": 82,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 70
+        "exp": 70,
+        "catchRate": 220
     },
     {
         "id": 675,
@@ -8270,7 +8693,8 @@ const pokemonList = [
         "attack": 124,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 65
     },
     {
         "id": 676,
@@ -8281,7 +8705,8 @@ const pokemonList = [
         "attack": 102,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 160
     },
     {
         "id": 677,
@@ -8292,7 +8717,8 @@ const pokemonList = [
         "attack": 68,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 71
+        "exp": 71,
+        "catchRate": 190
     },
     {
         "id": 678,
@@ -8303,7 +8729,8 @@ const pokemonList = [
         "attack": 104,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 163
+        "exp": 163,
+        "catchRate": 75
     },
     {
         "id": 679,
@@ -8315,7 +8742,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 65
+        "exp": 65,
+        "catchRate": 180
     },
     {
         "id": 680,
@@ -8327,7 +8755,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 157
+        "exp": 157,
+        "catchRate": 90
     },
     {
         "id": 681,
@@ -8339,7 +8768,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 234
+        "exp": 234,
+        "catchRate": 45
     },
     {
         "id": 682,
@@ -8350,7 +8780,8 @@ const pokemonList = [
         "attack": 78,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 68
+        "exp": 68,
+        "catchRate": 200
     },
     {
         "id": 683,
@@ -8361,7 +8792,8 @@ const pokemonList = [
         "attack": 101,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 162
+        "exp": 162,
+        "catchRate": 140
     },
     {
         "id": 684,
@@ -8372,7 +8804,8 @@ const pokemonList = [
         "attack": 66,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 68
+        "exp": 68,
+        "catchRate": 200
     },
     {
         "id": 685,
@@ -8383,7 +8816,8 @@ const pokemonList = [
         "attack": 86,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 140
     },
     {
         "id": 686,
@@ -8395,7 +8829,8 @@ const pokemonList = [
         "attack": 54,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 190
     },
     {
         "id": 687,
@@ -8407,7 +8842,8 @@ const pokemonList = [
         "attack": 92,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 169
+        "exp": 169,
+        "catchRate": 80
     },
     {
         "id": 688,
@@ -8419,7 +8855,8 @@ const pokemonList = [
         "attack": 67,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 120
     },
     {
         "id": 689,
@@ -8431,7 +8868,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 45
     },
     {
         "id": 690,
@@ -8443,7 +8881,8 @@ const pokemonList = [
         "attack": 60,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 225
     },
     {
         "id": 691,
@@ -8455,7 +8894,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 55
     },
     {
         "id": 692,
@@ -8466,7 +8906,8 @@ const pokemonList = [
         "attack": 63,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": 66
+        "exp": 66,
+        "catchRate": 225
     },
     {
         "id": 693,
@@ -8477,7 +8918,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": 100
+        "exp": 100,
+        "catchRate": 55
     },
     {
         "id": 694,
@@ -8489,7 +8931,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 58
+        "exp": 58,
+        "catchRate": 190
     },
     {
         "id": 695,
@@ -8501,7 +8944,8 @@ const pokemonList = [
         "attack": 109,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 75
     },
     {
         "id": 696,
@@ -8513,7 +8957,8 @@ const pokemonList = [
         "attack": 89,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 72
+        "exp": 72,
+        "catchRate": 45
     },
     {
         "id": 697,
@@ -8525,7 +8970,8 @@ const pokemonList = [
         "attack": 121,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 182
+        "exp": 182,
+        "catchRate": 45
     },
     {
         "id": 698,
@@ -8537,7 +8983,8 @@ const pokemonList = [
         "attack": 77,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 72
+        "exp": 72,
+        "catchRate": 45
     },
     {
         "id": 699,
@@ -8549,7 +8996,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 30,
         "levelType": "mediumfast",
-        "exp": 104
+        "exp": 104,
+        "catchRate": 45
     },
     {
         "id": 700,
@@ -8560,7 +9008,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 35,
         "levelType": "mediumfast",
-        "exp": 184
+        "exp": 184,
+        "catchRate": 45
     },
     {
         "id": 701,
@@ -8572,7 +9021,8 @@ const pokemonList = [
         "attack": 118,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 100
     },
     {
         "id": 702,
@@ -8584,7 +9034,8 @@ const pokemonList = [
         "attack": 101,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 151
+        "exp": 151,
+        "catchRate": 180
     },
     {
         "id": 703,
@@ -8596,7 +9047,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 25,
         "levelType": "slow",
-        "exp": 100
+        "exp": 100,
+        "catchRate": 60
     },
     {
         "id": 704,
@@ -8607,7 +9059,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 45
     },
     {
         "id": 705,
@@ -8618,7 +9071,8 @@ const pokemonList = [
         "attack": 113,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 158
+        "exp": 158,
+        "catchRate": 45
     },
     {
         "id": 706,
@@ -8629,7 +9083,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 45
     },
     {
         "id": 707,
@@ -8641,7 +9096,8 @@ const pokemonList = [
         "attack": 91,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 165
+        "exp": 165,
+        "catchRate": 75
     },
     {
         "id": 708,
@@ -8653,7 +9109,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 62
+        "exp": 62,
+        "catchRate": 120
     },
     {
         "id": 709,
@@ -8665,7 +9122,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 60
     },
     {
         "id": 710,
@@ -8677,7 +9135,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 67
+        "exp": 67,
+        "catchRate": 120
     },
     {
         "id": 711,
@@ -8689,7 +9148,8 @@ const pokemonList = [
         "attack": 122,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 60
     },
     {
         "id": 712,
@@ -8700,7 +9160,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 190
     },
     {
         "id": 713,
@@ -8711,7 +9172,8 @@ const pokemonList = [
         "attack": 184,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 180
+        "exp": 180,
+        "catchRate": 55
     },
     {
         "id": 714,
@@ -8723,7 +9185,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 49
+        "exp": 49,
+        "catchRate": 190
     },
     {
         "id": 715,
@@ -8735,7 +9198,8 @@ const pokemonList = [
         "attack": 123,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 187
+        "exp": 187,
+        "catchRate": 45
     },
     {
         "id": 716,
@@ -8746,7 +9210,8 @@ const pokemonList = [
         "attack": 131,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 45
     },
     {
         "id": 717,
@@ -8758,7 +9223,8 @@ const pokemonList = [
         "attack": 131,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 306
+        "exp": 306,
+        "catchRate": 45
     },
     {
         "id": 718,
@@ -8770,7 +9236,8 @@ const pokemonList = [
         "attack": 121,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 719,
@@ -8782,7 +9249,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 25,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 720,
@@ -8794,7 +9262,8 @@ const pokemonList = [
         "attack": 150,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 721,
@@ -8806,7 +9275,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 722,
@@ -8818,7 +9288,8 @@ const pokemonList = [
         "attack": 68,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 45
     },
     {
         "id": 723,
@@ -8830,7 +9301,8 @@ const pokemonList = [
         "attack": 78,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 724,
@@ -8842,7 +9314,8 @@ const pokemonList = [
         "attack": 107,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 725,
@@ -8853,7 +9326,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 45
     },
     {
         "id": 726,
@@ -8864,7 +9338,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 727,
@@ -8876,7 +9351,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 728,
@@ -8887,7 +9363,8 @@ const pokemonList = [
         "attack": 66,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 45
     },
     {
         "id": 729,
@@ -8898,7 +9375,8 @@ const pokemonList = [
         "attack": 91,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 730,
@@ -8910,7 +9388,8 @@ const pokemonList = [
         "attack": 126,
         "eggCycles": 15,
         "levelType": "mediumslow",
-        "exp": 239
+        "exp": 239,
+        "catchRate": 45
     },
     {
         "id": 731,
@@ -8922,7 +9401,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 53
+        "exp": 53,
+        "catchRate": 255
     },
     {
         "id": 732,
@@ -8934,7 +9414,8 @@ const pokemonList = [
         "attack": 85,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 124
+        "exp": 124,
+        "catchRate": 120
     },
     {
         "id": 733,
@@ -8946,7 +9427,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 218
+        "exp": 218,
+        "catchRate": 45
     },
     {
         "id": 734,
@@ -8957,7 +9439,8 @@ const pokemonList = [
         "attack": 70,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 51
+        "exp": 51,
+        "catchRate": 255
     },
     {
         "id": 735,
@@ -8968,7 +9451,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 146
+        "exp": 146,
+        "catchRate": 127
     },
     {
         "id": 736,
@@ -8979,7 +9463,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 255
     },
     {
         "id": 737,
@@ -8991,7 +9476,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 140
+        "exp": 140,
+        "catchRate": 120
     },
     {
         "id": 738,
@@ -9003,7 +9489,8 @@ const pokemonList = [
         "attack": 145,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 225
+        "exp": 225,
+        "catchRate": 45
     },
     {
         "id": 739,
@@ -9014,7 +9501,8 @@ const pokemonList = [
         "attack": 82,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 68
+        "exp": 68,
+        "catchRate": 225
     },
     {
         "id": 740,
@@ -9026,7 +9514,8 @@ const pokemonList = [
         "attack": 132,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 167
+        "exp": 167,
+        "catchRate": 60
     },
     {
         "id": 741,
@@ -9038,7 +9527,8 @@ const pokemonList = [
         "attack": 98,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 167
+        "exp": 167,
+        "catchRate": 45
     },
     {
         "id": 742,
@@ -9050,7 +9540,8 @@ const pokemonList = [
         "attack": 84,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 190
     },
     {
         "id": 743,
@@ -9062,7 +9553,8 @@ const pokemonList = [
         "attack": 124,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 162
+        "exp": 162,
+        "catchRate": 75
     },
     {
         "id": 744,
@@ -9073,7 +9565,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 56
+        "exp": 56,
+        "catchRate": 190
     },
     {
         "id": 745,
@@ -9084,7 +9577,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 90
     },
     {
         "id": 746,
@@ -9095,7 +9589,8 @@ const pokemonList = [
         "attack": 45,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 60
     },
     {
         "id": 747,
@@ -9107,7 +9602,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 61
+        "exp": 61,
+        "catchRate": 190
     },
     {
         "id": 748,
@@ -9119,7 +9615,8 @@ const pokemonList = [
         "attack": 152,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 173
+        "exp": 173,
+        "catchRate": 75
     },
     {
         "id": 749,
@@ -9130,7 +9627,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 77
+        "exp": 77,
+        "catchRate": 190
     },
     {
         "id": 750,
@@ -9141,7 +9639,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 60
     },
     {
         "id": 751,
@@ -9153,7 +9652,8 @@ const pokemonList = [
         "attack": 72,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 54
+        "exp": 54,
+        "catchRate": 200
     },
     {
         "id": 752,
@@ -9165,7 +9665,8 @@ const pokemonList = [
         "attack": 132,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 159
+        "exp": 159,
+        "catchRate": 100
     },
     {
         "id": 753,
@@ -9176,7 +9677,8 @@ const pokemonList = [
         "attack": 55,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 50
+        "exp": 50,
+        "catchRate": 190
     },
     {
         "id": 754,
@@ -9187,7 +9689,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 75
     },
     {
         "id": 755,
@@ -9199,7 +9702,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 57
+        "exp": 57,
+        "catchRate": 190
     },
     {
         "id": 756,
@@ -9211,7 +9715,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 142
+        "exp": 142,
+        "catchRate": 75
     },
     {
         "id": 757,
@@ -9223,7 +9728,8 @@ const pokemonList = [
         "attack": 77,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 120
     },
     {
         "id": 758,
@@ -9235,7 +9741,8 @@ const pokemonList = [
         "attack": 117,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 45
     },
     {
         "id": 759,
@@ -9247,7 +9754,8 @@ const pokemonList = [
         "attack": 75,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 68
+        "exp": 68,
+        "catchRate": 140
     },
     {
         "id": 760,
@@ -9259,7 +9767,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 175
+        "exp": 175,
+        "catchRate": 70
     },
     {
         "id": 761,
@@ -9270,7 +9779,8 @@ const pokemonList = [
         "attack": 42,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 42
+        "exp": 42,
+        "catchRate": 235
     },
     {
         "id": 762,
@@ -9281,7 +9791,8 @@ const pokemonList = [
         "attack": 62,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 102
+        "exp": 102,
+        "catchRate": 120
     },
     {
         "id": 763,
@@ -9292,7 +9803,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "mediumslow",
-        "exp": 230
+        "exp": 230,
+        "catchRate": 45
     },
     {
         "id": 764,
@@ -9303,7 +9815,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "fast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 60
     },
     {
         "id": 765,
@@ -9315,7 +9828,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 45
     },
     {
         "id": 766,
@@ -9326,7 +9840,8 @@ const pokemonList = [
         "attack": 120,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 172
+        "exp": 172,
+        "catchRate": 45
     },
     {
         "id": 767,
@@ -9338,7 +9853,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 46
+        "exp": 46,
+        "catchRate": 90
     },
     {
         "id": 768,
@@ -9350,7 +9866,8 @@ const pokemonList = [
         "attack": 140,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 186
+        "exp": 186,
+        "catchRate": 45
     },
     {
         "id": 769,
@@ -9362,7 +9879,8 @@ const pokemonList = [
         "attack": 80,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 64
+        "exp": 64,
+        "catchRate": 140
     },
     {
         "id": 770,
@@ -9374,7 +9892,8 @@ const pokemonList = [
         "attack": 110,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 60
     },
     {
         "id": 771,
@@ -9385,7 +9904,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 15,
         "levelType": "fast",
-        "exp": 144
+        "exp": 144,
+        "catchRate": 60
     },
     {
         "id": 772,
@@ -9396,7 +9916,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 107
+        "exp": 107,
+        "catchRate": 3
     },
     {
         "id": 773,
@@ -9407,7 +9928,8 @@ const pokemonList = [
         "attack": 95,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 774,
@@ -9419,7 +9941,8 @@ const pokemonList = [
         "attack": 100,
         "eggCycles": 25,
         "levelType": "mediumslow",
-        "exp": 154
+        "exp": 154,
+        "catchRate": 30
     },
     {
         "id": 775,
@@ -9430,7 +9953,8 @@ const pokemonList = [
         "attack": 115,
         "eggCycles": 20,
         "levelType": "slow",
-        "exp": 168
+        "exp": 168,
+        "catchRate": 45
     },
     {
         "id": 776,
@@ -9442,7 +9966,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 70
     },
     {
         "id": 777,
@@ -9454,7 +9979,8 @@ const pokemonList = [
         "attack": 98,
         "eggCycles": 10,
         "levelType": "mediumfast",
-        "exp": 152
+        "exp": 152,
+        "catchRate": 180
     },
     {
         "id": 778,
@@ -9466,7 +9992,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 167
+        "exp": 167,
+        "catchRate": 45
     },
     {
         "id": 779,
@@ -9478,7 +10005,8 @@ const pokemonList = [
         "attack": 105,
         "eggCycles": 15,
         "levelType": "mediumfast",
-        "exp": 166
+        "exp": 166,
+        "catchRate": 80
     },
     {
         "id": 780,
@@ -9490,7 +10018,8 @@ const pokemonList = [
         "attack": 135,
         "eggCycles": 20,
         "levelType": "mediumfast",
-        "exp": 170
+        "exp": 170,
+        "catchRate": 70
     },
     {
         "id": 781,
@@ -9502,7 +10031,8 @@ const pokemonList = [
         "attack": 131,
         "eggCycles": 25,
         "levelType": "mediumfast",
-        "exp": 181
+        "exp": 181,
+        "catchRate": 25
     },
     {
         "id": 782,
@@ -9513,7 +10043,8 @@ const pokemonList = [
         "attack": 65,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 60
+        "exp": 60,
+        "catchRate": 45
     },
     {
         "id": 783,
@@ -9525,7 +10056,8 @@ const pokemonList = [
         "attack": 90,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 147
+        "exp": 147,
+        "catchRate": 45
     },
     {
         "id": 784,
@@ -9537,7 +10069,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 40,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 45
     },
     {
         "id": 785,
@@ -9549,7 +10082,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 786,
@@ -9561,7 +10095,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 787,
@@ -9573,7 +10108,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 788,
@@ -9585,7 +10121,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 15,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 789,
@@ -9596,7 +10133,8 @@ const pokemonList = [
         "attack": 43,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 40
+        "exp": 40,
+        "catchRate": 45
     },
     {
         "id": 790,
@@ -9607,7 +10145,8 @@ const pokemonList = [
         "attack": 131,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 791,
@@ -9619,7 +10158,8 @@ const pokemonList = [
         "attack": 137,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 792,
@@ -9631,7 +10171,8 @@ const pokemonList = [
         "attack": 137,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 793,
@@ -9643,7 +10184,8 @@ const pokemonList = [
         "attack": 131,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 794,
@@ -9655,7 +10197,8 @@ const pokemonList = [
         "attack": 139,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 795,
@@ -9667,7 +10210,8 @@ const pokemonList = [
         "attack": 151,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 796,
@@ -9678,7 +10222,8 @@ const pokemonList = [
         "attack": 173,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 797,
@@ -9690,7 +10235,8 @@ const pokemonList = [
         "attack": 107,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 798,
@@ -9702,7 +10248,8 @@ const pokemonList = [
         "attack": 181,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 799,
@@ -9714,7 +10261,8 @@ const pokemonList = [
         "attack": 223,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 45
     },
     {
         "id": 800,
@@ -9725,7 +10273,8 @@ const pokemonList = [
         "attack": 127,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 255
     },
     {
         "id": 801,
@@ -9737,7 +10286,8 @@ const pokemonList = [
         "attack": 130,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 802,
@@ -9749,7 +10299,8 @@ const pokemonList = [
         "attack": 125,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": null
+        "exp": null,
+        "catchRate": 3
     },
     {
         "id": 803,
@@ -9760,7 +10311,8 @@ const pokemonList = [
         "attack": 73,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 189
+        "exp": 189,
+        "catchRate": 45
     },
     {
         "id": 804,
@@ -9772,7 +10324,8 @@ const pokemonList = [
         "attack": 127,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 243
+        "exp": 243,
+        "catchRate": 45
     },
     {
         "id": 805,
@@ -9784,7 +10337,8 @@ const pokemonList = [
         "attack": 211,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 257
+        "exp": 257,
+        "catchRate": 30
     },
     {
         "id": 806,
@@ -9796,7 +10350,8 @@ const pokemonList = [
         "attack": 151,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 257
+        "exp": 257,
+        "catchRate": 30
     },
     {
         "id": 807,
@@ -9807,7 +10362,8 @@ const pokemonList = [
         "attack": 143,
         "eggCycles": 120,
         "levelType": "slow",
-        "exp": 270
+        "exp": 270,
+        "catchRate": 3
     },
     {
         "id": 808,
@@ -9816,7 +10372,8 @@ const pokemonList = [
             "Steel"
         ],
         "attack": 65,
-        "levelType": "slow"
+        "levelType": "slow",
+        "catchRate": 3
     },
     {
         "id": 809,
@@ -9825,7 +10382,8 @@ const pokemonList = [
             "Steel"
         ],
         "attack": 143,
-        "levelType": "slow"
+        "levelType": "slow",
+        "catchRate": 3
     }
 ];
 
