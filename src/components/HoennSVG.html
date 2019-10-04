@@ -370,233 +370,142 @@
     <!-- TOWNS -->
     <!-- ----- -->
 
-    <!--Littleroot Town--
-    <path d="M 94 323 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Littleroot Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Littleroot Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Littleroot Town') },
-          css: { flash: MapHelper.ableToTravel() }"
-          d="M 96.8 324.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path-->
+    <!--Littleroot Town-->
     <%- include('templates/mapTown',
         { name: "Littleroot Town"
         , x: 94, y: 323
         , home: true
+        , type: "O"
         })
      %>
 
     <!--Oldale Town-->
-    <path d="M 94 267 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Oldale Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Oldale Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Oldale Town') }"
-          d="M 96.8 268.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Oldale Town"
+        , x: 94, y: 267
+        , type: "O"
+        })
+     %>
 
     <!--Petalburg City-->
-    <path d="M 28 267 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Petalburg City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Petalburg City')},
-          attr: { class: MapHelper.calculateTownCssClass('Petalburg City') }"
-          d="M 30.8 268.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Petalburg Town"
+        , x: 28, y: 267
+        , type: "O"
+        })
+     %>
 
     <!--Rustboro City-->
-    <path d="M 5 160 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 40 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Rustboro City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Rustboro City')},
-          attr: { class: MapHelper.calculateTownCssClass('Rustboro City') }"
-          d="M 7.8 161.14 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 38 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Rustboro City"
+        , x: 5, y: 160
+        , type: "V"
+        })
+     %>
 
     <!--Dewford Town-->
-    <path d="M 50 380 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Dewford Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Dewford Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Dewford Town') }"
-          d="M 52.8 381.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Dewford Town"
+        , x: 50, y: 380
+        , type: "O"
+        })
+     %>
 
     <!--Slateport City-->
-    <path d="M 184 290 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 40 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Slateport City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Slateport City')},
-          attr: { class: MapHelper.calculateTownCssClass('Slateport City') }"
-          d="M 186.8 291.14 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 38 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Slateport City"
+        , x: 184, y: 290
+        , type: "V"
+        })
+     %>
 
     <!--Mauville City-->
-    <path d="M 175 178 l 8.29 -8.29 h 45 l 8.29 8.29 v 11.42 l -8.29 8.29 h -45 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Mauville City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Mauville City')},
-          attr: { class: MapHelper.calculateTownCssClass('Mauville City') }"
-          d="M 177.7 179.14 l 6.63 -6.63 h 43 l 6.63 6.63 v 9.14 l -6.63 6.63 h -43 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Mauville City"
+        , x: 175, y: 178
+        , type: "H"
+        })
+     %>
 
     <!--Verdanturf Town-->
-    <path d="M 95 180 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Verdanturf Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Verdanturf Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Verdanturf Town') }"
-          d="M 97.8 181.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Verdanturf Town"
+        , x: 95, y: 180
+        , type: "O"
+        })
+     %>
 
     <!--Fallarbor Town-->
-    <path d="M 62 44 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Fallarbor Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Fallarbor Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Fallarbor Town') }"
-          d="M 64.8 45.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Fallarbor Town"
+        , x: 62, y: 44
+        , type: "O"
+        })
+     %>
 
     <!--Lavaridge Town-->
-    <path d="M 119 135 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Lavaridge Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Lavaridge Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Lavaridge Town') }"
-          d="M 121.8 136.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Lavaridge Town"
+        , x: 119, y: 135
+        , type: "O"
+        })
+     %>
 
     <!--Fortree City-->
-    <path d="M 273 45 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Fortree City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Fortree City')},
-          attr: { class: MapHelper.calculateTownCssClass('Fortree City') }"
-          d="M 275.8 46.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Fortree Town"
+        , x: 273, y: 45
+        , type: "O"
+        })
+     %>
 
     <!--LilyCove City-->
-    <path d="M 425 112 l 8.29 -8.29 h 45 l 8.29 8.29 v 11.42 l -8.29 8.29 h -45 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="LilyCove City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('LilyCove City')},
-          attr: { class: MapHelper.calculateTownCssClass('LilyCove City') }"
-          d="M 427.7 113.14 l 6.63 -6.63 h 43 l 6.63 6.63 v 9.14 l -6.63 6.63 h -43 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Lilycove City"
+        , x: 425, y: 112
+        , type: "H"
+        })
+     %>
 
     <!--Mossdeep City-->
-    <path d="M 540 148 l 8.29 -8.29 h 45 l 8.29 8.29 v 11.42 l -8.29 8.29 h -45 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Mossdeep City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Mossdeep City')},
-          attr: { class: MapHelper.calculateTownCssClass('Mossdeep City') }"
-          d="M 542.7 149.14 l 6.63 -6.63 h 43 l 6.63 6.63 v 9.14 l -6.63 6.63 h -43 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Mossdeep City"
+        , x: 540, y: 148
+        , type: "H"
+        })
+     %>
     
     <!--Sootopolis City-->
-    <path d="M 487 232 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Sootopolis City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Sootopolis City')},
-          attr: { class: MapHelper.calculateTownCssClass('Sootopolis City') }"
-          d="M 489.8 233.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Sootopolis City"
+        , x: 487, y: 232
+        , type: "O"
+        })
+     %>
 
     <!--Pacifidlog Town-->
-    <path d="M 408 290 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Pacifidlog Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Pacifidlog Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Pacifidlog Town') }"
-          d="M 410.8 291.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Pacifidlog Town"
+        , x: 408, y: 290
+        , type: "O"
+        })
+     %>
 
     <!--Ever Grande City-->
-    <path d="M 609 269 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Ever Grande City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Ever Grande City')},
-          attr: { class: MapHelper.calculateTownCssClass('Ever Grande City') }"
-          d="M 611.8 270.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Ever Grande City"
+        , x: 609, y: 269
+        , type: "O"
+        })
+     %>
 
     <!--Hoenn Pokemon League-->
-    <path d="M 609 218 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Hoenn Pokemon League"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Hoenn Pokemon League')},
-          attr: { class: MapHelper.calculateTownCssClass('Hoenn Pokemon League') }"
-          d="M 611.8 219.2 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Hoenn Pokemon League"
+        , x: 609, y: 218
+        , type: "O"
+        })
+     %>
 
     <!-- -------- -->
     <!-- DUNGEONS -->
