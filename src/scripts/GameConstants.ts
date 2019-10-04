@@ -479,7 +479,41 @@ namespace GameConstants {
             26: [46],
             27: [26],
         },
-        2: {}
+        2: {
+            102: [101],
+            103: [101],
+            104: [102],
+            105: [104],
+            106: [105],
+            107: [106],
+            108: [107],
+            109: [108],
+            110: [117],
+            111: [117],
+            112: [111],
+            113: [112],
+            114: [113],
+            115: [114],
+            116: [104],
+            117: [116],
+            118: [117],
+            119: [118],
+            120: [119],
+            121: [120],
+            122: [121],
+            123: [122],
+            124: [121],
+            125: [124],
+            126: [124],
+            127: [126,125],
+            128: [128],
+            129: [128],
+            130: [129],
+            131: [130],
+            132: [131],
+            133: [132],
+            134: [133],
+        },
     };
 
     export const routeBadgeRequirements = {
@@ -509,7 +543,16 @@ namespace GameConstants {
             44: GameConstants.Badge.Glacier,
             45: GameConstants.Badge.Rising,
         },
-        2: {}
+        2: {
+            116: GameConstants.Badge.Stone,
+            117: GameConstants.Badge.Knuckle,
+            111: GameConstants.Badge.Dynamo,
+            113: GameConstants.Badge.Heat,
+            105: GameConstants.Badge.Balance,
+            120: GameConstants.Badge.Feather,
+            126: GameConstants.Badge.Mind,
+            127: GameConstants.Badge.Rain,
+        }
     };
 
     export const WaterRoutes = {
