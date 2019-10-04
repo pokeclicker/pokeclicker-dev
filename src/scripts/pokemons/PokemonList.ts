@@ -605,8 +605,14 @@ const pokemonList = [
         "id": 44,
         "name": "Gloom",
         "catchRate": 120,
-        "evolution": ["Vileplume", "Bellossom"],
-        "evoLevel": ["Leaf_stone", "Sun_stone"],
+        "evolution": [
+            "Vileplume",
+            "Bellossom"
+        ],
+        "evoLevel": [
+            "Leaf_stone",
+            "Sun_stone"
+        ],
         "type": [
             "Grass",
             "Poison"
@@ -833,8 +839,14 @@ const pokemonList = [
         "id": 61,
         "name": "Poliwhirl",
         "catchRate": 120,
-        "evolution": ["Poliwrath", "Politoed"],
-        "evoLevel": ["Water_stone", "Kings_rock"],
+        "evolution": [
+            "Poliwrath",
+            "Politoed"
+        ],
+        "evoLevel": [
+            "Water_stone",
+            "Kings_rock"
+        ],
         "type": [
             "Water"
         ],
@@ -1080,8 +1092,14 @@ const pokemonList = [
         "id": 79,
         "name": "Slowpoke",
         "catchRate": 190,
-        "evolution": ["Slowbro", "Slowking"],
-        "evoLevel": [37, "Kings_rock"],
+        "evolution": [
+            "Slowbro",
+            "Slowking"
+        ],
+        "evoLevel": [
+            37,
+            "Kings_rock"
+        ],
         "type": [
             "Water",
             "Psychic"
@@ -1300,8 +1318,8 @@ const pokemonList = [
         "id": 95,
         "name": "Onix",
         "catchRate": 45,
-        "evolution" : "Steelix",
-        "evoLevel" : "Metal_coat",
+        "evolution": "Steelix",
+        "evoLevel": "Metal_coat",
         "type": [
             "Rock",
             "Ground"
@@ -1537,8 +1555,8 @@ const pokemonList = [
         "id": 113,
         "name": "Chansey",
         "catchRate": 30,
-        "evolution" : "Blissey",
-        "evoLevel" : 100,
+        "evolution": "Blissey",
+        "evoLevel": 100,
         "type": [
             "Normal"
         ],
@@ -1589,8 +1607,8 @@ const pokemonList = [
         "id": 117,
         "name": "Seadra",
         "catchRate": 75,
-        "evolution" : "Kingdra",
-        "evoLevel" : "Dragon_scale",
+        "evolution": "Kingdra",
+        "evoLevel": "Dragon_scale",
         "type": [
             "Water"
         ],
@@ -1797,8 +1815,21 @@ const pokemonList = [
         "id": 133,
         "name": "Eevee",
         "catchRate": 45,
-        "evolution": ["Vaporeon", "Jolteon", "Flareon", ["Espeon", "Umbreon"]],
-        "evoLevel": ["Water_stone", "Thunder_stone", "Fire_stone", "Time_stone"],
+        "evolution": [
+            "Vaporeon",
+            "Jolteon",
+            "Flareon",
+            [
+                "Espeon",
+                "Umbreon"
+            ]
+        ],
+        "evoLevel": [
+            "Water_stone",
+            "Thunder_stone",
+            "Fire_stone",
+            "Time_stone"
+        ],
         "type": [
             "Normal"
         ],
@@ -1848,7 +1879,7 @@ const pokemonList = [
         "name": "Porygon",
         "catchRate": 45,
         "evolution": "Porygon2",
-        "evoLevel" : "Upgrade",
+        "evoLevel": "Upgrade",
         "type": [
             "Normal"
         ],
@@ -2043,1327 +2074,6088 @@ const pokemonList = [
         "eggCycles": 120
     },
     {
-      "id": 152,
-      "name": "Chikorita",
-      "catchRate": 45,
-      "evolution": "Bayleef",
-      "evoLevel": 16,
-      "type": [
-        "Grass"
-      ],
-      "attack": 65,
-      "levelType": "mediumslow",
-      "exp": 64,
-      "eggCycles": 20
-    },
-    {
-      "id": 153,
-      "name": "Bayleef",
-      "catchRate": 45,
-      "evolution": "Meganium",
-      "evoLevel": 32,
-      "type": [
-        "Grass"
-      ],
-      "attack": 80,
-      "levelType": "mediumslow",
-      "exp": 142,
-      "eggCycles": 20
-    },
-    {
-      "id": 154,
-      "name": "Meganium",
-      "catchRate": 45,
-      "type": [
-        "Grass"
-      ],
-      "attack": 100,
-      "levelType": "mediumslow",
-      "exp": 236,
-      "eggCycles": 20
-    },
-    {
-      "id": 155,
-      "name": "Cyndaquil",
-      "catchRate": 45,
-      "evolution": "Quilava",
-      "evoLevel": 14,
-      "type": [
-        "Fire"
-      ],
-      "attack": 52,
-      "levelType": "mediumslow",
-      "exp": 62,
-      "eggCycles": 20
-    },
-    {
-      "id": 156,
-      "name": "Quilava",
-      "catchRate": 45,
-      "evolution": "Typhlosion",
-      "evoLevel": 36,
-      "type": [
-        "Fire"
-      ],
-      "attack": 65,
-      "levelType": "mediumslow",
-      "exp": 142,
-      "eggCycles": 20
-    },
-    {
-      "id": 157,
-      "name": "Typhlosion",
-      "catchRate": 45,
-      "type": [
-        "Fire"
-      ],
-      "attack": 85,
-      "levelType": "mediumslow",
-      "exp": 240,
-      "eggCycles": 20
-    },
-    {
-      "id": 158,
-      "name": "Totodile",
-      "catchRate": 45,
-      "evolution": "Croconaw",
-      "evoLevel": 18,
-      "type": [
-        "Water"
-      ],
-      "attack": 65,
-      "levelType": "mediumslow",
-      "exp": 63,
-      "eggCycles": 20
-    },
-    {
-      "id": 159,
-      "name": "Croconaw",
-      "catchRate": 45,
-      "evolution": "Feraligatr",
-      "evoLevel": 30,
-      "type": [
-        "Water"
-      ],
-      "attack": 80,
-      "levelType": "mediumslow",
-      "exp": 142,
-      "eggCycles": 20
-    },
-    {
-      "id": 160,
-      "name": "Feraligatr",
-      "catchRate": 45,
-      "type": [
-        "Water"
-      ],
-      "attack": 105,
-      "levelType": "mediumslow",
-      "exp": 239,
-      "eggCycles": 20
-    },
-    {
-      "id": 161,
-      "name": "Sentret",
-      "catchRate": 255,
-      "evolution": "Furret",
-      "evoLevel": 15,
-      "type": [
-        "Normal"
-      ],
-      "attack": 46,
-      "levelType": "mediumfast",
-      "exp": 43,
-      "eggCycles": 15
-    },
-    {
-      "id": 162,
-      "name": "Furret",
-      "catchRate": 90,
-      "type": [
-        "Normal"
-      ],
-      "attack": 76,
-      "levelType": "mediumfast",
-      "exp": 145,
-      "eggCycles": 15
-    },
-    {
-      "id": 163,
-      "name": "Hoothoot",
-      "catchRate": 255,
-      "evolution": "Noctowl",
-      "evoLevel": 20,
-      "type": [
-        "Normal",
-        "Flying"
-      ],
-      "attack": 56,
-      "levelType": "mediumfast",
-      "exp": 52,
-      "eggCycles": 15
-    },
-    {
-      "id": 164,
-      "name": "Noctowl",
-      "catchRate": 90,
-      "type": [
-        "Normal",
-        "Flying"
-      ],
-      "attack": 96,
-      "levelType": "mediumfast",
-      "exp": 158,
-      "eggCycles": 15
-    },
-    {
-      "id": 165,
-      "name": "Ledyba",
-      "catchRate": 255,
-      "evolution": "Ledian",
-      "evoLevel": 18,
-      "type": [
-        "Bug",
-        "Flying"
-      ],
-      "attack": 80,
-      "levelType": "fast",
-      "exp": 53,
-      "eggCycles": 15
-    },
-    {
-      "id": 166,
-      "name": "Ledian",
-      "catchRate": 90,
-      "type": [
-        "Bug",
-        "Flying"
-      ],
-      "attack": 110,
-      "levelType": "fast",
-      "exp": 137,
-      "eggCycles": 15
-    },
-    {
-      "id": 167,
-      "name": "Spinarak",
-      "catchRate": 255,
-      "evolution": "Ariados",
-      "evoLevel": 22,
-      "type": [
-        "Bug",
-        "Poison"
-      ],
-      "attack": 60,
-      "levelType": "fast",
-      "exp": 50,
-      "eggCycles": 15
-    },
-    {
-      "id": 168,
-      "name": "Ariados",
-      "catchRate": 90,
-      "type": [
-        "Bug",
-        "Poison"
-      ],
-      "attack": 90,
-      "levelType": "fast",
-      "exp": 140,
-      "eggCycles": 15
-    },
-    {
-      "id": 169,
-      "name": "Crobat",
-      "catchRate": 90,
-      "type": [
-        "Poison",
-        "Flying"
-      ],
-      "attack": 90,
-      "levelType": "mediumfast",
-      "exp": 241,
-      "eggCycles": 15
-    },
-    {
-      "id": 170,
-      "name": "Chinchou",
-      "catchRate": 190,
-      "evolution": "Lanturn",
-      "evoLevel": 27,
-      "type": [
-        "Water",
-        "Electric"
-      ],
-      "attack": 56,
-      "levelType": "slow",
-      "exp": 66,
-      "eggCycles": 20
-    },
-    {
-      "id": 171,
-      "name": "Lanturn",
-      "catchRate": 75,
-      "type": [
-        "Water",
-        "Electric"
-      ],
-      "attack": 76,
-      "levelType": "slow",
-      "exp": 161,
-      "eggCycles": 20
-    },
-    {
-      "id": 172,
-      "name": "Pichu",
-      "catchRate": 190,
-      "evolution": "Pikachu",
-      "evoLevel": 100,
-      "type": [
-        "Electric"
-      ],
-      "attack": 40,
-      "levelType": "mediumfast",
-      "exp": 41,
-      "eggCycles": 10
-    },
-    {
-      "id": 173,
-      "name": "Cleffa",
-      "catchRate": 150,
-      "evolution": "Clefairy",
-      "evoLevel": 100,
-      "type": [
-        "Fairy"
-      ],
-      "attack": 55,
-      "levelType": "fast",
-      "exp": 44,
-      "eggCycles": 10
-    },
-    {
-      "id": 174,
-      "name": "Igglybuff",
-      "catchRate": 170,
-      "evolution": "Jigglypuff",
-      "evoLevel": 100,
-      "type": [
-        "Normal",
-        "Fairy"
-      ],
-      "attack": 30,
-      "levelType": "fast",
-      "exp": 42,
-      "eggCycles": 10
-    },
-    {
-      "id": 175,
-      "name": "Togepi",
-      "catchRate": 190,
-      "evolution": "Togetic",
-      "evoLevel": 100,
-      "type": [
-        "Fairy"
-      ],
-      "attack": 65,
-      "levelType": "fast",
-      "exp": 49,
-      "eggCycles": 10
-    },
-    {
-      "id": 176,
-      "name": "Togetic",
-      "catchRate": 75,
-      "type": [
-        "Fairy",
-        "Flying"
-      ],
-      "attack": 105,
-      "levelType": "fast",
-      "exp": 142,
-      "eggCycles": 10
-    },
-    {
-      "id": 177,
-      "name": "Natu",
-      "catchRate": 190,
-      "evolution": "Xatu",
-      "evoLevel": 25,
-      "type": [
-        "Psychic",
-        "Flying"
-      ],
-      "attack": 50,
-      "levelType": "mediumfast",
-      "exp": 64,
-      "eggCycles": 20
-    },
-    {
-      "id": 178,
-      "name": "Xatu",
-      "catchRate": 75,
-      "type": [
-        "Psychic",
-        "Flying"
-      ],
-      "attack": 75,
-      "levelType": "mediumfast",
-      "exp": 165,
-      "eggCycles": 20
-    },
-    {
-      "id": 179,
-      "name": "Mareep",
-      "catchRate": 235,
-      "evolution": "Flaaffy",
-      "evoLevel": 15,
-      "type": [
-        "Electric"
-      ],
-      "attack": 45,
-      "levelType": "mediumslow",
-      "exp": 56,
-      "eggCycles": 20
-    },
-    {
-      "id": 180,
-      "name": "Flaaffy",
-      "catchRate": 120,
-      "evolution": "Ampharos",
-      "evoLevel": 30,
-      "type": [
-        "Electric"
-      ],
-      "attack": 60,
-      "levelType": "mediumslow",
-      "exp": 128,
-      "eggCycles": 20
-    },
-    {
-      "id": 181,
-      "name": "Ampharos",
-      "catchRate": 45,
-      "type": [
-        "Electric"
-      ],
-      "attack": 110,
-      "levelType": "mediumslow",
-      "exp": 230,
-      "eggCycles": 20
-    },
-    {
-      "id": 182,
-      "name": "Bellossom",
-      "catchRate": 45,
-      "type": [
-        "Grass"
-      ],
-      "attack": 100,
-      "levelType": "mediumslow",
-      "exp": 221,
-      "eggCycles": 20
-    },
-    {
-      "id": 183,
-      "name": "Marill",
-      "catchRate": 190,
-      "evolution": "Azumarill",
-      "evoLevel": 18,
-      "type": [
-        "Water",
-        "Fairy"
-      ],
-      "attack": 50,
-      "levelType": "fast",
-      "exp": 88,
-      "eggCycles": 10
-    },
-    {
-      "id": 184,
-      "name": "Azumarill",
-      "catchRate": 75,
-      "type": [
-        "Water",
-        "Fairy"
-      ],
-      "attack": 80,
-      "levelType": "fast",
-      "exp": 189,
-      "eggCycles": 10
-    },
-    {
-      "id": 185,
-      "name": "Sudowoodo",
-      "catchRate": 65,
-      "type": [
-        "Rock"
-      ],
-      "attack": 100,
-      "levelType": "mediumfast",
-      "exp": 144,
-      "eggCycles": 20
-    },
-    {
-      "id": 186,
-      "name": "Politoed",
-      "catchRate": 45,
-      "type": [
-        "Water"
-      ],
-      "attack": 100,
-      "levelType": "mediumslow",
-      "exp": 225,
-      "eggCycles": 20
-    },
-    {
-      "id": 187,
-      "name": "Hoppip",
-      "catchRate": 255,
-      "evolution": "Skiploom",
-      "evoLevel": 18,
-      "type": [
-        "Grass",
-        "Flying"
-      ],
-      "attack": 55,
-      "levelType": "mediumslow",
-      "exp": 50,
-      "eggCycles": 20
-    },
-    {
-      "id": 188,
-      "name": "Skiploom",
-      "catchRate": 120,
-      "evolution": "Jumpluff",
-      "evoLevel": 27,
-      "type": [
-        "Grass",
-        "Flying"
-      ],
-      "attack": 65,
-      "levelType": "mediumslow",
-      "exp": 119,
-      "eggCycles": 20
-    },
-    {
-      "id": 189,
-      "name": "Jumpluff",
-      "catchRate": 45,
-      "type": [
-        "Grass",
-        "Flying"
-      ],
-      "attack": 95,
-      "levelType": "mediumslow",
-      "exp": 207,
-      "eggCycles": 20
-    },
-    {
-      "id": 190,
-      "name": "Aipom",
-      "catchRate": 45,
-      "type": [
-        "Normal"
-      ],
-      "attack": 70,
-      "levelType": "fast",
-      "exp": 72,
-      "eggCycles": 20
-    },
-    {
-      "id": 191,
-      "name": "Sunkern",
-      "catchRate": 235,
-      "evolution": "Sunflora",
-      "evoLevel": "Sun_stone",
-      "type": [
-        "Grass"
-      ],
-      "attack": 30,
-      "levelType": "mediumslow",
-      "exp": 36,
-      "eggCycles": 20
-    },
-    {
-      "id": 192,
-      "name": "Sunflora",
-      "catchRate": 120,
-      "type": [
-        "Grass"
-      ],
-      "attack": 85,
-      "levelType": "mediumslow",
-      "exp": 149,
-      "eggCycles": 20
-    },
-    {
-      "id": 193,
-      "name": "Yanma",
-      "catchRate": 75,
-      "type": [
-        "Bug",
-        "Flying"
-      ],
-      "attack": 65,
-      "levelType": "mediumfast",
-      "exp": 78,
-      "eggCycles": 20
-    },
-    {
-      "id": 194,
-      "name": "Wooper",
-      "catchRate": 255,
-      "evolution": "Quagsire",
-      "evoLevel": 20,
-      "type": [
-        "Water",
-        "Ground"
-      ],
-      "attack": 45,
-      "levelType": "mediumfast",
-      "exp": 42,
-      "eggCycles": 20
-    },
-    {
-      "id": 195,
-      "name": "Quagsire",
-      "catchRate": 90,
-      "type": [
-        "Water",
-        "Ground"
-      ],
-      "attack": 85,
-      "levelType": "mediumfast",
-      "exp": 151,
-      "eggCycles": 20
-    },
-    {
-      "id": 196,
-      "name": "Espeon",
-      "catchRate": 45,
-      "type": [
-        "Psychic"
-      ],
-      "attack": 95,
-      "levelType": "mediumfast",
-      "exp": 184,
-      "eggCycles": 35
-    },
-    {
-      "id": 197,
-      "name": "Umbreon",
-      "catchRate": 45,
-      "type": [
-        "Dark"
-      ],
-      "attack": 130,
-      "levelType": "mediumfast",
-      "exp": 184,
-      "eggCycles": 35
-    },
-    {
-      "id": 198,
-      "name": "Murkrow",
-      "catchRate": 30,
-      "type": [
-        "Dark",
-        "Flying"
-      ],
-      "attack": 85,
-      "levelType": "mediumslow",
-      "exp": 81,
-      "eggCycles": 20
-    },
-    {
-      "id": 199,
-      "name": "Slowking",
-      "catchRate": 70,
-      "type": [
-        "Water",
-        "Psychic"
-      ],
-      "attack": 110,
-      "levelType": "mediumfast",
-      "exp": 172,
-      "eggCycles": 20
-    },
-    {
-      "id": 200,
-      "name": "Misdreavus",
-      "catchRate": 45,
-      "type": [
-        "Ghost"
-      ],
-      "attack": 85,
-      "levelType": "fast",
-      "exp": 87,
-      "eggCycles": 25
-    },
-    {
-      "id": 201,
-      "name": "Unown",
-      "catchRate": 225,
-      "type": [
-        "Psychic"
-      ],
-      "attack": 72,
-      "levelType": "mediumfast",
-      "exp": 118,
-      "eggCycles": 40
-    },
-    {
-      "id": 202,
-      "name": "Wobbuffet",
-      "catchRate": 45,
-      "type": [
-        "Psychic"
-      ],
-      "attack": 58,
-      "levelType": "mediumfast",
-      "exp": 142,
-      "eggCycles": 20
-    },
-    {
-      "id": 203,
-      "name": "Girafarig",
-      "catchRate": 60,
-      "type": [
-        "Normal",
-        "Psychic"
-      ],
-      "attack": 80,
-      "levelType": "mediumfast",
-      "exp": 159,
-      "eggCycles": 20
-    },
-    {
-      "id": 204,
-      "name": "Pineco",
-      "catchRate": 190,
-      "evolution": "Forretress",
-      "evoLevel": 31,
-      "type": [
-        "Bug"
-      ],
-      "attack": 65,
-      "levelType": "mediumfast",
-      "exp": 58,
-      "eggCycles": 20
-    },
-    {
-      "id": 205,
-      "name": "Forretress",
-      "catchRate": 75,
-      "type": [
-        "Bug",
-        "Steel"
-      ],
-      "attack": 90,
-      "levelType": "mediumfast",
-      "exp": 163,
-      "eggCycles": 20
-    },
-    {
-      "id": 206,
-      "name": "Dunsparce",
-      "catchRate": 190,
-      "type": [
-        "Normal"
-      ],
-      "attack": 70,
-      "levelType": "mediumfast",
-      "exp": 145,
-      "eggCycles": 20
-    },
-    {
-      "id": 207,
-      "name": "Gligar",
-      "catchRate": 60,
-      "type": [
-        "Ground",
-        "Flying"
-      ],
-      "attack": 75,
-      "levelType": "mediumslow",
-      "exp": 86,
-      "eggCycles": 20
-    },
-    {
-      "id": 208,
-      "name": "Steelix",
-      "catchRate": 25,
-      "type": [
-        "Steel",
-        "Ground"
-      ],
-      "attack": 125,
-      "levelType": "mediumfast",
-      "exp": 179,
-      "eggCycles": 25
-    },
-    {
-      "id": 209,
-      "name": "Snubbull",
-      "catchRate": 190,
-      "evolution": "Granbull",
-      "evoLevel": 23,
-      "type": [
-        "Fairy"
-      ],
-      "attack": 80,
-      "levelType": "fast",
-      "exp": 60,
-      "eggCycles": 20
-    },
-    {
-      "id": 210,
-      "name": "Granbull",
-      "catchRate": 75,
-      "type": [
-        "Fairy"
-      ],
-      "attack": 120,
-      "levelType": "fast",
-      "exp": 158,
-      "eggCycles": 20
-    },
-    {
-      "id": 211,
-      "name": "Qwilfish",
-      "catchRate": 45,
-      "type": [
-        "Water",
-        "Poison"
-      ],
-      "attack": 95,
-      "levelType": "mediumfast",
-      "exp": 88,
-      "eggCycles": 20
-    },
-    {
-      "id": 212,
-      "name": "Scizor",
-      "catchRate": 25,
-      "type": [
-        "Bug",
-        "Steel"
-      ],
-      "attack": 150,
-      "levelType": "mediumfast",
-      "exp": 175,
-      "eggCycles": 25
-    },
-    {
-      "id": 213,
-      "name": "Shuckle",
-      "catchRate": 190,
-      "type": [
-        "Bug",
-        "Rock"
-      ],
-      "attack": 230,
-      "levelType": "mediumslow",
-      "exp": 177,
-      "eggCycles": 20
-    },
-    {
-      "id": 214,
-      "name": "Heracross",
-      "catchRate": 45,
-      "type": [
-        "Bug",
-        "Fighting"
-      ],
-      "attack": 185,
-      "levelType": "slow",
-      "exp": 175,
-      "eggCycles": 25
-    },
-    {
-      "id": 215,
-      "name": "Sneasel",
-      "catchRate": 60,
-      "type": [
-        "Dark",
-        "Ice"
-      ],
-      "attack": 95,
-      "levelType": "mediumslow",
-      "exp": 86,
-      "eggCycles": 20
-    },
-    {
-      "id": 216,
-      "name": "Teddiursa",
-      "catchRate": 120,
-      "evolution": "Ursaring",
-      "evoLevel": 30,
-      "type": [
-        "Normal"
-      ],
-      "attack": 80,
-      "levelType": "mediumfast",
-      "exp": 66,
-      "eggCycles": 20
-    },
-    {
-      "id": 217,
-      "name": "Ursaring",
-      "catchRate": 60,
-      "type": [
-        "Normal"
-      ],
-      "attack": 130,
-      "levelType": "mediumfast",
-      "exp": 175,
-      "eggCycles": 20
-    },
-    {
-      "id": 218,
-      "name": "Slugma",
-      "catchRate": 190,
-      "evolution": "Magcargo",
-      "evoLevel": 38,
-      "type": [
-        "Fire"
-      ],
-      "attack": 40,
-      "levelType": "mediumfast",
-      "exp": 50,
-      "eggCycles": 20
-    },
-    {
-      "id": 219,
-      "name": "Magcargo",
-      "catchRate": 75,
-      "type": [
-        "Fire",
-        "Rock"
-      ],
-      "attack": 80,
-      "levelType": "mediumfast",
-      "exp": 151,
-      "eggCycles": 20
-    },
-    {
-      "id": 220,
-      "name": "Swinub",
-      "catchRate": 225,
-      "evolution": "Piloswine",
-      "evoLevel": 33,
-      "type": [
-        "Ice",
-        "Ground"
-      ],
-      "attack": 50,
-      "levelType": "slow",
-      "exp": 50,
-      "eggCycles": 20
-    },
-    {
-      "id": 221,
-      "name": "Piloswine",
-      "catchRate": 75,
-      "type": [
-        "Ice",
-        "Ground"
-      ],
-      "attack": 100,
-      "levelType": "slow",
-      "exp": 158,
-      "eggCycles": 20
-    },
-    {
-      "id": 222,
-      "name": "Corsola",
-      "catchRate": 60,
-      "type": [
-        "Water",
-        "Rock"
-      ],
-      "attack": 95,
-      "levelType": "fast",
-      "exp": 144,
-      "eggCycles": 20
-    },
-    {
-      "id": 223,
-      "name": "Remoraid",
-      "catchRate": 190,
-      "evolution": "Octillery",
-      "evoLevel": 25,
-      "type": [
-        "Water"
-      ],
-      "attack": 65,
-      "levelType": "mediumfast",
-      "exp": 60,
-      "eggCycles": 20
-    },
-    {
-      "id": 224,
-      "name": "Octillery",
-      "catchRate": 75,
-      "type": [
-        "Water"
-      ],
-      "attack": 105,
-      "levelType": "mediumfast",
-      "exp": 168,
-      "eggCycles": 20
-    },
-    {
-      "id": 225,
-      "name": "Delibird",
-      "catchRate": 45,
-      "type": [
-        "Ice",
-        "Flying"
-      ],
-      "attack": 55,
-      "levelType": "fast",
-      "exp": 116,
-      "eggCycles": 20
-    },
-    {
-      "id": 226,
-      "name": "Mantine",
-      "catchRate": 25,
-      "type": [
-        "Water",
-        "Flying"
-      ],
-      "attack": 140,
-      "levelType": "slow",
-      "exp": 170,
-      "eggCycles": 25
-    },
-    {
-      "id": 227,
-      "name": "Skarmory",
-      "catchRate": 25,
-      "type": [
-        "Steel",
-        "Flying"
-      ],
-      "attack": 80,
-      "levelType": "slow",
-      "exp": 163,
-      "eggCycles": 25
-    },
-    {
-      "id": 228,
-      "name": "Houndour",
-      "catchRate": 120,
-      "evolution": "Houndoom",
-      "evoLevel": 24,
-      "type": [
-        "Dark",
-        "Fire"
-      ],
-      "attack": 60,
-      "levelType": "slow",
-      "exp": 66,
-      "eggCycles": 20
-    },
-    {
-      "id": 229,
-      "name": "Houndoom",
-      "catchRate": 45,
-      "type": [
-        "Dark",
-        "Fire"
-      ],
-      "attack": 90,
-      "levelType": "slow",
-      "exp": 175,
-      "eggCycles": 20
-    },
-    {
-      "id": 230,
-      "name": "Kingdra",
-      "catchRate": 45,
-      "type": [
-        "Water",
-        "Dragon"
-      ],
-      "attack": 95,
-      "levelType": "mediumfast",
-      "exp": 243,
-      "eggCycles": 20
-    },
-    {
-      "id": 231,
-      "name": "Phanpy",
-      "catchRate": 120,
-      "evolution": "Donphan",
-      "evoLevel": 25,
-      "type": [
-        "Ground"
-      ],
-      "attack": 60,
-      "levelType": "mediumfast",
-      "exp": 66,
-      "eggCycles": 20
-    },
-    {
-      "id": 232,
-      "name": "Donphan",
-      "catchRate": 60,
-      "type": [
-        "Ground"
-      ],
-      "attack": 120,
-      "levelType": "mediumfast",
-      "exp": 175,
-      "eggCycles": 20
-    },
-    {
-      "id": 233,
-      "name": "Porygon2",
-      "catchRate": 45,
-      "type": [
-        "Normal"
-      ],
-      "attack": 95,
-      "levelType": "mediumfast",
-      "exp": 180,
-      "eggCycles": 20
-    },
-    {
-      "id": 234,
-      "name": "Stantler",
-      "catchRate": 45,
-      "type": [
-        "Normal"
-      ],
-      "attack": 95,
-      "levelType": "slow",
-      "exp": 163,
-      "eggCycles": 20
-    },
-    {
-      "id": 235,
-      "name": "Smeargle",
-      "catchRate": 45,
-      "type": [
-        "Normal"
-      ],
-      "attack": 45,
-      "levelType": "fast",
-      "exp": 88,
-      "eggCycles": 20
-    },
-    {
-      "id": 236,
-      "name": "Tyrogue",
-      "catchRate": 75,
-      "evolution": [["Hitmonlee", "Hitmonchan", "Hitmontop"]],
-      "evoLevel": [20],
-      "type": [
-        "Fighting"
-      ],
-      "attack": 35,
-      "levelType": "mediumfast",
-      "exp": 42,
-      "eggCycles": 25
-    },
-    {
-      "id": 237,
-      "name": "Hitmontop",
-      "catchRate": 45,
-      "type": [
-        "Fighting"
-      ],
-      "attack": 110,
-      "levelType": "mediumfast",
-      "exp": 159,
-      "eggCycles": 25
-    },
-    {
-      "id": 238,
-      "name": "Smoochum",
-      "catchRate": 45,
-      "evolution": "Jynx",
-      "evoLevel": 30,
-      "type": [
-        "Ice",
-        "Psychic"
-      ],
-      "attack": 65,
-      "levelType": "mediumfast",
-      "exp": 61,
-      "eggCycles": 25
-    },
-    {
-      "id": 239,
-      "name": "Elekid",
-      "catchRate": 45,
-      "evolution": "Electabuzz",
-      "evoLevel": 30,
-      "type": [
-        "Electric"
-      ],
-      "attack": 63,
-      "levelType": "mediumfast",
-      "exp": 72,
-      "eggCycles": 25
-    },
-    {
-      "id": 240,
-      "name": "Magby",
-      "catchRate": 45,
-      "evolution": "Magmar",
-      "evoLevel": 30,
-      "type": [
-        "Fire"
-      ],
-      "attack": 75,
-      "levelType": "mediumfast",
-      "exp": 73,
-      "eggCycles": 25
-    },
-    {
-      "id": 241,
-      "name": "Miltank",
-      "catchRate": 45,
-      "type": [
-        "Normal"
-      ],
-      "attack": 80,
-      "levelType": "slow",
-      "exp": 172,
-      "eggCycles": 20
-    },
-    {
-      "id": 242,
-      "name": "Blissey",
-      "catchRate": 30,
-      "type": [
-        "Normal"
-      ],
-      "attack": 135,
-      "levelType": "fast",
-      "exp": 608,
-      "eggCycles": 40
-    },
-    {
-      "id": 243,
-      "name": "Raikou",
-      "catchRate": 3,
-      "type": [
-        "Electric"
-      ],
-      "attack": 100,
-      "levelType": "slow",
-      "exp": 261,
-      "eggCycles": 80
-    },
-    {
-      "id": 244,
-      "name": "Entei",
-      "catchRate": 3,
-      "type": [
-        "Fire"
-      ],
-      "attack": 115,
-      "levelType": "slow",
-      "exp": 261,
-      "eggCycles": 80
-    },
-    {
-      "id": 245,
-      "name": "Suicune",
-      "catchRate": 3,
-      "type": [
-        "Water"
-      ],
-      "attack": 115,
-      "levelType": "slow",
-      "exp": 261,
-      "eggCycles": 80
-    },
-    {
-      "id": 246,
-      "name": "Larvitar",
-      "catchRate": 45,
-      "evolution": "Pupitar",
-      "evoLevel": 30,
-      "type": [
-        "Rock",
-        "Ground"
-      ],
-      "attack": 64,
-      "levelType": "slow",
-      "exp": 60,
-      "eggCycles": 40
-    },
-    {
-      "id": 247,
-      "name": "Pupitar",
-      "catchRate": 45,
-      "evolution": "Tyranitar",
-      "evoLevel": 55,
-      "type": [
-        "Rock",
-        "Ground"
-      ],
-      "attack": 84,
-      "levelType": "slow",
-      "exp": 144,
-      "eggCycles": 40
-    },
-    {
-      "id": 248,
-      "name": "Tyranitar",
-      "catchRate": 45,
-      "type": [
-        "Rock",
-        "Dark"
-      ],
-      "attack": 164,
-      "levelType": "slow",
-      "exp": 270,
-      "eggCycles": 40
-    },
-    {
-      "id": 249,
-      "name": "Lugia",
-      "catchRate": 3,
-      "type": [
-        "Psychic",
-        "Flying"
-      ],
-      "attack": 154,
-      "levelType": "slow",
-      "exp": 306,
-      "eggCycles": 120
-    },
-    {
-      "id": 250,
-      "name": "Ho-Oh",
-      "catchRate": 3,
-      "type": [
-        "Fire",
-        "Flying"
-      ],
-      "attack": 154,
-      "levelType": "slow",
-      "exp": 306,
-      "eggCycles": 120
-    },
-    {
-      "id": 251,
-      "name": "Celebi",
-      "catchRate": 45,
-      "type": [
-        "Psychic",
-        "Grass"
-      ],
-      "attack": 100,
-      "levelType": "mediumslow",
-      "exp": 270,
-      "eggCycles": 120
+        "id": 152,
+        "name": "Chikorita",
+        "catchRate": 45,
+        "evolution": "Bayleef",
+        "evoLevel": 16,
+        "type": [
+            "Grass"
+        ],
+        "attack": 65,
+        "levelType": "mediumslow",
+        "exp": 64,
+        "eggCycles": 20
+    },
+    {
+        "id": 153,
+        "name": "Bayleef",
+        "catchRate": 45,
+        "evolution": "Meganium",
+        "evoLevel": 32,
+        "type": [
+            "Grass"
+        ],
+        "attack": 80,
+        "levelType": "mediumslow",
+        "exp": 142,
+        "eggCycles": 20
+    },
+    {
+        "id": 154,
+        "name": "Meganium",
+        "catchRate": 45,
+        "type": [
+            "Grass"
+        ],
+        "attack": 100,
+        "levelType": "mediumslow",
+        "exp": 236,
+        "eggCycles": 20
+    },
+    {
+        "id": 155,
+        "name": "Cyndaquil",
+        "catchRate": 45,
+        "evolution": "Quilava",
+        "evoLevel": 14,
+        "type": [
+            "Fire"
+        ],
+        "attack": 52,
+        "levelType": "mediumslow",
+        "exp": 62,
+        "eggCycles": 20
+    },
+    {
+        "id": 156,
+        "name": "Quilava",
+        "catchRate": 45,
+        "evolution": "Typhlosion",
+        "evoLevel": 36,
+        "type": [
+            "Fire"
+        ],
+        "attack": 65,
+        "levelType": "mediumslow",
+        "exp": 142,
+        "eggCycles": 20
+    },
+    {
+        "id": 157,
+        "name": "Typhlosion",
+        "catchRate": 45,
+        "type": [
+            "Fire"
+        ],
+        "attack": 85,
+        "levelType": "mediumslow",
+        "exp": 240,
+        "eggCycles": 20
+    },
+    {
+        "id": 158,
+        "name": "Totodile",
+        "catchRate": 45,
+        "evolution": "Croconaw",
+        "evoLevel": 18,
+        "type": [
+            "Water"
+        ],
+        "attack": 65,
+        "levelType": "mediumslow",
+        "exp": 63,
+        "eggCycles": 20
+    },
+    {
+        "id": 159,
+        "name": "Croconaw",
+        "catchRate": 45,
+        "evolution": "Feraligatr",
+        "evoLevel": 30,
+        "type": [
+            "Water"
+        ],
+        "attack": 80,
+        "levelType": "mediumslow",
+        "exp": 142,
+        "eggCycles": 20
+    },
+    {
+        "id": 160,
+        "name": "Feraligatr",
+        "catchRate": 45,
+        "type": [
+            "Water"
+        ],
+        "attack": 105,
+        "levelType": "mediumslow",
+        "exp": 239,
+        "eggCycles": 20
+    },
+    {
+        "id": 161,
+        "name": "Sentret",
+        "catchRate": 255,
+        "evolution": "Furret",
+        "evoLevel": 15,
+        "type": [
+            "Normal"
+        ],
+        "attack": 46,
+        "levelType": "mediumfast",
+        "exp": 43,
+        "eggCycles": 15
+    },
+    {
+        "id": 162,
+        "name": "Furret",
+        "catchRate": 90,
+        "type": [
+            "Normal"
+        ],
+        "attack": 76,
+        "levelType": "mediumfast",
+        "exp": 145,
+        "eggCycles": 15
+    },
+    {
+        "id": 163,
+        "name": "Hoothoot",
+        "catchRate": 255,
+        "evolution": "Noctowl",
+        "evoLevel": 20,
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 56,
+        "levelType": "mediumfast",
+        "exp": 52,
+        "eggCycles": 15
+    },
+    {
+        "id": 164,
+        "name": "Noctowl",
+        "catchRate": 90,
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 96,
+        "levelType": "mediumfast",
+        "exp": 158,
+        "eggCycles": 15
+    },
+    {
+        "id": 165,
+        "name": "Ledyba",
+        "catchRate": 255,
+        "evolution": "Ledian",
+        "evoLevel": 18,
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 80,
+        "levelType": "fast",
+        "exp": 53,
+        "eggCycles": 15
+    },
+    {
+        "id": 166,
+        "name": "Ledian",
+        "catchRate": 90,
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 110,
+        "levelType": "fast",
+        "exp": 137,
+        "eggCycles": 15
+    },
+    {
+        "id": 167,
+        "name": "Spinarak",
+        "catchRate": 255,
+        "evolution": "Ariados",
+        "evoLevel": 22,
+        "type": [
+            "Bug",
+            "Poison"
+        ],
+        "attack": 60,
+        "levelType": "fast",
+        "exp": 50,
+        "eggCycles": 15
+    },
+    {
+        "id": 168,
+        "name": "Ariados",
+        "catchRate": 90,
+        "type": [
+            "Bug",
+            "Poison"
+        ],
+        "attack": 90,
+        "levelType": "fast",
+        "exp": 140,
+        "eggCycles": 15
+    },
+    {
+        "id": 169,
+        "name": "Crobat",
+        "catchRate": 90,
+        "type": [
+            "Poison",
+            "Flying"
+        ],
+        "attack": 90,
+        "levelType": "mediumfast",
+        "exp": 241,
+        "eggCycles": 15
+    },
+    {
+        "id": 170,
+        "name": "Chinchou",
+        "catchRate": 190,
+        "evolution": "Lanturn",
+        "evoLevel": 27,
+        "type": [
+            "Water",
+            "Electric"
+        ],
+        "attack": 56,
+        "levelType": "slow",
+        "exp": 66,
+        "eggCycles": 20
+    },
+    {
+        "id": 171,
+        "name": "Lanturn",
+        "catchRate": 75,
+        "type": [
+            "Water",
+            "Electric"
+        ],
+        "attack": 76,
+        "levelType": "slow",
+        "exp": 161,
+        "eggCycles": 20
+    },
+    {
+        "id": 172,
+        "name": "Pichu",
+        "catchRate": 190,
+        "evolution": "Pikachu",
+        "evoLevel": 100,
+        "type": [
+            "Electric"
+        ],
+        "attack": 40,
+        "levelType": "mediumfast",
+        "exp": 41,
+        "eggCycles": 10
+    },
+    {
+        "id": 173,
+        "name": "Cleffa",
+        "catchRate": 150,
+        "evolution": "Clefairy",
+        "evoLevel": 100,
+        "type": [
+            "Fairy"
+        ],
+        "attack": 55,
+        "levelType": "fast",
+        "exp": 44,
+        "eggCycles": 10
+    },
+    {
+        "id": 174,
+        "name": "Igglybuff",
+        "catchRate": 170,
+        "evolution": "Jigglypuff",
+        "evoLevel": 100,
+        "type": [
+            "Normal",
+            "Fairy"
+        ],
+        "attack": 30,
+        "levelType": "fast",
+        "exp": 42,
+        "eggCycles": 10
+    },
+    {
+        "id": 175,
+        "name": "Togepi",
+        "catchRate": 190,
+        "evolution": "Togetic",
+        "evoLevel": 100,
+        "type": [
+            "Fairy"
+        ],
+        "attack": 65,
+        "levelType": "fast",
+        "exp": 49,
+        "eggCycles": 10
+    },
+    {
+        "id": 176,
+        "name": "Togetic",
+        "catchRate": 75,
+        "type": [
+            "Fairy",
+            "Flying"
+        ],
+        "attack": 105,
+        "levelType": "fast",
+        "exp": 142,
+        "eggCycles": 10
+    },
+    {
+        "id": 177,
+        "name": "Natu",
+        "catchRate": 190,
+        "evolution": "Xatu",
+        "evoLevel": 25,
+        "type": [
+            "Psychic",
+            "Flying"
+        ],
+        "attack": 50,
+        "levelType": "mediumfast",
+        "exp": 64,
+        "eggCycles": 20
+    },
+    {
+        "id": 178,
+        "name": "Xatu",
+        "catchRate": 75,
+        "type": [
+            "Psychic",
+            "Flying"
+        ],
+        "attack": 75,
+        "levelType": "mediumfast",
+        "exp": 165,
+        "eggCycles": 20
+    },
+    {
+        "id": 179,
+        "name": "Mareep",
+        "catchRate": 235,
+        "evolution": "Flaaffy",
+        "evoLevel": 15,
+        "type": [
+            "Electric"
+        ],
+        "attack": 45,
+        "levelType": "mediumslow",
+        "exp": 56,
+        "eggCycles": 20
+    },
+    {
+        "id": 180,
+        "name": "Flaaffy",
+        "catchRate": 120,
+        "evolution": "Ampharos",
+        "evoLevel": 30,
+        "type": [
+            "Electric"
+        ],
+        "attack": 60,
+        "levelType": "mediumslow",
+        "exp": 128,
+        "eggCycles": 20
+    },
+    {
+        "id": 181,
+        "name": "Ampharos",
+        "catchRate": 45,
+        "type": [
+            "Electric"
+        ],
+        "attack": 110,
+        "levelType": "mediumslow",
+        "exp": 230,
+        "eggCycles": 20
+    },
+    {
+        "id": 182,
+        "name": "Bellossom",
+        "catchRate": 45,
+        "type": [
+            "Grass"
+        ],
+        "attack": 100,
+        "levelType": "mediumslow",
+        "exp": 221,
+        "eggCycles": 20
+    },
+    {
+        "id": 183,
+        "name": "Marill",
+        "catchRate": 190,
+        "evolution": "Azumarill",
+        "evoLevel": 18,
+        "type": [
+            "Water",
+            "Fairy"
+        ],
+        "attack": 50,
+        "levelType": "fast",
+        "exp": 88,
+        "eggCycles": 10
+    },
+    {
+        "id": 184,
+        "name": "Azumarill",
+        "catchRate": 75,
+        "type": [
+            "Water",
+            "Fairy"
+        ],
+        "attack": 80,
+        "levelType": "fast",
+        "exp": 189,
+        "eggCycles": 10
+    },
+    {
+        "id": 185,
+        "name": "Sudowoodo",
+        "catchRate": 65,
+        "type": [
+            "Rock"
+        ],
+        "attack": 100,
+        "levelType": "mediumfast",
+        "exp": 144,
+        "eggCycles": 20
+    },
+    {
+        "id": 186,
+        "name": "Politoed",
+        "catchRate": 45,
+        "type": [
+            "Water"
+        ],
+        "attack": 100,
+        "levelType": "mediumslow",
+        "exp": 225,
+        "eggCycles": 20
+    },
+    {
+        "id": 187,
+        "name": "Hoppip",
+        "catchRate": 255,
+        "evolution": "Skiploom",
+        "evoLevel": 18,
+        "type": [
+            "Grass",
+            "Flying"
+        ],
+        "attack": 55,
+        "levelType": "mediumslow",
+        "exp": 50,
+        "eggCycles": 20
+    },
+    {
+        "id": 188,
+        "name": "Skiploom",
+        "catchRate": 120,
+        "evolution": "Jumpluff",
+        "evoLevel": 27,
+        "type": [
+            "Grass",
+            "Flying"
+        ],
+        "attack": 65,
+        "levelType": "mediumslow",
+        "exp": 119,
+        "eggCycles": 20
+    },
+    {
+        "id": 189,
+        "name": "Jumpluff",
+        "catchRate": 45,
+        "type": [
+            "Grass",
+            "Flying"
+        ],
+        "attack": 95,
+        "levelType": "mediumslow",
+        "exp": 207,
+        "eggCycles": 20
+    },
+    {
+        "id": 190,
+        "name": "Aipom",
+        "catchRate": 45,
+        "type": [
+            "Normal"
+        ],
+        "attack": 70,
+        "levelType": "fast",
+        "exp": 72,
+        "eggCycles": 20
+    },
+    {
+        "id": 191,
+        "name": "Sunkern",
+        "catchRate": 235,
+        "evolution": "Sunflora",
+        "evoLevel": "Sun_stone",
+        "type": [
+            "Grass"
+        ],
+        "attack": 30,
+        "levelType": "mediumslow",
+        "exp": 36,
+        "eggCycles": 20
+    },
+    {
+        "id": 192,
+        "name": "Sunflora",
+        "catchRate": 120,
+        "type": [
+            "Grass"
+        ],
+        "attack": 85,
+        "levelType": "mediumslow",
+        "exp": 149,
+        "eggCycles": 20
+    },
+    {
+        "id": 193,
+        "name": "Yanma",
+        "catchRate": 75,
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 65,
+        "levelType": "mediumfast",
+        "exp": 78,
+        "eggCycles": 20
+    },
+    {
+        "id": 194,
+        "name": "Wooper",
+        "catchRate": 255,
+        "evolution": "Quagsire",
+        "evoLevel": 20,
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 45,
+        "levelType": "mediumfast",
+        "exp": 42,
+        "eggCycles": 20
+    },
+    {
+        "id": 195,
+        "name": "Quagsire",
+        "catchRate": 90,
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 85,
+        "levelType": "mediumfast",
+        "exp": 151,
+        "eggCycles": 20
+    },
+    {
+        "id": 196,
+        "name": "Espeon",
+        "catchRate": 45,
+        "type": [
+            "Psychic"
+        ],
+        "attack": 95,
+        "levelType": "mediumfast",
+        "exp": 184,
+        "eggCycles": 35
+    },
+    {
+        "id": 197,
+        "name": "Umbreon",
+        "catchRate": 45,
+        "type": [
+            "Dark"
+        ],
+        "attack": 130,
+        "levelType": "mediumfast",
+        "exp": 184,
+        "eggCycles": 35
+    },
+    {
+        "id": 198,
+        "name": "Murkrow",
+        "catchRate": 30,
+        "type": [
+            "Dark",
+            "Flying"
+        ],
+        "attack": 85,
+        "levelType": "mediumslow",
+        "exp": 81,
+        "eggCycles": 20
+    },
+    {
+        "id": 199,
+        "name": "Slowking",
+        "catchRate": 70,
+        "type": [
+            "Water",
+            "Psychic"
+        ],
+        "attack": 110,
+        "levelType": "mediumfast",
+        "exp": 172,
+        "eggCycles": 20
+    },
+    {
+        "id": 200,
+        "name": "Misdreavus",
+        "catchRate": 45,
+        "type": [
+            "Ghost"
+        ],
+        "attack": 85,
+        "levelType": "fast",
+        "exp": 87,
+        "eggCycles": 25
+    },
+    {
+        "id": 201,
+        "name": "Unown",
+        "catchRate": 225,
+        "type": [
+            "Psychic"
+        ],
+        "attack": 72,
+        "levelType": "mediumfast",
+        "exp": 118,
+        "eggCycles": 40
+    },
+    {
+        "id": 202,
+        "name": "Wobbuffet",
+        "catchRate": 45,
+        "type": [
+            "Psychic"
+        ],
+        "attack": 58,
+        "levelType": "mediumfast",
+        "exp": 142,
+        "eggCycles": 20
+    },
+    {
+        "id": 203,
+        "name": "Girafarig",
+        "catchRate": 60,
+        "type": [
+            "Normal",
+            "Psychic"
+        ],
+        "attack": 80,
+        "levelType": "mediumfast",
+        "exp": 159,
+        "eggCycles": 20
+    },
+    {
+        "id": 204,
+        "name": "Pineco",
+        "catchRate": 190,
+        "evolution": "Forretress",
+        "evoLevel": 31,
+        "type": [
+            "Bug"
+        ],
+        "attack": 65,
+        "levelType": "mediumfast",
+        "exp": 58,
+        "eggCycles": 20
+    },
+    {
+        "id": 205,
+        "name": "Forretress",
+        "catchRate": 75,
+        "type": [
+            "Bug",
+            "Steel"
+        ],
+        "attack": 90,
+        "levelType": "mediumfast",
+        "exp": 163,
+        "eggCycles": 20
+    },
+    {
+        "id": 206,
+        "name": "Dunsparce",
+        "catchRate": 190,
+        "type": [
+            "Normal"
+        ],
+        "attack": 70,
+        "levelType": "mediumfast",
+        "exp": 145,
+        "eggCycles": 20
+    },
+    {
+        "id": 207,
+        "name": "Gligar",
+        "catchRate": 60,
+        "type": [
+            "Ground",
+            "Flying"
+        ],
+        "attack": 75,
+        "levelType": "mediumslow",
+        "exp": 86,
+        "eggCycles": 20
+    },
+    {
+        "id": 208,
+        "name": "Steelix",
+        "catchRate": 25,
+        "type": [
+            "Steel",
+            "Ground"
+        ],
+        "attack": 125,
+        "levelType": "mediumfast",
+        "exp": 179,
+        "eggCycles": 25
+    },
+    {
+        "id": 209,
+        "name": "Snubbull",
+        "catchRate": 190,
+        "evolution": "Granbull",
+        "evoLevel": 23,
+        "type": [
+            "Fairy"
+        ],
+        "attack": 80,
+        "levelType": "fast",
+        "exp": 60,
+        "eggCycles": 20
+    },
+    {
+        "id": 210,
+        "name": "Granbull",
+        "catchRate": 75,
+        "type": [
+            "Fairy"
+        ],
+        "attack": 120,
+        "levelType": "fast",
+        "exp": 158,
+        "eggCycles": 20
+    },
+    {
+        "id": 211,
+        "name": "Qwilfish",
+        "catchRate": 45,
+        "type": [
+            "Water",
+            "Poison"
+        ],
+        "attack": 95,
+        "levelType": "mediumfast",
+        "exp": 88,
+        "eggCycles": 20
+    },
+    {
+        "id": 212,
+        "name": "Scizor",
+        "catchRate": 25,
+        "type": [
+            "Bug",
+            "Steel"
+        ],
+        "attack": 150,
+        "levelType": "mediumfast",
+        "exp": 175,
+        "eggCycles": 25
+    },
+    {
+        "id": 213,
+        "name": "Shuckle",
+        "catchRate": 190,
+        "type": [
+            "Bug",
+            "Rock"
+        ],
+        "attack": 230,
+        "levelType": "mediumslow",
+        "exp": 177,
+        "eggCycles": 20
+    },
+    {
+        "id": 214,
+        "name": "Heracross",
+        "catchRate": 45,
+        "type": [
+            "Bug",
+            "Fighting"
+        ],
+        "attack": 185,
+        "levelType": "slow",
+        "exp": 175,
+        "eggCycles": 25
+    },
+    {
+        "id": 215,
+        "name": "Sneasel",
+        "catchRate": 60,
+        "type": [
+            "Dark",
+            "Ice"
+        ],
+        "attack": 95,
+        "levelType": "mediumslow",
+        "exp": 86,
+        "eggCycles": 20
+    },
+    {
+        "id": 216,
+        "name": "Teddiursa",
+        "catchRate": 120,
+        "evolution": "Ursaring",
+        "evoLevel": 30,
+        "type": [
+            "Normal"
+        ],
+        "attack": 80,
+        "levelType": "mediumfast",
+        "exp": 66,
+        "eggCycles": 20
+    },
+    {
+        "id": 217,
+        "name": "Ursaring",
+        "catchRate": 60,
+        "type": [
+            "Normal"
+        ],
+        "attack": 130,
+        "levelType": "mediumfast",
+        "exp": 175,
+        "eggCycles": 20
+    },
+    {
+        "id": 218,
+        "name": "Slugma",
+        "catchRate": 190,
+        "evolution": "Magcargo",
+        "evoLevel": 38,
+        "type": [
+            "Fire"
+        ],
+        "attack": 40,
+        "levelType": "mediumfast",
+        "exp": 50,
+        "eggCycles": 20
+    },
+    {
+        "id": 219,
+        "name": "Magcargo",
+        "catchRate": 75,
+        "type": [
+            "Fire",
+            "Rock"
+        ],
+        "attack": 80,
+        "levelType": "mediumfast",
+        "exp": 151,
+        "eggCycles": 20
+    },
+    {
+        "id": 220,
+        "name": "Swinub",
+        "catchRate": 225,
+        "evolution": "Piloswine",
+        "evoLevel": 33,
+        "type": [
+            "Ice",
+            "Ground"
+        ],
+        "attack": 50,
+        "levelType": "slow",
+        "exp": 50,
+        "eggCycles": 20
+    },
+    {
+        "id": 221,
+        "name": "Piloswine",
+        "catchRate": 75,
+        "type": [
+            "Ice",
+            "Ground"
+        ],
+        "attack": 100,
+        "levelType": "slow",
+        "exp": 158,
+        "eggCycles": 20
+    },
+    {
+        "id": 222,
+        "name": "Corsola",
+        "catchRate": 60,
+        "type": [
+            "Water",
+            "Rock"
+        ],
+        "attack": 95,
+        "levelType": "fast",
+        "exp": 144,
+        "eggCycles": 20
+    },
+    {
+        "id": 223,
+        "name": "Remoraid",
+        "catchRate": 190,
+        "evolution": "Octillery",
+        "evoLevel": 25,
+        "type": [
+            "Water"
+        ],
+        "attack": 65,
+        "levelType": "mediumfast",
+        "exp": 60,
+        "eggCycles": 20
+    },
+    {
+        "id": 224,
+        "name": "Octillery",
+        "catchRate": 75,
+        "type": [
+            "Water"
+        ],
+        "attack": 105,
+        "levelType": "mediumfast",
+        "exp": 168,
+        "eggCycles": 20
+    },
+    {
+        "id": 225,
+        "name": "Delibird",
+        "catchRate": 45,
+        "type": [
+            "Ice",
+            "Flying"
+        ],
+        "attack": 55,
+        "levelType": "fast",
+        "exp": 116,
+        "eggCycles": 20
+    },
+    {
+        "id": 226,
+        "name": "Mantine",
+        "catchRate": 25,
+        "type": [
+            "Water",
+            "Flying"
+        ],
+        "attack": 140,
+        "levelType": "slow",
+        "exp": 170,
+        "eggCycles": 25
+    },
+    {
+        "id": 227,
+        "name": "Skarmory",
+        "catchRate": 25,
+        "type": [
+            "Steel",
+            "Flying"
+        ],
+        "attack": 80,
+        "levelType": "slow",
+        "exp": 163,
+        "eggCycles": 25
+    },
+    {
+        "id": 228,
+        "name": "Houndour",
+        "catchRate": 120,
+        "evolution": "Houndoom",
+        "evoLevel": 24,
+        "type": [
+            "Dark",
+            "Fire"
+        ],
+        "attack": 60,
+        "levelType": "slow",
+        "exp": 66,
+        "eggCycles": 20
+    },
+    {
+        "id": 229,
+        "name": "Houndoom",
+        "catchRate": 45,
+        "type": [
+            "Dark",
+            "Fire"
+        ],
+        "attack": 90,
+        "levelType": "slow",
+        "exp": 175,
+        "eggCycles": 20
+    },
+    {
+        "id": 230,
+        "name": "Kingdra",
+        "catchRate": 45,
+        "type": [
+            "Water",
+            "Dragon"
+        ],
+        "attack": 95,
+        "levelType": "mediumfast",
+        "exp": 243,
+        "eggCycles": 20
+    },
+    {
+        "id": 231,
+        "name": "Phanpy",
+        "catchRate": 120,
+        "evolution": "Donphan",
+        "evoLevel": 25,
+        "type": [
+            "Ground"
+        ],
+        "attack": 60,
+        "levelType": "mediumfast",
+        "exp": 66,
+        "eggCycles": 20
+    },
+    {
+        "id": 232,
+        "name": "Donphan",
+        "catchRate": 60,
+        "type": [
+            "Ground"
+        ],
+        "attack": 120,
+        "levelType": "mediumfast",
+        "exp": 175,
+        "eggCycles": 20
+    },
+    {
+        "id": 233,
+        "name": "Porygon2",
+        "catchRate": 45,
+        "type": [
+            "Normal"
+        ],
+        "attack": 95,
+        "levelType": "mediumfast",
+        "exp": 180,
+        "eggCycles": 20
+    },
+    {
+        "id": 234,
+        "name": "Stantler",
+        "catchRate": 45,
+        "type": [
+            "Normal"
+        ],
+        "attack": 95,
+        "levelType": "slow",
+        "exp": 163,
+        "eggCycles": 20
+    },
+    {
+        "id": 235,
+        "name": "Smeargle",
+        "catchRate": 45,
+        "type": [
+            "Normal"
+        ],
+        "attack": 45,
+        "levelType": "fast",
+        "exp": 88,
+        "eggCycles": 20
+    },
+    {
+        "id": 236,
+        "name": "Tyrogue",
+        "catchRate": 75,
+        "evolution": [
+            [
+                "Hitmonlee",
+                "Hitmonchan",
+                "Hitmontop"
+            ]
+        ],
+        "evoLevel": [
+            20
+        ],
+        "type": [
+            "Fighting"
+        ],
+        "attack": 35,
+        "levelType": "mediumfast",
+        "exp": 42,
+        "eggCycles": 25
+    },
+    {
+        "id": 237,
+        "name": "Hitmontop",
+        "catchRate": 45,
+        "type": [
+            "Fighting"
+        ],
+        "attack": 110,
+        "levelType": "mediumfast",
+        "exp": 159,
+        "eggCycles": 25
+    },
+    {
+        "id": 238,
+        "name": "Smoochum",
+        "catchRate": 45,
+        "evolution": "Jynx",
+        "evoLevel": 30,
+        "type": [
+            "Ice",
+            "Psychic"
+        ],
+        "attack": 65,
+        "levelType": "mediumfast",
+        "exp": 61,
+        "eggCycles": 25
+    },
+    {
+        "id": 239,
+        "name": "Elekid",
+        "catchRate": 45,
+        "evolution": "Electabuzz",
+        "evoLevel": 30,
+        "type": [
+            "Electric"
+        ],
+        "attack": 63,
+        "levelType": "mediumfast",
+        "exp": 72,
+        "eggCycles": 25
+    },
+    {
+        "id": 240,
+        "name": "Magby",
+        "catchRate": 45,
+        "evolution": "Magmar",
+        "evoLevel": 30,
+        "type": [
+            "Fire"
+        ],
+        "attack": 75,
+        "levelType": "mediumfast",
+        "exp": 73,
+        "eggCycles": 25
+    },
+    {
+        "id": 241,
+        "name": "Miltank",
+        "catchRate": 45,
+        "type": [
+            "Normal"
+        ],
+        "attack": 80,
+        "levelType": "slow",
+        "exp": 172,
+        "eggCycles": 20
+    },
+    {
+        "id": 242,
+        "name": "Blissey",
+        "catchRate": 30,
+        "type": [
+            "Normal"
+        ],
+        "attack": 135,
+        "levelType": "fast",
+        "exp": 608,
+        "eggCycles": 40
+    },
+    {
+        "id": 243,
+        "name": "Raikou",
+        "catchRate": 3,
+        "type": [
+            "Electric"
+        ],
+        "attack": 100,
+        "levelType": "slow",
+        "exp": 261,
+        "eggCycles": 80
+    },
+    {
+        "id": 244,
+        "name": "Entei",
+        "catchRate": 3,
+        "type": [
+            "Fire"
+        ],
+        "attack": 115,
+        "levelType": "slow",
+        "exp": 261,
+        "eggCycles": 80
+    },
+    {
+        "id": 245,
+        "name": "Suicune",
+        "catchRate": 3,
+        "type": [
+            "Water"
+        ],
+        "attack": 115,
+        "levelType": "slow",
+        "exp": 261,
+        "eggCycles": 80
+    },
+    {
+        "id": 246,
+        "name": "Larvitar",
+        "catchRate": 45,
+        "evolution": "Pupitar",
+        "evoLevel": 30,
+        "type": [
+            "Rock",
+            "Ground"
+        ],
+        "attack": 64,
+        "levelType": "slow",
+        "exp": 60,
+        "eggCycles": 40
+    },
+    {
+        "id": 247,
+        "name": "Pupitar",
+        "catchRate": 45,
+        "evolution": "Tyranitar",
+        "evoLevel": 55,
+        "type": [
+            "Rock",
+            "Ground"
+        ],
+        "attack": 84,
+        "levelType": "slow",
+        "exp": 144,
+        "eggCycles": 40
+    },
+    {
+        "id": 248,
+        "name": "Tyranitar",
+        "catchRate": 45,
+        "type": [
+            "Rock",
+            "Dark"
+        ],
+        "attack": 164,
+        "levelType": "slow",
+        "exp": 270,
+        "eggCycles": 40
+    },
+    {
+        "id": 249,
+        "name": "Lugia",
+        "catchRate": 3,
+        "type": [
+            "Psychic",
+            "Flying"
+        ],
+        "attack": 154,
+        "levelType": "slow",
+        "exp": 306,
+        "eggCycles": 120
+    },
+    {
+        "id": 250,
+        "name": "Ho-Oh",
+        "catchRate": 3,
+        "type": [
+            "Fire",
+            "Flying"
+        ],
+        "attack": 154,
+        "levelType": "slow",
+        "exp": 306,
+        "eggCycles": 120
+    },
+    {
+        "id": 251,
+        "name": "Celebi",
+        "catchRate": 45,
+        "type": [
+            "Psychic",
+            "Grass"
+        ],
+        "attack": 100,
+        "levelType": "mediumslow",
+        "exp": 270,
+        "eggCycles": 120
+    },
+    {
+        "id": 252,
+        "name": "Treecko",
+        "type": [
+            "Grass"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 253,
+        "name": "Grovyle",
+        "type": [
+            "Grass"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 254,
+        "name": "Sceptile",
+        "type": [
+            "Grass"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 255,
+        "name": "Torchic",
+        "type": [
+            "Fire"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 256,
+        "name": "Combusken",
+        "type": [
+            "Fire",
+            "Fighting"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 257,
+        "name": "Blaziken",
+        "type": [
+            "Fire",
+            "Fighting"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 258,
+        "name": "Mudkip",
+        "type": [
+            "Water"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 259,
+        "name": "Marshtomp",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 260,
+        "name": "Swampert",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 261,
+        "name": "Poochyena",
+        "type": [
+            "Dark"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 262,
+        "name": "Mightyena",
+        "type": [
+            "Dark"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 263,
+        "name": "Zigzagoon",
+        "type": [
+            "Normal"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 264,
+        "name": "Linoone",
+        "type": [
+            "Normal"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 265,
+        "name": "Wurmple",
+        "type": [
+            "Bug"
+        ],
+        "attack": 45
+    },
+    {
+        "id": 266,
+        "name": "Silcoon",
+        "type": [
+            "Bug"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 267,
+        "name": "Beautifly",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 268,
+        "name": "Cascoon",
+        "type": [
+            "Bug"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 269,
+        "name": "Dustox",
+        "type": [
+            "Bug",
+            "Poison"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 270,
+        "name": "Lotad",
+        "type": [
+            "Water",
+            "Grass"
+        ],
+        "attack": 50
+    },
+    {
+        "id": 271,
+        "name": "Lombre",
+        "type": [
+            "Water",
+            "Grass"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 272,
+        "name": "Ludicolo",
+        "type": [
+            "Water",
+            "Grass"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 273,
+        "name": "Seedot",
+        "type": [
+            "Grass"
+        ],
+        "attack": 50
+    },
+    {
+        "id": 274,
+        "name": "Nuzleaf",
+        "type": [
+            "Grass",
+            "Dark"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 275,
+        "name": "Shiftry",
+        "type": [
+            "Grass",
+            "Dark"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 276,
+        "name": "Taillow",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 277,
+        "name": "Swellow",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 278,
+        "name": "Wingull",
+        "type": [
+            "Water",
+            "Flying"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 279,
+        "name": "Pelipper",
+        "type": [
+            "Water",
+            "Flying"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 280,
+        "name": "Ralts",
+        "type": [
+            "Psychic",
+            "Fairy"
+        ],
+        "attack": 45
+    },
+    {
+        "id": 281,
+        "name": "Kirlia",
+        "type": [
+            "Psychic",
+            "Fairy"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 282,
+        "name": "Gardevoir",
+        "type": [
+            "Psychic",
+            "Fairy"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 283,
+        "name": "Surskit",
+        "type": [
+            "Bug",
+            "Water"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 284,
+        "name": "Masquerain",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 285,
+        "name": "Shroomish",
+        "type": [
+            "Grass"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 286,
+        "name": "Breloom",
+        "type": [
+            "Grass",
+            "Fighting"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 287,
+        "name": "Slakoth",
+        "type": [
+            "Normal"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 288,
+        "name": "Vigoroth",
+        "type": [
+            "Normal"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 289,
+        "name": "Slaking",
+        "type": [
+            "Normal"
+        ],
+        "attack": 160
+    },
+    {
+        "id": 290,
+        "name": "Nincada",
+        "type": [
+            "Bug",
+            "Ground"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 291,
+        "name": "Ninjask",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 160
+    },
+    {
+        "id": 292,
+        "name": "Shedinja",
+        "type": [
+            "Bug",
+            "Ghost"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 293,
+        "name": "Whismur",
+        "type": [
+            "Normal"
+        ],
+        "attack": 64
+    },
+    {
+        "id": 294,
+        "name": "Loudred",
+        "type": [
+            "Normal"
+        ],
+        "attack": 84
+    },
+    {
+        "id": 295,
+        "name": "Exploud",
+        "type": [
+            "Normal"
+        ],
+        "attack": 104
+    },
+    {
+        "id": 296,
+        "name": "Makuhita",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 72
+    },
+    {
+        "id": 297,
+        "name": "Hariyama",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 144
+    },
+    {
+        "id": 298,
+        "name": "Azurill",
+        "type": [
+            "Normal",
+            "Fairy"
+        ],
+        "attack": 50
+    },
+    {
+        "id": 299,
+        "name": "Nosepass",
+        "type": [
+            "Rock"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 300,
+        "name": "Skitty",
+        "type": [
+            "Normal"
+        ],
+        "attack": 50
+    },
+    {
+        "id": 301,
+        "name": "Delcatty",
+        "type": [
+            "Normal"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 302,
+        "name": "Sableye",
+        "type": [
+            "Dark",
+            "Ghost"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 303,
+        "name": "Mawile",
+        "type": [
+            "Steel",
+            "Fairy"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 304,
+        "name": "Aron",
+        "type": [
+            "Steel",
+            "Rock"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 305,
+        "name": "Lairon",
+        "type": [
+            "Steel",
+            "Rock"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 306,
+        "name": "Aggron",
+        "type": [
+            "Steel",
+            "Rock"
+        ],
+        "attack": 180
+    },
+    {
+        "id": 307,
+        "name": "Meditite",
+        "type": [
+            "Fighting",
+            "Psychic"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 308,
+        "name": "Medicham",
+        "type": [
+            "Fighting",
+            "Psychic"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 309,
+        "name": "Electrike",
+        "type": [
+            "Electric"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 310,
+        "name": "Manectric",
+        "type": [
+            "Electric"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 311,
+        "name": "Plusle",
+        "type": [
+            "Electric"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 312,
+        "name": "Minun",
+        "type": [
+            "Electric"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 313,
+        "name": "Volbeat",
+        "type": [
+            "Bug"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 314,
+        "name": "Illumise",
+        "type": [
+            "Bug"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 315,
+        "name": "Roselia",
+        "type": [
+            "Grass",
+            "Poison"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 316,
+        "name": "Gulpin",
+        "type": [
+            "Poison"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 317,
+        "name": "Swalot",
+        "type": [
+            "Poison"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 318,
+        "name": "Carvanha",
+        "type": [
+            "Water",
+            "Dark"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 319,
+        "name": "Sharpedo",
+        "type": [
+            "Water",
+            "Dark"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 320,
+        "name": "Wailmer",
+        "type": [
+            "Water"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 321,
+        "name": "Wailord",
+        "type": [
+            "Water"
+        ],
+        "attack": 170
+    },
+    {
+        "id": 322,
+        "name": "Numel",
+        "type": [
+            "Fire",
+            "Ground"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 323,
+        "name": "Camerupt",
+        "type": [
+            "Fire",
+            "Ground"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 324,
+        "name": "Torkoal",
+        "type": [
+            "Fire"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 325,
+        "name": "Spoink",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 326,
+        "name": "Grumpig",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 327,
+        "name": "Spinda",
+        "type": [
+            "Normal"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 328,
+        "name": "Trapinch",
+        "type": [
+            "Ground"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 329,
+        "name": "Vibrava",
+        "type": [
+            "Ground",
+            "Dragon"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 330,
+        "name": "Flygon",
+        "type": [
+            "Ground",
+            "Dragon"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 331,
+        "name": "Cacnea",
+        "type": [
+            "Grass"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 332,
+        "name": "Cacturne",
+        "type": [
+            "Grass",
+            "Dark"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 333,
+        "name": "Swablu",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 334,
+        "name": "Altaria",
+        "type": [
+            "Dragon",
+            "Flying"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 335,
+        "name": "Zangoose",
+        "type": [
+            "Normal"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 336,
+        "name": "Seviper",
+        "type": [
+            "Poison"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 337,
+        "name": "Lunatone",
+        "type": [
+            "Rock",
+            "Psychic"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 338,
+        "name": "Solrock",
+        "type": [
+            "Rock",
+            "Psychic"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 339,
+        "name": "Barboach",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 340,
+        "name": "Whiscash",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 341,
+        "name": "Corphish",
+        "type": [
+            "Water"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 342,
+        "name": "Crawdaunt",
+        "type": [
+            "Water",
+            "Dark"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 343,
+        "name": "Baltoy",
+        "type": [
+            "Ground",
+            "Psychic"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 344,
+        "name": "Claydol",
+        "type": [
+            "Ground",
+            "Psychic"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 345,
+        "name": "Lileep",
+        "type": [
+            "Rock",
+            "Grass"
+        ],
+        "attack": 87
+    },
+    {
+        "id": 346,
+        "name": "Cradily",
+        "type": [
+            "Rock",
+            "Grass"
+        ],
+        "attack": 107
+    },
+    {
+        "id": 347,
+        "name": "Anorith",
+        "type": [
+            "Rock",
+            "Bug"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 348,
+        "name": "Armaldo",
+        "type": [
+            "Rock",
+            "Bug"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 349,
+        "name": "Feebas",
+        "type": [
+            "Water"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 350,
+        "name": "Milotic",
+        "type": [
+            "Water"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 351,
+        "name": "Castform",
+        "type": [
+            "Normal"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 352,
+        "name": "Kecleon",
+        "type": [
+            "Normal"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 353,
+        "name": "Shuppet",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 354,
+        "name": "Banette",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 355,
+        "name": "Duskull",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 356,
+        "name": "Dusclops",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 357,
+        "name": "Tropius",
+        "type": [
+            "Grass",
+            "Flying"
+        ],
+        "attack": 99
+    },
+    {
+        "id": 358,
+        "name": "Chimecho",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 359,
+        "name": "Absol",
+        "type": [
+            "Dark"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 360,
+        "name": "Wynaut",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 361,
+        "name": "Snorunt",
+        "type": [
+            "Ice"
+        ],
+        "attack": 50
+    },
+    {
+        "id": 362,
+        "name": "Glalie",
+        "type": [
+            "Ice"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 363,
+        "name": "Spheal",
+        "type": [
+            "Ice",
+            "Water"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 364,
+        "name": "Sealeo",
+        "type": [
+            "Ice",
+            "Water"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 365,
+        "name": "Walrein",
+        "type": [
+            "Ice",
+            "Water"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 366,
+        "name": "Clamperl",
+        "type": [
+            "Water"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 367,
+        "name": "Huntail",
+        "type": [
+            "Water"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 368,
+        "name": "Gorebyss",
+        "type": [
+            "Water"
+        ],
+        "attack": 114
+    },
+    {
+        "id": 369,
+        "name": "Relicanth",
+        "type": [
+            "Water",
+            "Rock"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 370,
+        "name": "Luvdisc",
+        "type": [
+            "Water"
+        ],
+        "attack": 97
+    },
+    {
+        "id": 371,
+        "name": "Bagon",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 372,
+        "name": "Shelgon",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 373,
+        "name": "Salamence",
+        "type": [
+            "Dragon",
+            "Flying"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 374,
+        "name": "Beldum",
+        "type": [
+            "Steel",
+            "Psychic"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 375,
+        "name": "Metang",
+        "type": [
+            "Steel",
+            "Psychic"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 376,
+        "name": "Metagross",
+        "type": [
+            "Steel",
+            "Psychic"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 377,
+        "name": "Regirock",
+        "type": [
+            "Rock"
+        ],
+        "attack": 200
+    },
+    {
+        "id": 378,
+        "name": "Regice",
+        "type": [
+            "Ice"
+        ],
+        "attack": 200
+    },
+    {
+        "id": 379,
+        "name": "Registeel",
+        "type": [
+            "Steel"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 380,
+        "name": "Latias",
+        "type": [
+            "Dragon",
+            "Psychic"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 381,
+        "name": "Latios",
+        "type": [
+            "Dragon",
+            "Psychic"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 382,
+        "name": "Kyogre",
+        "type": [
+            "Water"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 383,
+        "name": "Groudon",
+        "type": [
+            "Ground"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 384,
+        "name": "Rayquaza",
+        "type": [
+            "Dragon",
+            "Flying"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 385,
+        "name": "Jirachi",
+        "type": [
+            "Steel",
+            "Psychic"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 386,
+        "name": "Deoxys\nNormal Forme",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 387,
+        "name": "Turtwig",
+        "type": [
+            "Grass"
+        ],
+        "attack": 68
+    },
+    {
+        "id": 388,
+        "name": "Grotle",
+        "type": [
+            "Grass"
+        ],
+        "attack": 89
+    },
+    {
+        "id": 389,
+        "name": "Torterra",
+        "type": [
+            "Grass",
+            "Ground"
+        ],
+        "attack": 109
+    },
+    {
+        "id": 390,
+        "name": "Chimchar",
+        "type": [
+            "Fire"
+        ],
+        "attack": 61
+    },
+    {
+        "id": 391,
+        "name": "Monferno",
+        "type": [
+            "Fire",
+            "Fighting"
+        ],
+        "attack": 81
+    },
+    {
+        "id": 392,
+        "name": "Infernape",
+        "type": [
+            "Fire",
+            "Fighting"
+        ],
+        "attack": 108
+    },
+    {
+        "id": 393,
+        "name": "Piplup",
+        "type": [
+            "Water"
+        ],
+        "attack": 61
+    },
+    {
+        "id": 394,
+        "name": "Prinplup",
+        "type": [
+            "Water"
+        ],
+        "attack": 81
+    },
+    {
+        "id": 395,
+        "name": "Empoleon",
+        "type": [
+            "Water",
+            "Steel"
+        ],
+        "attack": 111
+    },
+    {
+        "id": 396,
+        "name": "Starly",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 397,
+        "name": "Staravia",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 398,
+        "name": "Staraptor",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 399,
+        "name": "Bidoof",
+        "type": [
+            "Normal"
+        ],
+        "attack": 59
+    },
+    {
+        "id": 400,
+        "name": "Bibarel",
+        "type": [
+            "Normal",
+            "Water"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 401,
+        "name": "Kricketot",
+        "type": [
+            "Bug"
+        ],
+        "attack": 41
+    },
+    {
+        "id": 402,
+        "name": "Kricketune",
+        "type": [
+            "Bug"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 403,
+        "name": "Shinx",
+        "type": [
+            "Electric"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 404,
+        "name": "Luxio",
+        "type": [
+            "Electric"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 405,
+        "name": "Luxray",
+        "type": [
+            "Electric"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 406,
+        "name": "Budew",
+        "type": [
+            "Grass",
+            "Poison"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 407,
+        "name": "Roserade",
+        "type": [
+            "Grass",
+            "Poison"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 408,
+        "name": "Cranidos",
+        "type": [
+            "Rock"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 409,
+        "name": "Rampardos",
+        "type": [
+            "Rock"
+        ],
+        "attack": 165
+    },
+    {
+        "id": 410,
+        "name": "Shieldon",
+        "type": [
+            "Rock",
+            "Steel"
+        ],
+        "attack": 118
+    },
+    {
+        "id": 411,
+        "name": "Bastiodon",
+        "type": [
+            "Rock",
+            "Steel"
+        ],
+        "attack": 168
+    },
+    {
+        "id": 412,
+        "name": "Burmy",
+        "type": [
+            "Bug"
+        ],
+        "attack": 45
+    },
+    {
+        "id": 413,
+        "name": "Wormadam\nPlant Cloak",
+        "type": [
+            "Bug",
+            "Grass"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 414,
+        "name": "Mothim",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 94
+    },
+    {
+        "id": 415,
+        "name": "Combee",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 416,
+        "name": "Vespiquen",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 102
+    },
+    {
+        "id": 417,
+        "name": "Pachirisu",
+        "type": [
+            "Electric"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 418,
+        "name": "Buizel",
+        "type": [
+            "Water"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 419,
+        "name": "Floatzel",
+        "type": [
+            "Water"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 420,
+        "name": "Cherubi",
+        "type": [
+            "Grass"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 421,
+        "name": "Cherrim",
+        "type": [
+            "Grass"
+        ],
+        "attack": 87
+    },
+    {
+        "id": 422,
+        "name": "Shellos",
+        "type": [
+            "Water"
+        ],
+        "attack": 76
+    },
+    {
+        "id": 423,
+        "name": "Gastrodon",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 111
+    },
+    {
+        "id": 424,
+        "name": "Ambipom",
+        "type": [
+            "Normal"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 425,
+        "name": "Drifloon",
+        "type": [
+            "Ghost",
+            "Flying"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 426,
+        "name": "Drifblim",
+        "type": [
+            "Ghost",
+            "Flying"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 427,
+        "name": "Buneary",
+        "type": [
+            "Normal"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 428,
+        "name": "Lopunny",
+        "type": [
+            "Normal"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 429,
+        "name": "Mismagius",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 430,
+        "name": "Honchkrow",
+        "type": [
+            "Dark",
+            "Flying"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 431,
+        "name": "Glameow",
+        "type": [
+            "Normal"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 432,
+        "name": "Purugly",
+        "type": [
+            "Normal"
+        ],
+        "attack": 112
+    },
+    {
+        "id": 433,
+        "name": "Chingling",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 434,
+        "name": "Stunky",
+        "type": [
+            "Poison",
+            "Dark"
+        ],
+        "attack": 74
+    },
+    {
+        "id": 435,
+        "name": "Skuntank",
+        "type": [
+            "Poison",
+            "Dark"
+        ],
+        "attack": 103
+    },
+    {
+        "id": 436,
+        "name": "Bronzor",
+        "type": [
+            "Steel",
+            "Psychic"
+        ],
+        "attack": 86
+    },
+    {
+        "id": 437,
+        "name": "Bronzong",
+        "type": [
+            "Steel",
+            "Psychic"
+        ],
+        "attack": 116
+    },
+    {
+        "id": 438,
+        "name": "Bonsly",
+        "type": [
+            "Rock"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 439,
+        "name": "Mime Jr.",
+        "type": [
+            "Psychic",
+            "Fairy"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 440,
+        "name": "Happiny",
+        "type": [
+            "Normal"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 441,
+        "name": "Chatot",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 92
+    },
+    {
+        "id": 442,
+        "name": "Spiritomb",
+        "type": [
+            "Ghost",
+            "Dark"
+        ],
+        "attack": 108
+    },
+    {
+        "id": 443,
+        "name": "Gible",
+        "type": [
+            "Dragon",
+            "Ground"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 444,
+        "name": "Gabite",
+        "type": [
+            "Dragon",
+            "Ground"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 445,
+        "name": "Garchomp",
+        "type": [
+            "Dragon",
+            "Ground"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 446,
+        "name": "Munchlax",
+        "type": [
+            "Normal"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 447,
+        "name": "Riolu",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 448,
+        "name": "Lucario",
+        "type": [
+            "Fighting",
+            "Steel"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 449,
+        "name": "Hippopotas",
+        "type": [
+            "Ground"
+        ],
+        "attack": 78
+    },
+    {
+        "id": 450,
+        "name": "Hippowdon",
+        "type": [
+            "Ground"
+        ],
+        "attack": 118
+    },
+    {
+        "id": 451,
+        "name": "Skorupi",
+        "type": [
+            "Poison",
+            "Bug"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 452,
+        "name": "Drapion",
+        "type": [
+            "Poison",
+            "Dark"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 453,
+        "name": "Croagunk",
+        "type": [
+            "Poison",
+            "Fighting"
+        ],
+        "attack": 61
+    },
+    {
+        "id": 454,
+        "name": "Toxicroak",
+        "type": [
+            "Poison",
+            "Fighting"
+        ],
+        "attack": 106
+    },
+    {
+        "id": 455,
+        "name": "Carnivine",
+        "type": [
+            "Grass"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 456,
+        "name": "Finneon",
+        "type": [
+            "Water"
+        ],
+        "attack": 66
+    },
+    {
+        "id": 457,
+        "name": "Lumineon",
+        "type": [
+            "Water"
+        ],
+        "attack": 91
+    },
+    {
+        "id": 458,
+        "name": "Mantyke",
+        "type": [
+            "Water",
+            "Flying"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 459,
+        "name": "Snover",
+        "type": [
+            "Grass",
+            "Ice"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 460,
+        "name": "Abomasnow",
+        "type": [
+            "Grass",
+            "Ice"
+        ],
+        "attack": 92
+    },
+    {
+        "id": 461,
+        "name": "Weavile",
+        "type": [
+            "Dark",
+            "Ice"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 462,
+        "name": "Magnezone",
+        "type": [
+            "Electric",
+            "Steel"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 463,
+        "name": "Lickilicky",
+        "type": [
+            "Normal"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 464,
+        "name": "Rhyperior",
+        "type": [
+            "Ground",
+            "Rock"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 465,
+        "name": "Tangrowth",
+        "type": [
+            "Grass"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 466,
+        "name": "Electivire",
+        "type": [
+            "Electric"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 467,
+        "name": "Magmortar",
+        "type": [
+            "Fire"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 468,
+        "name": "Togekiss",
+        "type": [
+            "Fairy",
+            "Flying"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 469,
+        "name": "Yanmega",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 116
+    },
+    {
+        "id": 470,
+        "name": "Leafeon",
+        "type": [
+            "Grass"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 471,
+        "name": "Glaceon",
+        "type": [
+            "Ice"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 472,
+        "name": "Gliscor",
+        "type": [
+            "Ground",
+            "Flying"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 473,
+        "name": "Mamoswine",
+        "type": [
+            "Ice",
+            "Ground"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 474,
+        "name": "Porygon-Z",
+        "type": [
+            "Normal"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 475,
+        "name": "Gallade",
+        "type": [
+            "Psychic",
+            "Fighting"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 476,
+        "name": "Probopass",
+        "type": [
+            "Rock",
+            "Steel"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 477,
+        "name": "Dusknoir",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 478,
+        "name": "Froslass",
+        "type": [
+            "Ice",
+            "Ghost"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 479,
+        "name": "Rotom",
+        "type": [
+            "Electric",
+            "Ghost"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 480,
+        "name": "Uxie",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 481,
+        "name": "Mesprit",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 482,
+        "name": "Azelf",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 483,
+        "name": "Dialga",
+        "type": [
+            "Steel",
+            "Dragon"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 484,
+        "name": "Palkia",
+        "type": [
+            "Water",
+            "Dragon"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 485,
+        "name": "Heatran",
+        "type": [
+            "Fire",
+            "Steel"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 486,
+        "name": "Regigigas",
+        "type": [
+            "Normal"
+        ],
+        "attack": 160
+    },
+    {
+        "id": 487,
+        "name": "Giratina\nAltered Forme",
+        "type": [
+            "Ghost",
+            "Dragon"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 488,
+        "name": "Cresselia",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 489,
+        "name": "Phione",
+        "type": [
+            "Water"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 490,
+        "name": "Manaphy",
+        "type": [
+            "Water"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 491,
+        "name": "Darkrai",
+        "type": [
+            "Dark"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 492,
+        "name": "Shaymin\nLand Forme",
+        "type": [
+            "Grass"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 493,
+        "name": "Arceus",
+        "type": [
+            "Normal"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 494,
+        "name": "Victini",
+        "type": [
+            "Psychic",
+            "Fire"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 495,
+        "name": "Snivy",
+        "type": [
+            "Grass"
+        ],
+        "attack": 63
+    },
+    {
+        "id": 496,
+        "name": "Servine",
+        "type": [
+            "Grass"
+        ],
+        "attack": 83
+    },
+    {
+        "id": 497,
+        "name": "Serperior",
+        "type": [
+            "Grass"
+        ],
+        "attack": 113
+    },
+    {
+        "id": 498,
+        "name": "Tepig",
+        "type": [
+            "Fire"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 499,
+        "name": "Pignite",
+        "type": [
+            "Fire",
+            "Fighting"
+        ],
+        "attack": 93
+    },
+    {
+        "id": 500,
+        "name": "Emboar",
+        "type": [
+            "Fire",
+            "Fighting"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 501,
+        "name": "Oshawott",
+        "type": [
+            "Water"
+        ],
+        "attack": 63
+    },
+    {
+        "id": 502,
+        "name": "Dewott",
+        "type": [
+            "Water"
+        ],
+        "attack": 83
+    },
+    {
+        "id": 503,
+        "name": "Samurott",
+        "type": [
+            "Water"
+        ],
+        "attack": 108
+    },
+    {
+        "id": 504,
+        "name": "Patrat",
+        "type": [
+            "Normal"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 505,
+        "name": "Watchog",
+        "type": [
+            "Normal"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 506,
+        "name": "Lillipup",
+        "type": [
+            "Normal"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 507,
+        "name": "Herdier",
+        "type": [
+            "Normal"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 508,
+        "name": "Stoutland",
+        "type": [
+            "Normal"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 509,
+        "name": "Purrloin",
+        "type": [
+            "Dark"
+        ],
+        "attack": 66
+    },
+    {
+        "id": 510,
+        "name": "Liepard",
+        "type": [
+            "Dark"
+        ],
+        "attack": 106
+    },
+    {
+        "id": 511,
+        "name": "Pansage",
+        "type": [
+            "Grass"
+        ],
+        "attack": 64
+    },
+    {
+        "id": 512,
+        "name": "Simisage",
+        "type": [
+            "Grass"
+        ],
+        "attack": 101
+    },
+    {
+        "id": 513,
+        "name": "Pansear",
+        "type": [
+            "Fire"
+        ],
+        "attack": 64
+    },
+    {
+        "id": 514,
+        "name": "Simisear",
+        "type": [
+            "Fire"
+        ],
+        "attack": 101
+    },
+    {
+        "id": 515,
+        "name": "Panpour",
+        "type": [
+            "Water"
+        ],
+        "attack": 64
+    },
+    {
+        "id": 516,
+        "name": "Simipour",
+        "type": [
+            "Water"
+        ],
+        "attack": 101
+    },
+    {
+        "id": 517,
+        "name": "Munna",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 76
+    },
+    {
+        "id": 518,
+        "name": "Musharna",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 116
+    },
+    {
+        "id": 519,
+        "name": "Pidove",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 520,
+        "name": "Tranquill",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 77
+    },
+    {
+        "id": 521,
+        "name": "Unfezant",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 522,
+        "name": "Blitzle",
+        "type": [
+            "Electric"
+        ],
+        "attack": 76
+    },
+    {
+        "id": 523,
+        "name": "Zebstrika",
+        "type": [
+            "Electric"
+        ],
+        "attack": 116
+    },
+    {
+        "id": 524,
+        "name": "Roggenrola",
+        "type": [
+            "Rock"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 525,
+        "name": "Boldore",
+        "type": [
+            "Rock"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 526,
+        "name": "Gigalith",
+        "type": [
+            "Rock"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 527,
+        "name": "Woobat",
+        "type": [
+            "Psychic",
+            "Flying"
+        ],
+        "attack": 72
+    },
+    {
+        "id": 528,
+        "name": "Swoobat",
+        "type": [
+            "Psychic",
+            "Flying"
+        ],
+        "attack": 114
+    },
+    {
+        "id": 529,
+        "name": "Drilbur",
+        "type": [
+            "Ground"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 530,
+        "name": "Excadrill",
+        "type": [
+            "Ground",
+            "Steel"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 531,
+        "name": "Audino",
+        "type": [
+            "Normal"
+        ],
+        "attack": 103
+    },
+    {
+        "id": 532,
+        "name": "Timburr",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 533,
+        "name": "Gurdurr",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 534,
+        "name": "Conkeldurr",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 535,
+        "name": "Tympole",
+        "type": [
+            "Water"
+        ],
+        "attack": 64
+    },
+    {
+        "id": 536,
+        "name": "Palpitoad",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 537,
+        "name": "Seismitoad",
+        "type": [
+            "Water",
+            "Ground"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 538,
+        "name": "Throh",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 539,
+        "name": "Sawk",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 540,
+        "name": "Sewaddle",
+        "type": [
+            "Bug",
+            "Grass"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 541,
+        "name": "Swadloon",
+        "type": [
+            "Bug",
+            "Grass"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 542,
+        "name": "Leavanny",
+        "type": [
+            "Bug",
+            "Grass"
+        ],
+        "attack": 103
+    },
+    {
+        "id": 543,
+        "name": "Venipede",
+        "type": [
+            "Bug",
+            "Poison"
+        ],
+        "attack": 59
+    },
+    {
+        "id": 544,
+        "name": "Whirlipede",
+        "type": [
+            "Bug",
+            "Poison"
+        ],
+        "attack": 99
+    },
+    {
+        "id": 545,
+        "name": "Scolipede",
+        "type": [
+            "Bug",
+            "Poison"
+        ],
+        "attack": 112
+    },
+    {
+        "id": 546,
+        "name": "Cottonee",
+        "type": [
+            "Grass",
+            "Fairy"
+        ],
+        "attack": 66
+    },
+    {
+        "id": 547,
+        "name": "Whimsicott",
+        "type": [
+            "Grass",
+            "Fairy"
+        ],
+        "attack": 116
+    },
+    {
+        "id": 548,
+        "name": "Petilil",
+        "type": [
+            "Grass"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 549,
+        "name": "Lilligant",
+        "type": [
+            "Grass"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 550,
+        "name": "Basculin\nRed-Striped Form",
+        "type": [
+            "Water"
+        ],
+        "attack": 98
+    },
+    {
+        "id": 551,
+        "name": "Sandile",
+        "type": [
+            "Ground",
+            "Dark"
+        ],
+        "attack": 72
+    },
+    {
+        "id": 552,
+        "name": "Krokorok",
+        "type": [
+            "Ground",
+            "Dark"
+        ],
+        "attack": 82
+    },
+    {
+        "id": 553,
+        "name": "Krookodile",
+        "type": [
+            "Ground",
+            "Dark"
+        ],
+        "attack": 117
+    },
+    {
+        "id": 554,
+        "name": "Darumaka",
+        "type": [
+            "Fire"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 555,
+        "name": "Darmanitan\nStandard Mode",
+        "type": [
+            "Fire"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 556,
+        "name": "Maractus",
+        "type": [
+            "Grass"
+        ],
+        "attack": 106
+    },
+    {
+        "id": 557,
+        "name": "Dwebble",
+        "type": [
+            "Bug",
+            "Rock"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 558,
+        "name": "Crustle",
+        "type": [
+            "Bug",
+            "Rock"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 559,
+        "name": "Scraggy",
+        "type": [
+            "Dark",
+            "Fighting"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 560,
+        "name": "Scrafty",
+        "type": [
+            "Dark",
+            "Fighting"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 561,
+        "name": "Sigilyph",
+        "type": [
+            "Psychic",
+            "Flying"
+        ],
+        "attack": 103
+    },
+    {
+        "id": 562,
+        "name": "Yamask",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 563,
+        "name": "Cofagrigus",
+        "type": [
+            "Ghost"
+        ],
+        "attack": 145
+    },
+    {
+        "id": 564,
+        "name": "Tirtouga",
+        "type": [
+            "Water",
+            "Rock"
+        ],
+        "attack": 103
+    },
+    {
+        "id": 565,
+        "name": "Carracosta",
+        "type": [
+            "Water",
+            "Rock"
+        ],
+        "attack": 133
+    },
+    {
+        "id": 566,
+        "name": "Archen",
+        "type": [
+            "Rock",
+            "Flying"
+        ],
+        "attack": 112
+    },
+    {
+        "id": 567,
+        "name": "Archeops",
+        "type": [
+            "Rock",
+            "Flying"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 568,
+        "name": "Trubbish",
+        "type": [
+            "Poison"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 569,
+        "name": "Garbodor",
+        "type": [
+            "Poison"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 570,
+        "name": "Zorua",
+        "type": [
+            "Dark"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 571,
+        "name": "Zoroark",
+        "type": [
+            "Dark"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 572,
+        "name": "Minccino",
+        "type": [
+            "Normal"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 573,
+        "name": "Cinccino",
+        "type": [
+            "Normal"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 574,
+        "name": "Gothita",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 575,
+        "name": "Gothorita",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 576,
+        "name": "Gothitelle",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 577,
+        "name": "Solosis",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 578,
+        "name": "Duosion",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 579,
+        "name": "Reuniclus",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 580,
+        "name": "Ducklett",
+        "type": [
+            "Water",
+            "Flying"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 581,
+        "name": "Swanna",
+        "type": [
+            "Water",
+            "Flying"
+        ],
+        "attack": 98
+    },
+    {
+        "id": 582,
+        "name": "Vanillite",
+        "type": [
+            "Ice"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 583,
+        "name": "Vanillish",
+        "type": [
+            "Ice"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 584,
+        "name": "Vanilluxe",
+        "type": [
+            "Ice"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 585,
+        "name": "Deerling",
+        "type": [
+            "Normal",
+            "Grass"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 586,
+        "name": "Sawsbuck",
+        "type": [
+            "Normal",
+            "Grass"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 587,
+        "name": "Emolga",
+        "type": [
+            "Electric",
+            "Flying"
+        ],
+        "attack": 103
+    },
+    {
+        "id": 588,
+        "name": "Karrablast",
+        "type": [
+            "Bug"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 589,
+        "name": "Escavalier",
+        "type": [
+            "Bug",
+            "Steel"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 590,
+        "name": "Foongus",
+        "type": [
+            "Grass",
+            "Poison"
+        ],
+        "attack": 69
+    },
+    {
+        "id": 591,
+        "name": "Amoonguss",
+        "type": [
+            "Grass",
+            "Poison"
+        ],
+        "attack": 114
+    },
+    {
+        "id": 592,
+        "name": "Frillish",
+        "type": [
+            "Water",
+            "Ghost"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 593,
+        "name": "Jellicent",
+        "type": [
+            "Water",
+            "Ghost"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 594,
+        "name": "Alomomola",
+        "type": [
+            "Water"
+        ],
+        "attack": 165
+    },
+    {
+        "id": 595,
+        "name": "Joltik",
+        "type": [
+            "Bug",
+            "Electric"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 596,
+        "name": "Galvantula",
+        "type": [
+            "Bug",
+            "Electric"
+        ],
+        "attack": 108
+    },
+    {
+        "id": 597,
+        "name": "Ferroseed",
+        "type": [
+            "Grass",
+            "Steel"
+        ],
+        "attack": 91
+    },
+    {
+        "id": 598,
+        "name": "Ferrothorn",
+        "type": [
+            "Grass",
+            "Steel"
+        ],
+        "attack": 131
+    },
+    {
+        "id": 599,
+        "name": "Klink",
+        "type": [
+            "Steel"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 600,
+        "name": "Klang",
+        "type": [
+            "Steel"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 601,
+        "name": "Klinklang",
+        "type": [
+            "Steel"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 602,
+        "name": "Tynamo",
+        "type": [
+            "Electric"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 603,
+        "name": "Eelektrik",
+        "type": [
+            "Electric"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 604,
+        "name": "Eelektross",
+        "type": [
+            "Electric"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 605,
+        "name": "Elgyem",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 606,
+        "name": "Beheeyem",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 607,
+        "name": "Litwick",
+        "type": [
+            "Ghost",
+            "Fire"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 608,
+        "name": "Lampent",
+        "type": [
+            "Ghost",
+            "Fire"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 609,
+        "name": "Chandelure",
+        "type": [
+            "Ghost",
+            "Fire"
+        ],
+        "attack": 145
+    },
+    {
+        "id": 610,
+        "name": "Axew",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 87
+    },
+    {
+        "id": 611,
+        "name": "Fraxure",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 117
+    },
+    {
+        "id": 612,
+        "name": "Haxorus",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 147
+    },
+    {
+        "id": 613,
+        "name": "Cubchoo",
+        "type": [
+            "Ice"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 614,
+        "name": "Beartic",
+        "type": [
+            "Ice"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 615,
+        "name": "Cryogonal",
+        "type": [
+            "Ice"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 616,
+        "name": "Shelmet",
+        "type": [
+            "Bug"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 617,
+        "name": "Accelgor",
+        "type": [
+            "Bug"
+        ],
+        "attack": 145
+    },
+    {
+        "id": 618,
+        "name": "Stunfisk",
+        "type": [
+            "Ground",
+            "Electric"
+        ],
+        "attack": 109
+    },
+    {
+        "id": 619,
+        "name": "Mienfoo",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 620,
+        "name": "Mienshao",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 621,
+        "name": "Druddigon",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 622,
+        "name": "Golett",
+        "type": [
+            "Ground",
+            "Ghost"
+        ],
+        "attack": 74
+    },
+    {
+        "id": 623,
+        "name": "Golurk",
+        "type": [
+            "Ground",
+            "Ghost"
+        ],
+        "attack": 124
+    },
+    {
+        "id": 624,
+        "name": "Pawniard",
+        "type": [
+            "Dark",
+            "Steel"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 625,
+        "name": "Bisharp",
+        "type": [
+            "Dark",
+            "Steel"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 626,
+        "name": "Bouffalant",
+        "type": [
+            "Normal"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 627,
+        "name": "Rufflet",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 83
+    },
+    {
+        "id": 628,
+        "name": "Braviary",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 629,
+        "name": "Vullaby",
+        "type": [
+            "Dark",
+            "Flying"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 630,
+        "name": "Mandibuzz",
+        "type": [
+            "Dark",
+            "Flying"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 631,
+        "name": "Heatmor",
+        "type": [
+            "Fire"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 632,
+        "name": "Durant",
+        "type": [
+            "Bug",
+            "Steel"
+        ],
+        "attack": 112
+    },
+    {
+        "id": 633,
+        "name": "Deino",
+        "type": [
+            "Dark",
+            "Dragon"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 634,
+        "name": "Zweilous",
+        "type": [
+            "Dark",
+            "Dragon"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 635,
+        "name": "Hydreigon",
+        "type": [
+            "Dark",
+            "Dragon"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 636,
+        "name": "Larvesta",
+        "type": [
+            "Bug",
+            "Fire"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 637,
+        "name": "Volcarona",
+        "type": [
+            "Bug",
+            "Fire"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 638,
+        "name": "Cobalion",
+        "type": [
+            "Steel",
+            "Fighting"
+        ],
+        "attack": 129
+    },
+    {
+        "id": 639,
+        "name": "Terrakion",
+        "type": [
+            "Rock",
+            "Fighting"
+        ],
+        "attack": 129
+    },
+    {
+        "id": 640,
+        "name": "Virizion",
+        "type": [
+            "Grass",
+            "Fighting"
+        ],
+        "attack": 129
+    },
+    {
+        "id": 641,
+        "name": "Tornadus\nIncarnate Forme",
+        "type": [
+            "Flying"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 642,
+        "name": "Thundurus\nIncarnate Forme",
+        "type": [
+            "Electric",
+            "Flying"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 643,
+        "name": "Reshiram",
+        "type": [
+            "Dragon",
+            "Fire"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 644,
+        "name": "Zekrom",
+        "type": [
+            "Dragon",
+            "Electric"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 645,
+        "name": "Landorus\nIncarnate Forme",
+        "type": [
+            "Ground",
+            "Flying"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 646,
+        "name": "Kyurem",
+        "type": [
+            "Dragon",
+            "Ice"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 647,
+        "name": "Keldeo\nOrdinary Forme",
+        "type": [
+            "Water",
+            "Fighting"
+        ],
+        "attack": 129
+    },
+    {
+        "id": 648,
+        "name": "Meloetta\nAria Forme",
+        "type": [
+            "Normal",
+            "Psychic"
+        ],
+        "attack": 128
+    },
+    {
+        "id": 649,
+        "name": "Genesect",
+        "type": [
+            "Bug",
+            "Steel"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 650,
+        "name": "Chespin",
+        "type": [
+            "Grass"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 651,
+        "name": "Quilladin",
+        "type": [
+            "Grass"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 652,
+        "name": "Chesnaught",
+        "type": [
+            "Grass",
+            "Fighting"
+        ],
+        "attack": 122
+    },
+    {
+        "id": 653,
+        "name": "Fennekin",
+        "type": [
+            "Fire"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 654,
+        "name": "Braixen",
+        "type": [
+            "Fire"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 655,
+        "name": "Delphox",
+        "type": [
+            "Fire",
+            "Psychic"
+        ],
+        "attack": 114
+    },
+    {
+        "id": 656,
+        "name": "Froakie",
+        "type": [
+            "Water"
+        ],
+        "attack": 71
+    },
+    {
+        "id": 657,
+        "name": "Frogadier",
+        "type": [
+            "Water"
+        ],
+        "attack": 97
+    },
+    {
+        "id": 658,
+        "name": "Greninja",
+        "type": [
+            "Water",
+            "Dark"
+        ],
+        "attack": 122
+    },
+    {
+        "id": 659,
+        "name": "Bunnelby",
+        "type": [
+            "Normal"
+        ],
+        "attack": 57
+    },
+    {
+        "id": 660,
+        "name": "Diggersby",
+        "type": [
+            "Normal",
+            "Ground"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 661,
+        "name": "Fletchling",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 662,
+        "name": "Fletchinder",
+        "type": [
+            "Fire",
+            "Flying"
+        ],
+        "attack": 84
+    },
+    {
+        "id": 663,
+        "name": "Talonflame",
+        "type": [
+            "Fire",
+            "Flying"
+        ],
+        "attack": 126
+    },
+    {
+        "id": 664,
+        "name": "Scatterbug",
+        "type": [
+            "Bug"
+        ],
+        "attack": 40
+    },
+    {
+        "id": 665,
+        "name": "Spewpa",
+        "type": [
+            "Bug"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 666,
+        "name": "Vivillon",
+        "type": [
+            "Bug",
+            "Flying"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 667,
+        "name": "Litleo",
+        "type": [
+            "Fire",
+            "Normal"
+        ],
+        "attack": 73
+    },
+    {
+        "id": 668,
+        "name": "Pyroar",
+        "type": [
+            "Fire",
+            "Normal"
+        ],
+        "attack": 109
+    },
+    {
+        "id": 669,
+        "name": "Flabébé",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 79
+    },
+    {
+        "id": 670,
+        "name": "Floette",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 98
+    },
+    {
+        "id": 671,
+        "name": "Florges",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 154
+    },
+    {
+        "id": 672,
+        "name": "Skiddo",
+        "type": [
+            "Grass"
+        ],
+        "attack": 66
+    },
+    {
+        "id": 673,
+        "name": "Gogoat",
+        "type": [
+            "Grass"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 674,
+        "name": "Pancham",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 82
+    },
+    {
+        "id": 675,
+        "name": "Pangoro",
+        "type": [
+            "Fighting",
+            "Dark"
+        ],
+        "attack": 124
+    },
+    {
+        "id": 676,
+        "name": "Furfrou",
+        "type": [
+            "Normal"
+        ],
+        "attack": 102
+    },
+    {
+        "id": 677,
+        "name": "Espurr",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 68
+    },
+    {
+        "id": 678,
+        "name": "Meowstic\nMale",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 104
+    },
+    {
+        "id": 679,
+        "name": "Honedge",
+        "type": [
+            "Steel",
+            "Ghost"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 680,
+        "name": "Doublade",
+        "type": [
+            "Steel",
+            "Ghost"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 681,
+        "name": "Aegislash\nBlade Forme",
+        "type": [
+            "Steel",
+            "Ghost"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 682,
+        "name": "Spritzee",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 78
+    },
+    {
+        "id": 683,
+        "name": "Aromatisse",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 101
+    },
+    {
+        "id": 684,
+        "name": "Swirlix",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 66
+    },
+    {
+        "id": 685,
+        "name": "Slurpuff",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 86
+    },
+    {
+        "id": 686,
+        "name": "Inkay",
+        "type": [
+            "Dark",
+            "Psychic"
+        ],
+        "attack": 54
+    },
+    {
+        "id": 687,
+        "name": "Malamar",
+        "type": [
+            "Dark",
+            "Psychic"
+        ],
+        "attack": 92
+    },
+    {
+        "id": 688,
+        "name": "Binacle",
+        "type": [
+            "Rock",
+            "Water"
+        ],
+        "attack": 67
+    },
+    {
+        "id": 689,
+        "name": "Barbaracle",
+        "type": [
+            "Rock",
+            "Water"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 690,
+        "name": "Skrelp",
+        "type": [
+            "Poison",
+            "Water"
+        ],
+        "attack": 60
+    },
+    {
+        "id": 691,
+        "name": "Dragalge",
+        "type": [
+            "Poison",
+            "Dragon"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 692,
+        "name": "Clauncher",
+        "type": [
+            "Water"
+        ],
+        "attack": 63
+    },
+    {
+        "id": 693,
+        "name": "Clawitzer",
+        "type": [
+            "Water"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 694,
+        "name": "Helioptile",
+        "type": [
+            "Electric",
+            "Normal"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 695,
+        "name": "Heliolisk",
+        "type": [
+            "Electric",
+            "Normal"
+        ],
+        "attack": 109
+    },
+    {
+        "id": 696,
+        "name": "Tyrunt",
+        "type": [
+            "Rock",
+            "Dragon"
+        ],
+        "attack": 89
+    },
+    {
+        "id": 697,
+        "name": "Tyrantrum",
+        "type": [
+            "Rock",
+            "Dragon"
+        ],
+        "attack": 121
+    },
+    {
+        "id": 698,
+        "name": "Amaura",
+        "type": [
+            "Rock",
+            "Ice"
+        ],
+        "attack": 77
+    },
+    {
+        "id": 699,
+        "name": "Aurorus",
+        "type": [
+            "Rock",
+            "Ice"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 700,
+        "name": "Sylveon",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 701,
+        "name": "Hawlucha",
+        "type": [
+            "Fighting",
+            "Flying"
+        ],
+        "attack": 118
+    },
+    {
+        "id": 702,
+        "name": "Dedenne",
+        "type": [
+            "Electric",
+            "Fairy"
+        ],
+        "attack": 101
+    },
+    {
+        "id": 703,
+        "name": "Carbink",
+        "type": [
+            "Rock",
+            "Fairy"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 704,
+        "name": "Goomy",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 705,
+        "name": "Sliggoo",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 113
+    },
+    {
+        "id": 706,
+        "name": "Goodra",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 707,
+        "name": "Klefki",
+        "type": [
+            "Steel",
+            "Fairy"
+        ],
+        "attack": 91
+    },
+    {
+        "id": 708,
+        "name": "Phantump",
+        "type": [
+            "Ghost",
+            "Grass"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 709,
+        "name": "Trevenant",
+        "type": [
+            "Ghost",
+            "Grass"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 710,
+        "name": "Pumpkaboo\nAverage Size",
+        "type": [
+            "Ghost",
+            "Grass"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 711,
+        "name": "Gourgeist\nAverage Size",
+        "type": [
+            "Ghost",
+            "Grass"
+        ],
+        "attack": 122
+    },
+    {
+        "id": 712,
+        "name": "Bergmite",
+        "type": [
+            "Ice"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 713,
+        "name": "Avalugg",
+        "type": [
+            "Ice"
+        ],
+        "attack": 184
+    },
+    {
+        "id": 714,
+        "name": "Noibat",
+        "type": [
+            "Flying",
+            "Dragon"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 715,
+        "name": "Noivern",
+        "type": [
+            "Flying",
+            "Dragon"
+        ],
+        "attack": 123
+    },
+    {
+        "id": 716,
+        "name": "Xerneas",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 131
+    },
+    {
+        "id": 717,
+        "name": "Yveltal",
+        "type": [
+            "Dark",
+            "Flying"
+        ],
+        "attack": 131
+    },
+    {
+        "id": 718,
+        "name": "Zygarde\n50% Forme",
+        "type": [
+            "Dragon",
+            "Ground"
+        ],
+        "attack": 121
+    },
+    {
+        "id": 719,
+        "name": "Diancie",
+        "type": [
+            "Rock",
+            "Fairy"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 720,
+        "name": "Hoopa\nHoopa Confined",
+        "type": [
+            "Psychic",
+            "Ghost"
+        ],
+        "attack": 150
+    },
+    {
+        "id": 721,
+        "name": "Volcanion",
+        "type": [
+            "Fire",
+            "Water"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 722,
+        "name": "Rowlet",
+        "type": [
+            "Grass",
+            "Flying"
+        ],
+        "attack": 68
+    },
+    {
+        "id": 723,
+        "name": "Dartrix",
+        "type": [
+            "Grass",
+            "Flying"
+        ],
+        "attack": 78
+    },
+    {
+        "id": 724,
+        "name": "Decidueye",
+        "type": [
+            "Grass",
+            "Ghost"
+        ],
+        "attack": 107
+    },
+    {
+        "id": 725,
+        "name": "Litten",
+        "type": [
+            "Fire"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 726,
+        "name": "Torracat",
+        "type": [
+            "Fire"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 727,
+        "name": "Incineroar",
+        "type": [
+            "Fire",
+            "Dark"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 728,
+        "name": "Popplio",
+        "type": [
+            "Water"
+        ],
+        "attack": 66
+    },
+    {
+        "id": 729,
+        "name": "Brionne",
+        "type": [
+            "Water"
+        ],
+        "attack": 91
+    },
+    {
+        "id": 730,
+        "name": "Primarina",
+        "type": [
+            "Water",
+            "Fairy"
+        ],
+        "attack": 126
+    },
+    {
+        "id": 731,
+        "name": "Pikipek",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 732,
+        "name": "Trumbeak",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 85
+    },
+    {
+        "id": 733,
+        "name": "Toucannon",
+        "type": [
+            "Normal",
+            "Flying"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 734,
+        "name": "Yungoos",
+        "type": [
+            "Normal"
+        ],
+        "attack": 70
+    },
+    {
+        "id": 735,
+        "name": "Gumshoos",
+        "type": [
+            "Normal"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 736,
+        "name": "Grubbin",
+        "type": [
+            "Bug"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 737,
+        "name": "Charjabug",
+        "type": [
+            "Bug",
+            "Electric"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 738,
+        "name": "Vikavolt",
+        "type": [
+            "Bug",
+            "Electric"
+        ],
+        "attack": 145
+    },
+    {
+        "id": 739,
+        "name": "Crabrawler",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 82
+    },
+    {
+        "id": 740,
+        "name": "Crabominable",
+        "type": [
+            "Fighting",
+            "Ice"
+        ],
+        "attack": 132
+    },
+    {
+        "id": 741,
+        "name": "Oricorio\nBaile Style",
+        "type": [
+            "Fire",
+            "Flying"
+        ],
+        "attack": 98
+    },
+    {
+        "id": 742,
+        "name": "Cutiefly",
+        "type": [
+            "Bug",
+            "Fairy"
+        ],
+        "attack": 84
+    },
+    {
+        "id": 743,
+        "name": "Ribombee",
+        "type": [
+            "Bug",
+            "Fairy"
+        ],
+        "attack": 124
+    },
+    {
+        "id": 744,
+        "name": "Rockruff",
+        "type": [
+            "Rock"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 745,
+        "name": "Lycanroc\nMidday Form",
+        "type": [
+            "Rock"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 746,
+        "name": "Wishiwashi\nSolo Form",
+        "type": [
+            "Water"
+        ],
+        "attack": 45
+    },
+    {
+        "id": 747,
+        "name": "Mareanie",
+        "type": [
+            "Poison",
+            "Water"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 748,
+        "name": "Toxapex",
+        "type": [
+            "Poison",
+            "Water"
+        ],
+        "attack": 152
+    },
+    {
+        "id": 749,
+        "name": "Mudbray",
+        "type": [
+            "Ground"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 750,
+        "name": "Mudsdale",
+        "type": [
+            "Ground"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 751,
+        "name": "Dewpider",
+        "type": [
+            "Water",
+            "Bug"
+        ],
+        "attack": 72
+    },
+    {
+        "id": 752,
+        "name": "Araquanid",
+        "type": [
+            "Water",
+            "Bug"
+        ],
+        "attack": 132
+    },
+    {
+        "id": 753,
+        "name": "Fomantis",
+        "type": [
+            "Grass"
+        ],
+        "attack": 55
+    },
+    {
+        "id": 754,
+        "name": "Lurantis",
+        "type": [
+            "Grass"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 755,
+        "name": "Morelull",
+        "type": [
+            "Grass",
+            "Fairy"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 756,
+        "name": "Shiinotic",
+        "type": [
+            "Grass",
+            "Fairy"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 757,
+        "name": "Salandit",
+        "type": [
+            "Poison",
+            "Fire"
+        ],
+        "attack": 77
+    },
+    {
+        "id": 758,
+        "name": "Salazzle",
+        "type": [
+            "Poison",
+            "Fire"
+        ],
+        "attack": 117
+    },
+    {
+        "id": 759,
+        "name": "Stufful",
+        "type": [
+            "Normal",
+            "Fighting"
+        ],
+        "attack": 75
+    },
+    {
+        "id": 760,
+        "name": "Bewear",
+        "type": [
+            "Normal",
+            "Fighting"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 761,
+        "name": "Bounsweet",
+        "type": [
+            "Grass"
+        ],
+        "attack": 42
+    },
+    {
+        "id": 762,
+        "name": "Steenee",
+        "type": [
+            "Grass"
+        ],
+        "attack": 62
+    },
+    {
+        "id": 763,
+        "name": "Tsareena",
+        "type": [
+            "Grass"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 764,
+        "name": "Comfey",
+        "type": [
+            "Fairy"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 765,
+        "name": "Oranguru",
+        "type": [
+            "Normal",
+            "Psychic"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 766,
+        "name": "Passimian",
+        "type": [
+            "Fighting"
+        ],
+        "attack": 120
+    },
+    {
+        "id": 767,
+        "name": "Wimpod",
+        "type": [
+            "Bug",
+            "Water"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 768,
+        "name": "Golisopod",
+        "type": [
+            "Bug",
+            "Water"
+        ],
+        "attack": 140
+    },
+    {
+        "id": 769,
+        "name": "Sandygast",
+        "type": [
+            "Ghost",
+            "Ground"
+        ],
+        "attack": 80
+    },
+    {
+        "id": 770,
+        "name": "Palossand",
+        "type": [
+            "Ghost",
+            "Ground"
+        ],
+        "attack": 110
+    },
+    {
+        "id": 771,
+        "name": "Pyukumuku",
+        "type": [
+            "Water"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 772,
+        "name": "Type: Null",
+        "type": [
+            "Normal"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 773,
+        "name": "Silvally",
+        "type": [
+            "Normal"
+        ],
+        "attack": 95
+    },
+    {
+        "id": 774,
+        "name": "Minior\nMeteor Form",
+        "type": [
+            "Rock",
+            "Flying"
+        ],
+        "attack": 100
+    },
+    {
+        "id": 775,
+        "name": "Komala",
+        "type": [
+            "Normal"
+        ],
+        "attack": 115
+    },
+    {
+        "id": 776,
+        "name": "Turtonator",
+        "type": [
+            "Fire",
+            "Dragon"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 777,
+        "name": "Togedemaru",
+        "type": [
+            "Electric",
+            "Steel"
+        ],
+        "attack": 98
+    },
+    {
+        "id": 778,
+        "name": "Mimikyu",
+        "type": [
+            "Ghost",
+            "Fairy"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 779,
+        "name": "Bruxish",
+        "type": [
+            "Water",
+            "Psychic"
+        ],
+        "attack": 105
+    },
+    {
+        "id": 780,
+        "name": "Drampa",
+        "type": [
+            "Normal",
+            "Dragon"
+        ],
+        "attack": 135
+    },
+    {
+        "id": 781,
+        "name": "Dhelmise",
+        "type": [
+            "Ghost",
+            "Grass"
+        ],
+        "attack": 131
+    },
+    {
+        "id": 782,
+        "name": "Jangmo-o",
+        "type": [
+            "Dragon"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 783,
+        "name": "Hakamo-o",
+        "type": [
+            "Dragon",
+            "Fighting"
+        ],
+        "attack": 90
+    },
+    {
+        "id": 784,
+        "name": "Kommo-o",
+        "type": [
+            "Dragon",
+            "Fighting"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 785,
+        "name": "Tapu Koko",
+        "type": [
+            "Electric",
+            "Fairy"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 786,
+        "name": "Tapu Lele",
+        "type": [
+            "Psychic",
+            "Fairy"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 787,
+        "name": "Tapu Bulu",
+        "type": [
+            "Grass",
+            "Fairy"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 788,
+        "name": "Tapu Fini",
+        "type": [
+            "Water",
+            "Fairy"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 789,
+        "name": "Cosmog",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 43
+    },
+    {
+        "id": 790,
+        "name": "Cosmoem",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 131
+    },
+    {
+        "id": 791,
+        "name": "Solgaleo",
+        "type": [
+            "Psychic",
+            "Steel"
+        ],
+        "attack": 137
+    },
+    {
+        "id": 792,
+        "name": "Lunala",
+        "type": [
+            "Psychic",
+            "Ghost"
+        ],
+        "attack": 137
+    },
+    {
+        "id": 793,
+        "name": "Nihilego",
+        "type": [
+            "Rock",
+            "Poison"
+        ],
+        "attack": 131
+    },
+    {
+        "id": 794,
+        "name": "Buzzwole",
+        "type": [
+            "Bug",
+            "Fighting"
+        ],
+        "attack": 139
+    },
+    {
+        "id": 795,
+        "name": "Pheromosa",
+        "type": [
+            "Bug",
+            "Fighting"
+        ],
+        "attack": 151
+    },
+    {
+        "id": 796,
+        "name": "Xurkitree",
+        "type": [
+            "Electric"
+        ],
+        "attack": 173
+    },
+    {
+        "id": 797,
+        "name": "Celesteela",
+        "type": [
+            "Steel",
+            "Flying"
+        ],
+        "attack": 107
+    },
+    {
+        "id": 798,
+        "name": "Kartana",
+        "type": [
+            "Grass",
+            "Steel"
+        ],
+        "attack": 181
+    },
+    {
+        "id": 799,
+        "name": "Guzzlord",
+        "type": [
+            "Dark",
+            "Dragon"
+        ],
+        "attack": 223
+    },
+    {
+        "id": 800,
+        "name": "Necrozma",
+        "type": [
+            "Psychic"
+        ],
+        "attack": 127
+    },
+    {
+        "id": 801,
+        "name": "Magearna",
+        "type": [
+            "Steel",
+            "Fairy"
+        ],
+        "attack": 130
+    },
+    {
+        "id": 802,
+        "name": "Marshadow",
+        "type": [
+            "Fighting",
+            "Ghost"
+        ],
+        "attack": 125
+    },
+    {
+        "id": 803,
+        "name": "Poipole",
+        "type": [
+            "Poison"
+        ],
+        "attack": 73
+    },
+    {
+        "id": 804,
+        "name": "Naganadel",
+        "type": [
+            "Poison",
+            "Dragon"
+        ],
+        "attack": 127
+    },
+    {
+        "id": 805,
+        "name": "Stakataka",
+        "type": [
+            "Rock",
+            "Steel"
+        ],
+        "attack": 211
+    },
+    {
+        "id": 806,
+        "name": "Blacephalon",
+        "type": [
+            "Fire",
+            "Ghost"
+        ],
+        "attack": 151
+    },
+    {
+        "id": 807,
+        "name": "Zeraora",
+        "type": [
+            "Electric"
+        ],
+        "attack": 143
+    },
+    {
+        "id": 808,
+        "name": "Meltan",
+        "type": [
+            "Steel"
+        ],
+        "attack": 65
+    },
+    {
+        "id": 809,
+        "name": "Melmetal",
+        "type": [
+            "Steel"
+        ],
+        "attack": 143
     }
 ];
 
