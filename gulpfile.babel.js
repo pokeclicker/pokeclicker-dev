@@ -30,6 +30,7 @@ const srcs = {
     buildArtefacts: 'build/**/*',
     scripts: 'src/scripts/**/*.ts',
     html: ['src/*.html', 'src/templates/*.html', 'src/components/*.html'],
+    ejsTemplates: ['src/templates/*.ejs'],
     styles: 'src/styles/**/*.less',
     assets: 'src/assets/**/*',
     libs: ['node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -143,6 +144,7 @@ gulp.task('website', done => {
 gulp.task('default', done => {
     runSequence('clean', 'build', 'browserSync', () => {
         gulp.watch(srcs.html, ['compile-html']);
+        gulp.watch(srcs.ejsTemplates, ['compile-html']);
         gulp.watch(srcs.assets, ['assets']);
         gulp.watch(srcs.scripts, ['scripts']);
         gulp.watch(srcs.styles, ['styles']);

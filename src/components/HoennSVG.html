@@ -26,16 +26,14 @@
     <!-- ROUTES -->
     <!-- ------ -->
 
-    <!--Route 101-->
-    <g transform="rotate(90,0,0)"
-       data-bind="click:function(){ MapHelper.moveToRoute(101, 2); } ">
-        <rect data-route='101'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(101,2) }"
-              height="23"
-              width="40"
-              x="280" y="-120"></rect>
-        <text font-size="13px" x="289" y="-105">101</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 101, region: 2
+        , height: 23, width: 40
+        , x: 280, y: -120
+        , textx: 289, texty: -105
+        , rotate: true
+        })
+     %>
 
     <!--Route 102-->
     <g data-bind="click:function(){ MapHelper.moveToRoute(102, 2); } ">

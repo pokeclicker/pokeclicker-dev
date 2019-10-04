@@ -1,0 +1,13 @@
+<!--Route <%= route %>-->
+<g
+<% if (rotate) { %>
+      transform="rotate(90,0,0)"
+<% } %>
+      data-bind="click:function(){ MapHelper.moveToRoute(<%= route %>, <%= region %>); } ">
+      <rect data-route='<%= route %>'
+            data-bind="attr: { class: MapHelper.calculateRouteCssClass(<%= route %>, <%= region %>) }"
+            height="<%= height %>"
+            width="<%= width %>"
+            x="<%= x %>" y="<%= y %>"></rect>
+      <text font-size="13px" x="<%= textx %>" y="<%= texty %>"><%= route %></text>
+</g>
