@@ -1,0 +1,10 @@
+<rect fill="#ffffff" height="15" stroke="none" width="15"
+    x="<%= x %>" y="<%= y %>">
+</rect>
+<rect data-bind="
+    click:function(){MapHelper.moveToTown('<%= name %>')},
+    attr: { class: MapHelper.calculateTownCssClass('<%= name %>') }"
+    class="city" data-town="<%= name %>"
+    fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+    height="12" stroke="#6c8ebf" width="12" x="<%= (x + 1.5) %>" y="<%= (y + 1.5) %>">
+</rect>

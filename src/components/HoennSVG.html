@@ -511,7 +511,7 @@
     <!-- DUNGEONS -->
     <!-- -------- -->
 
-    <!--Petalburg Woods-->
+    <!--Petalburg Woods--
     <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
           x="11" y="217"></rect>
     <rect data-bind="
@@ -519,7 +519,12 @@
     attr: { class: MapHelper.calculateTownCssClass('Petalburg Woods') }"
           class="city" data-town="Petalburg Woods"
           fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="12" y="218"></rect>
+          height="12.6" stroke="#6c8ebf" width="12.6" x="12" y="218"></rect-->
+    <%- include('templates/mapDungeon',
+        { name: "Petalburg Woods"
+        , x: 11, y: 217
+        })
+     %>
 
     <!--Rusturf Tunnel-->
     <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
