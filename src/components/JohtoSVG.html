@@ -312,124 +312,90 @@
      %>
 
     <!--Sprout Tower-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="292" y="126"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Violet City')},
-    attr: { class: MapHelper.calculateTownCssClass('Sprout Tower') }"
-          class="city" data-town="Sprout Tower"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="293" y="127"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Sprout Tower"
+        , moveToTown: "Violet City"
+        , x: 292, y: 126
+        })
+     %>
 
     <!--Ruins of Alph-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="287" y="180"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Ruins of Alph')},
-    attr: { class: MapHelper.calculateTownCssClass('Ruins of Alph') }"
-          class="city" data-town="Ruins of Alph"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="288" y="181"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Ruins of Alph"
+        , x: 287, y: 180
+        })
+     %>
 
     <!--Union Cave-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="287" y="326"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Union Cave')},
-    attr: { class: MapHelper.calculateTownCssClass('Union Cave') }"
-          class="city" data-town="Union Cave"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="288" y="327"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Union Cave"
+        , x: 287, y: 326
+        })
+     %>
 
     <!--Slowpoke Well-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="200" y="370"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Azalea Town')},
-    attr: { class: MapHelper.calculateTownCssClass('Slowpoke Well') }"
-          class="city" data-town="Slowpoke Well"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="201" y="371"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Slowpoke Well"
+        , moveToTown: "Azalea Town"
+        , x: 2007, y: 370
+        })
+     %>
 
     <!--Ilex Forest-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="160" y="370"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Ilex Forest')},
-    attr: { class: MapHelper.calculateTownCssClass('Ilex Forest') }"
-          class="city" data-town="Ilex Forest"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="161" y="371"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Ilex Forest"
+        , x: 160, y: 370
+        })
+     %>
 
     <!--Burned Tower-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="215" y="50"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Burned Tower')},
-    attr: { class: MapHelper.calculateTownCssClass('Burned Tower') }"
-          class="city" data-town="Burned Tower"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="216" y="51"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Burned Tower"
+        , x: 215, y: 50
+        })
+     %>
 
     <!--Tin Tower-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="235" y="50"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Tin Tower')},
-    attr: { class: MapHelper.calculateTownCssClass('Tin Tower') }"
-          class="city" data-town="Tin Tower"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="236" y="51"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Tin Tower"
+        , x: 235, y: 50
+        })
+     %>
 
     <!--Whirl Islands-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="72" y="284"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Whirl Islands')},
-    attr: { class: MapHelper.calculateTownCssClass('Whirl Islands') }"
-          class="city" data-town="Whirl Islands"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="73" y="285"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Whirl Islands"
+        , x: 72, y: 284
+        })
+     %>
 
     <!--Mt Mortar-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="325" y="70"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Mt Mortar')},
-    attr: { class: MapHelper.calculateTownCssClass('Mt Mortar') }"
-          class="city" data-town="Mt Mortar"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="326" y="71"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Mt Mortar"
+        , x: 325, y: 70
+        })
+     %>
 
     <!--Ice Path-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="470" y="70"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Ice Path')},
-    attr: { class: MapHelper.calculateTownCssClass('Ice Path') }"
-          class="city" data-town="Ice Path"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="471" y="71"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Ice Path"
+        , x: 470, y: 70
+        })
+     %>
 
     <!--Dark Cave-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="465" y="179"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Dark Cave')},
-    attr: { class: MapHelper.calculateTownCssClass('Dark Cave') }"
-          class="city" data-town="Dark Cave"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="466" y="180"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Dark Cave"
+        , x: 465, y: 179
+        })
+     %>
 
     <!--Mt Silver-->
-    <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
-          x="525" y="224"></rect>
-    <rect data-bind="
-    click:function(){MapHelper.moveToTown('Mt Silver')},
-    attr: { class: MapHelper.calculateTownCssClass('Mt Silver') }"
-          class="city" data-town="Mt Silver"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="526" y="225"></rect>
+    <%- include('templates/mapDungeon',
+        { name: "Mt Silver"
+        , x: 525, y: 224
+        })
+     %>
 
     <!-- Dock -->
     <rect class="city" data-town="Dock"

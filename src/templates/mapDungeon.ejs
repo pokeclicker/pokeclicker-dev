@@ -2,7 +2,7 @@
     x="<%= x %>" y="<%= y %>">
 </rect>
 <rect data-bind="
-    click:function(){MapHelper.moveToTown('<%= name %>')},
+    click:function(){MapHelper.moveToTown('<%= (locals.moveToTown) ? locals.moveToTown : name %>')},
     attr: { class: MapHelper.calculateTownCssClass('<%= name %>') }"
     class="city" data-town="<%= name %>"
     fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
