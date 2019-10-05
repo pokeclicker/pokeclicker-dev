@@ -1,5 +1,9 @@
-<g transform="translate(-1,-1)" data-bind='if: player.region == GameConstants.Region.kanto'>
-    <image height="420.7" width="651" xlink:href="assets/images/kanto.png"></image>
+<g data-bind='if: player.region == GameConstants.Region.kanto'>
+    <image width="100%" xlink:href="assets/images/kanto.png"></image>
+
+    <!-- ------ -->
+    <!-- ROUTES -->
+    <!-- ------ -->
 
     <!--Route 1-->
     <%- include('templates/mapRoute',
@@ -249,6 +253,11 @@
 
 
 
+
+    <!-- ----- -->
+    <!-- TOWNS -->
+    <!-- ----- -->
+
     <!--Pallet Town-->
     <%- include('templates/mapTown',
         { name: "Pallet Town"
@@ -340,6 +349,10 @@
 
 
 
+
+    <!-- -------- -->
+    <!-- DUNGEONS -->
+    <!-- -------- -->
      
     <!--Viridian Forest-->
     <%- include('templates/mapDungeon',
@@ -413,6 +426,13 @@
         , x: 349, y: 83
         })
      %>
+
+
+
+
+    <!-- ------------------ -->
+    <!-- PLACES OF INTEREST -->
+    <!-- ------------------ -->
 
     <rect fill="#ffffff" height="15.4" stroke="none" width="15.4" x="343.6"
           y="109.3"></rect>
