@@ -13,8 +13,8 @@ class RouteHelper {
      */
     public static getAvailablePokemonList(route: number, region: GameConstants.Region, includeHeadbutt: boolean = true): string[] {
         // If the route is somehow higher than allowed, use the first route to generateWildPokemon Pokémon
-        if (route < GameConstants.RegionRoute[region][0] || route > GameConstants.RegionRoute[region][1]) {
-            route = 1;
+        if (!MapHelper.validRoute(route, region)) {
+            route = GameConstants.RegionRoute[region][0];
         }
         let possiblePokemons = pokemonsPerRoute[region][route];
         if (possiblePokemons == null) {
