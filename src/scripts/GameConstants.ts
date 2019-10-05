@@ -833,40 +833,39 @@ namespace GameConstants {
     ];
 
     export const HoennDungeons = [
-        // Caves, Tunnels & Mountains
         "Rusturf Tunnel",
-        "Island Cave",
         "Granite Cave",
-        "Desert Ruins",
         "Jagged Pass",
         "Fiery Path",
         "Mt. Chimney",
         "Meteor Falls",
-        "Scorched Slab",
-        "Ancient Tomb",
         "Mt. Pyre",
         "Shoal Cave",
-        "Aqua Hideout",
-        "Magma Hideout",
         "Seafloor Cavern",
         "Cave of Origin",
         "Sky Pillar",
         "Victory Road Hoenn",
+        "Petalburg Woods",
+        "New Mauville",
+        "Sea Mauville",
+        // These aren't implemented anywhere yet
+        /*
+        "Island Cave",
+        "Desert Ruins",
+        "Scorched Slab",
+        "Ancient Tomb",
+        "Aqua Hideout",
+        "Magma Hideout",
         "Sealed Chamber",
         "Artisan Cave",
         "Desert Underpass",
         "Marine Cave",
         "Terra Cave",
-        // Forest
-        "Petalburg Woods",
-        // Islands
         "Southern Island",
         "Faraway Island",
         "Birth Island",
-        // Place of Interest
         "Devon Corporation",
         "Oceanic Museum",
-        "New Mauville",
         "Mirage Tower",
         "Weather Institute",
         "Safari Zone",
@@ -877,7 +876,7 @@ namespace GameConstants {
         "Battle Maison",
         "Battle Resort",
         "Mirage Spots",
-        "Sea Mauville",
+        */
     ];
 
     export const RegionDungeons = [
