@@ -250,173 +250,173 @@ const pokemonsPerRoute = {
     },
     2: {
         101: {
-            land: ['Zigzagoon', 'Wurmple', 'Poochyena'],
+            land: ['Wurmple', 'Poochyena', 'Zigzagoon'],
             water: [],
             headbutt: []
         },
         102: {
-            land: ['Zigzagoon', 'Wurmple', 'Poochyena', 'Seedot', 'Lotad', 'Ralts', 'Surskit'],
-            water: ['Marill', 'Azumarill', 'Masquerain', 'Magikarp', 'Goldeen', 'Corphish'],
+            land: ['Poochyena', 'Wurmple', 'Lotad', 'Zigzagoon', 'Ralts', 'Seedot'],
+            water: ['Marill', 'Goldeen', 'Magikarp', 'Corphish'],
             headbutt: []
         },
         103: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Wingull', 'Zigzagoon'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         104: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Wurmple', 'Marill', 'Taillow', 'Wingull'],
+            water: ['Wingull', 'Pelipper', 'Magikarp'],
             headbutt: []
         },
         105: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         106: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         107: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         108: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         109: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         110: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Electrike', 'Gulpin', 'Minun', 'Oddish', 'Wingull', 'Plusle'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         111: {
-            land: [],
-            water: [],
-            headbutt: []
+            land: ['Sandshrew', 'Trapinch', 'Baltoy', 'Cacnea'],
+            water: ['Marill', 'Goldeen', 'Magikarp', 'Barboach'],
+            headbutt: ['Geodude']
         },
         112: {
-            land: [],
+            land: ['Numel', 'Marill'],
             water: [],
             headbutt: []
         },
         113: {
-            land: [],
+            land: ['Spinda', 'Slugma', 'Skarmory'],
             water: [],
             headbutt: []
         },
         114: {
-            land: [],
-            water: [],
-            headbutt: []
+            land: ['Swablu', 'Lotad', 'Lombre', 'Seviper', 'Nuzleaf'],
+            water: ['Marill', 'Goldeen', 'Magikarp', 'Barboach'],
+            headbutt: ['Geodude']
         },
         115: {
-            land: [],
-            water: [],
+            land: ['Swablu', 'Taillow', 'Swellow', 'Jigglypuff', 'Wingull'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         116: {
-            land: [],
+            land: ['Poochyena', 'Whismur', 'Nincada', 'Abra', 'Taillow', 'Skitty'],
             water: [],
             headbutt: []
         },
         117: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Oddish', 'Marill', 'Illumise', 'Volbeat', 'Seedot'],
+            water: ['Marill', 'Goldeen', 'Magikarp', 'Corphish'],
             headbutt: []
         },
         118: {
-            land: [],
-            water: [],
+            land: ['Zigzagoon', 'Electrike', 'Linoone', 'Manectric', 'Wingull', 'Kecleon'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Carvanha', 'Sharpedo'],
             headbutt: []
         },
         119: {
-            land: [],
-            water: [],
+            land: ['Zigzagoon', 'Linoone', 'Oddish', 'Tropius', 'Kecleon'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Carvanha'],
             headbutt: []
         },
         120: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Mightyena', 'Oddish', 'Marill', 'Absol', 'Kecleon', 'Seedot'],
+            water: ['Marill', 'Goldeen', 'Magikarp', 'Barboach'],
             headbutt: []
         },
         121: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Shuppet', 'Mightyena', 'Oddish', 'Gloom', 'Wingull', 'Kecleon'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         122: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         123: {
-            land: [],
-            water: [],
+            land: ['Poochyena', 'Shuppet', 'Mightyena', 'Oddish', 'Gloom', 'Wingull', 'Kecleon'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer'],
             headbutt: []
         },
         124: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         125: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         126: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         127: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         128: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Luvdisc', 'Wailmer', 'Corsola'],
             headbutt: []
         },
         129: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Wailord', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         130: {
-            land: [],
-            water: [],
+            land: ['Wynaut'],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         131: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo'],
             headbutt: []
         },
         132: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo', 'Horsea'],
             headbutt: []
         },
         133: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo', 'Horsea'],
             headbutt: []
         },
         134: {
             land: [],
-            water: [],
+            water: ['Tentacool', 'Wingull', 'Pelipper', 'Magikarp', 'Wailmer', 'Sharpedo', 'Horsea'],
             headbutt: []
         }
     }
