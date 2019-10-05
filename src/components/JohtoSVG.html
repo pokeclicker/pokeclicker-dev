@@ -223,148 +223,93 @@
      %>
 
     <!--New Bark Town-->
-    <path d="M 496 286.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="New Bark Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('New Bark Town')},
-          attr: { class: MapHelper.calculateTownCssClass('New Bark Town') },
-          css: { flash: MapHelper.ableToTravel() }"
-          d="M 498.8 287.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "New Bark Town"
+        , x: 496, y: 286
+        , home: true
+        , type: "O"
+        })
+     %>
 
     <!--Cherrygrove City-->
-    <path d="M 340 288.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Cherrygrove City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Cherrygrove City')},
-          attr: { class: MapHelper.calculateTownCssClass('Cherrygrove City') }"
-          d="M 342.8 289.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Cherrygrove City"
+        , x: 340, y: 288
+        , type: "O"
+        })
+     %>
 
     <!--Violet City-->
-    <path d="M 281 133.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Violet City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Violet City')},
-          attr: { class: MapHelper.calculateTownCssClass('Violet City') }"
-          d="M 283.8 134.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Violet City"
+        , x: 281, y: 133
+        , type: "O"
+        })
+     %>
 
     <!--Azalea Town-->
-    <path d="M 187 378.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Azalea Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Azalea Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Azalea Town') }"
-          d="M 189.8 379.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Azalea Town"
+        , x: 187, y: 378
+        , type: "O"
+        })
+     %>
 
     <!--Goldenrod City-->
-    <path d="M 158 229 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 40 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Goldenrod City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Goldenrod City')},
-          attr: { class: MapHelper.calculateTownCssClass('Goldenrod City') }"
-          d="M 160.8 230.14 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 38 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Goldenrod City"
+        , x: 158, y: 229
+        , type: "V"
+        })
+     %>
 
     <!--Ecruteak City-->
-    <path d="M 218 72 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Ecruteak City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Ecruteak City')},
-          attr: { class: MapHelper.calculateTownCssClass('Ecruteak City') }"
-          d="M 220.8 73 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Ecruteak City"
+        , x: 218, y: 72
+        , type: "O"
+        })
+     %>
 
     <!--Olivine City-->
-    <path d="M 63 135 l 8.29 -8.29 h 45 l 8.29 8.29 v 11.42 l -8.29 8.29 h -45 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Olivine City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Olivine City')},
-          attr: { class: MapHelper.calculateTownCssClass('Olivine City') }"
-          d="M 65.4 136.2 l 6.63 -6.63 h 43 l 6.63 6.63 v 9.14 l -6.63 6.63 h -43 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Olivine City"
+        , x: 63, y: 135
+        , type: "H"
+        })
+     %>
 
     <!--Cianwood City-->
-    <path d="M 34 288 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Cianwood City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Cianwood City')},
-          attr: { class: MapHelper.calculateTownCssClass('Cianwood City') }"
-          d="M 37 289 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Cianwood City"
+        , x: 34, y: 288
+        , type: "O"
+        })
+     %>
 
     <!--Mahogany Town-->
-    <path d="M 373 72 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Mahogany Town"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Mahogany Town')},
-          attr: { class: MapHelper.calculateTownCssClass('Mahogany Town') }"
-          d="M 376 73 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Mahogany Town"
+        , x: 373, y: 72
+        , type: "O"
+        })
+     %>
 
     <!--Blackthorn City-->
-    <path d="M 465 103 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Blackthorn City"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Blackthorn City')},
-          attr: { class: MapHelper.calculateTownCssClass('Blackthorn City') }"
-          d="M 468 104 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Blackthorn City"
+        , x: 465, y: 103
+        , type: "O"
+        })
+     %>
 
     <!--Indigo Plateau 2.0-->
-    <path d="M 619 72 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="Indigo Plateau 2.0"
-          data-bind="
-          click:function(){MapHelper.moveToTown('Indigo Plateau 2.0')},
-          attr: { class: MapHelper.calculateTownCssClass('Indigo Plateau 2.0') }"
-          d="M 622 73 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
+    <%- include('templates/mapTown',
+        { name: "Indigo Plateau 2.0"
+        , x: 619, y: 72
+        , type: "O"
+        })
+     %>
 
     <!--Sprout Tower-->
     <rect fill="#ffffff" height="15.4" stroke="none" width="15.4"
