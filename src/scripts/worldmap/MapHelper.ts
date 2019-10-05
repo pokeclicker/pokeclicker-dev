@@ -118,15 +118,6 @@ class MapHelper {
         }
     };
 
-    public static updateAllRoutes() {
-        const region = player.region;
-        for (let route = GameConstants.RegionRoute[region][0]; route < GameConstants.RegionRoute[region][1]; route++) {
-            if (MapHelper.accessToRoute(route, region)) {
-                $("[data-route='" + route + "']").removeClass('currentRoute').removeClass('lockedRoute').addClass('unlockedRoute');
-            }
-        }
-    }
-
     public static validRoute(route: number = 0, region: GameConstants.Region = 0): boolean {
         return route >= GameConstants.RegionRoute[region][0] && route <= GameConstants.RegionRoute[region][1];
     }
