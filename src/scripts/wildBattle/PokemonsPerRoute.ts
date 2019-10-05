@@ -238,7 +238,7 @@ const pokemonsPerRoute = {
             headbutt: ['Spearow', 'Aipom', 'Heracross']
         },
         47: {
-            land: ['Raticate', 'Spearow', 'Fearow', 'Gloom', 'farfetch\'d', 'Ditto', 'Noctowl', W'Miltank'],
+            land: ['Raticate', 'Spearow', 'Fearow', 'Gloom', 'farfetch\'d', 'Ditto', 'Noctowl', 'Miltank'],
             water: ['Tentacool', 'Seel', 'Staryu', 'Magikarp', 'Shellder', 'Chinchou', 'Lanturn'],
             headbutt: ['Metapod', 'Butterfree', 'Kakuna', 'Beedrill', 'Exeggcute', 'Hoothoot', 'Ledyba', 'Spinarak', 'Pineco', 'Heracross']
         },
