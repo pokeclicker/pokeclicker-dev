@@ -171,19 +171,19 @@ TownList["Mt Silver"] = new DungeonTown("Mt Silver", [28], GameConstants.Badge.E
 TownList["Littleroot Town"] = new Town("Littleroot Town", []);
 TownList["Oldale Town"] = new Town("Oldale Town", [101]);
 TownList["Petalburg City"] = new Town("Petalburg City", [102]);
-TownList["Rustboro City"] = new Town("Rustboro City", [104], null, dungeonList["Petalburg Woods"]);
+TownList["Rustboro City"] = new Town("Rustboro City", [104], null, null, "Petalburg Woods");
 TownList["Dewford Town"] = new Town("Dewford Town", [116]);
-TownList["Slateport City"] = new Town("Slateport City", [], null, dungeonList["Granite Cave"]);
+TownList["Slateport City"] = new Town("Slateport City", [], null, null, "Granite Cave");
 TownList["Mauville City"] = new Town("Mauville City", [110]);
 TownList["Verdanturf Town"] = new Town("Verdanturf Town", [117]);
-TownList["Lavaridge Town"] = new Town("Lavaridge Town", [112], null, dungeonList["Mt. Chimney"]);
+TownList["Lavaridge Town"] = new Town("Lavaridge Town", [112], null, null, "Mt. Chimney");
 TownList["Fallarbor Town"] = new Town("Fallarbor Town", [113]);
 TownList["Fortree City"] = new Town("Fortree City", [119]);
-TownList["Lilycove City"] = new Town("Lilycove City", [121], null, dungeonList["Mt. Pyre"]);
+TownList["Lilycove City"] = new Town("Lilycove City", [121], null, null, "Mt. Pyre");
 TownList["Mossdeep City"] = new Town("Mossdeep City", [125]);
-TownList["Sootopolis City"] = new Town("Sootopolis City", [126], null, dungeonList["Cave of Origin"]);
+TownList["Sootopolis City"] = new Town("Sootopolis City", [126], null, null, "Cave of Origin");
 TownList["Ever Grande City"] = new Town("Ever Grande City", [128]);
-TownList["Pokemon League Hoenn"] = new Town("Pokemon League", [128], null, dungeonList["Victory Road Hoenn"]);
+TownList["Pokemon League Hoenn"] = new Town("Pokemon League", [128], null, null, "Victory Road Hoenn");
 TownList["Pacifidlog Town"] = new Town("Pacifidlog Town", [131]);
 
 //Hoenn Dungeons
