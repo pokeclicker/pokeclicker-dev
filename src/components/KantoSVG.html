@@ -176,24 +176,21 @@
      %>
 
     <!--Route 19-->
-    <g transform="rotate(90,83.65,263.2)"
-       data-bind="click:function(){ MapHelper.moveToRoute(19, 0); } ">
-        <rect data-route='19'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(19,0) }"
-              height="28"
-              width="64"
-              x="151.3" y="35.2"></rect>
-    </g>
-
-    <!--Route 19-->
-    <g data-bind="click:function(){ MapHelper.moveToRoute(19, 0); } ">
-        <rect data-route='19'
-              data-bind="attr: { class: MapHelper.calculateRouteCssClass(19,0) }"
-              height="28"
-              width="95.3"
-              x="188.3" y="367"></rect>
-        <text x="235.3" y="387">19</text>
-    </g>
+    <%- include('templates/mapRoute',
+        { route: 19, region: 0
+        , height: 54, width: 28
+        , x: 283, y: 341
+        , noText: true
+        })
+     %>
+    <!--Extra bit of Route 19 because it goes around a corner-->
+    <%- include('templates/mapRoute',
+        { route: 19, region: 0
+        , height: 28, width: 95
+        , x: 188, y: 367
+        , textx: 235, texty: 387
+        })
+     %>
 
     <!--Route 20-->
     <%- include('templates/mapRoute',

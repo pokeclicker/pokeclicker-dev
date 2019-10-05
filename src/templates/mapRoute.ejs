@@ -7,6 +7,9 @@
             data-bind="attr: { class: MapHelper.calculateRouteCssClass(<%= route %>, <%= region %>) }"
             height="<%= height %>"
             width="<%= width %>"
-            x="<%= x %>" y="<%= y %>"></rect>
+            x="<%= x %>" y="<%= y %>">
+      </rect>
+<% if (!locals.noText) { %>
       <text font-size="13px" x="<%= textx %>" y="<%= texty %>"><%= route %></text>
+<% } %>
 </g>
