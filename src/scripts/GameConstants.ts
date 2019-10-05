@@ -495,7 +495,7 @@ namespace GameConstants {
             114: [113],
             115: [114],
             116: [104],
-            117: [116],
+            117: [110],
             118: [117],
             119: [118],
             120: [119],
@@ -504,9 +504,9 @@ namespace GameConstants {
             123: [122],
             124: [121],
             125: [124],
-            126: [124],
-            127: [126,125],
-            128: [128],
+            126: [125],
+            127: [126],
+            128: [127],
             129: [128],
             130: [129],
             131: [130],
@@ -547,8 +547,9 @@ namespace GameConstants {
             116: GameConstants.Badge.Stone,
             117: GameConstants.Badge.Knuckle,
             111: GameConstants.Badge.Dynamo,
-            113: GameConstants.Badge.Heat,
+            112: GameConstants.Badge.Heat,
             105: GameConstants.Badge.Balance,
+            118: GameConstants.Badge.Balance,
             120: GameConstants.Badge.Feather,
             126: GameConstants.Badge.Mind,
             127: GameConstants.Badge.Rain,
@@ -570,7 +571,13 @@ namespace GameConstants {
             33: "Union Cave",
             34: "Ilex Forest"
         },
-        2: {}
+        2: {
+            116: "Petalburg Woods",
+            113: "Fiery Path",
+            115: "Meteor Falls",
+            112: "Jagged Pass",
+            128: "Seafloor Cavern",
+        }
     }
 
     export enum Starter {
