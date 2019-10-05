@@ -576,6 +576,7 @@ namespace GameConstants {
             113: "Fiery Path",
             115: "Meteor Falls",
             112: "Jagged Pass",
+            124: "Mt. Pyre",
             128: "Seafloor Cavern",
         }
     }
