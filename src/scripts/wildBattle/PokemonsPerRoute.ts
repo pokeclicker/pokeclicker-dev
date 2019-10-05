@@ -61,12 +61,12 @@ const pokemonsPerRoute = {
             headbutt: []
         },
         12: {
-            land: ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'farfetch\'d', 'Snorlax'],
+            land: ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Farfetch\'d', 'Snorlax'],
             water: ['Slowbro', 'Magikarp', 'Poliwag', 'Goldeen', 'Tentacool', 'Krabby', 'Horsea', 'Seadra'],
             headbutt: []
         },
         13: {
-            land: ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'farfetch\'d', 'Ditto'],
+            land: ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Farfetch\'d', 'Ditto'],
             water: ['Slowbro', 'Magikarp', 'Poliwag', 'Goldeen', 'Tentacool', 'Krabby', 'Horsea', 'Seadra'],
             headbutt: []
         },
@@ -193,12 +193,12 @@ const pokemonsPerRoute = {
             headbutt: ['Exeggcute', 'Hoothoot', 'Ledyba', 'Spinarak', 'Pineco']
         },
         38: {
-            land: ['Rattata', 'Raticate', 'Meowth', 'Magnemite', 'farfetch\'d', 'Tauros', 'Snubbull', 'Miltank'],
+            land: ['Rattata', 'Raticate', 'Meowth', 'Magnemite', 'Farfetch\'d', 'Tauros', 'Snubbull', 'Miltank'],
             water: [],
             headbutt: ['Exeggcute', 'Hoothoot', 'Ledyba', 'Spinarak', 'Pineco']
         },
         39: {
-            land: ['Rattata', 'Raticate', 'Meowth', 'Magnemite', 'farfetch\'d', 'Tauros', 'Miltank'],
+            land: ['Rattata', 'Raticate', 'Meowth', 'Magnemite', 'Farfetch\'d', 'Tauros', 'Miltank'],
             water: [],
             headbutt: ['Exeggcute', 'Hoothoot', 'Ledyba', 'Spinarak', 'Pineco']
         },
@@ -238,12 +238,12 @@ const pokemonsPerRoute = {
             headbutt: ['Spearow', 'Aipom', 'Heracross']
         },
         47: {
-            land: ['Raticate', 'Spearow', 'Fearow', 'Gloom', 'farfetch\'d', 'Ditto', 'Noctowl', 'Miltank'],
+            land: ['Raticate', 'Spearow', 'Fearow', 'Gloom', 'Farfetch\'d', 'Ditto', 'Noctowl', 'Miltank'],
             water: ['Tentacool', 'Seel', 'Staryu', 'Magikarp', 'Shellder', 'Chinchou', 'Lanturn'],
             headbutt: ['Metapod', 'Butterfree', 'Kakuna', 'Beedrill', 'Exeggcute', 'Hoothoot', 'Ledyba', 'Spinarak', 'Pineco', 'Heracross']
         },
         48: {
-            land: ['Fearow', 'Vulpix', 'Gloom', 'Diglett', 'Growlithe', 'farfetch\'d', 'Tauros', 'Hoppip', 'Girafarig'],
+            land: ['Fearow', 'Vulpix', 'Gloom', 'Diglett', 'Growlithe', 'Farfetch\'d', 'Tauros', 'Hoppip', 'Girafarig'],
             water: [],
             headbutt: ['Exeggcute', 'Hoothoot', 'Ledyba', 'Spinarak', 'Pineco']
         }
