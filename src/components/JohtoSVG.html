@@ -1,26 +1,9 @@
-<g transform='translate(-1,-1)' data-bind='if: player.region == GameConstants.Region.johto'>
-    <image height="100%" width="100%" xlink:href="assets/images/johto.png"></image>
+<g data-bind='if: player.region == GameConstants.Region.johto'>
+    <image width="100%" xlink:href="assets/images/johto.png"></image>
 
-    <!--
-    Town element
-
-        The two numbers following M in the path route are coordinates for the inital point,
-        adjust them to move the town element, and replace "TOWN" with the actual town name
-
-
-    <path d="M 70 108.39 l 8.29 -8.29 h 11.42 l 8.29 8.29 v 11.42 l -8.29 8.29 h -11.42 l -8.29 -8.29 Z"
-          fill="#ffffff" stroke="#000000" stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-    <path class="city" data-town="TOWN"
-          data-bind="
-          click:function(){MapHelper.moveToTown('TOWN')},
-          attr: { class: MapHelper.calculateTownCssClass('TOWN') }"
-          d="M 72.8 109.53 l 6.63 -6.63 h 9.14 l 6.63 6.63 v 9.14 l -6.63 6.63 h -9.14 l -6.63 -6.63 Z"
-          fill="url(#mx-gradient-f8cecc-1-ea583b-1-s-0)" stroke="#b85450"
-          stroke-miterlimit="10" stroke-width="1.4">
-    </path>
-
-    -->
+    <!-- ------ -->
+    <!-- ROUTES -->
+    <!-- ------ -->
 
     <!--Route 26-->
     <%- include('templates/mapRoute',
@@ -222,6 +205,13 @@
         })
      %>
 
+
+
+
+    <!-- ----- -->
+    <!-- TOWNS -->
+    <!-- ----- -->
+
     <!--New Bark Town-->
     <%- include('templates/mapTown',
         { name: "New Bark Town"
@@ -311,6 +301,13 @@
         })
      %>
 
+
+
+
+    <!-- -------- -->
+    <!-- DUNGEONS -->
+    <!-- -------- -->
+
     <!--Sprout Tower-->
     <%- include('templates/mapDungeon',
         { name: "Sprout Tower"
@@ -396,6 +393,13 @@
         , x: 525, y: 224
         })
      %>
+
+
+
+
+    <!-- ------------------ -->
+    <!-- PLACES OF INTEREST -->
+    <!-- ------------------ -->
 
     <!-- Dock -->
     <rect class="city" data-town="Dock"
