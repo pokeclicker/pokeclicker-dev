@@ -37,14 +37,14 @@ Parameters:
 <% if (locals.rotate) { %>
     transform="rotate(90,0,0)"
 <% } %>
-    data-bind="click:function(){ MapHelper.moveToRoute(<%= route %>, <%= region %>); } ">
-    <rect data-route='<%= route %>'
-        data-bind="attr: { class: MapHelper.calculateRouteCssClass(<%= route %>, <%= region %>) }"
-        height="<%= height %>"
-        width="<%= width %>"
-        x="<%= x %>" y="<%= y %>">
+    data-bind="click:function(){ MapHelper.moveToRoute(<%= locals.route %>, <%= locals.region %>); } ">
+    <rect data-route='<%= locals.route %>'
+        data-bind="attr: { class: MapHelper.calculateRouteCssClass(<%= locals.route %>, <%= locals.region %>) }"
+        height="<%= locals.height %>"
+        width="<%= locals.width %>"
+        x="<%= locals.x %>" y="<%= locals.y %>">
     </rect>
 <% if (!locals.noText) { %>
-    <text font-size="13px" x="<%= textx %>" y="<%= texty %>"><%= route %></text>
+    <text font-size="13px" x="<%= locals.textx %>" y="<%= locals.texty %>"><%= locals.route %></text>
 <% } %>
 </g>
