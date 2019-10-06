@@ -1557,7 +1557,7 @@ const pokemonList = [
         "exp": 170,
         "eggCycles": 20,
         "evolution": "Rhyperior",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 113,
@@ -1733,7 +1733,7 @@ const pokemonList = [
         "exp": 172,
         "eggCycles": 25,
         "evolution": "Electivire",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 126,
@@ -1747,7 +1747,7 @@ const pokemonList = [
         "exp": 173,
         "eggCycles": 25,
         "evolution": "Magmortar",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 127,
@@ -3191,7 +3191,7 @@ const pokemonList = [
         "exp": 180,
         "eggCycles": 20,
         "evolution": "Porygon-Z",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 234,
@@ -4084,7 +4084,7 @@ const pokemonList = [
         "exp": 38,
         "catchRate": 150,
         "evolution": "Marill",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 299,
@@ -4768,7 +4768,7 @@ const pokemonList = [
         "exp": 40,
         "catchRate": 255,
         "evolution": "Milotic",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 350,
@@ -4858,7 +4858,7 @@ const pokemonList = [
         "exp": 159,
         "catchRate": 90,
         "evolution": "Dusknoir",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 357,
@@ -4992,7 +4992,7 @@ const pokemonList = [
         "exp": 69,
         "catchRate": 255,
         "evolution": "Huntail",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 367,
@@ -5524,7 +5524,7 @@ const pokemonList = [
         "exp": 56,
         "catchRate": 255,
         "evolution": "Roselia",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 407,
@@ -5605,7 +5605,7 @@ const pokemonList = [
         "exp": 45,
         "catchRate": 120,
         "evolution": "Wormadam",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 20
     },
     {
         "id": 413,
@@ -5646,7 +5646,7 @@ const pokemonList = [
         "exp": 49,
         "catchRate": 120,
         "evolution": "Vespiquen",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 21
     },
     {
         "id": 416,
@@ -5804,7 +5804,7 @@ const pokemonList = [
         "exp": 70,
         "catchRate": 190,
         "evolution": "Lopunny",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 428,
@@ -5881,7 +5881,7 @@ const pokemonList = [
         "exp": 57,
         "catchRate": 120,
         "evolution": "Chimecho",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 434,
@@ -6063,7 +6063,7 @@ const pokemonList = [
         "exp": 78,
         "catchRate": 50,
         "evolution": "Snorlax",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 447,
@@ -6077,7 +6077,7 @@ const pokemonList = [
         "exp": 57,
         "catchRate": 75,
         "evolution": "Lucario",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 448,
@@ -7092,7 +7092,7 @@ const pokemonList = [
         "exp": 137,
         "catchRate": 120,
         "evolution": "Gigalith",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 526,
@@ -7119,7 +7119,7 @@ const pokemonList = [
         "exp": 65,
         "catchRate": 190,
         "evolution": "Swoobat",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 528,
@@ -7199,7 +7199,7 @@ const pokemonList = [
         "exp": 142,
         "catchRate": 90,
         "evolution": "Conkeldurr",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 534,
@@ -7307,7 +7307,7 @@ const pokemonList = [
         "exp": 133,
         "catchRate": 120,
         "evolution": "Leavanny",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 542,
@@ -7942,7 +7942,7 @@ const pokemonList = [
         "exp": 63,
         "catchRate": 200,
         "evolution": "Escavalier",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 589,
@@ -8320,7 +8320,7 @@ const pokemonList = [
         "exp": 61,
         "catchRate": 200,
         "evolution": "Accelgor",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 617,
@@ -9100,7 +9100,7 @@ const pokemonList = [
         "exp": 70,
         "catchRate": 220,
         "evolution": "Pangoro",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 32
     },
     {
         "id": 675,
@@ -9208,7 +9208,7 @@ const pokemonList = [
         "exp": 68,
         "catchRate": 200,
         "evolution": "Aromatisse",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 683,
@@ -9234,7 +9234,7 @@ const pokemonList = [
         "exp": 68,
         "catchRate": 200,
         "evolution": "Slurpuff",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 685,
@@ -9261,7 +9261,7 @@ const pokemonList = [
         "exp": 58,
         "catchRate": 190,
         "evolution": "Malamar",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 30
     },
     {
         "id": 687,
@@ -9399,7 +9399,7 @@ const pokemonList = [
         "exp": 72,
         "catchRate": 45,
         "evolution": "Tyrantrum",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 39
     },
     {
         "id": 697,
@@ -9427,7 +9427,7 @@ const pokemonList = [
         "exp": 72,
         "catchRate": 45,
         "evolution": "Aurorus",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 39
     },
     {
         "id": 699,
@@ -9519,7 +9519,7 @@ const pokemonList = [
         "exp": 158,
         "catchRate": 45,
         "evolution": "Goodra",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 50
     },
     {
         "id": 706,
@@ -9559,7 +9559,7 @@ const pokemonList = [
         "exp": 62,
         "catchRate": 120,
         "evolution": "Trevenant",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": "Trade_stone"
     },
     {
         "id": 709,
@@ -9911,7 +9911,7 @@ const pokemonList = [
         "exp": 51,
         "catchRate": 255,
         "evolution": "Gumshoos",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 20
     },
     {
         "id": 735,
@@ -10047,7 +10047,7 @@ const pokemonList = [
         "exp": 56,
         "catchRate": 190,
         "evolution": "Lycanroc",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 25
     },
     {
         "id": 745,
@@ -10167,7 +10167,7 @@ const pokemonList = [
         "exp": 50,
         "catchRate": 190,
         "evolution": "Lurantis",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 34
     },
     {
         "id": 754,
@@ -10222,7 +10222,7 @@ const pokemonList = [
         "exp": 64,
         "catchRate": 120,
         "evolution": "Salazzle",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 33
     },
     {
         "id": 758,
@@ -10422,7 +10422,7 @@ const pokemonList = [
         "exp": 107,
         "catchRate": 3,
         "evolution": "Silvally",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 100
     },
     {
         "id": 773,
@@ -10659,7 +10659,7 @@ const pokemonList = [
         "exp": null,
         "catchRate": 45,
         "evolution": "Solgaleo",
-        "evoLevel": "_____TODO_____"
+        "evoLevel": 53
     },
     {
         "id": 791,
