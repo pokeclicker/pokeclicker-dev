@@ -584,12 +584,12 @@
     <!-- PLACES OF INTEREST -->
     <!-- ------------------ -->
 
-    <!-- Dock -->
-    <rect class="city" data-town="Dock"
-          fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
-          height="12.6" stroke="#6c8ebf" width="12.6" x="209" y="290"
-          data-bind="click:function(){MapHelper.openShipModal()},
-          attr: { class: MapHelper.calculateTownCssClass('Slateport City') }"></rect>
+    <%- include('templates/mapPOI',
+        { name: "Dock"
+        , x: 209, y: 290
+        , databind: "click:function(){MapHelper.openShipModal()}, attr: { class: MapHelper.calculateTownCssClass('Slateport City') }"
+        })
+     %>
 
 
 
