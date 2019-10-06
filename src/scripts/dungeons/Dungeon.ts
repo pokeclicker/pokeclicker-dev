@@ -247,10 +247,10 @@ dungeonList["Petalburg Woods"] = new Dungeon("Petalburg Woods",
     12000, null, 101, 5);
 
 dungeonList["Rusturf Tunnel"] = new Dungeon("Rusturf Tunnel",
-    ["Unown"],
+    ["Whismur"],
     [GameConstants.BattleItemType.xAttack, GameConstants.BattleItemType.xExp],
     4000,
-    [new DungeonBossPokemon("Unown", 100000, 20)],
+    [new DungeonBossPokemon("Whismur", 100000, 20)],
     12000, GameConstants.Badge.Stone, 101, 5);
 
 dungeonList["Granite Cave"] = new Dungeon("Granite Cave",
