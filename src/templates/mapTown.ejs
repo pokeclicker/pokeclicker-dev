@@ -1,3 +1,29 @@
+<% /* %>
+
+Parameters:
+    - name : Required : String
+        The name of this town.
+        Should match what is used in TownList.
+
+    - type : Required : String
+        Controls the shape of the town.
+        Should be one of:
+        O - regular circle shaped town
+        H - long horizontal town
+        V - long vertical town
+
+    - x : Required : Number
+        x axis position of this route element.
+
+    - y : Required : Number
+        y axis position of this route element.
+
+    - home : Optional : Boolean
+        Used to indicate that this is the home town for a region.
+        Will add the flashy thing when the player is able to trabel to the next region.
+
+<% */ %>
+
 <path d="M <%= x %> <%= y %> 
          l 8.29 -8.29 
          h <% if (type === "H") { %> 45 <% } else { %> 11.42 <% } %> 
