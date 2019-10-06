@@ -2428,7 +2428,7 @@ const pokemonList = [
         "exp": 142,
         "eggCycles": 10,
         "evolution": "Togekiss",
-        "evoLevel": "Shiny_Stone"
+        "evoLevel": "Shiny_stone"
     },
     {
         "id": 177,
@@ -2725,7 +2725,7 @@ const pokemonList = [
         "exp": 81,
         "eggCycles": 20,
         "evolution": "Honchkrow",
-        "evoLevel": "Dusk_Stone"
+        "evoLevel": "Dusk_stone"
     },
     {
         "id": 199,
@@ -2752,7 +2752,7 @@ const pokemonList = [
         "exp": 87,
         "eggCycles": 25,
         "evolution": "Mismagius",
-        "evoLevel": "Dusk_Stone"
+        "evoLevel": "Dusk_stone"
     },
     {
         "id": 201,
@@ -3713,7 +3713,7 @@ const pokemonList = [
         "exp": 119,
         "catchRate": 120,
         "evolution": "Ludicolo",
-        "evoLevel": "Water_Stone"
+        "evoLevel": "Water_stone"
     },
     {
         "id": 272,
@@ -3755,7 +3755,7 @@ const pokemonList = [
         "exp": 119,
         "catchRate": 120,
         "evolution": "Shiftry",
-        "evoLevel": "Leaf_Stone"
+        "evoLevel": "Leaf_stone"
     },
     {
         "id": 275,
@@ -4112,7 +4112,7 @@ const pokemonList = [
         "exp": 52,
         "catchRate": 255,
         "evolution": "Delcatty",
-        "evoLevel": "Moon_Stone"
+        "evoLevel": "Moon_stone"
     },
     {
         "id": 301,
@@ -4310,7 +4310,7 @@ const pokemonList = [
         "exp": 140,
         "catchRate": 150,
         "evolution": "Roserade",
-        "evoLevel": "Shiny_Stone"
+        "evoLevel": "Shiny_stone"
     },
     {
         "id": 316,
@@ -6905,7 +6905,7 @@ const pokemonList = [
         "exp": 63,
         "catchRate": 190,
         "evolution": "Simisage",
-        "evoLevel": "Leaf_Stone"
+        "evoLevel": "Leaf_stone"
     },
     {
         "id": 512,
@@ -6931,7 +6931,7 @@ const pokemonList = [
         "exp": 63,
         "catchRate": 190,
         "evolution": "Simisear",
-        "evoLevel": "Fire_Stone"
+        "evoLevel": "Fire_stone"
     },
     {
         "id": 514,
@@ -6957,7 +6957,7 @@ const pokemonList = [
         "exp": 63,
         "catchRate": 190,
         "evolution": "Simipour",
-        "evoLevel": "Water_Stone"
+        "evoLevel": "Water_stone"
     },
     {
         "id": 516,
@@ -6983,7 +6983,7 @@ const pokemonList = [
         "exp": 58,
         "catchRate": 190,
         "evolution": "Musharna",
-        "evoLevel": "Moon_Stone"
+        "evoLevel": "Moon_stone"
     },
     {
         "id": 518,
@@ -7378,7 +7378,7 @@ const pokemonList = [
         "exp": 56,
         "catchRate": 190,
         "evolution": "Whimsicott",
-        "evoLevel": "Sun_Stone"
+        "evoLevel": "Sun_stone"
     },
     {
         "id": 547,
@@ -7405,7 +7405,7 @@ const pokemonList = [
         "exp": 56,
         "catchRate": 190,
         "evolution": "Lilligant",
-        "evoLevel": "Sun_Stone"
+        "evoLevel": "Sun_stone"
     },
     {
         "id": 549,
@@ -7727,7 +7727,7 @@ const pokemonList = [
         "exp": 60,
         "catchRate": 255,
         "evolution": "Cinccino",
-        "evoLevel": "Shiny_Stone"
+        "evoLevel": "Shiny_stone"
     },
     {
         "id": 573,
@@ -8147,7 +8147,7 @@ const pokemonList = [
         "exp": 142,
         "catchRate": 60,
         "evolution": "Eelektross",
-        "evoLevel": "Thunder_Stone"
+        "evoLevel": "Thunder_stone"
     },
     {
         "id": 604,
@@ -8215,7 +8215,7 @@ const pokemonList = [
         "exp": 130,
         "catchRate": 90,
         "evolution": "Chandelure",
-        "evoLevel": "Dusk_Stone"
+        "evoLevel": "Dusk_stone"
     },
     {
         "id": 609,
@@ -9048,7 +9048,7 @@ const pokemonList = [
         "exp": 130,
         "catchRate": 120,
         "evolution": "Florges",
-        "evoLevel": "Shiny_Stone"
+        "evoLevel": "Shiny_stone"
     },
     {
         "id": 671,
@@ -9181,7 +9181,7 @@ const pokemonList = [
         "exp": 157,
         "catchRate": 90,
         "evolution": "Aegislash",
-        "evoLevel": "Dusk_Stone"
+        "evoLevel": "Dusk_stone"
     },
     {
         "id": 681,
@@ -9371,7 +9371,7 @@ const pokemonList = [
         "exp": 58,
         "catchRate": 190,
         "evolution": "Heliolisk",
-        "evoLevel": "Sun_Stone"
+        "evoLevel": "Sun_stone"
     },
     {
         "id": 695,
