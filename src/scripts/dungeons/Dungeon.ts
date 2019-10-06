@@ -337,7 +337,7 @@ dungeonList["Sky Pillar"] = new Dungeon("Sky Pillar",
     [new DungeonBossPokemon("Unown", 100000, 20)],
     12000, GameConstants.Badge.Stone, 101, 5);
 
-dungeonList["Victory Road Hoenn"] = new Dungeon("Victory Road",
+dungeonList["Victory Road Hoenn"] = new Dungeon("Victory Road Hoenn",
     ["Unown"],
     [GameConstants.BattleItemType.xAttack, GameConstants.BattleItemType.xExp],
     4000,
