@@ -261,10 +261,10 @@ dungeonList["Granite Cave"] = new Dungeon("Granite Cave",
     12000, GameConstants.Badge.Stone, 101, 5);
 
 dungeonList["Fiery Path"] = new Dungeon("Fiery Path",
-    ["Unown"],
+    ["Machop", "Grimer", "Koffing", "Slugma", "Numel"],
     [GameConstants.BattleItemType.xAttack, GameConstants.BattleItemType.xExp],
     4000,
-    [new DungeonBossPokemon("Unown", 100000, 20)],
+    [new DungeonBossPokemon("Torkoal", 100000, 20)],
     12000, GameConstants.Badge.Stone, 101, 5);
 
 dungeonList["Meteor Falls"] = new Dungeon("Meteor Falls",
