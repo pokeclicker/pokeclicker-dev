@@ -39,7 +39,7 @@
            </div>
        </div>
        <div class="col-7 no-gutters">
-           <h2 class="pageItemTitle" data-bind="text: player.town().name()">Town Name</h2>
+           <h2 class="pageItemTitle" data-bind="text: player.town().dungeon() ? player.town().dungeon().name() : player.town().name()">Town Name</h2>
            <img class="townImage no-select" src=""
                 data-bind="attr:{ src: 'assets/images/towns/' + player.town().name() + '.png' }"/>
        </div>

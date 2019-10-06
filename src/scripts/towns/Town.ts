@@ -201,4 +201,4 @@ TownList["Shoal Cave"] = new DungeonTown("Shoal Cave", [125]);
 TownList["Cave of Origin"] = new DungeonTown("Cave of Origin", [126]);
 TownList["Seafloor Cavern"] = new DungeonTown("Seafloor Cavern", [127]);
 TownList["Sky Pillar"] = new DungeonTown("Sky Pillar", [131]);
-TownList["Victory Road Hoenn"] = new DungeonTown("Victory Road", [128], GameConstants.Badge.Rain);
+TownList["Victory Road Hoenn"] = new DungeonTown("Victory Road Hoenn", [128], GameConstants.Badge.Rain);
