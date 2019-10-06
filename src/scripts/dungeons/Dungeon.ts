@@ -254,10 +254,10 @@ dungeonList["Rusturf Tunnel"] = new Dungeon("Rusturf Tunnel",
     12000, GameConstants.Badge.Stone, 101, 5);
 
 dungeonList["Granite Cave"] = new Dungeon("Granite Cave",
-    ["Unown"],
+    ["Zubat", "Abra", "Geodude", "Makuhita", "Aron", "Sableye"],
     [GameConstants.BattleItemType.xAttack, GameConstants.BattleItemType.xExp],
     4000,
-    [new DungeonBossPokemon("Unown", 100000, 20)],
+    [new DungeonBossPokemon("Mawile", 100000, 20), new DungeonBossPokemon("Nosepass", 100000, 20)],
     12000, GameConstants.Badge.Stone, 101, 5);
 
 dungeonList["Fiery Path"] = new Dungeon("Fiery Path",
