@@ -240,11 +240,11 @@ dungeonList["Mt Silver"] = new Dungeon("Mt Silver",
 // Hoenn Dungeons
 
 dungeonList["Petalburg Woods"] = new Dungeon("Petalburg Woods",
-    ["Unown"],
+    ["Poochyena", "Zigzagoon", "Wurmple", "Silcoon", "Cascoon", "Taillow", "Shroomish"],
     [GameConstants.BattleItemType.xAttack, GameConstants.BattleItemType.xExp],
     4000,
-    [new DungeonBossPokemon("Unown", 100000, 20)],
-    12000, GameConstants.Badge.Stone, 101, 5);
+    [new DungeonBossPokemon("Slakoth", 100000, 10)],
+    12000, null, 101, 5);
 
 dungeonList["Rusturf Tunnel"] = new Dungeon("Rusturf Tunnel",
     ["Unown"],
