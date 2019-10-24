@@ -61,7 +61,11 @@ class MapHelper {
             return "currentRoute";
         }
         if (MapHelper.accessToRoute(route, region)) {
-            return "unlockedRoute";
+            if (player.routeKillsObservable(route)() >= player.routeKillsNeeded) {
+                return "unlockedRoute";
+            } else {
+                return "unlockedUnfinishedRoute";
+            }
         }
         return "lockedRoute";
     }
