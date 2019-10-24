@@ -79,7 +79,7 @@ class MapHelper {
         }
         if (MapHelper.accessToTown(town)) {
             if (dungeonList.hasOwnProperty(town)) {
-                if (DungeonRunner.dungeonCompleted(dungeonList[town], false)) {
+                if (player.statistics.dungeonsCleared[Statistics.getDungeonIndex(town)]()) {
                     return "dungeon completedDungeon"
                 }
                 return "dungeon unlockedDungeon"
