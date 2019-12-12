@@ -13,7 +13,7 @@ class Underground {
     }
 
     public static getMaxItems() {
-        return Underground.BASE_ITEMS_MAX + this.getUpgrade(Underground.Upgrades.Items_Max).calculateBonus();
+        return Underground.BASE_ITEMS_MAX + this.getUpgrade(Underground.Upgrades.Items_Max).calculateBonus() + PrestigeBonuses.getBonus(4);
     }
 
     public static getEnergyGain() {
@@ -25,7 +25,7 @@ class Underground {
     }
 
     public static getDailyDealsMax() {
-        return Underground.BASE_DAILY_DEALS_MAX + this.getUpgrade(Underground.Upgrades.Daily_Deals_Max).calculateBonus();
+        return Underground.BASE_DAILY_DEALS_MAX + this.getUpgrade(Underground.Upgrades.Daily_Deals_Max).calculateBonus() + PrestigeBonuses.getBonus(3);
     }
 
 

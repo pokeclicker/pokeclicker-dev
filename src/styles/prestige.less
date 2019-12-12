@@ -1,0 +1,58 @@
+.prestige-table {
+  width: 60% !important;
+  margin: auto;
+}
+.prestige-table td {
+  width: 14.2857143%;
+  position: relative;
+}
+.prestige-table td:after {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+.prestige-upgrade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.prestige-easy {
+  background-color: black;
+}
+
+.prestige-medium {
+  background-color:white;
+}
+
+.prestige-hard {
+  background-color:red;
+}
+
+.prestige-locked {
+  background-color: #333;
+  z-index: 2;
+}
+
+.prestige-reachable {
+  filter: opacity(70%);
+  z-index: 1;
+}
+
+.prestige-coins {
+  width: 20px;
+}
+
+.prestige-coin-0 {
+  filter: hue-rotate(30deg);
+}
+
+.prestige-coin-1 {
+  filter: hue-rotate(200deg);
+}
+
+.prestige-coin-2 {
+  filter: hue-rotate(300deg);
+}

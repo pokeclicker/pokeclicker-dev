@@ -10,6 +10,13 @@ class Player {
 
     public achievementsCompleted: { [name: string]: boolean };
 
+    public prestigeType: GameConstants.PrestigeType;
+    public prestigePoints: Array<KnockoutObservable<number>>;
+    public prestigeUpgradesBought: Array<KnockoutObservable<boolean>>;
+    public prestigeBank: Array<KnockoutObservable<number>>;
+
+    public dungeonsCleared: Array<KnockoutObservable<number>>;
+
     private _caughtShinyList: KnockoutObservableArray<string>;
     private _route: KnockoutObservable<number>;
     private _caughtPokemonList: KnockoutObservableArray<CaughtPokemon>;
@@ -45,6 +52,19 @@ class Player {
         this._money = ko.observable(savedPlayer._money || 0);
         this._dungeonTokens = ko.observable(savedPlayer._dungeonTokens || 0);
         this._questPoints = ko.observable(savedPlayer._questPoints || 0);
+        this.prestigeType = savedPlayer.prestigeType || GameConstants.PrestigeType.Easy;
+        this.prestigePoints = Array.apply(null, Array(GameHelper.enumLength(GameConstants.PrestigeType))).map(function (val, index) {
+            return ko.observable(savedPlayer.prestigePoints ? (savedPlayer.prestigePoints[index] || 0) : 0)
+        });
+        this.prestigeUpgradesBought = Array.apply(null, Array(GameConstants.AMOUNT_OF_PRESTIGE_UPGRADES + 1)).map(function (val, index) {
+            return ko.observable(savedPlayer.prestigeUpgradesBought ? (savedPlayer.prestigeUpgradesBought[index] || false) : false)
+        });
+        this.prestigeBank = Array.apply(null, Array(GameHelper.enumLength(GameConstants.Currency))).map(function (val, index) {
+            return ko.observable(savedPlayer.prestigeBank ? (savedPlayer.prestigeBank[index] || 0) : 0)
+        });
+        this.dungeonsCleared = Array.apply(null, Array(GameConstants.RegionDungeons.flat().length)).map(function (val, index) {
+            return ko.observable(savedPlayer.dungeonsCleared ? (savedPlayer.dungeonsCleared[index] || 0) : 0)
+        });
         this._caughtShinyList = ko.observableArray<string>(savedPlayer._caughtShinyList);
         this._region = ko.observable(savedPlayer._region);
         if (MapHelper.validRoute(savedPlayer._route, savedPlayer._region)) {
@@ -185,11 +205,8 @@ class Player {
         this.tutorialState = savedPlayer.tutorialState;
         this.tutorialComplete = ko.observable(!!savedPlayer.tutorialComplete);
 
-        //TODO remove before deployment
-        if (!debug) {
-            if (this.starter === GameConstants.Starter.None) {
-                StartSequenceRunner.start()
-            }
+        if (this.starter === GameConstants.Starter.None) {
+            StartSequenceRunner.start()
         }
     }
 
@@ -265,12 +282,7 @@ class Player {
     }
 
     public hasKeyItem(name: string): boolean {
-        for (let i = 0; i < this._keyItems().length; i++) {
-            if (this._keyItems()[i] == name) {
-                return true;
-            }
-        }
-        return false;
+        return this._keyItems().includes(name);
     }
 
     set defeatedAmount(value: Array<KnockoutObservable<number>>) {
@@ -287,7 +299,14 @@ class Player {
             this._keyItems().push(name);
             KeyItemHandler.getKeyItemObservableByName(name).valueHasMutated();
             player._keyItems.valueHasMutated();
+        }
+    }
 
+    public resetKeyItem(name: string) {
+        if (this.hasKeyItem(name)) {
+          this._keyItems().splice(this._keyItems().indexOf(name), 1);
+          KeyItemHandler.getKeyItemObservableByName(name).valueHasMutated();
+          player._keyItems.valueHasMutated();
         }
     }
 
@@ -387,20 +406,13 @@ class Player {
      * @returns {boolean}
      */
     public alreadyCaughtPokemon(pokemonName: string) {
-        const pokemon = PokemonHelper.getPokemonByName(pokemonName);
-        if (!pokemon) return false;
-        const id = PokemonHelper.getPokemonByName(pokemonName).id;
-        return player.caughtAmount[id]() > 0;
+        const pokemon = player._caughtPokemonList().find(p=>p.name==pokemonName);
+        return !!pokemon;
     }
 
     public alreadyCaughtPokemonShiny(pokemonName: string) {
         if (!this.alreadyCaughtPokemon(pokemonName)) return false;
-        for (let i: number = 0; i < this.caughtShinyList().length; i++) {
-            if (this.caughtShinyList()[i] == pokemonName) {
-                return true;
-            }
-        }
-        return false;
+        return player.caughtShinyList().includes(pokemonName);
     }
 
     public capturePokemon(pokemonName: string, shiny: boolean = false, supressNotification = false) {
@@ -659,9 +671,10 @@ class Player {
     }
 
     public gainDungeonTokens(tokens: number) {
+        tokens = Math.round(tokens * PrestigeBonuses.getBonus(2));
         this._dungeonTokens(Math.floor(this._dungeonTokens() + tokens));
         GameHelper.incrementObservable(this.statistics.totalTokens, tokens);
-        Game.animateMoney(tokens,'playerMoneyDungeon');
+        Game.animateMoney(tokens, 'playerMoneyDungeon');
     }
 
     get routeKills(): Array<KnockoutObservable<number>> {
@@ -943,59 +956,95 @@ class Player {
         Game.animateMoney(value,'playerMoneyQuest');
     }
 
-    public toJSON() {
-        let keep = [
-            "_money",
-            "_dungeonTokens",
-            "_questPoints",
-            "_caughtShinyList",
-            "_route",
-            "_caughtPokemonList",
-            "_defeatedAmount",
-            "_caughtAmount",
-            "_routeKills",
-            "_routeKillsNeeded",
-            "_region",
-            "_gymBadges",
-            "_pokeballs",
-            "_notCaughtBallSelection",
-            "_alreadyCaughtBallSelection",
-            "_sortOption",
-            "_sortDescending",
-            "_starter",
-            "_oakItemExp",
-            "_oakItemsEquipped",
-            "_itemList",
-            "_itemMultipliers",
-            "_keyItems",
-            // TODO(@Isha) remove.
-            "_mineInventory",
-            "_diamonds",
-            // TODO(@Isha) remove.
-            "_mineLayersCleared",
-            "_eggList",
-            "_eggSlots",
-            "_shardUpgrades",
-            "_shardsCollected",
-            "achievementsCompleted",
-            "completedQuestList",
-            "questRefreshes",
-            "_questXP",
-            "_questPoints",
-            "_lastSeen",
-            "currentQuests",
-            "_shinyCatches",
-            "gymDefeats",
-            "statistics",
-            "achievementsCompleted",
-            "farmPoints",
-            "plotList",
-            "berryList",
-            "highestRegion",
-            "tutorialProgress",
-            "tutorialState",
-            "tutorialComplete",
-        ];
+    public toJSON(prestige: boolean = false) {
+        let keep = [];
+        if (!prestige){
+          keep = [
+              "_money",
+              "_dungeonTokens",
+              "_questPoints",
+              "prestigePoints",
+              "prestigeUpgradesBought",
+              "prestigeType",
+              "prestigeBank",
+              "_caughtShinyList",
+              "_route",
+              "_caughtPokemonList",
+              "_defeatedAmount",
+              "_caughtAmount",
+              "_routeKills",
+              "_routeKillsNeeded",
+              "_region",
+              "_gymBadges",
+              "_pokeballs",
+              "_notCaughtBallSelection",
+              "_alreadyCaughtBallSelection",
+              "_sortOption",
+              "_sortDescending",
+              "_starter",
+              "_oakItemExp",
+              "_oakItemsEquipped",
+              "_itemList",
+              "_itemMultipliers",
+              "_keyItems",
+              // TODO(@Isha) remove.
+              "_mineInventory",
+              "_diamonds",
+              // TODO(@Isha) remove.
+              "_mineLayersCleared",
+              "_eggList",
+              "_eggSlots",
+              "_shardUpgrades",
+              "_shardsCollected",
+              "achievementsCompleted",
+              "completedQuestList",
+              "questRefreshes",
+              "_questXP",
+              "_questPoints",
+              "_lastSeen",
+              "currentQuests",
+              "_shinyCatches",
+              "gymDefeats",
+              "dungeonsCleared",
+              "statistics",
+              "achievementsCompleted",
+              "farmPoints",
+              "plotList",
+              "berryList",
+              "highestRegion",
+              "tutorialProgress",
+              "tutorialState",
+              "tutorialComplete",
+          ];
+        } else {
+          keep = [
+              "prestigePoints",
+              "prestigeUpgradesBought",
+              "prestigeType",
+              "prestigeBank",
+              "_caughtShinyList",
+              "_defeatedAmount",
+              "_caughtAmount",
+              "_sortOption",
+              "_sortDescending",
+              "_oakItemExp",
+              "_keyItems",
+              "_shardUpgrades",
+              "_shardsCollected",
+              "achievementsCompleted",
+              "questRefreshes",
+              "_questXP",
+              "_lastSeen",
+              "_shinyCatches",
+              "statistics",
+              "achievementsCompleted",
+              "plotList",
+              "berryList",
+              "tutorialProgress",
+              "tutorialState",
+              "tutorialComplete",
+          ];
+        }
         let plainJS = ko.toJS(this);
         return Save.filter(plainJS, keep)
     }

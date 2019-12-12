@@ -1,0 +1,98 @@
+<div class="modal noselect fade" id="PrestigeModal" tabindex="-1" role="dialog" aria-labelledby="PrestigeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <table width="100%">
+                  <tbody>
+                    <tr>
+                      <td width="33.33%">
+                          <span style="display: inline;">
+                              <img title="Prestige Points - Easy" src="assets/images/currency/money.png" class="prestige-coin-0" height="25px">
+                              <span id="prestigePointsEasy" data-bind="text: player.prestigePoints[0]()">0</span>
+                          </span>
+                      </td>
+                      <td width="33.33%">
+                          <span style="display: inline;">
+                              <img title="Prestige Points - Medium" src="assets/images/currency/money.png" class="prestige-coin-1" height="25px">
+                              <span id="prestigePointsMedium" data-bind="text: player.prestigePoints[1]()">0</span>
+                          </span>
+                      </td>
+                      <td width="33.33%">
+                          <span style="display: inline;">
+                              <img title="Prestige Points - Hard" src="assets/images/currency/money.png" class="prestige-coin-2" height="25px">
+                              <span id="prestigePointsHard" data-bind="text: player.prestigePoints[2]()">0</span>
+                          </span>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div class="modal-body p-0" id="prestige-modal-body">
+                <ul style="width:100%" class="nav nav-tabs nav-fill">
+                    <li class="nav-item"><a data-toggle='tab' class='nav-link active' href="#prestige-reset">Prestige</a>
+                    </li>
+                    <li class='nav-item'><a data-toggle='tab' class='nav-link' href="#prestige-upgrades">Upgrades</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div id="prestige-reset" class="tab-pane fade in active show">
+                      <h2>Prestige</h2>
+                      <p>Here you can reset your progress in order to gain prestige points in your current difficulty (<span data-bind="text: GameConstants.PrestigeType[player.prestigeType]"></span>).
+                      <br/>The amount of points gained is based on beating the Elite 4 Champion in each region
+                      <br/>The points gained from Prestiging can be used to buy Upgrades which will affect your gameplay in various ways.
+                      <br/>When you prestige, most of your progress will be reset to the beginning of the game.</p>
+                      <p>The following will <strong>not</strong> be reset:</p>
+                      <i>Shiny Pokemon</i><br/>
+                      <i>Oak item xp/level</i><br/>
+                      <i>All farm related items</i><br/>
+                      <i>Achievements</i><br/>
+                      <i>Shard progress</i><br/>
+                      <i>Quest xp/level</i><br/>
+                      <br/>
+                      <p>Your Money, Dungeon Tokens, Quest Points and Diamonds will all be banked,<br/>Once you reach a point where you can prestige again they will be added back to your total.</p>
+                      <h2>Choose Difficulty</h2>
+                      <div class="btn-group">
+                        <button class="btn btn-success" onclick="Prestige.startPrestige(GameConstants.PrestigeType.Easy)">Easy</button>
+                        <button class="btn btn-warning" onclick="Prestige.startPrestige(GameConstants.PrestigeType.Medium)">Medium</button>
+                        <button class="btn btn-danger" onclick="Prestige.startPrestige(GameConstants.PrestigeType.Hard)">Hard</button>
+                      </div>
+                      <br/>
+                      <br/>
+                      <button class="btn btn-primary" onclick="Prestige.takeFromBank()">Withdraw from bank</button>
+                      <br/>
+                      <br/>
+                    </div>
+                    <div id="prestige-upgrades" class="tab-pane fade">
+                      <h2>Upgrades</h2>
+                      <table class="table table-borderless prestige-table">
+                          <tbody data-bind="foreach: Prestige.upgradeLayout">
+                              <tr data-bind="foreach: $data">
+                                  <td data-bind="if: $data != 0">
+                                    <div class="prestige-upgrade" data-bind="attr: {
+                                        class: 'prestige-' + (Prestige.getUpgrade($data) !== undefined ? GameConstants.PrestigeType[Prestige.getUpgrade($data).costType].toLocaleLowerCase() : '')
+                                      },
+                                      css: {
+                                        'prestige-reachable': Prestige.isReachable($data)(),
+                                        'prestige-locked': Prestige.isLocked($data)(),
+                                        'prestige-upgrade': true
+                                      },
+                                      click: function(){Prestige.buyUpgrade($data)},
+                                      tooltip: {
+                                        title: Prestige.getUpgrade($data).tooltip,
+                                        trigger: 'hover',
+                                        placement: 'bottom',
+                                        html: true
+                                      }">
+                                      <span data-bind="text: $data"></span><br/>
+                                      <img data-bind="visible: Prestige.isLocked($data)()" src="assets/images/breeding/lock.png">
+                                    </div>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
