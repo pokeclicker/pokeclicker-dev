@@ -1888,9 +1888,44 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
 
         <!--Right column-->
         <div class="col-lg-3 col-md-6">
+
+            <!-- Battle Item container-->
+            <div id="BattleItemContainer" class="card mb-3">
+    <div class="card-header p-0"><span>Battle Items</span></div>
+    <div class="card-body p-0">
+      <table class="table table-bordered m-0">
+        <tbody>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="amount p-0" data-bind="text: GameHelper.formatAmount(player.itemList[$data]())"></td>
+          </tr>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="p-0" data-bind="attr: {
+                                disabled: !player.itemList[$data]()
+                            },
+                            css: {
+                                'bg-primary': EffectEngineRunner.getEffect($data) > 5,
+                                'bg-warning': EffectEngineRunner.getEffect($data) <= 5 && EffectEngineRunner.getEffect($data) > 0,
+                                'bg-secondary': !EffectEngineRunner.isActive($data)()
+                            },
+                            event: {
+                                click: function(){ItemHandler.useItem($data)}
+                            }">
+                <img src="" class="clickable" data-bind="attr: { src: '/assets/images/items/' + $data + '.png' }">
+
+            </td>
+          </tr>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="text-light p-0"><code data-bind="text: EffectEngineRunner.formattedTimeLeft($data)()"></code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
+
+
             <!-- Oak Items -->
-            
-<div class="card border-secondary mb-3" id="oakItemsContainer"
+            <div class="card border-secondary mb-3" id="oakItemsContainer"
 data-bind="visible: player.starter != GameConstants.Starter.None">
     <div class="card-header p-0">
         <div>
@@ -2561,9 +2596,9 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
        </div>
        <div class="modal-body">
            <p>
-               This is the Pokémon Day Care Center. You can trade your <br>
-               level 100 pokémon for an egg of the same pokémon.<br>
-               Hatched pokémon have a higher chance of becoming shiny!
+               This is the Pokémon Day Care Center.<br/>
+               You can trade your level 100 pokémon for an egg of the same pokémon.<br/>
+               Hatched pokémon will increase their attack and have a higher chance of becoming shiny!
            </p>
            <div data-bind="if: player.hasFreeEggSlot()">
                <!-- ko if: Object.keys(GameConstants.EggItemType).filter(e=>isNaN(e)).map(x=>player._itemList[x]()).reduce((x,y)=>x+y) -->
@@ -2589,23 +2624,22 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
                    Unfortunately, you don't have any pokémon of level 100
                </p>
                <!-- ko if: player.hasMaxLevelPokemon() -->
-               <p>
-                   Pick a pokémon below to breed them:
-               </p>
-               <div class="row col-lg-10 col-md-12 offset-lg-1 offset-md-0 col-sm-12 offset-sm-0"
-                    style="padding-right: 0"
-                    data-bind="foreach: player.maxLevelPokemonList()">
-                   <div class="col-md-6 col-sm-10 col-lg-4 offset-sm-1 offset-md-0 offset-md-0 breedingListItem text-nowrap">
-                       <button class="btn btn-secondary smallButton list-group-item-action"
-                               data-bind="click: function() { BreedingHelper.gainPokemonEgg($data);if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide');}}">
-                           <img class="smallImage"
-                                data-bind="attr:{ src: 'assets/images/' + (player.caughtShinyList().includes(name) ? 'shiny' : '') + 'pokemon/' + id +'.png' }"
-                                src=""/>
-                           <span data-bind="text: name" style="margin-left: 20px">Name</span>
-                           <span class="sparkle" data-bind="if: player.caughtShinyList().includes(name)">&nbsp;✨</span>
-                       </button>
-                   </div>
-               </div>
+                 <p>
+                     Pick a pokémon below to breed them:
+                 </p>
+                 <div class="row" data-bind="foreach: player.maxLevelPokemonList()">
+                    <button class="col-sm-4 col-md-3 col-lg-2 pokedexEntry text-nowrap btn"
+                    data-bind="style:{background: PokedexHelper.getBackgroundColors($data.name)},
+                      click: function() { BreedingHelper.gainPokemonEgg($data);if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide');}}">
+                        <span style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;" data-bind="text: $data.name">name</span>
+                        <div data-bind="if: PokedexHelper.pokemonSeen($data.id)">
+                            <div data-bind="visible: player.alreadyCaughtPokemonShiny(name)" style="position: absolute;right: 20px;top: 20px;">✨</div>
+                            <img src="" width="80px" data-bind="attr:{ src: PokedexHelper.getImage($data.id, $data.name)}">
+                            <span class="attack" style="bottom: 0; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px"
+                              data-bind="text: $data.attack()">attack</span>
+                        </div>
+                    </button>
+                 </div>
                <!-- /ko -->
            </div>
            <p class="text-danger" data-bind="visible: !player.hasFreeEggSlot()">
@@ -2865,7 +2899,7 @@ aria-labelledby="pokedexModalLabel">
                    style="max-width: 100%; padding:0; margin:0;">
                    <li class="col-sm-4 col-md-3 col-lg-2 pokedexEntry"
                        data-bind="style:{background: PokedexHelper.getBackgroundColors($data.name)}">
-                               <span style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;"
+                               <span class="id" style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;"
                                      data-bind="text: $data.id">number</span>
                        <div data-bind="if: PokedexHelper.pokemonSeen($data.id)">
                            <div data-bind="visible: player.alreadyCaughtPokemonShiny(name)" style="position: absolute;right: 20px;top: 20px;">✨</div>
