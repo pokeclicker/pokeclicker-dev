@@ -4,7 +4,7 @@
       <table class="table table-bordered m-0">
         <tbody>
           <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
-            <td width="16.6%" class="p-0" data-bind="text: player.itemList[$data]()"></td>
+            <td class="amount p-0" data-bind="text: GameHelper.formatAmount(player.itemList[$data]())"></td>
           </tr>
           <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
             <td class="p-0" data-bind="attr: {
