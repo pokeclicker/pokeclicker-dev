@@ -38,23 +38,22 @@ aria-labelledby="breedingModalLabel" aria-hidden="true">
                    Unfortunately, you don't have any pokémon of level 100
                </p>
                <!-- ko if: player.hasMaxLevelPokemon() -->
-               <p>
-                   Pick a pokémon below to breed them:
-               </p>
-               <div class="row" data-bind="foreach: player.maxLevelPokemonList()">
-
-                  <button class="col-sm-4 col-md-3 col-lg-2 pokedexEntry text-nowrap btn"
-                  data-bind="style:{background: PokedexHelper.getBackgroundColors($data.name)},
-                    click: function() { BreedingHelper.gainPokemonEgg($data);if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide');}}">
-                      <span style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;" data-bind="text: $data.name">name</span>
-                      <div data-bind="if: PokedexHelper.pokemonSeen($data.id)">
-                          <div data-bind="visible: player.alreadyCaughtPokemonShiny(name)" style="position: absolute;right: 20px;top: 20px;">✨</div>
-                          <img src="" width="80px" data-bind="attr:{ src: PokedexHelper.getImage($data.id, $data.name)}">
-                          <span class="attack" style="bottom: 0; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px"
-                            data-bind="text: $data.attack()">attack</span>
-                      </div>
-                  </button>
-               </div>
+                 <p>
+                     Pick a pokémon below to breed them:
+                 </p>
+                 <div class="row" data-bind="foreach: player.maxLevelPokemonList()">
+                    <button class="col-sm-4 col-md-3 col-lg-2 pokedexEntry text-nowrap btn"
+                    data-bind="style:{background: PokedexHelper.getBackgroundColors($data.name)},
+                      click: function() { BreedingHelper.gainPokemonEgg($data);if (!player.hasFreeEggSlot()) {$('#breedingModal').modal('hide');}}">
+                        <span style="top: 0; border-top-left-radius: 6px; border-top-right-radius: 6px;" data-bind="text: $data.name">name</span>
+                        <div data-bind="if: PokedexHelper.pokemonSeen($data.id)">
+                            <div data-bind="visible: player.alreadyCaughtPokemonShiny(name)" style="position: absolute;right: 20px;top: 20px;">✨</div>
+                            <img src="" width="80px" data-bind="attr:{ src: PokedexHelper.getImage($data.id, $data.name)}">
+                            <span class="attack" style="bottom: 0; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px"
+                              data-bind="text: $data.attack()">attack</span>
+                        </div>
+                    </button>
+                 </div>
                <!-- /ko -->
            </div>
            <p class="text-danger" data-bind="visible: !player.hasFreeEggSlot()">
