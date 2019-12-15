@@ -50,7 +50,7 @@ class QuestLineHelper {
         //Cleat Mt Moon dungeon
         let clearMtMoon = new DefeatDungeonQuest(GameConstants.KantoDungeons[2], 1);
         clearMtMoon.pointsReward = 10;
-        clearMtMoon.description = "Gather 75 Dungeon tokens by capturing Pokemon, then clear the Mt. Moon dungeon.";
+        clearMtMoon.description = 'Gather 75 Dungeon tokens by capturing Pokemon, then clear the Mt. Moon dungeon.';
         this.tutorial.addQuest(clearMtMoon);
 
         this.tutorialTracker = this.tutorial.curQuestInitial.subscribe((newInitial)=>{
