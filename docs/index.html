@@ -2014,7 +2014,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
       <!-- List of quests -->
       <div data-bind="foreach: player.currentQuests">
           <div class="card border-bottom-0">
-              <table>
+              <table width="100%">
                   <tr class="text-center">
                       <td colspan="2" data-bind="text: QuestHelper.questList()[$data.index].description"></td>
                   </tr>
@@ -2207,14 +2207,15 @@ aria-labelledby="receiveBadgeModalLabel" aria-hidden="true">
                <img src=""
                     data-bind="attr:{ src: 'assets/images/gymLeaders/' + GymRunner.gymObservable().leaderName + '.png'}">
                <h5 class="modal-title" id="receiveBadgeModalLabel"
-                   data-bind="text: GymRunner.gymObservable().leaderName">Modal title</h5>
+                   data-bind="text: GymRunner.gymObservable().leaderName.replace(/\d/g,'')">Modal title</h5>
 
            </div>
        </div>
        <div class="modal-body">
            <p data-bind="text: GymRunner.gymObservable().defeatMessage"></p>
-           <img src="" width="56px"
-                data-bind="attr:{ src: 'assets/images/badges/' + GymRunner.gymObservable().leaderName + '.png'}, visible: !GameConstants.Badge[GymRunner.gymObservable().badgeReward].startsWith('Elite')">
+           <!-- ko if: !GameConstants.Badge[GymRunner.gymObservable().badgeReward].startsWith('Elite') -->
+           <img src="" width="56px" data-bind="attr:{ src: 'assets/images/badges/' + GymRunner.gymObservable().leaderName + '.png'}">
+           <!-- /ko -->
 
        </div>
        <div data-bind="if: !(GymRunner.gymObservable() instanceof Champion)">
