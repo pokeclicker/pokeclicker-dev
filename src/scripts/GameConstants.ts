@@ -10,6 +10,7 @@ namespace GameConstants {
     export const UNDERGROUND_TICK = 1000;
     export const DUNGEON_TIME = 6000;
     export const DUNGEON_TICK = 1;
+    export const EFFECT_ENGINE_TICK = 1000;
     export const FARM_TICK = 1000;
     export const SAVE_TICK = 10000;
     export const GYM_TIME = 3000;
@@ -31,6 +32,7 @@ namespace GameConstants {
     ];
 
     export const AMOUNT_OF_BADGES = 16;
+    export const ITEM_USE_TIME = 30;
 
     export const ROAMING_MIN_CHANCE = 8192;
     export const ROAMING_MAX_CHANCE = 4096;
@@ -644,12 +646,12 @@ namespace GameConstants {
     }
 
     export enum BattleItemType {
-        xAttack,
-        xClick,
-        xExp,
-        Token_collector,
-        Item_magnet,
-        Lucky_incense
+        xAttack = "xAttack",
+        xClick = "xClick",
+        xExp = "xExp",
+        Token_collector = "Token_collector",
+        Item_magnet = "Item_magnet",
+        Lucky_incense = "Lucky_incense"
     }
 
     export enum PokemonItemType {
