@@ -531,7 +531,8 @@
                                 <img class="clickable" src=""
                                      data-bind="attr:{ src: 'assets/images/oakitems/' + GameConstants.humanifyString(GameConstants.OakItem[$data.id]) + '.png'},
                                       css: {
-                                        'oak-item-locked': !OakItemRunner.isUnlocked($data.id)
+                                        'oak-item-locked': !OakItemRunner.isUnlocked($data.id),
+                                        'flash': OakItemRunner.canUpgradeExp($data.id)
                                       },
                                       event: {
                                         mouseover: function(){OakItemRunner.hover($data.id)},
