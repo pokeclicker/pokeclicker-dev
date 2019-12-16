@@ -454,19 +454,26 @@ class Player {
         return false;
     }
 
-    public gainMoney(money: number) {
+    public gainMoney(money: number, applyBonuses: boolean = true) {
         OakItemRunner.use(GameConstants.OakItem.Amulet_Coin);
         // TODO add money multipliers
-        let oakItemBonus = OakItemRunner.isActive(GameConstants.OakItem.Amulet_Coin) ? (1 + OakItemRunner.calculateBonus(GameConstants.OakItem.Amulet_Coin) / 100) : 1;
-        let moneytogain = Math.floor(money * oakItemBonus * (1 + AchievementHandler.achievementBonus()))
-        if(EffectEngineRunner.isActive(GameConstants.BattleItemType.Lucky_incense)()){
-            moneytogain = Math.floor(moneytogain * 1.5);
+        if (applyBonuses){
+            // Apply oak item bonus
+            const oakItemBonus = OakItemRunner.isActive(GameConstants.OakItem.Amulet_Coin) ? (1 + OakItemRunner.calculateBonus(GameConstants.OakItem.Amulet_Coin) / 100) : 1;
+            money *= oakItemBonus;
+            // Apply achievemnts bonus
+            money *= 1 + AchievementHandler.achievementBonus();
+            // Apply battle item bonus
+            if(EffectEngineRunner.isActive(GameConstants.BattleItemType.Lucky_incense)()){
+                money *= 1.5;
+            }
         }
-        this._money(this._money() + moneytogain);
-        GameHelper.incrementObservable(this.statistics.totalMoney, moneytogain);
+        money = Math.floor(money);
+        this._money(this._money() + money);
+        GameHelper.incrementObservable(this.statistics.totalMoney, money);
         Game.updateMoney();
 
-        Game.animateMoney(moneytogain,'playerMoney');
+        Game.animateMoney(money, 'playerMoney');
     }
 
     set itemList(value: { [p: string]: KnockoutObservable<number> }) {
