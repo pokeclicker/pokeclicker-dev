@@ -18,7 +18,7 @@ const changelogType = {
     REMOVED: '<span class="badge badge-danger">REMOVED</span>',
     DEFAULT: '<span class="badge badge-default">-</span>', // unused - can be changed
     INFO: '<span class="badge badge-info">INFO</span>', // unused - can be changed
-}
+};
 
 const changelogItems = [
     new Changelog(changelogType.VERSION, 'v0.9.1'),
@@ -28,9 +28,4 @@ const changelogItems = [
         new Changelog(changelogType.FIXED, 'Battle items no longer always active'),
     new Changelog(changelogType.VERSION, 'v0.9.0'),
         new Changelog(changelogType.NEW, 'Add battle items'),
-]
-
-/*
-<span class="badge badge-primary">CHANGE</span> Show battle item names and descriptions<br/>
-<span class="badge badge-danger">FIXED</span> Fix battle items always being active<br/>
-*/
+];
