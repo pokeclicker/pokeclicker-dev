@@ -21,11 +21,11 @@ const changelogType = {
 };
 
 const changelogItems = [
-    new Changelog(changelogType.VERSION, 'v0.9.1'),
+    new Changelog(changelogType.VERSION, 'v1.0.1'),
         new Changelog(changelogType.NEW, 'Added changelog'),
         new Changelog(changelogType.CHANGE, 'Show battle item names and descriptions'),
         new Changelog(changelogType.FIXED, 'Item magnet now works in dungeons'),
         new Changelog(changelogType.FIXED, 'Battle items no longer always active'),
-    new Changelog(changelogType.VERSION, 'v0.9.0'),
+    new Changelog(changelogType.VERSION, 'v1.0.0'),
         new Changelog(changelogType.NEW, 'Add battle items'),
 ];
