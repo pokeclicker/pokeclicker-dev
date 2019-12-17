@@ -22,6 +22,7 @@ const changelogType = {
 
 const changelogItems = [
     new Changelog(changelogType.VERSION, 'v1.0.2'),
+        new Changelog(changelogType.CHANGE, 'Update how achievement percentages are shown'),
         new Changelog(changelogType.CHANGE, 'Update hatch/catch notification message'),
     new Changelog(changelogType.VERSION, 'v1.0.1'),
         new Changelog(changelogType.NEW, 'Added changelog'),
