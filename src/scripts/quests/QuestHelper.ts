@@ -195,7 +195,9 @@ class QuestHelper{
         return true;
     }
 
-    public static questSlots(): KnockoutObservable<number> {
-        return ko.observable(1);
+    public static questSlots(): KnockoutComputed<number> {
+        return ko.computed(function () {
+            return player ? player.highestRegion() + 1 : 1;
+        }, this);
     }
 }
