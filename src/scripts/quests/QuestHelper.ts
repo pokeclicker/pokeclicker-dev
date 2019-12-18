@@ -18,7 +18,7 @@ class QuestHelper{
         let amount, route, region;
         switch (type) {
             case "DefeatPokemons":
-                route = SeededRand.intBetween(1, GameConstants.RegionRoute[player.highestRegion]);
+                route = SeededRand.intBetween(1, GameConstants.RegionRoute[player.highestRegion()]);
                 amount = SeededRand.intBetween(100, 500);
                 return new DefeatPokemonsQuest(route, amount);
             case "CapturePokemons":
@@ -52,13 +52,13 @@ class QuestHelper{
             case "CatchShinies":
                 return new CatchShiniesQuest(1);
             case "DefeatGym":
-                region = SeededRand.intBetween(0, player.highestRegion);
+                region = SeededRand.intBetween(0, player.highestRegion());
                 const gymTown = SeededRand.fromArray(GameConstants.RegionGyms[region]);
                 amount = SeededRand.intBetween(5, 20);
                 return new DefeatGymQuest(gymTown, amount);
             case "DefeatDungeon":
                 // Allow upto highest region
-                region = SeededRand.intBetween(0, player.highestRegion);
+                region = SeededRand.intBetween(0, player.highestRegion());
                 const dungeon = SeededRand.fromArray(GameConstants.RegionDungeons[region]);
                 amount = SeededRand.intBetween(5, 20);
                 return new DefeatDungeonQuest(dungeon, amount);

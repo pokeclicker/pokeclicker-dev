@@ -3,7 +3,7 @@
     <div class="card-header p-0">
         <span>Hatchery</span>
         <button class='btn btn-sm btn-primary' style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px;"
-                data-bind='visible: player.highestRegion >= 1,
+                data-bind='visible: player.highestRegion() >= 1,
                     click: function(){ BreedingHelper.openBreedingModal() },
                     attr: { disabled: !player.hasFreeEggSlot() }'>
             List
