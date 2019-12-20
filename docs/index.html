@@ -28,7 +28,7 @@
             </td>
             <td style="vertical-align:middle;"><span data-bind="text: getProgressPercentage()"></span>%</td>
 
-            <td style="vertical-align:middle;">+<span data-bind="text: bonus"><Bonus></Bonus></span>%</td>
+            <td style="vertical-align:middle;">+<span data-bind="text: getBonus()"></span>%</td>
         </tr>
     </script>
 
@@ -43,8 +43,7 @@
             <td></td>
             <!-- /ko -->
             <!-- ko ifnot: valueType == "Mine Egg" -->
-            <td class='vertical-middle'
-                data-bind='text: value + " " + UndergroundItem.getFullResourceName(valueType, value)'></td>
+            <td class='vertical-middle' data-bind='text: value + " " + UndergroundItem.getFullResourceName(valueType, value)'></td>
             <!-- /ko -->
             <td class='vertical-middle'>
                 <button class='btn btn-success tooltipRightMine'
@@ -342,133 +341,183 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
         <!--The next two divs switch around on large screens. This way, battle screen/map is on top on smaller screens-->
         <!--left column-->
         <div class="col-lg-3 col-md-6 order-lg-first">
-            <div id="pokeballSelector" class="card border-secondary mb-3" style="min-height: 180px"
-                data-bind="visible: player.starter != GameConstants.Starter.None">
-                <div class="card-header p-0">
-                  <span>Pokéballs</span>
-                  <button type="button" class="btn btn-info" style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px; padding: 4px;"
-                      data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon (including unobtained shiny Pokémon)', trigger: 'hover', placement:'left' }">?</button>
-                </div>
-                <div class="card-body p-0">
-                    <table class="table table-sm">
-                        <thead>
-                        <tr>
-                            <th width="35%">Caught</th>
-                            <th width="30%">#</th>
-                            <th width="35%">New</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <img class="pokeball-small clickable" src="assets/images/pokeball/None.png"
-                                     data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.None)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.None}"/>
-                            </td>
-                            <td></td>
-                            <td>
-                                <img class="pokeball-small clickable" src="assets/images/pokeball/None.png"
-                                     data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.None)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.None}"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Pokeball-small.png"
-                                     data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Pokeball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Pokeball}"/>
-                            </td>
-                            <td>
-                                <span data-bind="text: player.pokeballsObservable(0)"></span>
-                            </td>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Pokeball-small.png"
-                                     data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Pokeball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Pokeball}"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Greatball-small.png"
-                                     data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Greatball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Greatball}"/>
-                            </td>
-                            <td>
-                                <span data-bind="text: player.pokeballsObservable(1)"></span>
-                            </td>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Greatball-small.png"
-                                     data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Greatball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Greatball}"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Ultraball-small.png"
-                                     data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Ultraball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Ultraball}"/>
-                            </td>
-                            <td>
-                                <span data-bind="text: player.pokeballsObservable(2)"></span>
-                            </td>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Ultraball-small.png"
-                                     data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Ultraball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Ultraball}"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Masterball-small.png"
-                                     data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Masterball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Masterball}"/>
-                            </td>
-                            <td>
-                                <span data-bind="text: player.pokeballsObservable(3)"></span>
-                            </td>
-                            <td>
-                                <img class="pokeball-small clickable"
-                                     src="assets/images/pokeball/Masterball-small.png"
-                                     data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Masterball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Masterball}"/>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
-            <div class="card border-secondary mb-3 pokemon-list-container" id="pokemonListContainer"
-                 data-bind="visible: player.starter != GameConstants.Starter.None">
-                <div class="card-header p-0"><span>Pokémon List</span></div>
-                <div class="card-body p-0">
-                    <div class="input-group input-group-sm">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Sort:</span>
-                        </div>
-                        <select class="form-control" data-bind="options: GameConstants.SortOptions,
-                                                                optionsText: 'text',
-                                                                optionsValue: 'value',
-                                                                value: player._sortOption,
-                                                                optionsCaption: 'Sort By...'" title="">
-                        </select>
-                        <div class="input-group-append">
-                          <label for="reverse_sort" class="input-group-text">
-                            <input id="reverse_sort" class="clickable" type='checkbox' data-bind="checked: player._sortDescending" title=""/>&nbsp;Reverse
-                          </label>
-                        </div>
-                   </div>
-                    <table id="pokemonList" class="table table-striped table-hover table-sm">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Atk</th>
-                            <th>Lvl</th>
-                        </tr>
-                        </thead>
-                        <tbody data-bind="template: { name: 'pokemonListTemplate', foreach: player.sortedPokemonList()()}">
+            <!-- pokeball selector -->
+            <div id="pokeballSelector" class="card border-secondary mb-3" data-bind="visible: player.starter != GameConstants.Starter.None">
+    <div class="card-header p-0" data-toggle="collapse" href="#pokeballSelectorBody">
+      <span>Pokéballs</span>
+    </div>
+    <button type="button" class="btn btn-info" style="position: absolute; right: 0px; top: 0px; width: auto; height: 41px; padding: 4px;"
+        data-bind="tooltip: { title: 'Select which Pokéball to use on caught Pokémon and new Pokémon (including unobtained shiny Pokémon)', trigger: 'hover', placement:'left' }">?</button>
+    <div id="pokeballSelectorBody" class="card-body p-0 show">
+        <table class="table table-sm">
+            <thead>
+            <tr>
+                <th width="35%">Caught</th>
+                <th width="30%">#</th>
+                <th width="35%">New</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <img class="pokeball-small clickable" src="assets/images/pokeball/None.png"
+                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.None)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.None}"/>
+                </td>
+                <td></td>
+                <td>
+                    <img class="pokeball-small clickable" src="assets/images/pokeball/None.png"
+                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.None)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.None}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Pokeball-small.png"
+                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Pokeball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Pokeball}"/>
+                </td>
+                <td>
+                    <span data-bind="text: player.pokeballsObservable(0)"></span>
+                </td>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Pokeball-small.png"
+                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Pokeball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Pokeball}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Greatball-small.png"
+                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Greatball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Greatball}"/>
+                </td>
+                <td>
+                    <span data-bind="text: player.pokeballsObservable(1)"></span>
+                </td>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Greatball-small.png"
+                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Greatball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Greatball}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Ultraball-small.png"
+                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Ultraball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Ultraball}"/>
+                </td>
+                <td>
+                    <span data-bind="text: player.pokeballsObservable(2)"></span>
+                </td>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Ultraball-small.png"
+                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Ultraball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Ultraball}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Masterball-small.png"
+                         data-bind="click: function(){player.setAlreadyCaughtBallSelection(GameConstants.Pokeball.Masterball)}, css: {'pokeball-selected': player._alreadyCaughtBallSelection() === GameConstants.Pokeball.Masterball}"/>
+                </td>
+                <td>
+                    <span data-bind="text: player.pokeballsObservable(3)"></span>
+                </td>
+                <td>
+                    <img class="pokeball-small clickable"
+                         src="assets/images/pokeball/Masterball-small.png"
+                         data-bind="click: function(){player.setNotCaughtBallSelection(GameConstants.Pokeball.Masterball)}, css: {'pokeball-selected': player._notCaughtBallSelection() === GameConstants.Pokeball.Masterball}"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                        </tbody>
-                    </table>
-                </div>
+
+            <!-- Battle Item container-->
+            <div id="BattleItemContainer" class="card border-secondary mb-3">
+    <div class="card-header p-0" data-toggle="collapse" href="#BattleItemContainerBody">
+      <span>Battle Items</span>
+    </div>
+    <div id="BattleItemContainerBody" class="card-body p-0 show">
+      <table class="table table-bordered m-0">
+        <tbody>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="amount p-0" data-bind="text: GameHelper.formatAmount(player.itemList[$data]())"></td>
+          </tr>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="p-0" data-bind="attr: {
+                                disabled: !player.itemList[$data]()
+                            },
+                            css: {
+                                'bg-primary': EffectEngineRunner.getEffect($data) > 5,
+                                'bg-warning': EffectEngineRunner.getEffect($data) <= 5 && EffectEngineRunner.getEffect($data) > 0,
+                                'bg-secondary': !EffectEngineRunner.isActive($data)()
+                            },
+                            event: {
+                                click: function(){ItemHandler.useItem($data)}
+                            },
+                            tooltip: {
+                              title: $data.replace('_', ' ') + '<br/>' + ItemList[$data].description,
+                              trigger: 'hover',
+                              placement:'bottom',
+                              html: true
+                            }">
+                <img src="" class="clickable" data-bind="attr: { src: 'assets/images/items/' + $data + '.png' }">
+
+            </td>
+          </tr>
+          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
+            <td class="text-light p-0"><code data-bind="text: EffectEngineRunner.formattedTimeLeft($data)()"></code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>
+
+
+            <!-- Pokemon List container-->
+            
+<div class="card border-secondary mb-3 pokemon-list-container" id="pokemonListContainer"
+     data-bind="visible: player.starter != GameConstants.Starter.None">
+    <div class="card-header p-0" data-toggle="collapse" href="#pokemonListBody">
+      <span>Pokémon List</span>
+    </div>
+    <div id="pokemonListBody" class="card-body p-0 show">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Sort:</span>
             </div>
+            <select class="form-control" data-bind="options: GameConstants.SortOptions,
+                                                    optionsText: 'text',
+                                                    optionsValue: 'value',
+                                                    value: player._sortOption,
+                                                    optionsCaption: 'Sort By...'" title="">
+            </select>
+            <div class="input-group-append">
+              <label for="reverse_sort" class="input-group-text">
+                <input id="reverse_sort" class="clickable" type='checkbox' data-bind="checked: player._sortDescending" title=""/>&nbsp;Reverse
+              </label>
+            </div>
+       </div>
+        <table id="pokemonList" class="table table-striped table-hover table-sm">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Atk</th>
+                <th>Lvl</th>
+            </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'pokemonListTemplate', foreach: player.sortedPokemonList()()}">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
         </div>
 
@@ -658,8 +707,8 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
                             </div>
                         </div>
                     </div>
-                    <!--TownView-->
 
+                    <!--TownView-->
                     <div id="townView" data-bind="if: Game.gameState() === GameConstants.GameState.town"
      class="justify-content-center no-gutters no-select">
     <div class="row justify-content-center no-gutters" style="min-height: 100px;">
@@ -1358,7 +1407,7 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
           fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
           height="12.6" stroke="#6c8ebf" width="12.6" x="325" y="240"
           data-bind="click:function(){MapHelper.openShipModal()},
-          css:{ unlockedTown: player.highestRegion >= 1}"></rect>
+          css:{ unlockedTown: player.highestRegion() >= 1}"></rect>
 </g>
 
                             <g transform='translate(-1,-1)' data-bind='if: player.region == GameConstants.Region.johto'>
@@ -1889,58 +1938,17 @@ aria-labelledby="keyItemModalLabel" aria-hidden="true">
         <!--Right column-->
         <div class="col-lg-3 col-md-6">
 
-            <!-- Battle Item container-->
-            <div id="BattleItemContainer" class="card mb-3">
-    <div class="card-header p-0"><span>Battle Items</span></div>
-    <div class="card-body p-0">
-      <table class="table table-bordered m-0">
-        <tbody>
-          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
-            <td class="amount p-0" data-bind="text: GameHelper.formatAmount(player.itemList[$data]())"></td>
-          </tr>
-          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
-            <td class="p-0" data-bind="attr: {
-                                disabled: !player.itemList[$data]()
-                            },
-                            css: {
-                                'bg-primary': EffectEngineRunner.getEffect($data) > 5,
-                                'bg-warning': EffectEngineRunner.getEffect($data) <= 5 && EffectEngineRunner.getEffect($data) > 0,
-                                'bg-secondary': !EffectEngineRunner.isActive($data)()
-                            },
-                            event: {
-                                click: function(){ItemHandler.useItem($data)}
-                            },
-                            tooltip: {
-                              title: $data.replace('_', ' ') + '<br/>' + ItemList[$data].description,
-                              trigger: 'hover',
-                              placement:'bottom',
-                              html: true
-                            }">
-                <img src="" class="clickable" data-bind="attr: { src: 'assets/images/items/' + $data + '.png' }">
-
-            </td>
-          </tr>
-          <tr data-bind="foreach: Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem')">
-            <td class="text-light p-0"><code data-bind="text: EffectEngineRunner.formattedTimeLeft($data)()"></code></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-</div>
-
-
             <!-- Oak Items -->
             <div class="card border-secondary mb-3" id="oakItemsContainer"
 data-bind="visible: player.starter != GameConstants.Starter.None">
-    <div class="card-header p-0">
+    <div class="card-header p-0" data-toggle="collapse" href="#oakItemsBody">
         <div>
             <span style="text-align:center" data-bind="text: 'Oak Items equiped: ' + OakItemRunner.getTotalActiveOakItems() + '/' + player.calculateOakItemSlots()()"></span>
-            <button type="button" class="btn btn-info" style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px; padding: 4px;"
-                data-bind="tooltip: { title: 'Activate Oak items to gain unique bonuses. When an Oak item has gained enough experience you can level it up with money to boost its effect.', trigger: 'hover', placement:'left' }">?</button>
         </div>
+        <button type="button" class="btn btn-info" style="position: absolute; right: 0px; top: 0px; width: auto; height: 41px; padding: 4px;"
+            data-bind="tooltip: { title: 'Activate Oak items to gain unique bonuses. When an Oak item has gained enough experience you can level it up with money to boost its effect.', trigger: 'hover', placement:'left' }">?</button>
     </div>
-    <div class="card-body">
+    <div id="oakItemsBody" class="card-body show">
         <div class="row" data-bind="foreach: OakItemRunner.oakItemList">
             <div class="col-xs-4 col-sm-4 col-md-3 p-2">
                 <button class="p-0 btn"
@@ -1962,23 +1970,16 @@ data-bind="visible: player.starter != GameConstants.Starter.None">
                   </button>
             </div>
         </div>
-    </div>
-
-    <div class="card oak-item-info">
-        <div data-bind="if: OakItemRunner.inspectedItem().isUnlocked()">
-            <div class="row justify-content-sm-center">
-                <div style="height:20px;" class="col">
-                    <b>
-                        <span data-bind="text: GameConstants.humanifyString(GameConstants.OakItem[OakItemRunner.inspectedItem().id])"></span>
-                    </b>
-                </div>
-            </div>
-            <div class="row justify-content-sm-center">
-                <div class="col">
-                    <span data-bind="text: OakItemRunner.inspectedItem().description"></span>
-                </div>
+        <hr/>
+        <div class="oak-item-info">
+            <div class="text-center">
+                <strong><h5 data-bind="text: GameConstants.humanifyString(GameConstants.OakItem[OakItemRunner.inspectedItem().id])"></h5></strong>
             </div>
 
+            <!-- ko if: OakItemRunner.inspectedItem().isUnlocked() -->
+            <div class="text-center">
+                <p data-bind="text: OakItemRunner.inspectedItem().description"></p>
+            </div>
             <div class="row justify-content-sm-center">
                 <div class="col-sm-11 col-md-8">
                     <div class="progress" style="margin-top: 12px"
@@ -2009,35 +2010,20 @@ data-bind="visible: player.starter != GameConstants.Starter.None">
 
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-sm-center no-gutters">
-
-                <div class="col">
-                    Lvl.
-                    <span data-bind="text: OakItemRunner.inspectedItem().level()"></span>
+                <div class="col-6">
+                    Lvl. <span data-bind="text: OakItemRunner.inspectedItem().level()"></span>
                 </div>
-
-                <div class="col">
-                    Bonus:
-                    <span data-bind="text: OakItemRunner.inspectedItem().calculateBonus()"></span>
-                    %
+                <div class="col-6">
+                    Bonus: <span data-bind="text: OakItemRunner.inspectedItem().calculateBonus()"></span>%
                 </div>
             </div>
-        </div>
-        <div data-bind="ifnot: OakItemRunner.inspectedItem().isUnlocked()">
-
-            <div class="row justify-content-sm-center">
-                <div style="height:20px;" class="col">
-                    <b>
-                        <span data-bind="text: GameConstants.humanifyString(GameConstants.OakItem[OakItemRunner.inspectedItem().id])"></span>
-                    </b>
-                </div>
-            </div>
-
+            <!-- /ko -->
+            <!-- ko ifnot: OakItemRunner.inspectedItem().isUnlocked() -->
             <div style="min-height:80px; vertical-align: center">
                 Capture <span data-bind="text: OakItemRunner.inspectedItem().unlockReq - player.caughtPokemonList.length"></span> more unique Pokémon to
                 unlock!
             </div>
+            <!-- /ko -->
         </div>
     </div>
 
@@ -2045,17 +2031,17 @@ data-bind="visible: player.starter != GameConstants.Starter.None">
 
 
             <!-- Current Quest -->
-            <div class="card border-secondary mb-3" id="questDisplayContainer" style="min-height: 100px">
+            <div class="card border-secondary mb-3" id="questDisplayContainer" >
 
-    <div class="card-header p-0">
-      <span class='' data-bind='text: !player.tutorialComplete() ? "Tutorial Quest" : "Quests (" + player.currentQuests().length + "/" + QuestHelper.questSlots()() + ")"'></span>
-      <button class='btn btn-sm btn-primary' style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px;"
-              data-bind='visible: player.tutorialComplete(), click: function(){$("#QuestModal").modal("show")}'>
-          List
-      </button>
+    <div class="card-header p-0" data-toggle="collapse" href="#questDisplayBody">
+      <span data-bind='text: !player.tutorialComplete() ? "Tutorial Quest" : "Quests (" + player.currentQuests().length + "/" + QuestHelper.questSlots()() + ")"'></span>
     </div>
+    <button class='btn btn-sm btn-primary' style="position: absolute; right: 0px; top: 0px; width: auto; height: 41px;"
+            data-bind='visible: player.tutorialComplete(), click: function(){$("#QuestModal").modal("show")}'>
+        List
+    </button>
 
-    <div class="card-body p-0">
+    <div id="questDisplayBody" class="card-body p-0 show">
       <!-- List of quests -->
       <div data-bind="foreach: player.currentQuests">
           <div class="card border-bottom-0">
@@ -2088,6 +2074,9 @@ data-bind="visible: player.starter != GameConstants.Starter.None">
               </table>
           </div>
       </div>
+      <!-- ko if: player.currentQuests().length == 0 -->
+        <span class="pt-2 pb-2">No active quest</span>
+      <!-- /ko -->
       <div data-bind='if: (!player.tutorialComplete()) && (QuestLineHelper.tutorial.totalQuests > 0) && (QuestLineHelper.tutorial.curQuest() < QuestLineHelper.tutorial.totalQuests)'>
           <div class="card border-bottom-0">
               <table>
@@ -2115,16 +2104,16 @@ data-bind="visible: player.starter != GameConstants.Starter.None">
             <!-- Egg Slots/Breeding-->
             <!-- ko if: KeyItemHandler.getKeyItemObservableByName('Mystery egg')().isUnlocked() -->
 <div class="card border-secondary mb-3">
-    <div class="card-header p-0">
+    <div class="card-header p-0" data-toggle="collapse" href="#eggList">
         <span>Hatchery</span>
-        <button class='btn btn-sm btn-primary' style="position: absolute; right: -1px; top: -1px; width: auto; height: 42px;"
-                data-bind='visible: player.highestRegion >= 1,
-                    click: function(){ BreedingHelper.openBreedingModal() },
-                    attr: { disabled: !player.hasFreeEggSlot() }'>
-            List
-        </button>
     </div>
-    <div id='eggList' class="card-body p-0">
+    <button class='btn btn-sm btn-primary' style="position: absolute; right: 0px; top: 0px; width: auto; height: 41px;"
+            data-bind='visible: player.highestRegion() >= 1,
+                click: function(){ BreedingHelper.openBreedingModal() },
+                attr: { disabled: !player.hasFreeEggSlot() }'>
+        List
+    </button>
+    <div id='eggList' class="card-body p-0 show">
       <div class="row m-0" data-bind="foreach: player.eggList">
         <div class="col-md-6 eggSlot">
             <div data-bind="if: $index() === player.eggSlots()">
@@ -2358,7 +2347,7 @@ aria-labelledby="AchievementsModalLabel" aria-hidden="true">
 
 <!-- Changelog Modal -->
 <div class="modal fade noselect" id="changelogModal" tabindex="-1" role="dialog" aria-badgeledby="changelogModal">
-    <div class="modal-dialog modal-md" role="document">
+    <div class="modal-dialog modal-lg" role="document">
        <div class="modal-content">
            <div class="modal-header">
                <h4>Changelog</h4>
@@ -2715,7 +2704,6 @@ style="cursor:default" tabindex="-1">
                              </tr>
                            </thead>
                            <tbody data-bind="template: { name: 'treasureListTemplate', foreach: player._mineInventory()}">
-
                            </tbody>
                        </table>
                    </div>
@@ -3200,7 +3188,7 @@ aria-labelledby="saveModalLabel">
                         Kanto
                     </button>
                     <button class='btn btn-primary'
-                        data-bind='visible: player.region != 1 && player.highestRegion >= 1'
+                        data-bind='visible: player.region != 1 && player.highestRegion() >= 1'
                         onclick='MapHelper.moveToTown("Olivine City");player.region = 1;$("#ShipModal").modal("hide")'>
                         Johto
                     </button>
