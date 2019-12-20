@@ -180,7 +180,7 @@ class Player {
         });
         this.plotList = Save.initializePlots(savedPlayer.plotList);
         this.effectList = Save.initializeEffects(savedPlayer.effectList || {});
-        this.highestRegion = savedPlayer.highestRegion || 0;
+        this.highestRegion = ko.observable(savedPlayer.highestRegion || 0);
 
         this.tutorialProgress = ko.observable(savedPlayer.tutorialProgress || 0);
         this.tutorialState = savedPlayer.tutorialState;
@@ -232,7 +232,7 @@ class Player {
     public tutorialState: any;
     public tutorialComplete: KnockoutObservable<boolean>;
 
-    private highestRegion: GameConstants.Region;
+    private highestRegion: KnockoutObservable<GameConstants.Region>;
 
     public routeKillsObservable(route: number): KnockoutComputed<number> {
         return ko.computed(function () {
@@ -418,7 +418,7 @@ class Player {
     }
 
     public capturePokemon(pokemonName: string, shiny: boolean = false, supressNotification = false) {
-        if (PokemonHelper.calcNativeRegion(pokemonName) > player.highestRegion) {
+        if (PokemonHelper.calcNativeRegion(pokemonName) > player.highestRegion()) {
             return;
         }
         OakItemRunner.use(GameConstants.OakItem.Magic_Ball);
@@ -428,7 +428,7 @@ class Player {
             this._caughtPokemonList.push(caughtPokemon);
             if (!supressNotification) {
                 if (shiny) Notifier.notify(`✨ You have captured a shiny ${pokemonName}! ✨`, GameConstants.NotificationOption.warning);
-                else Notifier.notify(`You have captured a ${pokemonName}!`, GameConstants.NotificationOption.success)
+                else Notifier.notify(`You have captured ${GameHelper.anOrA(pokemonName)} ${pokemonName}!`, GameConstants.NotificationOption.success)
             }
         }
         if (shiny && !this.alreadyCaughtPokemonShiny(pokemonName)) {
