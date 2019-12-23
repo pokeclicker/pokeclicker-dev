@@ -685,7 +685,9 @@ class Player {
             tokens *= 1.5;
         }
 
-        this._dungeonTokens(Math.floor(this._dungeonTokens() + tokens));
+        tokens = Math.floor(tokens);
+
+        this.dungeonTokens(this.dungeonTokens() + tokens);
 
         GameHelper.incrementObservable(this.statistics.totalTokens, tokens);
         Game.animateMoney(tokens,'playerMoneyDungeon');
